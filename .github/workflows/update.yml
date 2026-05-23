@@ -24,15 +24,15 @@ jobs:
         run: pip install requests pyyaml
 
       - name: Run merge script
-        env:
-          GOTIFY_URL: ${{ secrets.GOTIFY_URL }}
-          GOTIFY_TOKEN: ${{ secrets.GOTIFY_TOKEN }}
         run: python scripts/merge.py
+
+      - name: Run comparison script
+        run: python scripts/compare.py
 
       - name: Commit and push output
         run: |
           git config user.name "blocklist-bot"
           git config user.email "bot@blocklist-manager"
           git add output/
-          git diff --cached --quiet || git commit -m "chore: update merged lists $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git diff --cached --quiet || git commit -m "chore: update lists and recommendations $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
