@@ -14,6 +14,9 @@ REPORT_FILE = "output/last_run.json"
 HEADERS = {"User-Agent": "blocklist-manager/1.0 (https://github.com/ngfblog/blocklist-manager)"}
 TIMEOUT = 30
 
+GOTIFY_URL = os.environ.get("GOTIFY_URL", "")
+GOTIFY_TOKEN = os.environ.get("GOTIFY_TOKEN", "")
+
 def load_config():
     with open(CONFIG_FILE) as f:
         return yaml.safe_load(f)
@@ -78,14 +81,18 @@ def parse_dnsbl(text):
             domains.add(line.lower())
     return domains
 
-def send_gotify(url, token, title, message, priority=5):
+def send_gotify(title, message, priority=5):
+    if not GOTIFY_URL or not GOTIFY_TOKEN:
+        print("  Gotify not configured, skipping.")
+        return
     try:
         requests.post(
-            f"{url}/message",
+            f"{GOTIFY_URL}/message",
             json={"title": title, "message": message, "priority": priority},
-            headers={"X-Gotify-Key": token},
+            headers={"X-Gotify-Key": GOTIFY_TOKEN},
             timeout=10
         )
+        print("  Gotify sent.")
     except Exception as e:
         print(f"  Gotify error: {e}")
 
@@ -95,9 +102,6 @@ def main():
 
     config = load_config()
     os.makedirs("output", exist_ok=True)
-
-    gotify_url = config.get("gotify", {}).get("url", "")
-    gotify_token = config.get("gotify", {}).get("token", "")
 
     print("\n[1] Processing IP lists...")
     all_ips = set()
@@ -163,20 +167,16 @@ def main():
 
     ip_diff = len(merged_ips) - prev_ip_count
     dns_diff = len(merged_domains) - prev_dns_count
-
-    print("\n[3] Sending Gotify notification...")
     ip_change = f"+{ip_diff}" if ip_diff >= 0 else str(ip_diff)
     dns_change = f"+{dns_diff}" if dns_diff >= 0 else str(dns_diff)
+
+    print("\n[3] Sending Gotify notification...")
     message = (
         f"IP list: {len(merged_ips):,} entries ({ip_change})\n"
         f"DNSBL list: {len(merged_domains):,} entries ({dns_change})\n"
         f"Sources: {len(config.get('ip_lists',[]))} IP + {len(config.get('dnsbl_lists',[]))} DNSBL"
     )
-    if gotify_url and gotify_token:
-        send_gotify(gotify_url, gotify_token, "Blocklist Manager – Updated", message)
-        print("  Gotify sent.")
-    else:
-        print("  Gotify not configured, skipping.")
+    send_gotify("Blocklist Manager – Updated", message)
 
     print(f"\n=== Done ===")
     print(f"  IP:    {len(merged_ips):,} entries  ({ip_change})")

@@ -1,0 +1,38 @@
+name: Update Blocklists
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests pyyaml
+
+      - name: Run merge script
+        env:
+          GOTIFY_URL: ${{ secrets.GOTIFY_URL }}
+          GOTIFY_TOKEN: ${{ secrets.GOTIFY_TOKEN }}
+        run: python scripts/merge.py
+
+      - name: Commit and push output
+        run: |
+          git config user.name "blocklist-bot"
+          git config user.email "bot@blocklist-manager"
+          git add output/
+          git diff --cached --quiet || git commit -m "chore: update merged lists $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push

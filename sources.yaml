@@ -20,10 +20,6 @@ compare_sources:
     - url: https://github.com/hagezi/dns-blocklists
       name: Hagezi DNS Blocklists
 
-gotify:
-  url: http://10.10.20.110:8070
-  token: AzNVwfdXlp290Jh
-
 github:
   username: ngfblog
   repo: blocklist-manager
