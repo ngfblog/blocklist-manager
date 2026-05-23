@@ -1,11 +1,7 @@
 {
-  "generated": "2026-05-23T11:56:31.351009+00:00",
+  "generated": "2026-05-23T11:59:03.731870+00:00",
   "source": "pfSense config.xml",
   "ip_lists": [
-    "https://127.0.0.1:5555/pfblockerng/pfblockerng.php?pfb=pfB_Permit_ASN_v4",
-    "https://127.0.0.1:5555/pfblockerng/pfblockerng.php?pfb=pfB_GeoIP_Blocking_v4",
-    "https://127.0.0.1:5555/pfblockerng/pfblockerng.php?pfb=pfB_Spamhaus_DROP_v4",
-    "https://127.0.0.1:5555/pfblockerng/pfblockerng.php?pfb=pfB_ET_Block_v4",
     "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/cn/ipv4-aggregated.txt",
     "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/in/ipv4-aggregated.txt",
     "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/ir/ipv4-aggregated.txt",
