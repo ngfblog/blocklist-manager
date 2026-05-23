@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-23T11:59:03.731870+00:00",
+  "generated": "2026-05-23T12:28:34.781238+00:00",
   "source": "pfSense config.xml",
   "ip_lists": [
     "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/cn/ipv4-aggregated.txt",
@@ -8,7 +8,8 @@
     "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/kp/ipv4-aggregated.txt",
     "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/ru/ipv4-aggregated.txt",
     "https://www.spamhaus.org/drop/drop.txt",
-    "https://rules.emergingthreats.net/fwrules/emerging-Block-IPs.txt"
+    "https://rules.emergingthreats.net/fwrules/emerging-Block-IPs.txt",
+    "https://lists.blocklist.de/lists/all.txt"
   ],
   "dnsbl_lists": [
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/doh.txt",
