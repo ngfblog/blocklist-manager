@@ -94,8 +94,8 @@ def main():
     with open(MY_LISTS_FILE) as f:
         my_lists = json.load(f)
 
-    my_ip_urls    = [u for u in my_lists.get("ip_lists", []) if "ipverse" not in u]
-    my_dnsbl_urls = my_lists.get("dnsbl_lists", [])
+    my_ip_urls    = [u for u in my_lists.get("ip_lists", []) if "ipverse" not in u and "blocklist-manager" not in u]
+    my_dnsbl_urls = [u for u in my_lists.get("dnsbl_lists", []) if "blocklist-manager" not in u]
 
     # Download and parse my IP lists
     print("\n[2] Downloading my IP lists...")
