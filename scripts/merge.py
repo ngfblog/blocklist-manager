@@ -14,14 +14,15 @@ from datetime import datetime, timezone
 HEADERS = {"User-Agent": "blocklist-manager/1.0 (https://github.com/ngfblog/blocklist-manager)"}
 TIMEOUT = 30
 
-# External sources to compare against
+# External IP sources to compare against
 IP_SOURCES = [
     "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level1.netset",
+    "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level2.netset",
 ]
 
+# External DNSBL sources to compare against
 DNSBL_SOURCES = [
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/pro.txt",
-    "https://raw.githubusercontent.com/nicehash/NiceHashQuarantine/main/domains.txt",
 ]
 
 MY_LISTS_FILE = "my_lists.json"
@@ -93,7 +94,7 @@ def main():
     with open(MY_LISTS_FILE) as f:
         my_lists = json.load(f)
 
-    my_ip_urls   = [u for u in my_lists.get("ip_lists", []) if "ipverse" not in u]
+    my_ip_urls    = [u for u in my_lists.get("ip_lists", []) if "ipverse" not in u]
     my_dnsbl_urls = my_lists.get("dnsbl_lists", [])
 
     # Download and parse my IP lists
@@ -124,9 +125,8 @@ def main():
         source_nets = parse_ips(text)
         new_nets = [n for n in source_nets if not nets_overlap(n, my_ip_nets)]
         gap_nets.update(new_nets)
-        print(f"     {url.split('/')[-1]}: {len(source_nets)} total, {len(new_nets)} new")
+        print(f"     {url.split('/')[-1]}: {len(source_nets)} total, {len(new_nets)} new networks")
 
-    # Collapse and sort
     gap_nets_collapsed = sorted(
         ipaddress.collapse_addresses(gap_nets),
         key=lambda x: x
@@ -136,8 +136,9 @@ def main():
     with open(OUTPUT_IP, "w") as f:
         f.write(f"# Blocklist Manager – IP gaps\n")
         f.write(f"# Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\n")
-        f.write(f"# Contains IPs from external sources NOT covered by your pfBlockerNG lists\n")
-        f.write(f"# Total entries: {len(gap_nets_collapsed)}\n#\n")
+        f.write(f"# Sources: firehol_level1 + firehol_level2\n")
+        f.write(f"# Contains networks NOT covered by your pfBlockerNG lists\n")
+        f.write(f"# Total entries: {len(gap_nets_collapsed)} networks\n#\n")
         for net in gap_nets_collapsed:
             f.write(str(net) + "\n")
 
@@ -149,7 +150,7 @@ def main():
         source_domains = parse_domains(text)
         new_domains = source_domains - my_domains
         gap_domains.update(new_domains)
-        print(f"     {url.split('/')[-1]}: {len(source_domains)} total, {len(new_domains)} new")
+        print(f"     {url.split('/')[-1]}: {len(source_domains)} total, {len(new_domains)} new domains")
 
     gap_domains_sorted = sorted(gap_domains)
     print(f"  Total DNSBL gaps: {len(gap_domains_sorted)} domains")
@@ -157,8 +158,9 @@ def main():
     with open(OUTPUT_DNS, "w") as f:
         f.write(f"# Blocklist Manager – DNSBL gaps\n")
         f.write(f"# Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\n")
-        f.write(f"# Contains domains from external sources NOT covered by your pfBlockerNG lists\n")
-        f.write(f"# Total entries: {len(gap_domains_sorted)}\n#\n")
+        f.write(f"# Sources: Hagezi Pro\n")
+        f.write(f"# Contains domains NOT covered by your pfBlockerNG DNSBL lists\n")
+        f.write(f"# Total entries: {len(gap_domains_sorted)} domains\n#\n")
         for domain in gap_domains_sorted:
             f.write(f"0.0.0.0 {domain}\n")
 
