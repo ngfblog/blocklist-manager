@@ -89,6 +89,9 @@ code{color:#79c0ff;font-family:monospace}
 .toast{position:fixed;bottom:24px;right:24px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:12px 18px;font-size:13px;z-index:999;display:none;align-items:center;gap:8px}
 .toast.show{display:flex}
 .toast.success{border-color:var(--green-border);color:var(--green)}
+.font-ctrl{display:flex;align-items:center;gap:4px}
+.font-btn{width:28px;height:28px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--text2);cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;font-family:inherit}
+.font-btn:hover{color:var(--text);border-color:var(--border)}
 </style>
 </head>
 <body>
@@ -102,6 +105,10 @@ code{color:#79c0ff;font-family:monospace}
     </div>
   </div>
   <div class="topbar-right">
+    <div class="font-ctrl">
+      <button class="font-btn" onclick="fontSize(-1)" title="Smaller">A-</button>
+      <button class="font-btn" onclick="fontSize(1)" title="Larger">A+</button>
+    </div>
     <span class="pill green" id="status-pill"><i class="ti ti-refresh" style="font-size:10px;vertical-align:-1px"></i> Loading...</span>
   </div>
 </div>
@@ -187,6 +194,15 @@ code{color:#79c0ff;font-family:monospace}
 <script>
 const REPO = 'ngfblog/blocklist-manager';
 
+let currentSize = parseInt(localStorage.getItem('fontSize') || '14');
+document.body.style.fontSize = currentSize + 'px';
+
+function fontSize(delta) {
+  currentSize = Math.min(20, Math.max(11, currentSize + delta));
+  document.body.style.fontSize = currentSize + 'px';
+  localStorage.setItem('fontSize', currentSize);
+}
+
 function showToast(msg, type='success') {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -259,16 +275,16 @@ function renderRecs(recs) {
       <div class="rec-desc">${r.description}</div>
       <div class="rec-stats">
         <div class="rec-stat">
-          <div class="rec-stat-val ${r.worth_adding ? 'amber' : 'green'}">${formatNum(r.new_ips)}</div>
-          <div class="rec-stat-lbl">New IPs not covered</div>
+          <div class="rec-stat-val ${r.worth_adding ? 'amber' : 'green'}">${formatNum(r.new_networks)}</div>
+          <div class="rec-stat-lbl">New networks not covered</div>
         </div>
         <div class="rec-stat">
           <div class="rec-stat-val">${r.your_coverage_pct}%</div>
           <div class="rec-stat-lbl">Your current coverage</div>
         </div>
         <div class="rec-stat">
-          <div class="rec-stat-val">${formatNum(r.total_entries)}</div>
-          <div class="rec-stat-lbl">Total in source</div>
+          <div class="rec-stat-val">${formatNum(r.total_networks)}</div>
+          <div class="rec-stat-lbl">Total networks</div>
         </div>
       </div>
       <div class="rec-meta">
