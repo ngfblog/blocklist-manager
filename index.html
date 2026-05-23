@@ -28,19 +28,8 @@ code{color:#79c0ff;font-family:monospace}
 .topbar-right{display:flex;align-items:center;gap:10px}
 .pill{font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--border);color:var(--blue);background:var(--blue-bg)}
 .pill.green{color:var(--green);background:var(--green-bg);border-color:var(--green-border)}
+.pill.amber{color:var(--amber);background:var(--amber-bg);border-color:var(--amber-border)}
 .container{max-width:900px;margin:0 auto;padding:24px}
-.auth-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:24px}
-.auth-title{font-size:15px;font-weight:500;margin-bottom:6px;display:flex;align-items:center;gap:8px}
-.auth-desc{font-size:13px;color:var(--text2);margin-bottom:16px;line-height:1.7}
-.auth-row{display:flex;gap:8px}
-.auth-row input{flex:1;background:var(--bg);border:1px solid var(--border2);border-radius:8px;padding:8px 12px;color:var(--text);font-size:13px;font-family:monospace;outline:none}
-.auth-row input:focus{border-color:var(--blue)}
-.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;cursor:pointer;border:none;font-family:inherit}
-.btn:hover{opacity:0.8}
-.btn-blue{background:var(--blue-bg);border:1px solid var(--blue-border);color:var(--blue)}
-.btn-green{background:var(--green-bg);border:1px solid var(--green-border);color:var(--green)}
-.btn-red{background:var(--red-bg);border:1px solid var(--red-border);color:var(--red)}
-.btn-gray{background:var(--bg3);border:1px solid var(--border2);color:var(--text2)}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
 .sbox{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
 .sval{font-size:24px;font-weight:600}.slbl{font-size:11px;color:var(--text3);margin-top:3px}
@@ -53,6 +42,8 @@ code{color:#79c0ff;font-family:monospace}
 .panel{display:none}.panel.active{display:block}
 .banner{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--text2);margin-bottom:16px;display:flex;gap:8px;line-height:1.6}
 .banner i{color:var(--blue);font-size:16px;flex-shrink:0;margin-top:1px}
+.banner.green{background:var(--green-bg);border-color:var(--green-border)}
+.banner.green i{color:var(--green)}
 .sec{margin-bottom:24px}
 .sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .sec-head-left{display:flex;align-items:center;gap:8px}
@@ -71,26 +62,11 @@ code{color:#79c0ff;font-family:monospace}
 .b-green{background:var(--green-bg);color:var(--green);border-color:var(--green-border)}
 .b-purple{background:var(--purple-bg);color:var(--purple);border-color:var(--purple-border)}
 .b-amber{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-border)}
-.icon-btn{background:none;border:none;cursor:pointer;color:var(--text3);padding:4px;font-size:16px;display:flex;align-items:center;border-radius:4px}
-.icon-btn:hover{color:var(--red)}
-.add-form{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px;margin-top:8px;display:none}
-.add-form.open{display:block}
-.add-form-row{display:flex;gap:8px;flex-wrap:wrap}
-.add-form input{flex:1;min-width:180px;background:var(--bg);border:1px solid var(--border2);border-radius:6px;padding:7px 10px;color:var(--text);font-size:12px;font-family:monospace;outline:none}
-.add-form input:focus{border-color:var(--blue)}
-.add-form input.short{max-width:120px;flex:none}
-.src-row{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;margin-bottom:6px}
-.src-row:hover{border-color:var(--border2)}
-.src-info{flex:1;min-width:0}
-.src-name{font-size:13px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.src-url{font-size:11px;color:var(--text3);font-family:monospace;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .divider{height:1px;background:var(--border);margin:20px 0}
 .loading{color:var(--text3);font-size:13px;padding:20px 0;text-align:center}
-.save-bar{background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:8px;padding:10px 16px;margin-bottom:16px;display:none;align-items:center;justify-content:space-between;font-size:13px;color:var(--amber)}
-.save-bar.show{display:flex}
-.setup-block{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:14px}
-.setup-title{font-size:14px;font-weight:500;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.setup-desc{font-size:12px;color:var(--text2);margin-bottom:8px;line-height:1.6}
+.sync-info{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:14px}
+.sync-title{font-size:14px;font-weight:500;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.sync-desc{font-size:12px;color:var(--text2);margin-bottom:10px;line-height:1.6}
 .code-box{background:var(--bg);border:1px solid var(--border2);border-radius:6px;padding:10px 14px;font-family:monospace;font-size:12px;color:#79c0ff;word-break:break-all;line-height:1.8}
 .copy-btn{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:4px 10px;margin-top:8px}
 .step{display:flex;gap:12px;margin-bottom:10px}
@@ -99,17 +75,15 @@ code{color:#79c0ff;font-family:monospace}
 .step-title{font-size:13px;font-weight:500;margin-bottom:2px}
 .step-desc{font-size:12px;color:var(--text2);line-height:1.6}
 .mono{font-family:monospace;color:#79c0ff}
-.result-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:10px}
-.result-card.new{border-left:3px solid var(--blue)}
-.result-card.upgrade{border-left:3px solid var(--amber)}
-.result-name{font-size:14px;font-weight:500;margin-bottom:5px}
-.result-desc{font-size:12px;color:var(--text2);margin-bottom:10px;line-height:1.6}
-.result-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.spill{font-size:11px;color:var(--text3);background:var(--bg);padding:2px 8px;border-radius:20px;border:1px solid var(--border)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;cursor:pointer;border:none;font-family:inherit}
+.btn:hover{opacity:0.8}
+.btn-blue{background:var(--blue-bg);border:1px solid var(--blue-border);color:var(--blue)}
+.btn-gray{background:var(--bg3);border:1px solid var(--border2);color:var(--text2)}
 .toast{position:fixed;bottom:24px;right:24px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:12px 18px;font-size:13px;z-index:999;display:none;align-items:center;gap:8px}
 .toast.show{display:flex}
 .toast.success{border-color:var(--green-border);color:var(--green)}
 .toast.error{border-color:var(--red-border);color:var(--red)}
+.last-sync{font-size:11px;color:var(--text3);margin-top:6px}
 </style>
 </head>
 <body>
@@ -123,209 +97,93 @@ code{color:#79c0ff;font-family:monospace}
     </div>
   </div>
   <div class="topbar-right">
-    <span class="pill" id="status-pill"><i class="ti ti-clock" style="font-size:10px;vertical-align:-1px"></i> Not connected</span>
+    <span class="pill green" id="status-pill"><i class="ti ti-refresh" style="font-size:10px;vertical-align:-1px"></i> Loading...</span>
   </div>
 </div>
 
 <div class="container">
 
-  <div class="auth-card" id="auth-card">
-    <div class="auth-title"><i class="ti ti-brand-github" style="color:var(--blue)"></i> Connect to GitHub</div>
-    <div class="auth-desc">
-      Enter your GitHub Personal Access Token to load and save <code>sources.yaml</code>.<br>
-      Create one at: <a href="https://github.com/settings/tokens/new?scopes=repo&description=blocklist-manager" target="_blank">github.com/settings/tokens</a> — scope needed: <code>repo</code><br>
-      Your token is stored only in your browser (localStorage) and never sent anywhere except GitHub.
-    </div>
-    <div class="auth-row">
-      <input type="password" id="gh-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" />
-      <button class="btn btn-blue" onclick="connect()"><i class="ti ti-plug"></i> Connect</button>
-    </div>
-  </div>
-
-  <div class="save-bar" id="save-bar">
-    <span><i class="ti ti-pencil"></i> Unsaved changes</span>
-    <div style="display:flex;gap:8px">
-      <button class="btn btn-gray" onclick="loadFromGitHub()"><i class="ti ti-refresh"></i> Discard</button>
-      <button class="btn btn-green" onclick="saveToGitHub()"><i class="ti ti-cloud-upload"></i> Save to GitHub</button>
-    </div>
-  </div>
-
   <div class="stats">
     <div class="sbox"><div class="sval blue" id="cnt-ip">—</div><div class="slbl">IP lists</div></div>
     <div class="sbox"><div class="sval blue" id="cnt-dns">—</div><div class="slbl">DNSBL lists</div></div>
-    <div class="sbox"><div class="sval" id="cnt-src">—</div><div class="slbl">Compare sources</div></div>
     <div class="sbox"><div class="sval green" id="cnt-status">—</div><div class="slbl">Status</div></div>
+    <div class="sbox"><div class="sval" id="cnt-sync" style="font-size:13px;margin-top:4px">—</div><div class="slbl">Last sync</div></div>
   </div>
 
   <div class="tabs">
     <button class="tab active" onclick="sw('ip',this)"><i class="ti ti-shield"></i> IP Lists</button>
     <button class="tab" onclick="sw('dnsbl',this)"><i class="ti ti-dns"></i> DNSBL Lists</button>
-    <button class="tab" onclick="sw('compare',this)"><i class="ti ti-world"></i> Compare Sources</button>
-    <button class="tab" onclick="sw('results',this)"><i class="ti ti-bell"></i> Recommendations</button>
     <button class="tab" onclick="sw('setup',this)"><i class="ti ti-settings"></i> pfSense Setup</button>
   </div>
 
   <!-- IP Lists -->
   <div id="ip" class="panel active">
-    <div class="banner"><i class="ti ti-info-circle"></i><span>IP lists block traffic from known malicious IP addresses at the firewall level. pfBlockerNG loads these into PF tables in RAM and blocks matching packets before they reach your network.</span></div>
+    <div class="banner">
+      <i class="ti ti-info-circle"></i>
+      <span>IP lists block traffic from known malicious IP addresses at the firewall level. This list is read directly from your pfSense — updated automatically every day.</span>
+    </div>
     <div class="sec">
       <div class="sec-head">
         <div class="sec-head-left">
           <span class="sec-lbl">Active IP blocklists</span>
           <div class="help-wrap"><span class="help-btn">?</span>
-            <div class="tooltip"><strong>What are IP blocklists?</strong>Lists of known malicious IPs. pfBlockerNG downloads and blocks any packet from a listed IP before it enters your network. Best for scanners, botnets, and known attackers.</div>
+            <div class="tooltip"><strong>What are IP blocklists?</strong>Lists of known malicious IPs loaded into pfBlockerNG PF tables. Any packet from a listed IP is blocked before entering your network. To add/remove lists, edit them in pfBlockerNG — this view updates automatically next day.</div>
           </div>
         </div>
-        <button class="btn btn-blue" onclick="toggleForm('form-ip')"><i class="ti ti-plus"></i> Add list</button>
       </div>
-      <div id="list-ip"><div class="loading">Connect to GitHub to load your lists</div></div>
-      <div class="add-form" id="form-ip">
-        <div class="add-form-row">
-          <input type="text" placeholder="https://example.com/blocklist.txt" id="in-ip-url" />
-          <input type="text" placeholder="Label (e.g. ET)" id="in-ip-lbl" class="short" />
-          <button class="btn btn-blue" onclick="addIP()"><i class="ti ti-plus"></i> Add</button>
-          <button class="btn btn-gray" onclick="toggleForm('form-ip')">Cancel</button>
-        </div>
-      </div>
+      <div id="list-ip"><div class="loading"><i class="ti ti-loader"></i> Loading from pfSense...</div></div>
     </div>
   </div>
 
   <!-- DNSBL Lists -->
   <div id="dnsbl" class="panel">
-    <div class="banner"><i class="ti ti-info-circle"></i><span>DNSBL lists block malicious domains at DNS level. When a device resolves a blocked domain, Unbound returns nothing — the connection never happens. Works even for encrypted traffic.</span></div>
+    <div class="banner">
+      <i class="ti ti-info-circle"></i>
+      <span>DNSBL lists block malicious domains at DNS level via Unbound. This list is read directly from your pfSense — updated automatically every day.</span>
+    </div>
     <div class="sec">
       <div class="sec-head">
         <div class="sec-head-left">
           <span class="sec-lbl">Active DNSBL lists</span>
           <div class="help-wrap"><span class="help-btn">?</span>
-            <div class="tooltip"><strong>What are DNSBL lists?</strong>Domain blocklists fed into Unbound. When any device asks for a blocked domain, the DNS query returns nothing — blocking ads, trackers, and malware network-wide.</div>
+            <div class="tooltip"><strong>What are DNSBL lists?</strong>Domain blocklists fed into Unbound. When any device asks for a blocked domain, DNS returns nothing — blocking ads, trackers, and malware network-wide. Manage these in pfBlockerNG; this view syncs daily.</div>
           </div>
         </div>
-        <button class="btn btn-blue" onclick="toggleForm('form-dns')"><i class="ti ti-plus"></i> Add list</button>
       </div>
-      <div id="list-dns"><div class="loading">Connect to GitHub to load your lists</div></div>
-      <div class="add-form" id="form-dns">
-        <div class="add-form-row">
-          <input type="text" placeholder="https://example.com/dnsbl.txt" id="in-dns-url" />
-          <input type="text" placeholder="Label (e.g. Hagezi)" id="in-dns-lbl" class="short" />
-          <button class="btn btn-blue" onclick="addDNSBL()"><i class="ti ti-plus"></i> Add</button>
-          <button class="btn btn-gray" onclick="toggleForm('form-dns')">Cancel</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Compare Sources -->
-  <div id="compare" class="panel">
-    <div class="banner"><i class="ti ti-info-circle"></i><span>Compare sources are sites that track and catalog blocklists. GitHub Actions scans these daily and alerts you when a better list exists that you don't have yet.</span></div>
-    <div class="sec">
-      <div class="sec-head">
-        <div class="sec-head-left">
-          <span class="sec-lbl">IP comparison sources</span>
-          <div class="help-wrap"><span class="help-btn">?</span>
-            <div class="tooltip"><strong>IP comparison sources</strong>Sites cataloging IP blocklists. Scanner checks for lists you don't have. Best: FireHOL (350+ lists), AbuseIPDB, threat-intel.xyz.</div>
-          </div>
-        </div>
-        <button class="btn btn-blue" onclick="toggleForm('form-src-ip')"><i class="ti ti-plus"></i> Add source</button>
-      </div>
-      <div id="list-src-ip"><div class="loading">Connect to GitHub to load sources</div></div>
-      <div class="add-form" id="form-src-ip">
-        <div class="add-form-row">
-          <input type="text" placeholder="https://comparison-site.com" id="in-src-ip-url" />
-          <input type="text" placeholder="Name" id="in-src-ip-name" class="short" />
-          <button class="btn btn-blue" onclick="addSrcIP()"><i class="ti ti-plus"></i> Add</button>
-          <button class="btn btn-gray" onclick="toggleForm('form-src-ip')">Cancel</button>
-        </div>
-      </div>
-    </div>
-    <div class="divider"></div>
-    <div class="sec">
-      <div class="sec-head">
-        <div class="sec-head-left">
-          <span class="sec-lbl">DNSBL comparison sources</span>
-          <div class="help-wrap"><span class="help-btn">?</span>
-            <div class="tooltip"><strong>DNSBL comparison sources</strong>Sites cataloging domain blocklists. Best: Hagezi GitHub (all variants), filterlists.com (community catalog).</div>
-          </div>
-        </div>
-        <button class="btn btn-blue" onclick="toggleForm('form-src-dns')"><i class="ti ti-plus"></i> Add source</button>
-      </div>
-      <div id="list-src-dns"><div class="loading">Connect to GitHub to load sources</div></div>
-      <div class="add-form" id="form-src-dns">
-        <div class="add-form-row">
-          <input type="text" placeholder="https://dnsbl-source.com" id="in-src-dns-url" />
-          <input type="text" placeholder="Name" id="in-src-dns-name" class="short" />
-          <button class="btn btn-blue" onclick="addSrcDNS()"><i class="ti ti-plus"></i> Add</button>
-          <button class="btn btn-gray" onclick="toggleForm('form-src-dns')">Cancel</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Recommendations -->
-  <div id="results" class="panel">
-    <div class="banner"><i class="ti ti-info-circle"></i><span>Recommendations are generated by GitHub Actions after comparing your active lists against all compare sources. New entries appear here after each daily scan at 03:00 UTC.</span></div>
-    <div class="result-card new">
-      <div class="result-name">blocklist.de – all attacks</div>
-      <div class="result-desc">IPs that attacked SSH, FTP and web servers in the last 48h. Not currently in your lists.</div>
-      <div class="result-meta">
-        <span class="badge b-amber">new</span>
-        <span class="spill">~45,000 IPs</span>
-        <span class="spill">hourly updates</span>
-        <a href="https://www.blocklist.de/en/export.html" target="_blank" class="btn btn-gray" style="margin-left:auto;font-size:11px;padding:4px 10px">View source</a>
-      </div>
-    </div>
-    <div class="result-card upgrade">
-      <div class="result-name">Hagezi Pro – upgrade from Native</div>
-      <div class="result-desc">You have Hagezi Native. Pro covers 3x more malicious domains including advanced tracking and malware.</div>
-      <div class="result-meta">
-        <span class="badge b-blue">upgrade</span>
-        <span class="spill">~500K domains</span>
-        <span class="spill">daily updates</span>
-        <a href="https://github.com/hagezi/dns-blocklists" target="_blank" class="btn btn-gray" style="margin-left:auto;font-size:11px;padding:4px 10px">View source</a>
-      </div>
+      <div id="list-dns"><div class="loading"><i class="ti ti-loader"></i> Loading from pfSense...</div></div>
     </div>
   </div>
 
   <!-- pfSense Setup -->
   <div id="setup" class="panel">
-    <div class="banner"><i class="ti ti-info-circle"></i><span>GitHub Actions generates a merged, deduplicated list from all your sources daily and pushes it to a fixed URL. Add the URLs below once to pfBlockerNG — they update automatically.</span></div>
+    <div class="banner green">
+      <i class="ti ti-check"></i>
+      <span>This page shows your live pfBlockerNG configuration, synced daily by a script running on pfSense.</span>
+    </div>
 
-    <div class="setup-block">
-      <div class="setup-title"><i class="ti ti-link" style="color:var(--blue)"></i> Output URLs — add these to pfBlockerNG</div>
-      <div class="setup-desc">IP list:</div>
+    <div class="sync-info">
+      <div class="sync-title"><i class="ti ti-refresh" style="color:var(--green)"></i> How the sync works</div>
+      <div class="code-box">02:30  pfSense cron runs pfblockerng_sync.py
+       reads URLs from /cf/conf/config.xml
+       pushes my_lists.json to GitHub
+
+This page  reads my_lists.json from GitHub
+           displays your live pfBlockerNG config</div>
+    </div>
+
+    <div class="sync-info">
+      <div class="sync-title"><i class="ti ti-terminal" style="color:var(--blue)"></i> Sync script location on pfSense</div>
+      <div class="code-box">/root/Scripts/pfblockerng_sync.py</div>
+    </div>
+
+    <div class="sync-info">
+      <div class="sync-title"><i class="ti ti-link" style="color:var(--blue)"></i> Merged output URLs for pfBlockerNG</div>
+      <div class="sync-desc">IP list (merged from all your sources):</div>
       <div class="code-box" id="url-ip">https://raw.githubusercontent.com/ngfblog/blocklist-manager/main/output/merged_ip.txt</div>
       <button class="btn btn-blue copy-btn" onclick="copyText('url-ip')"><i class="ti ti-copy"></i> Copy</button>
-      <div class="setup-desc" style="margin-top:16px">DNSBL list:</div>
+      <div class="sync-desc" style="margin-top:14px">DNSBL list:</div>
       <div class="code-box" id="url-dns">https://raw.githubusercontent.com/ngfblog/blocklist-manager/main/output/merged_dnsbl.txt</div>
       <button class="btn btn-blue copy-btn" onclick="copyText('url-dns')"><i class="ti ti-copy"></i> Copy</button>
-    </div>
-
-    <div class="setup-block">
-      <div class="setup-title"><i class="ti ti-shield" style="color:var(--blue)"></i> Add IP list to pfBlockerNG</div>
-      <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-title">Firewall → pfBlockerNG → IP → IPv4 → Add</div></div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-title">Name: <span class="mono">BLM_Merged_IP</span></div></div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-title">Paste the IP URL above into Source field</div><div class="step-desc">Action: <span class="mono">Deny Both</span> · Format: <span class="mono">auto</span> · Update Frequency: <span class="mono">Every 6 hours</span></div></div></div>
-      <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-title">Save → pfBlockerNG Update tab → Force</div></div></div>
-    </div>
-
-    <div class="setup-block">
-      <div class="setup-title"><i class="ti ti-dns" style="color:var(--purple)"></i> Add DNSBL list to pfBlockerNG</div>
-      <div class="step"><div class="step-num">1</div><div class="step-body"><div class="step-title">Firewall → pfBlockerNG → DNSBL → DNSBL Groups → Add</div></div></div>
-      <div class="step"><div class="step-num">2</div><div class="step-body"><div class="step-title">Name: <span class="mono">BLM_Merged_DNSBL</span></div></div></div>
-      <div class="step"><div class="step-num">3</div><div class="step-body"><div class="step-title">Paste the DNSBL URL above into Source field</div><div class="step-desc">Action: <span class="mono">Unbound</span> · Update Frequency: <span class="mono">Every 6 hours</span></div></div></div>
-      <div class="step"><div class="step-num">4</div><div class="step-body"><div class="step-title">Save → pfBlockerNG Update tab → Force</div></div></div>
-    </div>
-
-    <div class="setup-block">
-      <div class="setup-title"><i class="ti ti-refresh" style="color:var(--green)"></i> Auto-update cycle</div>
-      <div class="code-box">03:00 UTC  GitHub Actions runs
-           downloads all your sources
-           removes duplicates and overlapping subnets
-           pushes merged files to GitHub
-
-Every 6h   pfBlockerNG fetches the URLs
-           loads updated IPs into PF table
-           Gotify alert sent</div>
     </div>
   </div>
 
@@ -335,22 +193,13 @@ Every 6h   pfBlockerNG fetches the URLs
 
 <script>
 const REPO = 'ngfblog/blocklist-manager';
-const FILE = 'sources.yaml';
-let token = localStorage.getItem('gh_token') || '';
-let config = null;
-let fileSha = '';
-let dirty = false;
+const MY_LISTS_FILE = 'my_lists.json';
 
 function showToast(msg, type='success') {
   const t = document.getElementById('toast');
   t.textContent = msg;
   t.className = 'toast show ' + type;
   setTimeout(() => t.className = 'toast', 3000);
-}
-
-function setDirty(val) {
-  dirty = val;
-  document.getElementById('save-bar').className = 'save-bar' + (val ? ' show' : '');
 }
 
 function sw(id, el) {
@@ -360,195 +209,80 @@ function sw(id, el) {
   el.classList.add('active');
 }
 
-function toggleForm(id) {
-  document.getElementById(id).classList.toggle('open');
+function getLabelFromURL(url) {
+  const u = url.toLowerCase();
+  if (u.includes('emergingthreats')) return { label: 'ET', cls: 'b-blue' };
+  if (u.includes('spamhaus')) return { label: 'Spamhaus', cls: 'b-blue' };
+  if (u.includes('ipverse') && u.includes('/cn/')) return { label: 'GeoIP CN', cls: 'b-amber' };
+  if (u.includes('ipverse') && u.includes('/ru/')) return { label: 'GeoIP RU', cls: 'b-amber' };
+  if (u.includes('ipverse') && u.includes('/ir/')) return { label: 'GeoIP IR', cls: 'b-amber' };
+  if (u.includes('ipverse') && u.includes('/kp/')) return { label: 'GeoIP KP', cls: 'b-amber' };
+  if (u.includes('ipverse') && u.includes('/in/')) return { label: 'GeoIP IN', cls: 'b-amber' };
+  if (u.includes('ipverse')) return { label: 'GeoIP', cls: 'b-amber' };
+  if (u.includes('hagezi') && u.includes('doh')) return { label: 'Hagezi DoH', cls: 'b-purple' };
+  if (u.includes('hagezi') && u.includes('winoffice')) return { label: 'Hagezi Microsoft', cls: 'b-purple' };
+  if (u.includes('hagezi') && u.includes('samsung')) return { label: 'Hagezi Samsung', cls: 'b-purple' };
+  if (u.includes('hagezi') && u.includes('tiktok')) return { label: 'Hagezi TikTok', cls: 'b-purple' };
+  if (u.includes('hagezi') && u.includes('xiaomi')) return { label: 'Hagezi Xiaomi', cls: 'b-purple' };
+  if (u.includes('hagezi')) return { label: 'Hagezi', cls: 'b-purple' };
+  if (u.includes('oisd')) return { label: 'OISD', cls: 'b-blue' };
+  if (u.includes('openphish')) return { label: 'OpenPhish', cls: 'b-blue' };
+  if (u.includes('stevenblack')) return { label: 'StevenBlack', cls: 'b-blue' };
+  if (u.includes('urlhaus')) return { label: 'URLhaus', cls: 'b-blue' };
+  return { label: 'Custom', cls: 'b-blue' };
 }
 
-async function connect() {
-  const t = document.getElementById('gh-token').value.trim();
-  if (!t) return;
-  token = t;
-  localStorage.setItem('gh_token', token);
-  await loadFromGitHub();
+function renderList(elId, urls) {
+  const el = document.getElementById(elId);
+  if (!urls || !urls.length) {
+    el.innerHTML = '<div class="loading" style="color:var(--text3)">No lists found</div>';
+    return;
+  }
+  el.innerHTML = urls.map(url => {
+    const { label, cls } = getLabelFromURL(url);
+    return `<div class="row">
+      <i class="ti ti-shield-check" style="font-size:15px;color:var(--green);flex-shrink:0"></i>
+      <span class="row-url">${url}</span>
+      <span class="badge ${cls}">${label}</span>
+      <span class="badge b-green">active</span>
+    </div>`;
+  }).join('');
 }
 
-async function loadFromGitHub() {
-  if (!token) return;
-  const pill = document.getElementById('status-pill');
-  pill.textContent = 'Loading...';
+async function loadMyLists() {
   try {
-    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE}`, {
-      headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' }
-    });
-    if (!r.ok) throw new Error('Auth failed – check your token and repo visibility');
+    const r = await fetch(`https://raw.githubusercontent.com/${REPO}/main/${MY_LISTS_FILE}?t=${Date.now()}`);
+    if (!r.ok) throw new Error('File not found');
     const data = await r.json();
-    fileSha = data.sha;
-    const yaml = decodeURIComponent(escape(atob(data.content.replace(/\n/g,''))));
-    config = parseYAML(yaml);
-    renderAll();
-    document.getElementById('auth-card').style.display = 'none';
-    pill.innerHTML = '<i class="ti ti-check" style="font-size:10px;vertical-align:-1px"></i> Connected';
-    pill.className = 'pill green';
-    setDirty(false);
-    showToast('Loaded from GitHub');
+
+    renderList('list-ip', data.ip_lists);
+    renderList('list-dns', data.dnsbl_lists);
+
+    document.getElementById('cnt-ip').textContent = data.ip_lists.length;
+    document.getElementById('cnt-dns').textContent = data.dnsbl_lists.length;
+    document.getElementById('cnt-status').textContent = 'Live';
+
+    const ts = new Date(data.generated);
+    const diff = Math.round((Date.now() - ts) / 3600000);
+    document.getElementById('cnt-sync').textContent = diff < 1 ? 'Just now' : diff < 24 ? `${diff}h ago` : ts.toLocaleDateString();
+
+    document.getElementById('status-pill').innerHTML = '<i class="ti ti-check" style="font-size:10px;vertical-align:-1px"></i> Live from pfSense';
+    document.getElementById('status-pill').className = 'pill green';
+
   } catch(e) {
-    pill.textContent = 'Connection failed';
-    showToast(e.message, 'error');
+    document.getElementById('list-ip').innerHTML = '<div class="loading" style="color:var(--red)">Error loading data</div>';
+    document.getElementById('list-dns').innerHTML = '<div class="loading" style="color:var(--red)">Error loading data</div>';
+    document.getElementById('status-pill').textContent = 'Load failed';
+    document.getElementById('status-pill').className = 'pill';
   }
 }
 
-function parseYAML(yaml) {
-  const obj = { ip_lists:[], dnsbl_lists:[], compare_sources:{ip:[],dnsbl:[]}, github:{} };
-  let section=null, subsection=null, item=null;
-  for (const raw of yaml.split('\n')) {
-    const line = raw.trimEnd();
-    if (!line.trim() || line.trim().startsWith('#')) continue;
-    const indent = line.match(/^(\s*)/)[1].length;
-    const content = line.trim();
-    if (indent===0) {
-      if (content.endsWith(':')) { section=content.slice(0,-1); subsection=null; item=null; }
-      continue;
-    }
-    if (indent===2) {
-      if (section==='compare_sources' && content.endsWith(':')) { subsection=content.slice(0,-1); item=null; continue; }
-      if (content.startsWith('- ')) {
-        item={};
-        const kv=content.slice(2).split(': ');
-        if(kv.length>=2) item[kv[0]]=kv.slice(1).join(': ');
-        if(section==='ip_lists') obj.ip_lists.push(item);
-        else if(section==='dnsbl_lists') obj.dnsbl_lists.push(item);
-        continue;
-      }
-      if(section==='github'){const kv=content.split(': ');if(kv.length>=2)obj.github[kv[0]]=kv.slice(1).join(': ');}
-      if(item&&section!=='compare_sources'){const kv=content.split(': ');if(kv.length>=2)item[kv[0]]=kv.slice(1).join(': ');}
-    }
-    if (indent===4) {
-      if(content.startsWith('- ')){
-        item={};
-        const kv=content.slice(2).split(': ');
-        if(kv.length>=2) item[kv[0]]=kv.slice(1).join(': ');
-        if(subsection==='ip') obj.compare_sources.ip.push(item);
-        else if(subsection==='dnsbl') obj.compare_sources.dnsbl.push(item);
-        continue;
-      }
-      if(item){const kv=content.split(': ');if(kv.length>=2)item[kv[0]]=kv.slice(1).join(': ');}
-    }
-    if (indent===6) {
-      if(item){const kv=content.split(': ');if(kv.length>=2)item[kv[0]]=kv.slice(1).join(': ');}
-    }
-  }
-  return obj;
+function copyText(id) {
+  navigator.clipboard.writeText(document.getElementById(id).textContent.trim())
+    .then(() => showToast('Copied to clipboard'));
 }
 
-function toYAML(cfg) {
-  let out='ip_lists:\n';
-  for(const e of cfg.ip_lists) out+=`  - url: ${e.url}\n    label: ${e.label||'IP'}\n`;
-  out+='\ndnsbl_lists:\n';
-  for(const e of cfg.dnsbl_lists) out+=`  - url: ${e.url}\n    label: ${e.label||'DNSBL'}\n`;
-  out+='\ncompare_sources:\n  ip:\n';
-  for(const e of cfg.compare_sources.ip) out+=`    - url: ${e.url}\n      name: ${e.name||e.url}\n`;
-  out+='  dnsbl:\n';
-  for(const e of cfg.compare_sources.dnsbl) out+=`    - url: ${e.url}\n      name: ${e.name||e.url}\n`;
-  out+=`\ngithub:\n  username: ${cfg.github.username||'ngfblog'}\n  repo: ${cfg.github.repo||'blocklist-manager'}\n`;
-  return out;
-}
-
-async function saveToGitHub() {
-  if(!token||!config) return;
-  const yaml=toYAML(config);
-  const content=btoa(unescape(encodeURIComponent(yaml)));
-  try {
-    const r=await fetch(`https://api.github.com/repos/${REPO}/contents/${FILE}`,{
-      method:'PUT',
-      headers:{Authorization:`token ${token}`,Accept:'application/vnd.github.v3+json','Content-Type':'application/json'},
-      body:JSON.stringify({message:'chore: update sources via Blocklist Manager UI',content,sha:fileSha})
-    });
-    if(!r.ok) throw new Error(await r.text());
-    const data=await r.json();
-    fileSha=data.content.sha;
-    setDirty(false);
-    showToast('Saved to GitHub');
-  } catch(e) {
-    showToast('Save failed: '+e.message,'error');
-  }
-}
-
-function renderAll() {
-  if(!config) return;
-  renderIPList(); renderDNSList(); renderSrcIP(); renderSrcDNS(); updateStats();
-}
-
-function updateStats() {
-  document.getElementById('cnt-ip').textContent=config.ip_lists.length;
-  document.getElementById('cnt-dns').textContent=config.dnsbl_lists.length;
-  document.getElementById('cnt-src').textContent=config.compare_sources.ip.length+config.compare_sources.dnsbl.length;
-  document.getElementById('cnt-status').textContent='OK';
-}
-
-function renderIPList() {
-  const el=document.getElementById('list-ip');
-  if(!config.ip_lists.length){el.innerHTML='<div class="loading">No IP lists configured — click Add list</div>';return;}
-  el.innerHTML=config.ip_lists.map((e,i)=>`
-    <div class="row">
-      <i class="ti ti-shield-check" style="font-size:15px;color:var(--green);flex-shrink:0"></i>
-      <span class="row-url">${e.url}</span>
-      <span class="badge b-blue">${e.label||'IP'}</span>
-      <span class="badge b-green">active</span>
-      <button class="icon-btn" onclick="removeIP(${i})" title="Remove"><i class="ti ti-trash"></i></button>
-    </div>`).join('');
-}
-
-function renderDNSList() {
-  const el=document.getElementById('list-dns');
-  if(!config.dnsbl_lists.length){el.innerHTML='<div class="loading">No DNSBL lists configured — click Add list</div>';return;}
-  el.innerHTML=config.dnsbl_lists.map((e,i)=>`
-    <div class="row">
-      <i class="ti ti-shield-check" style="font-size:15px;color:var(--green);flex-shrink:0"></i>
-      <span class="row-url">${e.url}</span>
-      <span class="badge b-purple">${e.label||'DNSBL'}</span>
-      <span class="badge b-green">active</span>
-      <button class="icon-btn" onclick="removeDNS(${i})" title="Remove"><i class="ti ti-trash"></i></button>
-    </div>`).join('');
-}
-
-function renderSrcIP() {
-  const el=document.getElementById('list-src-ip');
-  if(!config.compare_sources.ip.length){el.innerHTML='<div class="loading">No IP sources configured</div>';return;}
-  el.innerHTML=config.compare_sources.ip.map((e,i)=>`
-    <div class="src-row">
-      <i class="ti ti-database" style="font-size:18px;color:var(--blue);flex-shrink:0"></i>
-      <div class="src-info"><div class="src-name">${e.name||e.url}</div><div class="src-url">${e.url}</div></div>
-      <span class="badge b-blue">IP</span>
-      <span class="badge b-green">active</span>
-      <button class="icon-btn" onclick="removeSrcIP(${i})" title="Remove"><i class="ti ti-trash"></i></button>
-    </div>`).join('');
-}
-
-function renderSrcDNS() {
-  const el=document.getElementById('list-src-dns');
-  if(!config.compare_sources.dnsbl.length){el.innerHTML='<div class="loading">No DNSBL sources configured</div>';return;}
-  el.innerHTML=config.compare_sources.dnsbl.map((e,i)=>`
-    <div class="src-row">
-      <i class="ti ti-database" style="font-size:18px;color:var(--purple);flex-shrink:0"></i>
-      <div class="src-info"><div class="src-name">${e.name||e.url}</div><div class="src-url">${e.url}</div></div>
-      <span class="badge b-purple">DNSBL</span>
-      <span class="badge b-green">active</span>
-      <button class="icon-btn" onclick="removeSrcDNS(${i})" title="Remove"><i class="ti ti-trash"></i></button>
-    </div>`).join('');
-}
-
-function addIP(){const url=document.getElementById('in-ip-url').value.trim();const label=document.getElementById('in-ip-lbl').value.trim();if(!url)return;config.ip_lists.push({url,label:label||'IP'});document.getElementById('in-ip-url').value='';document.getElementById('in-ip-lbl').value='';toggleForm('form-ip');renderIPList();updateStats();setDirty(true);}
-function addDNSBL(){const url=document.getElementById('in-dns-url').value.trim();const label=document.getElementById('in-dns-lbl').value.trim();if(!url)return;config.dnsbl_lists.push({url,label:label||'DNSBL'});document.getElementById('in-dns-url').value='';document.getElementById('in-dns-lbl').value='';toggleForm('form-dns');renderDNSList();updateStats();setDirty(true);}
-function addSrcIP(){const url=document.getElementById('in-src-ip-url').value.trim();const name=document.getElementById('in-src-ip-name').value.trim();if(!url)return;config.compare_sources.ip.push({url,name:name||url});document.getElementById('in-src-ip-url').value='';document.getElementById('in-src-ip-name').value='';toggleForm('form-src-ip');renderSrcIP();updateStats();setDirty(true);}
-function addSrcDNS(){const url=document.getElementById('in-src-dns-url').value.trim();const name=document.getElementById('in-src-dns-name').value.trim();if(!url)return;config.compare_sources.dnsbl.push({url,name:name||url});document.getElementById('in-src-dns-url').value='';document.getElementById('in-src-dns-name').value='';toggleForm('form-src-dns');renderSrcDNS();updateStats();setDirty(true);}
-function removeIP(i){config.ip_lists.splice(i,1);renderIPList();updateStats();setDirty(true);}
-function removeDNS(i){config.dnsbl_lists.splice(i,1);renderDNSList();updateStats();setDirty(true);}
-function removeSrcIP(i){config.compare_sources.ip.splice(i,1);renderSrcIP();updateStats();setDirty(true);}
-function removeSrcDNS(i){config.compare_sources.dnsbl.splice(i,1);renderSrcDNS();updateStats();setDirty(true);}
-
-function copyText(id){navigator.clipboard.writeText(document.getElementById(id).textContent.trim()).then(()=>showToast('Copied to clipboard'));}
-
-if(token){document.getElementById('gh-token').value=token;loadFromGitHub();}
+loadMyLists();
 </script>
 </body>
 </html>
