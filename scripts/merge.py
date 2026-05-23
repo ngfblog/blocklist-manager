@@ -162,7 +162,7 @@ def main():
         f.write(f"# Contains domains NOT covered by your pfBlockerNG DNSBL lists\n")
         f.write(f"# Total entries: {len(gap_domains_sorted)} domains\n#\n")
         for domain in gap_domains_sorted:
-            f.write(f"0.0.0.0 {domain}\n")
+            f.write(domain + "\n")
 
     print(f"\n=== Done ===")
     print(f"  IP gaps:    {len(gap_nets_collapsed):,} networks → {OUTPUT_IP}")
