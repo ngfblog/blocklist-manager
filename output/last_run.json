@@ -1,0 +1,31 @@
+{
+  "timestamp": "2026-05-23T05:48:18.590554+00:00",
+  "ip": {
+    "total": 1547,
+    "prev": 0,
+    "sources": [
+      {
+        "label": "Emerging Threats",
+        "count": 1651
+      },
+      {
+        "label": "Spamhaus DROP",
+        "count": 1630
+      },
+      {
+        "label": "Spamhaus EDROP",
+        "count": 0
+      }
+    ]
+  },
+  "dnsbl": {
+    "total": 0,
+    "prev": 0,
+    "sources": [
+      {
+        "label": "Hagezi Native",
+        "count": 0
+      }
+    ]
+  }
+}
