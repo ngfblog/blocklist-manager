@@ -106,8 +106,8 @@ code{color:#79c0ff;font-family:monospace}
   </div>
   <div class="topbar-right">
     <div class="font-ctrl">
-      <button class="font-btn" onclick="fontSize(-1)" title="Smaller">A-</button>
-      <button class="font-btn" onclick="fontSize(1)" title="Larger">A+</button>
+      <button class="font-btn" onclick="changeFontSize(-1)" title="Smaller">A&#8722;</button>
+      <button class="font-btn" onclick="changeFontSize(1)" title="Larger">A&#43;</button>
     </div>
     <span class="pill green" id="status-pill"><i class="ti ti-refresh" style="font-size:10px;vertical-align:-1px"></i> Loading...</span>
   </div>
@@ -197,7 +197,7 @@ const REPO = 'ngfblog/blocklist-manager';
 let currentSize = parseInt(localStorage.getItem('fontSize') || '14');
 document.body.style.fontSize = currentSize + 'px';
 
-function fontSize(delta) {
+function changeFontSize(delta) {
   currentSize = Math.min(20, Math.max(11, currentSize + delta));
   document.body.style.fontSize = currentSize + 'px';
   localStorage.setItem('fontSize', currentSize);
