@@ -1,0 +1,29 @@
+ip_lists:
+  - url: https://rules.emergingthreats.net/fwrules/emerging-Block-IPs.txt
+    label: Emerging Threats
+  - url: https://www.spamhaus.org/drop/drop.txt
+    label: Spamhaus DROP
+  - url: https://www.spamhaus.org/drop/edrop.txt
+    label: Spamhaus EDROP
+
+dnsbl_lists:
+  - url: https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/hosts/native.txt
+    label: Hagezi Native
+
+compare_sources:
+  ip:
+    - url: https://iplists.firehol.org
+      name: FireHOL IP Lists
+    - url: https://threat-intel.xyz
+      name: Threat Intel XYZ
+  dnsbl:
+    - url: https://github.com/hagezi/dns-blocklists
+      name: Hagezi DNS Blocklists
+
+gotify:
+  url: http://10.10.20.110:8070
+  token: AzNVwfdXlp290Jh
+
+github:
+  username: ngfblog
+  repo: blocklist-manager
