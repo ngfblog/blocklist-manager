@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-05-23T05:48:18.590554+00:00",
+  "timestamp": "2026-05-23T11:12:45.142788+00:00",
   "ip": {
     "total": 1547,
-    "prev": 0,
+    "prev": 1547,
     "sources": [
       {
         "label": "Emerging Threats",
