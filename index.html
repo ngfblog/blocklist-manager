@@ -28,7 +28,6 @@ code{color:#79c0ff;font-family:monospace}
 .topbar-right{display:flex;align-items:center;gap:10px}
 .pill{font-size:11px;padding:3px 10px;border-radius:20px;border:1px solid var(--border);color:var(--blue);background:var(--blue-bg)}
 .pill.green{color:var(--green);background:var(--green-bg);border-color:var(--green-border)}
-.pill.amber{color:var(--amber);background:var(--amber-bg);border-color:var(--amber-border)}
 .container{max-width:900px;margin:0 auto;padding:24px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
 .sbox{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
@@ -39,6 +38,7 @@ code{color:#79c0ff;font-family:monospace}
 .tab.active{color:var(--blue);border-bottom-color:var(--blue)}
 .tab:hover:not(.active){color:var(--text2)}
 .tab i{font-size:15px}
+.badge-count{background:var(--amber-bg);color:var(--amber);font-size:10px;padding:1px 6px;border-radius:20px;border:1px solid var(--amber-border)}
 .panel{display:none}.panel.active{display:block}
 .banner{background:var(--blue-bg);border:1px solid var(--blue-border);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--text2);margin-bottom:16px;display:flex;gap:8px;line-height:1.6}
 .banner i{color:var(--blue);font-size:16px;flex-shrink:0;margin-top:1px}
@@ -62,28 +62,33 @@ code{color:#79c0ff;font-family:monospace}
 .b-green{background:var(--green-bg);color:var(--green);border-color:var(--green-border)}
 .b-purple{background:var(--purple-bg);color:var(--purple);border-color:var(--purple-border)}
 .b-amber{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-border)}
+.b-red{background:var(--red-bg);color:var(--red);border-color:var(--red-border)}
 .divider{height:1px;background:var(--border);margin:20px 0}
 .loading{color:var(--text3);font-size:13px;padding:20px 0;text-align:center}
 .sync-info{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:14px}
 .sync-title{font-size:14px;font-weight:500;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-.sync-desc{font-size:12px;color:var(--text2);margin-bottom:10px;line-height:1.6}
+.sync-desc{font-size:12px;color:var(--text2);margin-bottom:8px;line-height:1.6}
 .code-box{background:var(--bg);border:1px solid var(--border2);border-radius:6px;padding:10px 14px;font-family:monospace;font-size:12px;color:#79c0ff;word-break:break-all;line-height:1.8}
 .copy-btn{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:4px 10px;margin-top:8px}
-.step{display:flex;gap:12px;margin-bottom:10px}
-.step-num{width:24px;height:24px;border-radius:50%;background:var(--blue-bg);border:1px solid var(--blue-border);color:var(--blue);font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.step-body{flex:1}
-.step-title{font-size:13px;font-weight:500;margin-bottom:2px}
-.step-desc{font-size:12px;color:var(--text2);line-height:1.6}
-.mono{font-family:monospace;color:#79c0ff}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;cursor:pointer;border:none;font-family:inherit}
 .btn:hover{opacity:0.8}
 .btn-blue{background:var(--blue-bg);border:1px solid var(--blue-border);color:var(--blue)}
 .btn-gray{background:var(--bg3);border:1px solid var(--border2);color:var(--text2)}
+.rec-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:10px}
+.rec-card.worth{border-left:3px solid var(--amber)}
+.rec-card.covered{border-left:3px solid var(--green)}
+.rec-name{font-size:15px;font-weight:500;margin-bottom:4px}
+.rec-desc{font-size:12px;color:var(--text2);margin-bottom:12px;line-height:1.6}
+.rec-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.rec-stat{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:8px 10px}
+.rec-stat-val{font-size:16px;font-weight:600;color:var(--text)}
+.rec-stat-val.amber{color:var(--amber)}
+.rec-stat-val.green{color:var(--green)}
+.rec-stat-lbl{font-size:10px;color:var(--text3);margin-top:2px}
+.rec-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .toast{position:fixed;bottom:24px;right:24px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:12px 18px;font-size:13px;z-index:999;display:none;align-items:center;gap:8px}
 .toast.show{display:flex}
 .toast.success{border-color:var(--green-border);color:var(--green)}
-.toast.error{border-color:var(--red-border);color:var(--red)}
-.last-sync{font-size:11px;color:var(--text3);margin-top:6px}
 </style>
 </head>
 <body>
@@ -106,79 +111,67 @@ code{color:#79c0ff;font-family:monospace}
   <div class="stats">
     <div class="sbox"><div class="sval blue" id="cnt-ip">—</div><div class="slbl">IP lists</div></div>
     <div class="sbox"><div class="sval blue" id="cnt-dns">—</div><div class="slbl">DNSBL lists</div></div>
-    <div class="sbox"><div class="sval green" id="cnt-status">—</div><div class="slbl">Status</div></div>
+    <div class="sbox"><div class="sval amber" id="cnt-rec">—</div><div class="slbl">Recommendations</div></div>
     <div class="sbox"><div class="sval" id="cnt-sync" style="font-size:13px;margin-top:4px">—</div><div class="slbl">Last sync</div></div>
   </div>
 
   <div class="tabs">
     <button class="tab active" onclick="sw('ip',this)"><i class="ti ti-shield"></i> IP Lists</button>
     <button class="tab" onclick="sw('dnsbl',this)"><i class="ti ti-dns"></i> DNSBL Lists</button>
+    <button class="tab" onclick="sw('recs',this)"><i class="ti ti-bell"></i> Recommendations <span class="badge-count" id="rec-badge">0</span></button>
     <button class="tab" onclick="sw('setup',this)"><i class="ti ti-settings"></i> pfSense Setup</button>
   </div>
 
   <!-- IP Lists -->
   <div id="ip" class="panel active">
-    <div class="banner">
-      <i class="ti ti-info-circle"></i>
-      <span>IP lists block traffic from known malicious IP addresses at the firewall level. This list is read directly from your pfSense — updated automatically every day.</span>
-    </div>
+    <div class="banner"><i class="ti ti-info-circle"></i><span>IP lists block traffic from known malicious IP addresses at the firewall level. Updated automatically daily from your pfSense.</span></div>
     <div class="sec">
       <div class="sec-head">
         <div class="sec-head-left">
           <span class="sec-lbl">Active IP blocklists</span>
           <div class="help-wrap"><span class="help-btn">?</span>
-            <div class="tooltip"><strong>What are IP blocklists?</strong>Lists of known malicious IPs loaded into pfBlockerNG PF tables. Any packet from a listed IP is blocked before entering your network. To add/remove lists, edit them in pfBlockerNG — this view updates automatically next day.</div>
+            <div class="tooltip"><strong>What are IP blocklists?</strong>Lists of known malicious IPs loaded into pfBlockerNG PF tables. Any packet from a listed IP is blocked before entering your network. Manage in pfBlockerNG — this view syncs daily.</div>
           </div>
         </div>
       </div>
-      <div id="list-ip"><div class="loading"><i class="ti ti-loader"></i> Loading from pfSense...</div></div>
+      <div id="list-ip"><div class="loading">Loading from pfSense...</div></div>
     </div>
   </div>
 
   <!-- DNSBL Lists -->
   <div id="dnsbl" class="panel">
-    <div class="banner">
-      <i class="ti ti-info-circle"></i>
-      <span>DNSBL lists block malicious domains at DNS level via Unbound. This list is read directly from your pfSense — updated automatically every day.</span>
-    </div>
+    <div class="banner"><i class="ti ti-info-circle"></i><span>DNSBL lists block malicious domains at DNS level via Unbound. Updated automatically daily from your pfSense.</span></div>
     <div class="sec">
       <div class="sec-head">
         <div class="sec-head-left">
           <span class="sec-lbl">Active DNSBL lists</span>
           <div class="help-wrap"><span class="help-btn">?</span>
-            <div class="tooltip"><strong>What are DNSBL lists?</strong>Domain blocklists fed into Unbound. When any device asks for a blocked domain, DNS returns nothing — blocking ads, trackers, and malware network-wide. Manage these in pfBlockerNG; this view syncs daily.</div>
+            <div class="tooltip"><strong>What are DNSBL lists?</strong>Domain blocklists fed into Unbound. When any device asks for a blocked domain, DNS returns nothing — blocking ads, trackers, and malware network-wide.</div>
           </div>
         </div>
       </div>
-      <div id="list-dns"><div class="loading"><i class="ti ti-loader"></i> Loading from pfSense...</div></div>
+      <div id="list-dns"><div class="loading">Loading from pfSense...</div></div>
     </div>
+  </div>
+
+  <!-- Recommendations -->
+  <div id="recs" class="panel">
+    <div class="banner"><i class="ti ti-info-circle"></i><span>GitHub Actions compares your active lists against external sources daily. Recommendations show what's missing from your coverage.</span></div>
+    <div id="list-recs"><div class="loading">Loading recommendations...</div></div>
   </div>
 
   <!-- pfSense Setup -->
   <div id="setup" class="panel">
-    <div class="banner green">
-      <i class="ti ti-check"></i>
-      <span>This page shows your live pfBlockerNG configuration, synced daily by a script running on pfSense.</span>
-    </div>
-
+    <div class="banner green"><i class="ti ti-check"></i><span>Live pfBlockerNG configuration, synced daily by a script running on pfSense.</span></div>
     <div class="sync-info">
       <div class="sync-title"><i class="ti ti-refresh" style="color:var(--green)"></i> How the sync works</div>
-      <div class="code-box">02:30  pfSense cron runs pfblockerng_sync.py
-       reads URLs from /cf/conf/config.xml
-       pushes my_lists.json to GitHub
-
-This page  reads my_lists.json from GitHub
-           displays your live pfBlockerNG config</div>
+      <div class="code-box">02:30  pfSense cron → pfblockerng_sync.py → my_lists.json → GitHub
+03:00  GitHub Actions → compare.py → recommendations.json → GitHub
+       index.html reads both files and displays live data</div>
     </div>
-
     <div class="sync-info">
-      <div class="sync-title"><i class="ti ti-terminal" style="color:var(--blue)"></i> Sync script location on pfSense</div>
-      <div class="code-box">/root/Scripts/pfblockerng_sync.py</div>
-    </div>
-
-    <div class="sync-info">
-      <div class="sync-title"><i class="ti ti-link" style="color:var(--blue)"></i> Merged output URLs for pfBlockerNG</div>
-      <div class="sync-desc">IP list (merged from all your sources):</div>
+      <div class="sync-title"><i class="ti ti-link" style="color:var(--blue)"></i> Output URLs for pfBlockerNG</div>
+      <div class="sync-desc">IP list:</div>
       <div class="code-box" id="url-ip">https://raw.githubusercontent.com/ngfblog/blocklist-manager/main/output/merged_ip.txt</div>
       <button class="btn btn-blue copy-btn" onclick="copyText('url-ip')"><i class="ti ti-copy"></i> Copy</button>
       <div class="sync-desc" style="margin-top:14px">DNSBL list:</div>
@@ -193,7 +186,6 @@ This page  reads my_lists.json from GitHub
 
 <script>
 const REPO = 'ngfblog/blocklist-manager';
-const MY_LISTS_FILE = 'my_lists.json';
 
 function showToast(msg, type='success') {
   const t = document.getElementById('toast');
@@ -213,6 +205,7 @@ function getLabelFromURL(url) {
   const u = url.toLowerCase();
   if (u.includes('emergingthreats')) return { label: 'ET', cls: 'b-blue' };
   if (u.includes('spamhaus')) return { label: 'Spamhaus', cls: 'b-blue' };
+  if (u.includes('blocklist.de')) return { label: 'Blocklist.DE', cls: 'b-blue' };
   if (u.includes('ipverse') && u.includes('/cn/')) return { label: 'GeoIP CN', cls: 'b-amber' };
   if (u.includes('ipverse') && u.includes('/ru/')) return { label: 'GeoIP RU', cls: 'b-amber' };
   if (u.includes('ipverse') && u.includes('/ir/')) return { label: 'GeoIP IR', cls: 'b-amber' };
@@ -234,10 +227,7 @@ function getLabelFromURL(url) {
 
 function renderList(elId, urls) {
   const el = document.getElementById(elId);
-  if (!urls || !urls.length) {
-    el.innerHTML = '<div class="loading" style="color:var(--text3)">No lists found</div>';
-    return;
-  }
+  if (!urls || !urls.length) { el.innerHTML = '<div class="loading" style="color:var(--text3)">No lists found</div>'; return; }
   el.innerHTML = urls.map(url => {
     const { label, cls } = getLabelFromURL(url);
     return `<div class="row">
@@ -249,31 +239,75 @@ function renderList(elId, urls) {
   }).join('');
 }
 
-async function loadMyLists() {
+function formatNum(n) {
+  if (n >= 1000000) return (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return (n/1000).toFixed(0) + 'K';
+  return n.toString();
+}
+
+function renderRecs(recs) {
+  const el = document.getElementById('list-recs');
+  if (!recs || !recs.length) { el.innerHTML = '<div class="loading" style="color:var(--text3)">No recommendations yet</div>'; return; }
+
+  const worthAdding = recs.filter(r => r.worth_adding);
+  document.getElementById('rec-badge').textContent = worthAdding.length;
+  document.getElementById('cnt-rec').textContent = worthAdding.length;
+
+  el.innerHTML = recs.map(r => `
+    <div class="rec-card ${r.worth_adding ? 'worth' : 'covered'}">
+      <div class="rec-name">${r.name}</div>
+      <div class="rec-desc">${r.description}</div>
+      <div class="rec-stats">
+        <div class="rec-stat">
+          <div class="rec-stat-val ${r.worth_adding ? 'amber' : 'green'}">${formatNum(r.new_ips)}</div>
+          <div class="rec-stat-lbl">New IPs not covered</div>
+        </div>
+        <div class="rec-stat">
+          <div class="rec-stat-val">${r.your_coverage_pct}%</div>
+          <div class="rec-stat-lbl">Your current coverage</div>
+        </div>
+        <div class="rec-stat">
+          <div class="rec-stat-val">${formatNum(r.total_entries)}</div>
+          <div class="rec-stat-lbl">Total in source</div>
+        </div>
+      </div>
+      <div class="rec-meta">
+        <span class="badge ${r.worth_adding ? 'b-amber' : 'b-green'}">${r.worth_adding ? 'Worth adding' : 'Already covered'}</span>
+        <a href="${r.url}" target="_blank" class="btn btn-gray" style="font-size:11px;padding:4px 10px;margin-left:auto">View source ↗</a>
+      </div>
+    </div>`).join('');
+}
+
+async function loadData() {
   try {
-    const r = await fetch(`https://raw.githubusercontent.com/${REPO}/main/${MY_LISTS_FILE}?t=${Date.now()}`);
-    if (!r.ok) throw new Error('File not found');
-    const data = await r.json();
+    const [listsRes, recsRes] = await Promise.all([
+      fetch(`https://raw.githubusercontent.com/${REPO}/main/my_lists.json?t=${Date.now()}`),
+      fetch(`https://raw.githubusercontent.com/${REPO}/main/output/recommendations.json?t=${Date.now()}`)
+    ]);
 
-    renderList('list-ip', data.ip_lists);
-    renderList('list-dns', data.dnsbl_lists);
+    if (listsRes.ok) {
+      const data = await listsRes.json();
+      renderList('list-ip', data.ip_lists);
+      renderList('list-dns', data.dnsbl_lists);
+      document.getElementById('cnt-ip').textContent = data.ip_lists.length;
+      document.getElementById('cnt-dns').textContent = data.dnsbl_lists.length;
+      const ts = new Date(data.generated);
+      const diff = Math.round((Date.now() - ts) / 3600000);
+      document.getElementById('cnt-sync').textContent = diff < 1 ? 'Just now' : diff < 24 ? diff + 'h ago' : ts.toLocaleDateString();
+      document.getElementById('status-pill').innerHTML = '<i class="ti ti-check" style="font-size:10px;vertical-align:-1px"></i> Live from pfSense';
+      document.getElementById('status-pill').className = 'pill green';
+    }
 
-    document.getElementById('cnt-ip').textContent = data.ip_lists.length;
-    document.getElementById('cnt-dns').textContent = data.dnsbl_lists.length;
-    document.getElementById('cnt-status').textContent = 'Live';
-
-    const ts = new Date(data.generated);
-    const diff = Math.round((Date.now() - ts) / 3600000);
-    document.getElementById('cnt-sync').textContent = diff < 1 ? 'Just now' : diff < 24 ? `${diff}h ago` : ts.toLocaleDateString();
-
-    document.getElementById('status-pill').innerHTML = '<i class="ti ti-check" style="font-size:10px;vertical-align:-1px"></i> Live from pfSense';
-    document.getElementById('status-pill').className = 'pill green';
+    if (recsRes.ok) {
+      const data = await recsRes.json();
+      renderRecs(data.recommendations);
+    } else {
+      document.getElementById('list-recs').innerHTML = '<div class="loading" style="color:var(--text3)">Run GitHub Actions to generate recommendations</div>';
+      document.getElementById('cnt-rec').textContent = '—';
+    }
 
   } catch(e) {
-    document.getElementById('list-ip').innerHTML = '<div class="loading" style="color:var(--red)">Error loading data</div>';
-    document.getElementById('list-dns').innerHTML = '<div class="loading" style="color:var(--red)">Error loading data</div>';
     document.getElementById('status-pill').textContent = 'Load failed';
-    document.getElementById('status-pill').className = 'pill';
   }
 }
 
@@ -282,7 +316,7 @@ function copyText(id) {
     .then(() => showToast('Copied to clipboard'));
 }
 
-loadMyLists();
+loadData();
 </script>
 </body>
 </html>
