@@ -14,9 +14,6 @@ REPORT_FILE = "output/last_run.json"
 HEADERS = {"User-Agent": "blocklist-manager/1.0 (https://github.com/ngfblog/blocklist-manager)"}
 TIMEOUT = 30
 
-GOTIFY_URL = os.environ.get("GOTIFY_URL", "")
-GOTIFY_TOKEN = os.environ.get("GOTIFY_TOKEN", "")
-
 def load_config():
     with open(CONFIG_FILE) as f:
         return yaml.safe_load(f)
@@ -81,21 +78,6 @@ def parse_dnsbl(text):
             domains.add(line.lower())
     return domains
 
-def send_gotify(title, message, priority=5):
-    if not GOTIFY_URL or not GOTIFY_TOKEN:
-        print("  Gotify not configured, skipping.")
-        return
-    try:
-        requests.post(
-            f"{GOTIFY_URL}/message",
-            json={"title": title, "message": message, "priority": priority},
-            headers={"X-Gotify-Key": GOTIFY_TOKEN},
-            timeout=10
-        )
-        print("  Gotify sent.")
-    except Exception as e:
-        print(f"  Gotify error: {e}")
-
 def main():
     print("=== Blocklist Manager ===")
     print(f"Run time: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
@@ -157,6 +139,11 @@ def main():
         for domain in merged_domains:
             f.write(f"0.0.0.0 {domain}\n")
 
+    ip_diff = len(merged_ips) - prev_ip_count
+    dns_diff = len(merged_domains) - prev_dns_count
+    ip_change = f"+{ip_diff}" if ip_diff >= 0 else str(ip_diff)
+    dns_change = f"+{dns_diff}" if dns_diff >= 0 else str(dns_diff)
+
     report = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "ip": {"total": len(merged_ips), "prev": prev_ip_count, "sources": ip_stats},
@@ -164,19 +151,6 @@ def main():
     }
     with open(REPORT_FILE, "w") as f:
         json.dump(report, f, indent=2)
-
-    ip_diff = len(merged_ips) - prev_ip_count
-    dns_diff = len(merged_domains) - prev_dns_count
-    ip_change = f"+{ip_diff}" if ip_diff >= 0 else str(ip_diff)
-    dns_change = f"+{dns_diff}" if dns_diff >= 0 else str(dns_diff)
-
-    print("\n[3] Sending Gotify notification...")
-    message = (
-        f"IP list: {len(merged_ips):,} entries ({ip_change})\n"
-        f"DNSBL list: {len(merged_domains):,} entries ({dns_change})\n"
-        f"Sources: {len(config.get('ip_lists',[]))} IP + {len(config.get('dnsbl_lists',[]))} DNSBL"
-    )
-    send_gotify("Blocklist Manager – Updated", message)
 
     print(f"\n=== Done ===")
     print(f"  IP:    {len(merged_ips):,} entries  ({ip_change})")
