@@ -105,10 +105,12 @@ code{color:#79c0ff;font-family:monospace}
     </div>
   </div>
   <div class="topbar-right">
-    <div class="font-ctrl">
-      <button class="font-btn" onclick="changeFontSize(-1)" title="Smaller">A&#8722;</button>
-      <button class="font-btn" onclick="changeFontSize(1)" title="Larger">A&#43;</button>
-    </div>
+    <select onchange="document.body.style.fontSize=this.value" style="background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--text2);padding:4px 8px;font-size:12px;cursor:pointer;outline:none">
+      <option value="12px">Small</option>
+      <option value="14px" selected>Normal</option>
+      <option value="16px">Large</option>
+      <option value="18px">X-Large</option>
+    </select>
     <span class="pill green" id="status-pill"><i class="ti ti-refresh" style="font-size:10px;vertical-align:-1px"></i> Loading...</span>
   </div>
 </div>
