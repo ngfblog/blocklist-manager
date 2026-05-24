@@ -76,7 +76,7 @@ def main():
     with open(MY_LISTS_FILE) as f:
         my_lists = json.load(f)
 
-    my_ip_urls = [u for u in my_lists.get("ip_lists", []) if "ipverse" not in u]
+    my_ip_urls = [u for u in my_lists.get("ip_lists", []) if "ipverse" not in u and "blocklist-manager" not in u]
     print(f"  My IP sources: {len(my_ip_urls)}")
 
     print("\n[2] Downloading my IP lists...")
@@ -116,7 +116,7 @@ def main():
             "worth_adding": len(new_nets) > 100
         })
 
-    recommendations.sort(key=lambda x: x["new_networks"], reverse=True)
+    recommendations.sort(key=lambda x: x["your_coverage_pct"])
 
     output = {
         "generated": datetime.now(timezone.utc).isoformat(),
