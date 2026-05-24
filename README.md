@@ -1,40 +1,42 @@
 # Blocklist Manager
 
-A self-hosted tool that automatically finds and fills the gaps in your pfBlockerNG blocklists.
+A self-hosted tool for pfBlockerNG that gives you visibility into your blocklist coverage.
+
+It reads your active lists directly from pfSense, compares them against sources like FireHOL and Hagezi Pro, and shows you exactly what's covered, what overlaps, and what's missing — without downloading everything twice.
 
 **Live demo:** https://ngfblog.github.io/blocklist-manager
 
 ---
 
-## How it works
+## What it does
 
-```
-pfSense (daily at 02:30)
-    pfblockerng_sync.py reads your active pfBlockerNG URLs from config.xml
-    pushes my_lists.json to GitHub
+- Reads your active pfBlockerNG URLs directly from pfSense config
+- Compares them against FireHOL level1/level2 and Hagezi Pro
+- Identifies ecosystem overlap and coverage gaps
+- Generates two output files containing only what you don't already have
+- Shows a recommendation breakdown in a simple web UI
 
-GitHub Actions (daily at 03:00 UTC)
-    merge.py downloads firehol_level1 + firehol_level2 + Hagezi Pro
-    removes everything already covered by your pfBlockerNG lists
-    saves only the GAPS to output/merged_ip.txt and output/merged_dnsbl.txt
-
-    compare.py compares your lists against firehol sources
-    saves recommendations to output/recommendations.json
-
-Web UI (GitHub Pages)
-    reads my_lists.json → shows your active pfBlockerNG lists
-    reads recommendations.json → shows what you are missing
-    merged_ip.txt and merged_dnsbl.txt → add these to pfBlockerNG
-```
+The output files are optional — add them to pfBlockerNG or use the analysis to decide which sources to add manually.
 
 ---
 
-## What you get
+## Why GitHub?
 
-| Output file | What it contains | Add to pfBlockerNG |
-|-------------|-----------------|-------------------|
-| `output/merged_ip.txt` | IPs from firehol not covered by your lists | IP → IPv4 |
-| `output/merged_dnsbl.txt` | Domains from Hagezi Pro not covered by your lists | DNSBL → DNSBL Groups |
+GitHub handles two things here:
+
+1. **Automation** — GitHub Actions runs the daily comparison. No server, no cron job, no Python environment to maintain on your end.
+2. **Hosting** — GitHub Pages serves the web UI. The output files are served via raw.githubusercontent.com so pfBlockerNG can pull them directly.
+
+Your config (`my_lists.json`) lives in your own repo. Nothing passes through any third-party server.
+
+---
+
+## Output files
+
+| File | Contains | Optional use |
+|------|----------|-------------|
+| `output/merged_ip.txt` | IPs from FireHOL not in your lists | Add to pfBlockerNG → IP → IPv4 |
+| `output/merged_dnsbl.txt` | Domains from Hagezi Pro not in your lists | Add to pfBlockerNG → DNSBL Groups |
 
 ---
 
@@ -47,7 +49,7 @@ Fork to your own GitHub account and enable GitHub Pages:
 
 ### Step 2 – Install sync script on pfSense
 
-Copy `pfblockerng_sync.py` to pfSense via SCP or paste manually:
+Copy `pfblockerng_sync.py` to pfSense:
 
 ```bash
 scp pfblockerng_sync.py root@YOUR_PFSENSE_IP:/root/Scripts/
@@ -68,7 +70,7 @@ Replace `YOUR_GITHUB_TOKEN_HERE` with a GitHub Personal Access Token.
 4. Expiration: `No expiration`
 5. Scopes: check **repo** only
 6. Click **Generate token**
-7. Copy the token (starts with `ghp_`) – it will not be shown again
+7. Copy the token (starts with `ghp_`) — it will not be shown again
 
 Test it:
 
@@ -82,15 +84,15 @@ Add to cron (pfSense GUI → Services → Cron → Add):
 - Day/Month/Weekday: `*`
 - Command: `python3.11 /root/Scripts/pfblockerng_sync.py`
 
-### Step 3 – Add output URLs to pfBlockerNG
+### Step 3 – Add output URLs to pfBlockerNG (optional)
 
-**IP gaps** – Firewall → pfBlockerNG → IP → IPv4 → Add:
+**IP gaps** — Firewall → pfBlockerNG → IP → IPv4 → Add:
 - Name: `BLM_IP_Gaps`
 - Source: `https://raw.githubusercontent.com/YOUR_USERNAME/blocklist-manager/main/output/merged_ip.txt`
 - Action: `Deny Both`
 - Update Frequency: `Every 6 hours`
 
-**DNSBL gaps** – Firewall → pfBlockerNG → DNSBL → DNSBL Groups → Add:
+**DNSBL gaps** — Firewall → pfBlockerNG → DNSBL → DNSBL Groups → Add:
 - Name: `BLM_DNSBL_Gaps`
 - Source: `https://raw.githubusercontent.com/YOUR_USERNAME/blocklist-manager/main/output/merged_dnsbl.txt`
 - Action: `Unbound`
@@ -100,84 +102,72 @@ Add to cron (pfSense GUI → Services → Cron → Add):
 
 Actions → Update Blocklists → Run workflow
 
-Wait ~20 minutes for the first run.
-After that, runs automatically every day at 03:00 UTC.
+First run takes ~20 minutes. After that it runs automatically every day at 03:00 UTC.
 
 ---
 
 ## pfSense Sync Script
 
-Download `pfblockerng_sync.py` from this repo and copy to pfSense:
+Download `pfblockerng_sync.py` from this repo and copy to pfSense. Set `GITHUB_TOKEN` and `GITHUB_REPO` at the top of the script.
 
-```bash
-scp pfblockerng_sync.py root@YOUR_PFSENSE_IP:/root/Scripts/
-```
-
-Edit the file and set your `GITHUB_TOKEN` and `GITHUB_REPO` at the top of the script.
+---
 
 ## File structure
 
 ```
 blocklist-manager/
 ├── index.html                    # Web UI (GitHub Pages)
-├── my_lists.json                 # Your active pfBlockerNG lists (auto-updated by pfSense)
-├── README.md                     # This file
-├── requirements.txt              # Python dependencies
-├── pfblockerng_sync.py           # Script to run on pfSense
+├── my_lists.json                 # Your active pfBlockerNG lists (synced from pfSense)
+├── README.md
+├── requirements.txt
+├── pfblockerng_sync.py           # Runs on pfSense via cron
 ├── .github/
 │   └── workflows/
-│       └── update.yml            # GitHub Actions workflow
+│       └── update.yml
 ├── scripts/
-│   ├── merge.py                  # Finds gaps and generates output files
-│   └── compare.py                # Compares against firehol sources
+│   ├── merge.py                  # Generates gap output files
+│   └── compare.py                # Generates recommendations
 └── output/
-    ├── merged_ip.txt             # IP gaps to add to pfBlockerNG
-    ├── merged_dnsbl.txt          # DNSBL gaps to add to pfBlockerNG
-    ├── recommendations.json      # Shown in Recommendations tab
-    └── last_run.json             # Last run stats
+    ├── merged_ip.txt
+    ├── merged_dnsbl.txt
+    ├── recommendations.json
+    └── last_run.json
 ```
 
 ---
 
 ## Comparison sources
 
-| Type | Source | What it covers |
-|------|--------|---------------|
-| IP | firehol_level1 | Top consensus – aggregates 10+ trusted sources |
-| IP | firehol_level2 | Broader coverage, more aggressive |
+| Type | Source | Coverage |
+|------|--------|----------|
+| IP | firehol_level1 | Aggregates 10+ trusted sources |
+| IP | firehol_level2 | Broader, more aggressive |
 | IP | blocklist.de | IPs that attacked SSH/FTP/web in last 48h |
-| DNSBL | Hagezi Pro | Comprehensive domain blocklist from multiple sources |
+| DNSBL | Hagezi Pro | Large multi-source domain blocklist |
 
 ---
 
-## Auto-update schedule
+## Schedule
 
 | Time | What runs |
 |------|-----------|
-| 02:30 local | pfSense cron runs pfblockerng_sync.py |
-| 03:00 UTC | GitHub Actions runs merge.py + compare.py |
-| Every 6h | pfBlockerNG fetches merged_ip.txt and merged_dnsbl.txt |
+| 02:30 local | pfSense syncs active list URLs to GitHub |
+| 03:00 UTC | GitHub Actions runs comparison and generates output |
+| Every 6h | pfBlockerNG fetches updated output files |
 
 ---
 
 ## Requirements
 
-- pfSense 2.7+ with pfBlockerNG installed
+- pfSense 2.7+ with pfBlockerNG
 - Python 3.11 on pfSense (included by default)
 - GitHub account (free)
 - GitHub Personal Access Token (scope: repo)
 
-
 ---
 
-## Support The Project
+## Support
 
-This project started from my own homelab and many long nights of troubleshooting, testing, and building automation tools that I wished already existed.
-
-Everything here is created and maintained in my free time for the community.
-
-If these tools helped you, saved you time, or improved your setup, a small donation would genuinely mean a lot and help support future development ❤️
-
-Thank you for using the project and being part of the community.
+This started as a personal homelab project. If it saved you time or improved your setup, a small donation is appreciated.
 
 👉 https://paypal.me/ShopNGF
