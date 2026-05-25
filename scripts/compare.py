@@ -130,7 +130,8 @@ def main():
             "worth_adding": len(new_nets) > 100
         })
 
-    recommendations.sort(key=lambda x: x["your_coverage_pct"])
+    source_order = list(COMPARE_SOURCES.keys())
+    recommendations.sort(key=lambda x: source_order.index(x["name"]))
 
     output = {
         "generated": datetime.now(timezone.utc).isoformat(),
