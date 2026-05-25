@@ -35,6 +35,20 @@ COMPARE_SOURCES = {
 MY_LISTS_FILE = "my_lists.json"
 OUTPUT_FILE   = "output/recommendations.json"
 
+BOGON_RANGES = [
+    ipaddress.ip_network("10.0.0.0/8"),
+    ipaddress.ip_network("172.16.0.0/12"),
+    ipaddress.ip_network("192.168.0.0/16"),
+    ipaddress.ip_network("127.0.0.0/8"),
+    ipaddress.ip_network("169.254.0.0/16"),
+    ipaddress.ip_network("0.0.0.0/8"),
+    ipaddress.ip_network("100.64.0.0/10"),
+]
+
+
+def is_bogon(net):
+    return any(net.overlaps(b) for b in BOGON_RANGES)
+
 
 def parse_ips(text):
     nets = set()
@@ -98,7 +112,7 @@ def main():
             continue
 
         source_nets = parse_ips(text)
-        new_nets = [n for n in source_nets if not nets_overlap(n, my_nets)]
+        new_nets = [n for n in source_nets if not nets_overlap(n, my_nets) and not is_bogon(n)]
         coverage_pct = round((1 - len(new_nets) / max(len(source_nets), 1)) * 100, 1)
 
         print(f"    Total networks in source: {len(source_nets)}")
