@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-05-25 05:10 UTC
+# Generated: 2026-05-25 07:21 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 380367 domains
+# Total entries: 380323 domains
 #
 0--0.info
 0--4.com
@@ -3092,6 +3092,7 @@
 0b9ac158161bc1cce84b1668f94b8ec9.azr.footprintdns.com
 0b9b7c6f083cc0f9617a1ab65d86ba34.safeframe.googlesyndication.com
 0b9ddcc2f6aba3820544eaff44ca34d6.safeframe.googlesyndication.com
+0ba2b70e8c.com
 0ba512a3e50f.xyz
 0ba673210f51d452f0834acf60b1a382.safeframe.googlesyndication.com
 0baa4808dcfed2ae020dd5f2a4280f48.safeframe.googlesyndication.com
@@ -65554,7 +65555,6 @@ ads.gamberorosso.it
 ads.gamemeca.com
 ads.games.laohu.com
 ads.gamezoom.net
-ads.gawker.com
 ads.gazetaesportiva.net
 ads.gazetaexpress.com
 ads.gcp.roku.com
@@ -68549,7 +68549,6 @@ afghanalosa.cfd
 afgodscarpe.com
 afhaqcol.com
 afhjxb.flaconi.de
-afile2.com
 afiletoget.click
 afiliados.esportiva.bet
 afiliadoscasadellibro.uinterbox.com
@@ -69579,8 +69578,6 @@ aklmjylamvvbb.top
 akm3w.pleasedonotblockme.com
 akmt113zdee5se2xarbz5sdkg9ehm1779388282.nuid.nmrodam.com
 aknbxhzyd1.alphonso.tv
-akoo0513uis.com
-akoo0516uis.com
 akpsxcf.com
 akpy1lfonr2lse1kzg2t4xvcuac0d1771973358.nuid.imrworldwide.com
 akqdms.cdn-settings.appsflyersdk.com
@@ -83977,7 +83974,6 @@ bb21431a9ae53c7e.com
 bb2222.com
 bb22cee1755f56a4.com
 bb25c2d01c82f4142de1c2bdaf5c49b7.azr.footprintdns.com
-bb2676f953.0ba2b70e8c.com
 bb286.top
 bb29cbe614d4118f21a8f6bba503df60.safeframe.googlesyndication.com
 bb2d0c9c1beedfb65838569c8425fcf9.safeframe.googlesyndication.com
@@ -84576,7 +84572,6 @@ bdccfd5ba4dd3b43.top
 bdcebeabc4.com
 bdcfb5b6ba030782fbbbda6720d3ac8d.safeframe.googlesyndication.com
 bdcode.35d1.com
-bdcrihraly.com
 bdd08f16caa1ca6e0d4a627008497975.safeframe.googlesyndication.com
 bdd547c621ff410bbf964d5a54895c6e-f71dec87d3ed.cdn.forter.com
 bdd65833b2e2e9bf3ac56ce3f550e031.safeframe.googlesyndication.com
@@ -103214,7 +103209,6 @@ console.crashsight.wetest.net
 console.dsp.bance.jp
 console.zoomd.com
 consolebackup.com
-consolidata.ai
 consorsfinanzgermany.112.2o7.net
 consorsfinanzgermany.d3.sc.omtrdc.net
 consorsfinanzgermany.sc.omtrdc.net
@@ -104628,7 +104622,6 @@ creative-content-server-prod.advertise.qcinternal.io
 creative-content-server.advertise.qcinternal.io
 creative-content.lemonpi.io
 creative-growth-system.digital
-creative-klepon-3f0ecb.netlify.app
 creative-libraries.lemonpi.io
 creative-management-assets.ads.sportradar.com
 creative-measurement.advertise.qcinternal.io
@@ -105505,7 +105498,6 @@ cubpn7.inapps.appsflyersdk.com
 cubpn7.launches.appsflyersdk.com
 cucasharky.com
 cucexn.inapps.appsflyersdk.com
-cuckoo.cult.supply
 cuckoosad.com
 cucomxmcud.com
 cuddleangkhak.com
@@ -108846,7 +108838,6 @@ dangol-v2.web.app
 dangongshijie.com
 dangsboxfuls.help
 danianawazneswieta.com
-danicirvr.com
 daniellesfandomfavs.com
 danielwellingtontr.api.useinsider.com
 danilidi.ru
@@ -109577,7 +109568,6 @@ datiingvibe.com
 datikap.com
 dating-express.com
 dating-harmony-h0t.blogspot.com
-dating-honeygirles.com
 dating-match.top
 dating-mon.site
 dating-service.net
@@ -120188,7 +120178,6 @@ dynamite.btttag.com
 dynamitesecretary.com
 dynapharmacy.online
 dynastypilldocumentation.com
-dynbanners.netlify.app
 dync6.c.appier.net
 dynetrixaqax.top
 dynip.online
@@ -122538,7 +122527,6 @@ easybusy.biz
 easyca.ca
 easycep.api.useinsider.com
 easyclean.fun
-easyconverts.com
 easydisplay.no
 easyfastshopping.com
 easyflirt.com
@@ -123896,7 +123884,6 @@ efflwl-register.appsflyersdk.com
 efforlessefforlessadherence.com
 effortamendconfined.com
 effortless-lokum-f88801.netlify.app
-effulgent-stroopwafel-efb9ce.netlify.app
 effulgentnook.com
 effulgenttempest.com
 effusedprankle.com
@@ -128499,7 +128486,6 @@ ezymfdqibxt60iv67rabhkkaao3wi1777487015.nuid.nmrodam.com
 ezyro.com
 ezytrack.com
 ezzdk.lectricebikes.com
-ezzwechiiewt.com
 ezzxla8lwphljuxux36vvzgpmk0qo1778168432.nuid.nmrodam.com
 f-counter.jp
 f-counter.net
@@ -129402,7 +129388,6 @@ f5cv.xyz
 f5d6736e7435563b77cf2ef65c7f8d65.safeframe.googlesyndication.com
 f5d809590886e540b7813ec27b0cbcf3.azr.footprintdns.com
 f5d92070e79c413b99a86b8fb039c982-77ee068b6863.cdn.forter.com
-f5da763d07.f979592f34.com
 f5dadcbdc3a4ed9e.com
 f5dbd92953.0bd18cc899.com
 f5dfb60027304777666e718f6a172711.azr.footprintdns.com
@@ -129936,6 +129921,7 @@ f96nrtlige1cx38ggkfzn53l3asbu1775721590.uaid.vtwenty.com
 f9722a993f053e824968a075fadb6af6.safeframe.googlesyndication.com
 f974838bd1a758ec326e5c4297e2e756.safeframe.googlesyndication.com
 f97713eeee8f5e1290c488fb6a28f341.safeframe.googlesyndication.com
+f979592f34.com
 f979983ba931763bd3302f5e85a7aea7.safeframe.googlesyndication.com
 f97a50da817a4884879be96c8ef19a75-4dc2aa82bc5e.cdn.forter.com
 f97a50da817a4884879be96c8ef19a75-4dc2aa82bc5e.cdn8.forter.com
@@ -132312,10 +132298,6 @@ fhidefjhjbaffjaaad.world
 fhitagd.cn
 fhkex91.alphonso.tv
 fhkilrkw.euq.stape.net
-fhl05150ps.com
-fhl05160ps.com
-fhl05170ps.com
-fhl05181ps.com
 fhlb8y.cdn-settings.appsflyersdk.com
 fhlb8y.launches.appsflyersdk.com
 fhlcjp.cdn-settings.appsflyersdk.com
@@ -135630,7 +135612,6 @@ fuelreaction.com
 fuelx.com
 fueven.com
 fuexgl35.alphonso.tv
-fufemnirr.com
 fufuiloirtu.com
 fug3xj34uceniuvcfe8w2dh8pawpk1769793723.nuid.imrworldwide.com
 fugetech.com
@@ -139599,7 +139580,6 @@ gmc.com.ssl.sc.omtrdc.net
 gmcjjh.org
 gmdoy2.cdn-settings.appsflyersdk.com
 gmdoy2.launches.appsflyersdk.com
-gmendanln.com
 gmetrics.getbeamer.com
 gmfcg4t8trk.com
 gmfinancial.data.adobedc.net
@@ -154418,7 +154398,6 @@ iptbgnuggdd3yuqjkylf7rfdy9aka1775837135.nuid.nmrodam.com
 iptogreg.net
 iptoweather.vm5apis.com
 iptrack.io
-iptrauaktnua.com
 iptrezor.com
 ipummv.pharao24.de
 ipuss.tv
@@ -156298,7 +156277,6 @@ jerusalemcharity.com
 jerusalempost-d.openx.net
 jervinaneback.com
 jerwam.com
-jesfsf.top
 jessantwowedstoled.qpon
 jessedelves.shop
 jessejamesacademy.com
@@ -163614,7 +163592,6 @@ ldpsh.customers.edgetag.io
 ldqbfl-cdn-settings.appsflyersdk.com
 ldqxj9r16mbnxwi902pinbyzkuace1779287420.uaid.nmrodam.com
 ldrendreamin.org
-ldrerirbuaou.com
 lds-ldr-production.tvinteractive.tv
 lds-ldr-staging.tvinteractive.tv
 ldsa.l-iw.de
@@ -165941,7 +165918,6 @@ liveshopdealz.com
 liveshow.lss-user.baidubce.com
 livesmarter.com
 livesmi.com
-livespacelivekeyrealclub.com
 livesport-d.openx.net
 livesports088.net
 livestat.com
@@ -167329,7 +167305,6 @@ log.pacer.cc
 log.pdffileplusinc.live
 log.pdfnotebookclub.live
 log.pdfreadergoal.live
-log.pdfreaders.net
 log.pdfviewerprosinc.live
 log.philkotse.com
 log.phonefriendpro.live
@@ -168172,7 +168147,6 @@ love-letter-dm.com
 love-letter.info
 love-money.de
 love-partnersdreamers.com
-love-romancejunction.com
 love.loveedatilng.com
 love.vidora.su
 love2-mail.com
@@ -168425,7 +168399,6 @@ lqfcdn-cdn-settings.appsflyersdk.com
 lqfcdn-conversions.appsflyersdk.com
 lqfcdn-launches.appsflyersdk.com
 lqfsnws.cc
-lqftuugziloa.com
 lqfvredung.com
 lqgy.com
 lqhlj97yn0f0gevwu0pwtv8dbl5501779445059.uaid.nmrodam.com
@@ -174384,7 +174357,6 @@ meekreview.pro
 meektremble.com
 meendo.com
 meendo.ru
-meenehboq.com
 meepo.meitustat.com
 meer.prado.com
 meesisheethu.com
@@ -180016,9 +179988,6 @@ morulasbopsoxhide.cyou
 morvaxwave16.xyz
 moryou.com
 mos.m.taobao.com
-mos05110o9i.com
-mos05111o9i.com
-mos05120o9i.com
 mosaefr.cc
 mosaic2.jerkmate.com
 mosaicdevelopmentonline.com
@@ -182758,7 +182727,6 @@ nbniokbof7tws9s92cpypm0d8ln9e1770779194.uaid.vtwenty.com
 nbottkauyy.com
 nboxff.com
 nbpmmqz.pa-cd.com
-nbraenkikrn.com
 nbryb.com
 nbsdk-baichuan.alicdn.com
 nbsfmradio.com
@@ -183214,7 +183182,6 @@ netherexpro.com
 netinsight.co.kr
 netizen.co
 netjets.tt.omtrdc.net
-netlify-rum.netlify.app
 netliker.com
 netlixrenouvellement.my
 netlog.ru
@@ -193455,7 +193422,6 @@ ogenki.com.my
 ogeri.ru
 ogfalhazm.com
 ogfhroqi.com
-ogfvadunon.com
 ogg.gold-meat.ru
 oggda.com
 oggiinsintesi.numpet.com
@@ -194172,7 +194138,6 @@ onbvoi8zvibvsk6tywan7iijfgax91777673583.nuid.nmrodam.com
 onc0roarspt92h8ody6q7xl6n83qe1772512902.uaid.vtwenty.com
 oncallvirtualoffice.com
 once.spxl.socy.es
-onchilurg.com
 onciaendhand.qpon
 oncinu.com
 onclasrv.com
@@ -194932,7 +194897,6 @@ opioidledger.org
 opityilwierhtiegsfignterjie.homes
 opkezz.cdn-settings.appsflyersdk.com
 opkov1in9ghrezuuogb416mtcbpc71778619642.nuid.nmrodam.com
-opkrerkaidf.com
 oplpqddwn.com
 oplrvckg2rb1ouusfn59flvld14in1770579642.nuid.nmrodam.com
 oplytic.com
@@ -196949,7 +196913,6 @@ pagechoice.net
 pagedeletefacebook.com
 pagedemo.co
 pageid.info
-pagelivekeylearnbestz.com
 pagemaster.net
 pageone-d.openx.net
 pageonli-relay.iocnt.net
@@ -202000,7 +201963,6 @@ pomz64.conversions.appsflyersdk.com
 pomz64.dlsdk.appsflyersdk.com
 pomz64.inapps.appsflyersdk.com
 pomz64.launches.appsflyersdk.com
-pon-prairie.com
 ponceautermine.com
 pondagepoopgruffed.cfd
 ponderliquidate.com
@@ -205909,7 +205871,6 @@ qdfdqe-launches.appsflyersdk.com
 qdgdyz.cdn-settings.appsflyersdk.com
 qdgdyz.inapps.appsflyersdk.com
 qdgdyz.launches.appsflyersdk.com
-qdheqraln.com
 qdihmnfwepxni.tokenwqlzbyuarp.shop
 qdizj52.alphonso.tv
 qdjr6d.cdn-settings.appsflyersdk.com
@@ -212564,7 +212525,6 @@ rchzmn.inapps.appsflyersdk.com
 rchzmn.launches.appsflyersdk.com
 rchzmn.skadsdkless.appsflyersdk.com
 rcihwxupvbgoimq.ads.autodesk.com
-rcilgeill.com
 rckxozxp8vos3wkefrgykirvqnzlg1778737725.nuid.nmrodam.com
 rckzkg.cdn-settings.appsflyersdk.com
 rckzkg.conversions.appsflyersdk.com
@@ -219794,7 +219754,6 @@ sdf.mybluehost.me
 sdfbogkw2tea3z1xpo5sujeqec9lo1774977299.darnuid.imrworldwide.com
 sdfif.birkenstock.com
 sdg.fwtrck.com
-sdgsheh.top
 sdh3ztjl52ui2a3zee82bumqc4hhc4pk.d.sardine.ai
 sdh9hxw1wj6lgpvb9svrgxp6491un1773773291.nuid.nmrodam.com
 sdhahs.com
@@ -245786,7 +245745,6 @@ thz2lm.launches.appsflyersdk.com
 thza4ecrjb.data.adobedc.net
 thzgkfvgmxqeng1bhw6keeffxuuu61778879624.nuid.nmrodam.com
 ti-center.co.kr
-ti-files.org
 ti.hornbach.nl
 ti.sothssoapy.com
 ti1def6di15dzyk85ynzwfv10p0vq1771594856.uaid.nmrodam.com
@@ -251391,7 +251349,6 @@ trk.jawoll.de
 trk.jeffersonhealth.org
 trk.jensenprecast.com
 trk.johnlouishome.com
-trk.joinrs.com
 trk.jorc.com
 trk.jornadadareformatributaria.com.br
 trk.justanswer.com
@@ -376248,7 +376205,6 @@ yvtzdu3nvah33fwe4kwlwvad3ub6x1778880639.uaid.nmrodam.com
 yvudkv815hylaipwp2q00ifi6c1c71779120522.uaid.nmrodam.com
 yvw0ej1ag636iaxwrdt2lymbydua81776373605.uaid.vtwenty.com
 yvybfi.cdn-settings.appsflyersdk.com
-yvzgazds6d.com
 yw.conidiafoggara.com
 yw.flexityrepick.com
 yw.i4jxgewgl3rfgmgguhy899n8klpnn.cfd
