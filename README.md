@@ -154,7 +154,7 @@ blocklist-manager/
 
 ---
 
-## Support
+## ❤️ Support
 
 Personal homelab project. If it was useful, a small donation is appreciated.  
 👉 https://paypal.me/ShopNGF
