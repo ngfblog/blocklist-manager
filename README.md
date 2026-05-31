@@ -1,8 +1,10 @@
-# Blocklist Manager
+<img src="icon.svg" width="72" alt="Blocklist Manager">
 
-A self-hosted tool for pfBlockerNG that gives you visibility into your blocklist coverage.
+# blocklist-manager
 
-It reads your active lists directly from pfSense, compares them against sources like FireHOL and Hagezi Pro, and shows you exactly what's covered, what overlaps, and what's missing — without downloading everything twice.
+I've been running pfSense + pfBlockerNG for a while, and one thing kept bothering me: even with ET, Spamhaus, and Hagezi active, there were still gaps compared to FireHOL. But just adding FireHOL on top creates a mess of duplicates.
+
+So I built this to find only what's actually missing.
 
 **Live demo:** https://ngfblog.github.io/blocklist-manager
 
@@ -12,103 +14,100 @@ It reads your active lists directly from pfSense, compares them against sources 
 
 - Reads your active pfBlockerNG URLs directly from pfSense config
 - Compares them against FireHOL level1/level2 and Hagezi Pro
-- Identifies ecosystem overlap and coverage gaps
-- Generates two output files containing only what you don't already have
-- Shows a recommendation breakdown in a simple web UI
+- Finds only the IPs and domains you're not already covering
+- Generates two clean output files you can point pfBlockerNG at
+- Shows a breakdown in a simple web UI
 
-The output files are optional — add them to pfBlockerNG or use the analysis to decide which sources to add manually.
+The output files are optional. You can just use the analysis to decide what to add manually.
 
 ---
 
 ## Why GitHub?
 
-GitHub handles two things here:
+Two reasons:
 
-1. **Automation** — GitHub Actions runs the daily comparison. No server, no cron job, no Python environment to maintain on your end.
-2. **Hosting** — GitHub Pages serves the web UI. The output files are served via raw.githubusercontent.com so pfBlockerNG can pull them directly.
+1. **Automation** — GitHub Actions runs the daily comparison. No server to maintain, no cron on your own machine.
+2. **Hosting** — GitHub Pages serves the UI, and `raw.githubusercontent.com` gives pfBlockerNG a URL it can pull from directly.
 
-Your config (`my_lists.json`) lives in your own repo. Nothing passes through any third-party server.
+Your config lives in your own forked repo. Nothing goes through any server of mine.
+
+> The GitHub token only touches your own repo (read/write config file). If you'd rather not use the UI at all, just edit `my_lists.json` directly in GitHub — the automation works fine without it.
 
 ---
 
 ## Output files
 
-| File | Contains | Optional use |
-|------|----------|-------------|
-| `output/merged_ip.txt` | IPs from FireHOL not in your lists | Add to pfBlockerNG → IP → IPv4 |
-| `output/merged_dnsbl.txt` | Domains from Hagezi Pro not in your lists | Add to pfBlockerNG → DNSBL Groups |
+| File | What's in it |
+|------|-------------|
+| `output/merged_ip.txt` | IPs from FireHOL not already in your lists |
+| `output/merged_dnsbl.txt` | Domains from Hagezi Pro not already in your lists |
+
+Both update automatically every day.
 
 ---
 
 ## Setup
 
-### Step 1 – Fork this repo
+### 1. Fork this repo
 
-Fork to your own GitHub account and enable GitHub Pages:
-- Settings → Pages → Branch: `main` → Folder: `/ (root)` → Save
+Fork to your own GitHub account, then enable Pages:  
+Settings → Pages → Branch: `main` → Folder: `/ (root)` → Save
 
-### Step 2 – Install sync script on pfSense
-
-Copy `pfblockerng_sync.py` to pfSense:
+### 2. Install the sync script on pfSense
 
 ```bash
 scp pfblockerng_sync.py root@YOUR_PFSENSE_IP:/root/Scripts/
 ```
 
-Edit the script and set your GitHub token:
+Open the script and set your GitHub token:
 
 ```bash
 nano /root/Scripts/pfblockerng_sync.py
 ```
 
-Replace `YOUR_GITHUB_TOKEN_HERE` with a GitHub Personal Access Token.
+Replace `YOUR_GITHUB_TOKEN_HERE` with a Personal Access Token (scope: `repo`).
 
-**How to create a token:**
-1. Go to https://github.com/settings/tokens
-2. Click **Generate new token (classic)**
-3. Note: `blocklist-manager`
-4. Expiration: `No expiration`
-5. Scopes: check **repo** only
-6. Click **Generate token**
-7. Copy the token (starts with `ghp_`) — it will not be shown again
+**Creating a token:**
+1. https://github.com/settings/tokens → Generate new token (classic)
+2. Note: `blocklist-manager`, no expiration, scope: `repo`
+3. Copy it — it won't show again
 
 Test it:
-
 ```bash
 python3.11 /root/Scripts/pfblockerng_sync.py
 ```
 
 Add to cron (pfSense GUI → Services → Cron → Add):
-- Minute: `30`
-- Hour: `2`
-- Day/Month/Weekday: `*`
+- Minute: `30`, Hour: `2`, rest: `*`
 - Command: `python3.11 /root/Scripts/pfblockerng_sync.py`
 
-### Step 3 – Add output URLs to pfBlockerNG (optional)
+### 3. Add the output URLs to pfBlockerNG (optional)
 
-**IP gaps** — Firewall → pfBlockerNG → IP → IPv4 → Add:
+**IP** — pfBlockerNG → IP → IPv4 → Add:
 - Name: `BLM_IP_Gaps`
 - Source: `https://raw.githubusercontent.com/YOUR_USERNAME/blocklist-manager/main/output/merged_ip.txt`
-- Action: `Deny Both`
-- Update Frequency: `Every 6 hours`
+- Action: `Deny Both` / Update: `Every 6 hours`
 
-**DNSBL gaps** — Firewall → pfBlockerNG → DNSBL → DNSBL Groups → Add:
+**DNSBL** — pfBlockerNG → DNSBL → DNSBL Groups → Add:
 - Name: `BLM_DNSBL_Gaps`
 - Source: `https://raw.githubusercontent.com/YOUR_USERNAME/blocklist-manager/main/output/merged_dnsbl.txt`
-- Action: `Unbound`
-- Update Frequency: `Every 6 hours`
+- Action: `Unbound` / Update: `Every 6 hours`
 
-### Step 4 – Run GitHub Actions
+### 4. Run GitHub Actions once
 
 Actions → Update Blocklists → Run workflow
 
-First run takes ~20 minutes. After that it runs automatically every day at 03:00 UTC.
+First run takes ~20 minutes. After that it runs at 03:00 UTC daily.
 
 ---
 
-## pfSense Sync Script
+## How the sync works
 
-Download `pfblockerng_sync.py` from this repo and copy to pfSense. Set `GITHUB_TOKEN` and `GITHUB_REPO` at the top of the script.
+```
+02:30 local   pfSense cron → pfblockerng_sync.py → my_lists.json → GitHub
+03:00 UTC     GitHub Actions → compare.py → recommendations.json → GitHub
+              index.html reads both and shows live data
+```
 
 ---
 
@@ -116,17 +115,16 @@ Download `pfblockerng_sync.py` from this repo and copy to pfSense. Set `GITHUB_T
 
 ```
 blocklist-manager/
-├── index.html                    # Web UI (GitHub Pages)
-├── my_lists.json                 # Your active pfBlockerNG lists (synced from pfSense)
-├── README.md
+├── index.html                 # Web UI (GitHub Pages)
+├── icon.svg
+├── my_lists.json              # Your active pfBlockerNG lists (synced from pfSense)
+├── pfblockerng_sync.py        # Runs on pfSense via cron
 ├── requirements.txt
-├── pfblockerng_sync.py           # Runs on pfSense via cron
-├── .github/
-│   └── workflows/
-│       └── update.yml
+├── .github/workflows/
+│   └── update.yml
 ├── scripts/
-│   ├── merge.py                  # Generates gap output files
-│   └── compare.py                # Generates recommendations
+│   ├── merge.py               # Builds gap output files
+│   └── compare.py             # Builds recommendations
 └── output/
     ├── merged_ip.txt
     ├── merged_dnsbl.txt
@@ -138,36 +136,25 @@ blocklist-manager/
 
 ## Comparison sources
 
-| Type | Source | Coverage |
-|------|--------|----------|
+| Type | Source | Notes |
+|------|--------|-------|
 | IP | firehol_level1 | Aggregates 10+ trusted sources |
 | IP | firehol_level2 | Broader, more aggressive |
-| IP | blocklist.de | IPs that attacked SSH/FTP/web in last 48h |
+| IP | blocklist.de | SSH/FTP/web attacks from the last 48h |
 | DNSBL | Hagezi Pro | Large multi-source domain blocklist |
-
----
-
-## Schedule
-
-| Time | What runs |
-|------|-----------|
-| 02:30 local | pfSense syncs active list URLs to GitHub |
-| 03:00 UTC | GitHub Actions runs comparison and generates output |
-| Every 6h | pfBlockerNG fetches updated output files |
 
 ---
 
 ## Requirements
 
-- pfSense 2.7+ with pfBlockerNG
+- pfSense 2.7+ with pfBlockerNG installed
 - Python 3.11 on pfSense (included by default)
-- GitHub account (free)
-- GitHub Personal Access Token (scope: repo)
+- GitHub account (free tier is fine)
+- GitHub Personal Access Token (scope: `repo`)
 
 ---
 
 ## Support
 
-This started as a personal homelab project. If it saved you time or improved your setup, a small donation is appreciated.
-
+Personal homelab project. If it was useful, a small donation is appreciated.  
 👉 https://paypal.me/ShopNGF
