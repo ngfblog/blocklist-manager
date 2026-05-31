@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blocklist Manager</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -22,7 +23,8 @@ a{color:var(--blue);text-decoration:none}
 code{color:#79c0ff;font-family:monospace}
 .topbar{background:var(--bg);border-bottom:1px solid var(--border);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .logo{display:flex;align-items:center;gap:10px}
-.logo-icon{width:34px;height:34px;background:var(--blue-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:18px}
+.logo-icon{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.logo-icon img{width:34px;height:34px}
 .logo-text{font-size:16px;font-weight:600}
 .logo-sub{font-size:11px;color:var(--text3);margin-top:1px}
 .topbar-right{display:flex;align-items:center;gap:10px}
@@ -89,16 +91,30 @@ code{color:#79c0ff;font-family:monospace}
 .toast{position:fixed;bottom:24px;right:24px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:12px 18px;font-size:13px;z-index:999;display:none;align-items:center;gap:8px}
 .toast.show{display:flex}
 .toast.success{border-color:var(--green-border);color:var(--green)}
-.font-ctrl{display:flex;align-items:center;gap:4px}
-.font-btn{width:28px;height:28px;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;color:var(--text2);cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;font-family:inherit}
-.font-btn:hover{color:var(--text);border-color:var(--border)}
 </style>
 </head>
 <body>
 
 <div class="topbar">
   <div class="logo">
-    <div class="logo-icon"><i class="ti ti-shield-lock"></i></div>
+    <div class="logo-icon">
+      <svg width="34" height="34" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <rect width="512" height="512" rx="112" fill="#0f1117"/>
+        <defs>
+          <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#60a5fa"/>
+            <stop offset="100%" stop-color="#2563eb"/>
+          </linearGradient>
+        </defs>
+        <path d="M256 80 L370 124 L370 248 Q370 340 256 410 Q142 340 142 248 L142 124 Z" fill="url(#sg)" opacity="0.9"/>
+        <rect x="200" y="185" width="114" height="14" rx="7" fill="white" opacity="0.9"/>
+        <rect x="200" y="215" width="114" height="14" rx="7" fill="white" opacity="0.65"/>
+        <rect x="200" y="245" width="114" height="14" rx="7" fill="white" opacity="0.4"/>
+        <circle cx="340" cy="340" r="72" fill="#ef4444"/>
+        <line x1="308" y1="308" x2="372" y2="372" stroke="white" stroke-width="20" stroke-linecap="round"/>
+        <line x1="372" y1="308" x2="308" y2="372" stroke="white" stroke-width="20" stroke-linecap="round"/>
+      </svg>
+    </div>
     <div>
       <div class="logo-text">Blocklist Manager</div>
       <div class="logo-sub">pfBlockerNG · pfSense</div>
@@ -131,7 +147,6 @@ code{color:#79c0ff;font-family:monospace}
     <button class="tab" onclick="sw('setup',this)"><i class="ti ti-settings"></i> pfSense Setup</button>
   </div>
 
-  <!-- IP Lists -->
   <div id="ip" class="panel active">
     <div class="banner"><i class="ti ti-info-circle"></i><span>IP lists block traffic from known malicious IP addresses at the firewall level. Updated automatically daily from your pfSense.</span></div>
     <div class="sec">
@@ -147,7 +162,6 @@ code{color:#79c0ff;font-family:monospace}
     </div>
   </div>
 
-  <!-- DNSBL Lists -->
   <div id="dnsbl" class="panel">
     <div class="banner"><i class="ti ti-info-circle"></i><span>DNSBL lists block malicious domains at DNS level via Unbound. Updated automatically daily from your pfSense.</span></div>
     <div class="sec">
@@ -163,13 +177,11 @@ code{color:#79c0ff;font-family:monospace}
     </div>
   </div>
 
-  <!-- Recommendations -->
   <div id="recs" class="panel">
     <div class="banner"><i class="ti ti-info-circle"></i><span>GitHub Actions compares your active lists against external sources daily. Recommendations show what's missing from your coverage.</span></div>
     <div id="list-recs"><div class="loading">Loading recommendations...</div></div>
   </div>
 
-  <!-- pfSense Setup -->
   <div id="setup" class="panel">
     <div class="banner green"><i class="ti ti-check"></i><span>Live pfBlockerNG configuration, synced daily by a script running on pfSense.</span></div>
     <div class="sync-info">
@@ -195,15 +207,6 @@ code{color:#79c0ff;font-family:monospace}
 
 <script>
 const REPO = 'ngfblog/blocklist-manager';
-
-let currentSize = parseInt(localStorage.getItem('fontSize') || '14');
-document.body.style.fontSize = currentSize + 'px';
-
-function changeFontSize(delta) {
-  currentSize = Math.min(20, Math.max(11, currentSize + delta));
-  document.body.style.fontSize = currentSize + 'px';
-  localStorage.setItem('fontSize', currentSize);
-}
 
 function showToast(msg, type='success') {
   const t = document.getElementById('toast');
@@ -266,11 +269,9 @@ function formatNum(n) {
 function renderRecs(recs) {
   const el = document.getElementById('list-recs');
   if (!recs || !recs.length) { el.innerHTML = '<div class="loading" style="color:var(--text3)">No recommendations yet</div>'; return; }
-
   const worthAdding = recs.filter(r => r.worth_adding);
   document.getElementById('rec-badge').textContent = worthAdding.length;
   document.getElementById('cnt-rec').textContent = worthAdding.length;
-
   el.innerHTML = recs.map(r => `
     <div class="rec-card ${r.worth_adding ? 'worth' : 'covered'}">
       <div class="rec-name">${r.name}</div>
@@ -302,7 +303,6 @@ async function loadData() {
       fetch(`https://raw.githubusercontent.com/${REPO}/main/my_lists.json?t=${Date.now()}`),
       fetch(`https://raw.githubusercontent.com/${REPO}/main/output/recommendations.json?t=${Date.now()}`)
     ]);
-
     if (listsRes.ok) {
       const data = await listsRes.json();
       renderList('list-ip', data.ip_lists);
@@ -315,7 +315,6 @@ async function loadData() {
       document.getElementById('status-pill').innerHTML = '<i class="ti ti-check" style="font-size:10px;vertical-align:-1px"></i> Live from pfSense';
       document.getElementById('status-pill').className = 'pill green';
     }
-
     if (recsRes.ok) {
       const data = await recsRes.json();
       renderRecs(data.recommendations);
@@ -323,7 +322,6 @@ async function loadData() {
       document.getElementById('list-recs').innerHTML = '<div class="loading" style="color:var(--text3)">Run GitHub Actions to generate recommendations</div>';
       document.getElementById('cnt-rec').textContent = '—';
     }
-
   } catch(e) {
     document.getElementById('status-pill').textContent = 'Load failed';
   }
