@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-04T23:30:00.671636+00:00",
+  "generated": "2026-06-05T23:30:00.667075+00:00",
   "source": "pfSense config.xml",
   "ip_lists": [
     "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/cn/ipv4-aggregated.txt",
@@ -13,7 +13,7 @@
     "https://raw.githubusercontent.com/ngfblog/blocklist-manager/main/output/merged_ip.txt"
   ],
   "dnsbl_lists": [
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/doh.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/doh.txt",
     "https://small.oisd.nl",
     "https://openphish.com/feed.txt",
     "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
