@@ -14,6 +14,20 @@ from datetime import datetime, timezone
 HEADERS = {"User-Agent": "blocklist-manager/1.0 (https://github.com/ngfblog/blocklist-manager)"}
 TIMEOUT = 30
 
+BOGON_RANGES = [
+    ipaddress.ip_network("10.0.0.0/8"),
+    ipaddress.ip_network("172.16.0.0/12"),
+    ipaddress.ip_network("192.168.0.0/16"),
+    ipaddress.ip_network("127.0.0.0/8"),
+    ipaddress.ip_network("169.254.0.0/16"),
+    ipaddress.ip_network("0.0.0.0/8"),
+    ipaddress.ip_network("100.64.0.0/10"),
+]
+
+
+def is_bogon(net):
+    return any(net.overlaps(b) for b in BOGON_RANGES)
+
 # External IP sources to compare against
 IP_SOURCES = [
     "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level1.netset",
@@ -37,8 +51,7 @@ def download(url, label):
         r.raise_for_status()
         return r.text
     except Exception as e:
-        print(f"  ERROR: {e}")
-        return ""
+        raise RuntimeError(f"Failed to download {label}: {e}")
 
 
 def parse_ips(text):
@@ -123,7 +136,7 @@ def main():
     for url in IP_SOURCES:
         text = download(url, url.split("/")[-1])
         source_nets = parse_ips(text)
-        new_nets = [n for n in source_nets if not nets_overlap(n, my_ip_nets)]
+        new_nets = [n for n in source_nets if not nets_overlap(n, my_ip_nets) and not is_bogon(n)]
         gap_nets.update(new_nets)
         print(f"     {url.split('/')[-1]}: {len(source_nets)} total, {len(new_nets)} new networks")
 

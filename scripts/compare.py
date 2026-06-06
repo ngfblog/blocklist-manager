@@ -71,8 +71,7 @@ def download(url, label):
         r.raise_for_status()
         return r.text
     except Exception as e:
-        print(f"  ERROR: {e}")
-        return ""
+        raise RuntimeError(f"Failed to download {label}: {e}")
 
 
 def nets_overlap(net, existing_nets):
@@ -121,8 +120,6 @@ def main():
     for name, source in COMPARE_SOURCES.items():
         print(f"\n  Checking: {name}")
         text = download(source["url"], name)
-        if not text:
-            continue
 
         source_nets = parse_ips(text)
         new_nets = [n for n in source_nets if not nets_overlap(n, my_nets) and not is_bogon(n)]
