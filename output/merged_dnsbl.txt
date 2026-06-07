@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-06-06 16:17 UTC
+# Generated: 2026-06-07 07:18 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 377977 domains
+# Total entries: 377972 domains
 #
 0--0.info
 0--4.com
@@ -25545,7 +25545,6 @@
 2qpqwkx.cn
 2qshljfoa537ym688jzxuocbdnpn41774158713.nuid.imrworldwide.com
 2qwt2i8z8x.kameleoon.io
-2r2zhs64a7.com
 2rdvnk72k0m3e9l2jb3pk46qi5h3c1776796633.uaid.nmrodam.com
 2recycle.org
 2rii41v6jkjbvkzuxtckmm6e3apn75jd.d.sardine.ai
@@ -43790,7 +43789,6 @@
 6efbf0e93212f5ce.com
 6efd1158e36b1cd3f226cdd3d581a481.safeframe.googlesyndication.com
 6ei5y286vl59grahxb0n0z3b3oxgu1778933871.uaid.nmrodam.com
-6ejvq6ykg2.com
 6ejy4.skin
 6elxrvht0rptnuvni4w2wu78cwtqu1777892033.uaid.nmrodam.com
 6eo8xljzpwwv2gbxddjbeisuvsmey1780377160.uaid.nmrodam.com
@@ -114663,7 +114661,6 @@ dachbet-casino-online.de
 dachholz-relay.iocnt.net
 dachidusp1.wiki
 dacimmo.com
-daciuehpyf.com
 dackpartner-web.s3.amazonaws.com
 dacladds.com
 daclladds.com
@@ -142823,7 +142820,6 @@ g5th0p.skadsdkless.appsflyersdk.com
 g5xrib.cdn-settings.appsflyersdk.com
 g5xrib.conversions.appsflyersdk.com
 g5xrib.launches.appsflyersdk.com
-g5xu1dslr6.com
 g5ysr6i1yt87ui0u0xsybt4iuq4vk1780596201.uaid.nmrodam.com
 g6-gonight.org
 g6.bidbrain.app
@@ -160619,6 +160615,7 @@ jfmeg3apusefyym26wqowmt2wrlxt1773249629.uaid.nmrodam.com
 jfn4bjo0oaf0hcewkn8yly9bdp3bx1775058312.nuid.nmrodam.com
 jfoberf-relay.iocnt.net
 jfpkibro6hrpaf2lof8p7gxnbvfm71778790408.darnuid.imrworldwide.com
+jfpo.cn
 jfrodw-cdn-settings.appsflyersdk.com
 jfrodw-conversions.appsflyersdk.com
 jfrodw-inapps.appsflyersdk.com
@@ -168733,7 +168730,6 @@ ldcyjh.conversions.appsflyersdk.com
 ldcyjh.launches.appsflyersdk.com
 lddgcehutsn50vi87rq3war6i1f251769672043.uaid.vtwenty.com
 lddt.de
-lddvxfmswnnxny.com
 ldgnrtn.com
 ldgr-ssm-dev.weebly.com
 ldgre-homepage.kb.help
@@ -195461,7 +195457,6 @@ o5s9y2er6cu0e6w5ho115nbajphef1761874639.uaid.nmrodam.com
 o5u9i355y8hk6394odelvzruaoa4f1779948064.uaid.nmrodam.com
 o5v3lc89i0iz7xkon7vbel1zr9n6l1776354692.uaid.nmrodam.com
 o5v7tor50qg0ypti61tq10mkte2r5noex05q5xjyjn31niigfr9uz8ht53iu.d.sardine.ai
-o5y2zd1lq8.com
 o6.iads.unity3d.com
 o60449.ingest.sentry.io
 o60503.ingest.us.sentry.io
@@ -242032,7 +242027,6 @@ tdhpwy-inapps.appsflyersdk.com
 tdhpwy-launches.appsflyersdk.com
 tdjr7c53ni.kameleoon.io
 tdjuy31oe5qjupl4imnavhhdznrif1765287708.nuid.imrworldwide.com
-tdlop7tsme.com
 tdmg1kao6my9tdh4va5tya6sidcle6tf.d.sardine.ai
 tdmoffers.g2afse.com
 tdmspec17.com
@@ -262310,6 +262304,7 @@ woonkruthf.com
 wooolgame.com
 woopra-ns.com
 wooqi.win
+woovoree.net
 wooxnf-skadsdk.appsflyersdk.com
 woqlur4epf00o74czxq2frvj04ka11775725913.uaid.vtwenty.com
 word.oofpalate.com
