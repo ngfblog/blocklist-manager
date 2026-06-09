@@ -24,6 +24,14 @@ BOGON_RANGES = [
     ipaddress.ip_network("100.64.0.0/10"),
 ]
 
+# Fallback URLs: if the primary URL fails, try the alternatives in order
+FALLBACKS = {
+    "https://small.oisd.nl": [
+        "https://small.oisd.nl",
+        "https://raw.githubusercontent.com/sjhgvr/oisd/main/domainswild2_small.txt",
+    ],
+}
+
 
 def is_bogon(net):
     return any(net.overlaps(b) for b in BOGON_RANGES)
@@ -46,12 +54,19 @@ OUTPUT_DNS    = "output/merged_dnsbl.txt"
 
 def download(url, label):
     print(f"  Downloading: {label}")
-    try:
-        r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
-        r.raise_for_status()
-        return r.text
-    except Exception as e:
-        raise RuntimeError(f"Failed to download {label}: {e}")
+    urls = FALLBACKS.get(url, [url])
+    last_error = None
+    for attempt_url in urls:
+        try:
+            r = requests.get(attempt_url, headers=HEADERS, timeout=TIMEOUT)
+            r.raise_for_status()
+            if attempt_url != urls[0]:
+                print(f"     (fallback used: {attempt_url})")
+            return r.text
+        except Exception as e:
+            print(f"     Warning: {attempt_url} failed ({e}), trying next...")
+            last_error = e
+    raise RuntimeError(f"Failed to download {label}: {last_error}")
 
 
 def parse_ips(text):
