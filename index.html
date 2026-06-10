@@ -317,8 +317,9 @@ async function loadData() {
       renderRecs(data.recommendations);
       if (data.generated) {
         const ts = new Date(data.generated);
-        const diff = Math.round((Date.now() - ts) / 3600000);
-        document.getElementById('cnt-sync').textContent = diff < 1 ? 'Just now' : diff < 24 ? diff + 'h ago' : ts.toLocaleDateString();
+        const d = ts.toLocaleDateString('en-GB', { day:'2-digit', month:'2-digit', year:'numeric' });
+        const t = ts.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' });
+        document.getElementById('cnt-sync').textContent = d + ' ' + t;
       }
     } else {
       document.getElementById('list-recs').innerHTML = '<div class="loading" style="color:var(--text3)">Run GitHub Actions to generate recommendations</div>';
