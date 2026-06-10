@@ -40,6 +40,8 @@ def is_bogon(net):
 IP_SOURCES = [
     "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level1.netset",
     "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level2.netset",
+    "https://lists.blocklist.de/lists/all.txt",
+    "https://raw.githubusercontent.com/stamparm/ipsum/master/levels/3.txt",
 ]
 
 # External DNSBL sources to compare against
@@ -164,7 +166,7 @@ def main():
     with open(OUTPUT_IP, "w") as f:
         f.write(f"# Blocklist Manager – IP gaps\n")
         f.write(f"# Generated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}\n")
-        f.write(f"# Sources: firehol_level1 + firehol_level2\n")
+        f.write(f"# Sources: firehol_level1 + firehol_level2 + blocklist_de_all + ipsum_level3\n")
         f.write(f"# Contains networks NOT covered by your pfBlockerNG lists\n")
         f.write(f"# Total entries: {len(gap_nets_collapsed)} networks\n#\n")
         for net in gap_nets_collapsed:
