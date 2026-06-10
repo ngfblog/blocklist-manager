@@ -158,7 +158,7 @@ def main():
         print(f"     {url.split('/')[-1]}: {len(source_nets)} total, {len(new_nets)} new networks")
 
     gap_nets_collapsed = sorted(
-        ipaddress.collapse_addresses(gap_nets),
+        ipaddress.collapse_addresses(n for n in gap_nets if n.version == 4),
         key=lambda x: x
     )
     print(f"  Total IP gaps: {len(gap_nets_collapsed)} networks")
