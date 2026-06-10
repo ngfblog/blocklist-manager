@@ -309,15 +309,17 @@ async function loadData() {
       renderList('list-dns', data.dnsbl_lists);
       document.getElementById('cnt-ip').textContent = data.ip_lists.length;
       document.getElementById('cnt-dns').textContent = data.dnsbl_lists.length;
-      const ts = new Date(data.generated);
-      const diff = Math.round((Date.now() - ts) / 3600000);
-      document.getElementById('cnt-sync').textContent = diff < 1 ? 'Just now' : diff < 24 ? diff + 'h ago' : ts.toLocaleDateString();
       document.getElementById('status-pill').innerHTML = '<i class="ti ti-check" style="font-size:10px;vertical-align:-1px"></i> Live from pfSense';
       document.getElementById('status-pill').className = 'pill green';
     }
     if (recsRes.ok) {
       const data = await recsRes.json();
       renderRecs(data.recommendations);
+      if (data.generated) {
+        const ts = new Date(data.generated);
+        const diff = Math.round((Date.now() - ts) / 3600000);
+        document.getElementById('cnt-sync').textContent = diff < 1 ? 'Just now' : diff < 24 ? diff + 'h ago' : ts.toLocaleDateString();
+      }
     } else {
       document.getElementById('list-recs').innerHTML = '<div class="loading" style="color:var(--text3)">Run GitHub Actions to generate recommendations</div>';
       document.getElementById('cnt-rec').textContent = '—';
