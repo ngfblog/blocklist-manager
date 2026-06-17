@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-16T19:36:22.380281+00:00",
-  "my_networks_count": 42853,
+  "generated": "2026-06-17T09:19:17.097215+00:00",
+  "my_networks_count": 44345,
   "recommendations": [
     {
       "name": "firehol_level1",
@@ -18,8 +18,8 @@
       "url": "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level2.netset",
       "type": "ip",
       "total_networks": 19651,
-      "new_networks": 51,
-      "your_coverage_pct": 99.7,
+      "new_networks": 92,
+      "your_coverage_pct": 99.5,
       "worth_adding": false
     },
     {
@@ -27,8 +27,8 @@
       "description": "Blocklist.de \u2013 IPs that attacked SSH, FTP, web servers in last 48h",
       "url": "https://lists.blocklist.de/lists/all.txt",
       "type": "ip",
-      "total_networks": 27202,
-      "new_networks": 0,
+      "total_networks": 26312,
+      "new_networks": 11,
       "your_coverage_pct": 100.0,
       "worth_adding": false
     }
