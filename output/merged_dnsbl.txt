@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-06-22 19:06 UTC
+# Generated: 2026-06-23 07:13 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 424582 domains
+# Total entries: 424584 domains
 #
 0--0.info
 0--4.com
@@ -121951,6 +121951,7 @@ deadcourses.garden
 deadhomersociety.com
 deadly-nail.pro
 deadlywhensoup.com
+deadmentionsunday.com
 deadstarledger.com
 deae6c0968c31590b51344cef3419658.safeframe.googlesyndication.com
 deaf3a6c7768e00f7a8e13d019d75b05.safeframe.googlesyndication.com
@@ -127940,6 +127941,7 @@ ducatflapper.com
 ducina.com
 duckcash.eu
 duckieesotery.qpon
+duckier.com
 duckiesnotcheraramids.cfd
 duckieswonner.qpon
 duckoid.com
