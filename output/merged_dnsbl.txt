@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-06-29 08:35 UTC
+# Generated: 2026-06-29 17:54 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 581055 domains
+# Total entries: 581001 domains
 #
 0--0.info
 0--4.com
@@ -1949,7 +1949,6 @@
 02a28ed616b8d2643fe2d40eccde1307.safeframe.googlesyndication.com
 02a2dc3c810b47b28809095e67bef753.fp.measure.office.com
 02a2e259fd91062a.com
-02a30fd4b8.com
 02a333441805db134250acfe40f64879.safeframe.googlesyndication.com
 02a4823ac7f6b7286bd9be976d58b0df.safeframe.googlesyndication.com
 02a51ba7839d45e4a31a4c4f858c1c6b-77ee068b6863.cdn.forter.com
@@ -2191,7 +2190,6 @@
 031d34daed0045bba8ebdf0b7d1e929b.fp.measure.office.com
 031d46c99e604fe9884bdc1d7c83fdb5.fp.measure.office.com
 031d934573512d5594ed711472ce0389.safeframe.googlesyndication.com
-031dcf857c.com
 031xj.com
 03205.com
 03214bf436b7035bcf87916a29ddf264.safeframe.googlesyndication.com
@@ -2969,7 +2967,6 @@
 048pay.com
 049.net
 0490.org
-0491166852.com
 04913.com
 049191.com
 049191a9d7ab4e27800c05dc7b231ec6.fp.measure.office.com
@@ -5684,6 +5681,7 @@
 0a16329b2f3848f08651a571b49f08e1.fp.measure.office.com
 0a176dda5bb2437f9cc8f7a8133f2b70.fp.measure.office.com
 0a1792cfee415f6b02141a62f0f50467.safeframe.googlesyndication.com
+0a186254d0.cf25ba90cc.com
 0a18bc221cc6c184fd8d835918380464.safeframe.googlesyndication.com
 0a1b0dd0826cb13045160ba04665bbb3.safeframe.googlesyndication.com
 0a1b4cec9b144a32a188d544d3dd7f00.fp.measure.office.com
@@ -6538,7 +6536,6 @@
 0c4394106a434f33b227bce2193015b1.fp.measure.office.com
 0c43a4c42142c2472b01ba455e011412f0cbe8ace143045188793fa2.com
 0c43b75e64191238e423b9b12665820f.fp.measure.office.com
-0c43ec936e.d1e223a9f2.com
 0c452c0379aa45dca3228e7d4040be7f.fp.measure.office.com
 0c4548cad4014fa3b7eededc4e7da87c-578cc93811dc.cdn.forter.com
 0c4594d942024ddc8ee69b352fc20c5f.fp.measure.office.com
@@ -6766,7 +6763,6 @@
 0cdeb34ad48c49ae879283c78cf3a328.safeframe.googlesyndication.com
 0cdf7a994e1896aa156aa27b23e0bc91.safeframe.googlesyndication.com
 0cdf8eca4fc7.top
-0cdf9706af.com
 0cdfa61c08dbea70c5cebcdae4340d5d.azr.footprintdns.com
 0ce0049da5985e7ecb71c2831112519a.safeframe.googlesyndication.com
 0ce01264fdb806091a213302f34c3771.safeframe.googlesyndication.com
@@ -7502,7 +7498,6 @@
 0eaad8111b6405955d7af002a3a3b77f.azr.footprintdns.com
 0eaaf68996844dafbbcf49efbccdbd0d.fp.measure.office.com
 0eab6c5d608d4c60d3b61cbed11078fc.fp.measure.office.com
-0eab70c429.a567dda4c2.com
 0eabbdd9e325867bd0da9e63d7de216b.safeframe.googlesyndication.com
 0eaec44472ed4f3e81db1d3abfed74a3.fp.measure.office.com
 0eaf8cc4432e0cc16cd0afc0875c9556.safeframe.googlesyndication.com
@@ -11094,7 +11089,6 @@
 10ejawdkrokvtlc81cbwwaaexjpiq1778971182.nuid.nmrodam.com
 10eurobonus-ohne-einzahlung-casino.online
 10eurobonusohneeinzahlungcasino.life
-10f08b9ab4.d033093f1f.com
 10f136819320407f915e8888a9221d1a.fp.measure.office.com
 10f1e91c4077cd713120ff89a8cd53e8.safeframe.googlesyndication.com
 10f2b630131ec548f4fe918d200dd37e.safeframe.googlesyndication.com
@@ -17358,7 +17352,6 @@
 15535342.fls.doubleclick.net
 15536490.fls.doubleclick.net
 15537526.fls.doubleclick.net
-15537cf1f5.com
 15538672.fls.doubleclick.net
 15538675.fls.doubleclick.net
 15538738.fls.doubleclick.net
@@ -26890,7 +26883,6 @@
 1960df4d21d45de67c574abe697e884d.safeframe.googlesyndication.com
 196141210953464a85c7d7013c8279be-59b00ce73e8a.cdn8.forter.com
 196195--88797119-111-mnews.ms.vk.com
-19626fc3d0.com
 1963.global.siteimproveanalytics.io
 19631f63013ed2f167fa7002eb2b86b6.safeframe.googlesyndication.com
 19643b56434b9ad795573df58d30e0ea.safeframe.googlesyndication.com
@@ -28581,7 +28573,6 @@
 1d1ede957be968d800ae156b557baa10.safeframe.googlesyndication.com
 1d1f1403925c4da2843a75a066e6b406-0a75efd5c6eb.cdn.forter.com
 1d1fe344404dfd38901a38f4b46db7cc.fp.measure.office.com
-1d204d7192.ea32481d6e.com
 1d21cccd852c964dd51ee982f99e5100.azr.footprintdns.com
 1d23760253a06c35c18f56bbfa58de17.fp.measure.office.com
 1d251beff2c73884.com
@@ -31248,7 +31239,6 @@
 2039572ec12cb3ce8af03c6d3a416d79996c0cb1f-35642f77e1c3.cdn.forter.com
 2039815357.mc.yandex.ru
 2039f7b154a94c4f89cc4b0056fa7414.fp.measure.office.com
-203a382a60.403dee4b16.com
 203abe81d0e9f7c8fa5b7aded2478058.redinuid.imrworldwide.com
 203b3ed60998.top
 203be3073890c4203cd0572da1a05b0b.safeframe.googlesyndication.com
@@ -35853,7 +35843,6 @@
 23f09dd911f68a28.com
 23f16001c2cb37455ed9899d35db5ec4.safeframe.googlesyndication.com
 23f302bcc1844b39ab88faa06c27396d-cb0d19097525.cdn.forter.com
-23f30d7ca1.com
 23f3e2026c629f7e70429d6479caa7f5.safeframe.googlesyndication.com
 23f4b19e598049809d6ce3bd95c3ed4d.fp.measure.office.com
 23f63ca073c53c45112f38a664cf789f.azr.footprintdns.com
@@ -38491,6 +38480,7 @@
 28fc969968860f7d4e6f721a2356a804.safeframe.googlesyndication.com
 28fd7154e1750f22ada3821320f0f5e3.safeframe.googlesyndication.com
 28fe4240ad944f988cb0bbb16c8f15cb.fp.measure.office.com
+28fe4575ab.fb53d9afaf.com
 28fe9c789e66f255.com
 28feb943cecf4ab48b43ca58bb945466.fp.measure.office.com
 28fefb752e248b675wap.jigool.org
@@ -41004,7 +40994,6 @@
 2f0b5eeb97d633ecc8d09c6e9caf76ed.safeframe.googlesyndication.com
 2f0b6b3af130194d5f0af98ab2448284.safeframe.googlesyndication.com
 2f0b74d14406a098b7468830f512a4b0.safeframe.googlesyndication.com
-2f0bf9baae.5dede791d0.com
 2f0c4a3592c8e0ae95f4d16438118469.safeframe.googlesyndication.com
 2f0c624822d807ddf68a144b1de10723411a8de6e-35642f77e1c3.cdn.forter.com
 2f0cceaa07af82157a6ec87cae6940b8.safeframe.googlesyndication.com
@@ -42855,7 +42844,6 @@
 30e7dc84e30b4cfea4c36ffc660a4b10.fp.measure.office.com
 30e8d0ea84faa861d2d324123de793b0.safeframe.googlesyndication.com
 30e934f0d5fd50eabf6303447fd74801.safeframe.googlesyndication.com
-30ea3091fb.com
 30ea882c41a84152b332272138fd55b3.fp.measure.office.com
 30eb0007d53a4989b921aace583186da.fp.measure.office.com
 30eb44b5051443489f26f38d2633a421.fp.measure.office.com
@@ -45989,6 +45977,7 @@
 35a72ad6.de.ioam.de
 35a77310cc084c9789ab9b14f1b9d036.fp.measure.office.com
 35a7eec3df074c2dbe3c0d93d9bc99bf.fp.measure.office.com
+35a92e241c.30ea3091fb.com
 35a99b112f934151ba2767abc49ed3b9-578cc93811dc.cdn.forter.com
 35a99b112f934151ba2767abc49ed3b9-578cc93811dc.cdn8.forter.com
 35ac460ec73945df83b6d894d6474419.fp.measure.office.com
@@ -46721,6 +46710,7 @@
 36b9f9660610c35cc03972a6294043d0.safeframe.googlesyndication.com
 36bb05e2a9c56aab76dadd65f17e3924.safeframe.googlesyndication.com
 36bcbf09e8385d76d6acb524ab4ecdec.safeframe.googlesyndication.com
+36bd0d2ae3.caf44f3d39.com
 36bd7be3e028badfbcec1f5372166c01.safeframe.googlesyndication.com
 36bd9415b9027540d53a5bf7f3d41ae5.safeframe.googlesyndication.com
 36be29b2525141e79b67ba47f4f43a61.fp.measure.office.com
@@ -47194,7 +47184,6 @@
 37cbe9bc3d74eb936a3b6de50b98a6b8.safeframe.googlesyndication.com
 37cccad86eb9238ada755c1d91a6a529.otlp.bugsnag.com
 37ccd473b1df429da285312ee10255fe.fp.measure.office.com
-37ccf2671e.95ce9fb0ff.com
 37cd79ac32b0bcd44791cf567681ec77.safeframe.googlesyndication.com
 37cd818b02402f24.com
 37cf5fbd98d974eae39a6581c6b34642.safeframe.googlesyndication.com
@@ -59088,7 +59077,6 @@
 4608c0688e8d45d1bfffbde1f5d2ba0f-77ee068b6863.cdn.forter.com
 4608fd553af4fbcfc6af3a6f09a13786.safeframe.googlesyndication.com
 460bet.click
-460c0f8786.57fafe08ba.com
 460ced64a3c265d157f728e5e26f2773.safeframe.googlesyndication.com
 460cf1955b9cec972e5ee693c5fe72e1.safeframe.googlesyndication.com
 460d4f8c77af4f7584ffcc77d02b75b6-18d2da9edb80.cdn.forter.com
@@ -59724,6 +59712,7 @@
 47508.cfd
 4750fa00.de.ioam.de
 475172a592fbf467.com
+4752e0f296.4d2af59d17.com
 475306dc5e9a5084548ce74e7fa540aa.safeframe.googlesyndication.com
 47532.cfd
 4754571dc882479a9c45207f780c88eb-3f5451d08253.cdn.forter.com
@@ -60712,7 +60701,6 @@
 492e5bce97044f1aa908cfc4e504fe1c-72164059993b.cdn.forter.com
 492e9b14dc79db34fe8d8defab444183.safeframe.googlesyndication.com
 492fcb13bf4a43a78a81e80208d37461-77ee068b6863.cdn.forter.com
-492plugins.com
 49301a76833de944d22951b3972c4067.safeframe.googlesyndication.com
 49307.cfd
 4930e7850d0bf5a8.com
@@ -61553,7 +61541,6 @@
 4b1e1b0617b804113bf7a776a4332a88.fp.measure.office.com
 4b1e62d0a6c54f6fa06d2f71fb34a122-c0cfeb6cb243.cdn.forter.com
 4b1e932e645cd6ff47d41300dc046f80.safeframe.googlesyndication.com
-4b1eec4734.com
 4b209570df9d7fab07a38368ea78fb1f.safeframe.googlesyndication.com
 4b20bdc24095.top
 4b2125e4dc126b2d.com
@@ -61977,6 +61964,7 @@
 4c45a4be7a094ef38d905f6c268550ce.fp.measure.office.com
 4c469138e03a.top
 4c469138e03a.xyz
+4c4710bfc9.23f30d7ca1.com
 4c480e2951af4a5ebe5379374cb90ee9.fp.measure.office.com
 4c481d1c627a4fec8d66bf8780449cda.fp.measure.office.com
 4c484cefc8.com
@@ -65123,7 +65111,6 @@
 50e2f972076ecd3cf6dd6de51888fd70.safeframe.googlesyndication.com
 50e30cb1a70b7bb827b175a4210baebf.safeframe.googlesyndication.com
 50e353c44492437795ed9095f83ba988.fp.measure.office.com
-50e57be19a.b0ff04e647.com
 50e62820d94ca859da73b6cafdee588e.safeframe.googlesyndication.com
 50e6a94a75e045d98905180bd7200e6a.fp.measure.office.com
 50e6bc68afc87e94ef1d6001c92aa174.safeframe.googlesyndication.com
@@ -65534,6 +65521,7 @@
 5168826.fls.doubleclick.net
 5168f73659a70b6d332518e0f81e7020.azr.footprintdns.com
 516bf10d56dc56df2d079f5aa73b27e0.safeframe.googlesyndication.com
+516c0edfbb.com
 516cf3a3c1eb0d22.com
 516cfdd0f83b4c098ec9a224331cd685.fp.measure.office.com
 516fa7de5c31e83adf7a6845aaa8d180.safeframe.googlesyndication.com
@@ -67277,7 +67265,6 @@
 54a582225c.666f69c8bb.com
 54a5b13150e5fd282c300a834cf2c46b.safeframe.googlesyndication.com
 54a6229f8b274361961774b32e8a3618.fp.measure.office.com
-54a73dbcb6.com
 54a7500735bf14c9d7cfd837395954e6.safeframe.googlesyndication.com
 54a7c45a607e5d8c726545e846e6009b.safeframe.googlesyndication.com
 54a802c018230ec2e1d61a2b787df2fc.azr.footprintdns.com
@@ -68344,6 +68331,7 @@
 56aa6d705fd649e5bd56ba1d1281e191-821dbf709728.cdn.forter.com
 56aac570033c401b86e88181b4dca064.fp.measure.office.com
 56ac0d1497.com
+56ac3c29f3.com
 56ac77bfef84a9362f5128e0ddd2241d.safeframe.googlesyndication.com
 56ac89dab4d14ef6bcb53e460fd214d3.fp.measure.office.com
 56ac8c02961dcfede934b2d82942b67a.safeframe.googlesyndication.com
@@ -68933,6 +68921,7 @@
 57f8f1d7d7094aca99f21241feb4e8c8-59b00ce73e8a.cdn.forter.com
 57f9296245304459a240f1b71a565df3.fp.measure.office.com
 57fac6ac6d704e5779920fa66a77897b.safeframe.googlesyndication.com
+57fafe08ba.com
 57fc22791b7c9c3c9fa4fec94abf4a4a.safeframe.googlesyndication.com
 57fc59713f8b416593aada92db0c5e54-72164059993b.cdn.forter.com
 57fcccafa8be97bf62e5bca0ddc0f7a7.safeframe.googlesyndication.com
@@ -69152,6 +69141,7 @@
 585250bc.de.ioam.de
 5852acfeec1b4bc28e9f4887815207c5-77ee068b6863.cdn.forter.com
 5853216b16cab693a6bbe19c40e40c55.safeframe.googlesyndication.com
+5853f04e7c.83c6db1e10.com
 58545.cfd
 585459040a2f9c9571ab39afda7ec817.safeframe.googlesyndication.com
 58547.cfd
@@ -69365,6 +69355,7 @@
 58bd40870552835bcbf26c62b062789e.fp.measure.office.com
 58bf2b18a9988f6d2df67bde319e9a17.safeframe.googlesyndication.com
 58bf5285bdb21227a2f895b607fec998.safeframe.googlesyndication.com
+58bf902565.8e111120ff.com
 58c0980b38f1.xyz
 58c0cf889add9e53e5ba76d391a6085d.safeframe.googlesyndication.com
 58c0e921d96168c3aa2f2109980ae1dd.fp.measure.office.com
@@ -71387,6 +71378,7 @@
 5deb23be61d5268826b60e45abf4f935.xyz
 5debb852c39a476fb5193fe5cfc9b71c.fp.measure.office.com
 5ded548d29c241d0909e8bb76dd7200c.fp.measure.office.com
+5dede791d0.com
 5dee6ba35ad7a352f977dce2bb6a1bb4.safeframe.googlesyndication.com
 5dee7fd70c988028d342b167ac16c360.safeframe.googlesyndication.com
 5dee956f8a134591990bb9ed958fc3ea.fp.measure.office.com
@@ -73294,7 +73286,6 @@
 60004bbbd9dce063b4e92ef1a7ececf7.safeframe.googlesyndication.com
 6000554.global.siteimproveanalytics.io
 6000bf7a3fa3d6d7a8c6c1666f0f3a7c.azr.footprintdns.com
-6000function.com
 6002269449b93cd7e50d66c150b6d669.safeframe.googlesyndication.com
 6002359.global.siteimproveanalytics.io
 60024.cfd
@@ -75975,6 +75966,7 @@
 64f01181d1444a289ee2e05e40c84236.fp.measure.office.com
 64f12306b7374528a94ae900e7a8f2f4.fp.measure.office.com
 64f140b98167960438e5f4cf63b7f198.safeframe.googlesyndication.com
+64f14dbf1b.8dc714cafe.com
 64f18d44ceb269de.com
 64f21cf0a10c0739e0a0cf928f0fc3dc.fp.measure.office.com
 64f236e4804e82add405f219972f51d0.safeframe.googlesyndication.com
@@ -85489,7 +85481,6 @@
 720c6b3755f0920ff207c0299c0a8994.safeframe.googlesyndication.com
 720d7e4edca46f250ea2e88f3949e3e3.safeframe.googlesyndication.com
 720da080c1871822303d00be56cf4c50.azr.footprintdns.com
-720dash.com
 720df8c8c9.com
 720ea5688b7c106801f0f4b9c74cfa67.fp.measure.office.com
 720ff0c6092aa544ebf6462dc9a7fa25.safeframe.googlesyndication.com
@@ -86749,7 +86740,6 @@
 74a16baae4eb.xyz
 74a17a50a49b49409fb3d5b8ef259455.fp.measure.office.com
 74a4fb955808c128ecac1925373232fa.safeframe.googlesyndication.com
-74a54ccd8d.56ac3c29f3.com
 74a6156a769447eb6c211d367d419471.azr.footprintdns.com
 74a89d842d950a6baf9867f1343b664c.fp.measure.office.com
 74a91d05a3f7462e9dba45c246381966.fp.measure.office.com
@@ -88901,7 +88891,6 @@
 794e9c09a99fccf0.com
 794ea1ca3656b5b5e3764f6930fec96f.safeframe.googlesyndication.com
 794el687vyiftiifksewzpuffeglj8gj.d.sardine.ai
-794f43b774.d3c6339ed7.com
 7951504c8b.com
 795202c4c27fbe72a1db671edb0d833a.safeframe.googlesyndication.com
 7952ca724c1e8b36427921cff307f87a.safeframe.googlesyndication.com
@@ -91464,7 +91453,6 @@
 7fec9654e0dfad9f3c7a8ffeb3b08b36.safeframe.googlesyndication.com
 7fee494a3d638c9caaa03ea1fbda250a.safeframe.googlesyndication.com
 7fefsl.cdn-settings.appsflyersdk.com
-7ff01aa709.516c0edfbb.com
 7ff01e7e7172276bb65937dccd11abe4.safeframe.googlesyndication.com
 7ff04f4bdbc54efd91c16ec85d14aa0e.fp.measure.office.com
 7ff06aea618b446bb046de7a562cbe7f.fp.measure.office.com
@@ -96220,7 +96208,6 @@
 870686f24a9037e553dea60f41f83307.safeframe.googlesyndication.com
 8706dc3b278143a68d1cdc75980fc682.fp.measure.office.com
 87076b7d1e22425dbf8ff7a44dcaa5cb-71a0326da09e.cdn.forter.com
-8707c7e689.dec0c1a14f.com
 8708c2ea1e0335badd48aff0c9346b0f.safeframe.googlesyndication.com
 87094fc9a35a.info
 87095.cfd
@@ -100564,7 +100551,6 @@
 8dc4e1fd53bd48000a627b05fecbada4.safeframe.googlesyndication.com
 8dc70658f5c4.cdn4.forter.com
 8dc7099d28414c38a4fe79a58f6029e6.fp.measure.office.com
-8dc714cafe.com
 8dc884d7fa434fa478ffd3f0f9f06853.safeframe.googlesyndication.com
 8dc95920c37ab80697a3036600bfb4c8.safeframe.googlesyndication.com
 8dcb8d512175fd63fadf5c46b15eee6a.safeframe.googlesyndication.com
@@ -106626,6 +106612,7 @@
 95ccf6cc801149e39cb37f72ea3c8195.fp.measure.office.com
 95ce14990e123a2d20f747a3db1b5fdd.safeframe.googlesyndication.com
 95ce94d2eae3.top
+95ce9fb0ff.com
 95cefe8fef.com
 95ckbh2ccrwkdwznnxxzzanmikqsv1774624896.nuid.nmrodam.com
 95d0048106ca4e3ca4e9267fe672d519.fp.measure.office.com
@@ -111151,6 +111138,7 @@
 9fa3ce8fd72eb6e054b0bacfb47800be.fp.measure.office.com
 9fa4f3e3b3624e3ba28ae48e0411e002.fp.measure.office.com
 9fa6253a6df0cc76.com
+9fa67c2dc3.54a73dbcb6.com
 9fa697af947525a62af6b4e8ff7a384c.safeframe.googlesyndication.com
 9fa7cd5b6e97385429771f3dee2b8610.safeframe.googlesyndication.com
 9fa7d2e81dc28e91120720c2ccb6d03a.safeframe.googlesyndication.com
@@ -113080,7 +113068,6 @@ a0d1e3893066d0e9b745909b7a47908e.fp.measure.office.com
 a0d30e6e206e94bfa58ea0b209096312.safeframe.googlesyndication.com
 a0d33640a22ac46fd3ed39a57fa49870.safeframe.googlesyndication.com
 a0d35544.de.ioam.de
-a0d3dd0c89.com
 a0d40b91f974617cbb19157cad14df74.safeframe.googlesyndication.com
 a0d505a1d6eb51ce3ff0a65b8961bd30.safeframe.googlesyndication.com
 a0d56e0b899c4fe189641555ac58aeff.fp.measure.office.com
@@ -119414,6 +119401,7 @@ a5676.casalemedia.com
 a5676741851611136.cdn.optimizely.com
 a5677.casalemedia.com
 a5679.casalemedia.com
+a567dda4c2.com
 a568.casalemedia.com
 a5680.casalemedia.com
 a5681.casalemedia.com
@@ -122398,6 +122386,7 @@ aaf0b437c6e541d984215ed7214dfa1f.fp.measure.office.com
 aaf4374d35c9b81c51dc7e48ef9a17fc.fp.measure.office.com
 aaf55c95060da7e957bdb79564ed7c80.safeframe.googlesyndication.com
 aaf656994c81cfdd7407419d6cfe2ad3.safeframe.googlesyndication.com
+aaf6a9ea84.4b1eec4734.com
 aaf75cf85b7043968a5e87b631c954e2-59b00ce73e8a.cdn.forter.com
 aaf8019b18897c3a2f74c47358d08ab2.fp.measure.office.com
 aaf8102cd80043aaaf57402d4289984f.fp.measure.office.com
@@ -122929,7 +122918,6 @@ abaplovers.foolhardywear.pro
 abaqhco7ruvy6bocuzciusrmjkjcd1775754957.uaid.nmrodam.com
 abasesets.com
 abashmaters.qpon
-abassinbiomes.qpon
 abattoirexcursion.com
 abattuehagbuts.com
 abaxialboy.shop
@@ -125949,7 +125937,6 @@ adara.com
 adarabi.com
 adarbo2.bbmedia.cz
 adart.hostin.lt
-adasgxsp.cc
 adashbc.m.taobao.com
 adashx.m.taobao.com
 adashx.ut.amap.com
@@ -126973,7 +126960,6 @@ adperform.de
 adpersia.com
 adpf-info.i-mobile.co.jp
 adpick.co.kr
-adpix.online
 adpix.ru
 adplace.cz
 adplan7.com
@@ -132325,7 +132311,6 @@ agne-wending.com.cn
 agnelbehung.com
 agnes.waz.de
 agnieszka-scrappassion.fumblingvacation.pro
-agnizecabbage.cyou
 agnomentopslwomby.cyou
 ago-web-5aaeffb781873d1ad32b8e4f51e67d1.webflow.io
 ago2vrxndhl36imqzbwvokosuxd1o1781815025.uaid.nmrodam.com
@@ -146692,7 +146677,6 @@ axtsdxnmu3zcdb9jl6dgjqftmeaz31780684925.nuid.nmrodam.com
 axtun.fun
 axtw7ryharijspiux9zavttse6mcx1771506470.nuid.imrworldwide.com
 axtxrwzyeafi.com
-axupfpniadauk.site
 axusledger.app
 axuvu.com
 axvbuhlmubm.com
@@ -147460,6 +147444,7 @@ b0fce7fd4585432e8b3e6f85c2029333.fp.measure.office.com
 b0fd7b580d96d6e2.com
 b0fdf54b360ec7b1a963ca26cb04212f.redinuid.imrworldwide.com
 b0fe0579760e159f58bb964e94ab01a3.safeframe.googlesyndication.com
+b0ff04e647.com
 b0gtr0d4cvdlqr1tqioz780mxvvhddsp.d.sardine.ai
 b0h.xiaoranxinli.com
 b0hqk482sqoh9pkdrzq8bxc5jjrijjjc.d.sardine.ai
@@ -148910,7 +148895,6 @@ b4aec794a1104bb9be4c55b2e376ea9d-93cfcf349b56.cdn.forter.com
 b4af84a2642e7b39403bd1ae9fdb23db.safeframe.googlesyndication.com
 b4ai0xf4x7m2xphbpi0opunvn0qkn1781761798.uaid.nmrodam.com
 b4apeq8pxje6lgxbdsyeex3lgoxxfljr.d.sardine.ai
-b4b00ff6ab.com
 b4b0a8e74d27cc0e3785c534cc0b46a0.safeframe.googlesyndication.com
 b4b0c6479bcee118becbeef447707711.safeframe.googlesyndication.com
 b4b29caa2832ac6cc8291d3e1fd7ca76.fp.measure.office.com
@@ -149767,6 +149751,7 @@ b6ea4b4f07c94b60af26ec803aaab359.fp.measure.office.com
 b6ea9ac3a16611487424a040991a0822.redinuid.imrworldwide.com
 b6ealpjzfur95vwt0hxt6tiqcdljy1779382745.uaid.vtwenty.com
 b6ec9c7179c2434d352a4e1fc54135a8.azr.footprintdns.com
+b6ed49d650.b4b00ff6ab.com
 b6ed848933bc549c256a64b9b2a5e72e.safeframe.googlesyndication.com
 b6edcf3022e7bba173b390215f1eb838.safeframe.googlesyndication.com
 b6ede0f3e83a04a69a1f29ea4139070e.safeframe.googlesyndication.com
@@ -152985,6 +152970,7 @@ bbe2c55a60fbd6792af5b22155c30606.safeframe.googlesyndication.com
 bbe2cf44075f4f3b82b40b5c58a7e8b8.fp.measure.office.com
 bbe3720e8562450eb5933aa125f349af-3f5451d08253.cdn.forter.com
 bbe3c21e2c8d49248c9fa29b5c7f11c0.fp.measure.office.com
+bbe3e16f85.15537cf1f5.com
 bbe3fe19dc9f410f9c88ae5393211660.fp.measure.office.com
 bbe41ad161c03d017295914f1ad51a99.azr.footprintdns.com
 bbe466f3a46eca927153de3f70f9d1a0.safeframe.googlesyndication.com
@@ -156833,6 +156819,7 @@ bfa4b34733b5454cbdb8019b3821062e.fp.measure.office.com
 bfa524ccccd642d5b2ca5b179c69a76f-821dbf709728.cdn.forter.com
 bfa55c5cf90a7f3c425df016ccdd32b8.safeframe.googlesyndication.com
 bfa681760.app-ads-txt.com
+bfa7591905.0cdf9706af.com
 bfa8434ddec612d590fa3f64a8b63d61.fp.measure.office.com
 bfa885ad78c3833a553f8183c84c2ff5.safeframe.googlesyndication.com
 bfac99d392ce4168acbbfb34c98be499.fp.measure.office.com
@@ -159524,6 +159511,7 @@ bmzbisjl3ic1waeqvurylsihsk2od1773389813.nuid.imrworldwide.com
 bn-ad-lgsmartad-com.aws-prd.net
 bn.ad.lgsmartad.com
 bn.adasgsts.cc
+bn.adasgxsp.cc
 bn.adbestnet.com
 bn.asgadmp.cc
 bn.asgadsts.cc
@@ -163635,7 +163623,6 @@ bylkvh-launches.appsflyersdk.com
 bylkvh.cdn-settings.appsflyersdk.com
 bylkvh.inapps.appsflyersdk.com
 bylkvh.launches.appsflyersdk.com
-bylwwylkjmyai.site
 bym6zq5whtte5pmrdbzi2hbhpwhbl1781706914.nuid.imrworldwide.com
 bymfrssvqytslotkfvaospof30quy1770811140.nuid.imrworldwide.com
 bynder.drift.click
@@ -164401,6 +164388,7 @@ c0555a247a0e95f39c3cda141d495536.safeframe.googlesyndication.com
 c05564fe8439da8b.com
 c056173dd87748e097dcebceffd89b68.fp.measure.office.com
 c0572a5b710d4e26b009d66cda52db5d.fp.measure.office.com
+c058b13b28.deec684fdd.com
 c05969f67d26e8a6.com
 c05a5a44930020bee7c8e8c705dea944.safeframe.googlesyndication.com
 c05b3d4015590a6684ee2c9a2c2799b4.safeframe.googlesyndication.com
@@ -167357,6 +167345,7 @@ c7c5d7d00b700343bf24b138a9ab9984.safeframe.googlesyndication.com
 c7c7a8fa2c3d0fe07e8907a2fd0152b8.safeframe.googlesyndication.com
 c7c8adc1e5f6459091054b4e1fb7d83d-821dbf709728.cdn.forter.com
 c7ca135b324bf1e1ab0eaee3698fd127.safeframe.googlesyndication.com
+c7ca525b2e.0491166852.com
 c7cb813960a9419ab210f677039f02a6.safeframe.googlesyndication.com
 c7ce15ccc9dd54ba2194e3d911ab474a.safeframe.googlesyndication.com
 c7ce34da64e962736f4ca04fee6ed0a4.safeframe.googlesyndication.com
@@ -167765,6 +167754,7 @@ c8d7d35a89e74dae82802ae6d8dc79ef-821dbf709728.cdn.forter.com
 c8d7e1e4bf6c45dcae19bbd0be99b32c-821dbf709728.cdn.forter.com
 c8d8639e81b2429996a562718c38d7f7.fp.measure.office.com
 c8d96e4a7e2ea7d27f061a6584d3c13a.safeframe.googlesyndication.com
+c8d9e11a82.031dcf857c.com
 c8dbab2b32dc4bb4a05ab0630efd5a12-77ee068b6863.cdn.forter.com
 c8dc68d4408bf1487895cc8ff9093372.safeframe.googlesyndication.com
 c8dcb565c0c2f2c14c7ed5b09973960d.fp.measure.office.com
@@ -167889,6 +167879,7 @@ c924c59020bad58e.com
 c9268d5332ae5b42685d8001b671de8a.safeframe.googlesyndication.com
 c9272e19633b4e27bfa7319ec2a0d7c1.fp.measure.office.com
 c92762d81ec34fefb3db60e189f98c32.fp.measure.office.com
+c92a8a2de1.a0d3dd0c89.com
 c92c09d47d.6b902da043.com
 c92c649472452d732e7a5d3b13b76624.safeframe.googlesyndication.com
 c92d8236b3c444b1b7410054985a877c.fp.measure.office.com
@@ -172452,10 +172443,10 @@ cdn.exorigos.com
 cdn.exp.pandora.net
 cdn.f11-ads.com
 cdn.fajukc.com
-cdn.falkloo.cloud
 cdn.falkwo.com
 cdn.famitaa.com
 cdn.fanplayr.com
+cdn.faspox.com
 cdn.fazanppq.com
 cdn.feathr.co
 cdn.fedykr.com
@@ -174326,7 +174317,6 @@ cf22acee72872fb5703b6c35415ce8b5.safeframe.googlesyndication.com
 cf22ba27b3e14b87a2cffff94f520dd6.fp.measure.office.com
 cf244af44f99.xyz
 cf24c22a7be102c7e1b2382b9af4af96.safeframe.googlesyndication.com
-cf25ba90cc.com
 cf25beafcd07408ba63465cd17327aa8-77ee068b6863.cdn.forter.com
 cf26fe19.de.ioam.de
 cf2823173cbe801a38148c92a755f8c2.safeframe.googlesyndication.com
@@ -176380,7 +176370,6 @@ ckmh0r.cdn-settings.appsflyersdk.com
 ckmh0r.inapps.appsflyersdk.com
 ckmh0r.launches.appsflyersdk.com
 ckminusone.mobileposse.com
-ckndisjiwbc.com
 ckntbhmjsdrzd.space
 ckobhab74hfixhglf4wrmln93edv41777876358.nuid.imrworldwide.com
 ckookftuw.com
@@ -176808,7 +176797,7 @@ click-dogster.com
 click-eu-v4.celxkpdir.com
 click-eu-v4.cldirplarimo.com
 click-eu-v4.clkoplardir.com
-click-eu-v4.ecxclk.com
+click-eu-v4.exclk.com
 click-eu-v4.exclkplat.com
 click-eu-v4.exclplatmain.com
 click-eu-v4.exmainclck.com
@@ -176850,7 +176839,7 @@ click-url.com
 click-v4.celxkpdir.com
 click-v4.cldirplarimo.com
 click-v4.clkoplardir.com
-click-v4.ecxclk.com
+click-v4.exclk.com
 click-v4.exclkplat.com
 click-v4.exclplatmain.com
 click-v4.exmainclck.com
@@ -176902,10 +176891,10 @@ click.digiato.com
 click.directrankcl.com
 click.dsp.com
 click.eclk.club
-click.ecxclk.com
 click.electricalpartsportal.info
 click.eu.ankdoier.com
 click.eu.foerpo.com
+click.exclk.com
 click.exclkplat.com
 click.exclplatmain.com
 click.exmainclck.com
@@ -178353,6 +178342,7 @@ cns.clickiocdn.com
 cnsafe-bob-recreation.com.cn
 cnsb.000webhostapp.com
 cnshcncjs3.vip
+cnsiap.online
 cnstats.ksearchnet.com
 cnstats.ru
 cnswz.com
@@ -181817,7 +181807,6 @@ completedparanoia.com
 completegameproshop.com
 completelyexpandedculinary.com
 completelywrath.com
-complex-switch.pro
 complexpixel.com
 compliance-tdos.play.aiseet.atianqi.com
 complianceledger.info
@@ -187149,6 +187138,7 @@ d031672a2626bb79a8e22198d41a51c0.safeframe.googlesyndication.com
 d031f322200ecbddcfe96f611669a0f7.safeframe.googlesyndication.com
 d032dd7e8114da349267cbd73b88d448.safeframe.googlesyndication.com
 d032e6215c81e3af4372d34899a8d1ca.safeframe.googlesyndication.com
+d033093f1f.com
 d0337bcd7930.xyz
 d0353de3f3594534a7842f46c62f9145.fp.measure.office.com
 d035c53e8575404bb13264102f56cbf7.fp.measure.office.com
@@ -187816,6 +187806,7 @@ d1e02fec2183fb474d8b6127613cfd88.fp.measure.office.com
 d1e0515b37f845569cb2494b752e912b.fp.measure.office.com
 d1e1044bec774e32a41d60e90f0f5801.fp.measure.office.com
 d1e1rbybdt265x.cloudfront.net
+d1e223a9f2.com
 d1e23f37bf9beec4517a2eaff406947d.safeframe.googlesyndication.com
 d1e3e2e344fe414ebdb418f5255ca2e6.fp.measure.office.com
 d1e4e64588e212f44d7807a995d9118e.azr.footprintdns.com
@@ -189275,6 +189266,7 @@ d3c50bc42c404159a92b3014cd09e068.fp.measure.office.com
 d3c568d0e8fc3b3b1bd20bf83efe6f8dff8df8064b6bd71a5240292ecc98408.us-east-1.prod.service.minerva.devices.a2z.com
 d3c5789dba094d9bf6a29c1d6df35dac.safeframe.googlesyndication.com
 d3c5b1c8657e7eca7d5c7d6df2559f8e.fp.measure.office.com
+d3c6339ed7.com
 d3c79f43ae457003f81cf21725b8315b.fp.measure.office.com
 d3c80fd9ce0245423c2cec107ab2d611.safeframe.googlesyndication.com
 d3c8231e913a33fa82ab4f0b73756ce5.safeframe.googlesyndication.com
@@ -190617,6 +190609,7 @@ d6f10a95bdbb4e2798a129769f7ab7ac.fp.measure.office.com
 d6f1ff270d3343f9a2a04ac85ea85a35-adf0901f1861.cdn.forter.com
 d6f2590791c8612be67c9c0ba96f195d.safeframe.googlesyndication.com
 d6f2ff6d26e45a11a42201de601e58de.fp.measure.office.com
+d6f37ffb47.19626fc3d0.com
 d6f4f7996dd94451ac25121fe1675fb1.fp.measure.office.com
 d6f619594c3126c22bce229d45251769.safeframe.googlesyndication.com
 d6f75-76a1e.api.pushwoosh.com
@@ -195875,6 +195868,7 @@ debug.nordsec.com
 debug.nordvpn.com
 debugshy-fansync.cyou
 dec-a-porter.leftmany.pro
+dec0c1a14f.com
 dec0d062f146e192983aa59565f8a84f.safeframe.googlesyndication.com
 dec117d8ea26822800bb4f612dbb78b0.safeframe.googlesyndication.com
 dec1b94ee3c744529bbf2f6f0763bf40.fp.measure.office.com
@@ -197985,7 +197979,6 @@ dgleem.romantiicdatess.com
 dglkwq.letmeetonline.net
 dglqvwczzmoxxbx.truelovehunt.com
 dgm-prd-euw1-log.s3.eu-west-1.amazonaws.com
-dgmaubdjrranx.site
 dgmaxinteractive.com
 dgmgz.com
 dgmntdgp6o7vswa6zyifla3ymf2xc1780583311.nuid.nmrodam.com
@@ -214796,6 +214789,7 @@ ecvccv.inapps.appsflyersdk.com
 ecvccv.launches.appsflyersdk.com
 ecvmivgs.emltrk.com
 ecwid.promolayer.io
+ecxclk.com
 ecxf4zgcnyasdw3k0sen10d2q2puj1768577290.uaid.nmrodam.com
 ecxvcouu.atw.hu
 ecyklqrkcz.com
@@ -216782,7 +216776,6 @@ eif-sig01.sdiapi.com
 eiftfa.fashionette.de
 eifwal6kmc6b4l546vcdl1bzu43qk1782333077.uaid.nmrodam.com
 eiga.com.102.112.2o7.net
-eigbxvnpedwcv.site
 eighaver.cfd
 eightcombustibleexpose.com
 eightgreens.com
@@ -221804,7 +221797,6 @@ excitingvisual.com
 exclaimhuman.com
 exclamationresound.com
 exclamatory77.top
-exclk.com
 exclusioneveryone.com
 exclusiveclicks.com
 exclusivepussy.com
@@ -221913,7 +221905,6 @@ exogeneassigne.com
 exogenydorperforbow.qpon
 exoilix.com
 exoletebeisa.shop
-exoletetumboa.shop
 exoltramis.pro
 exomonyf.com
 exonerrotter.com
@@ -223385,6 +223376,7 @@ f21e43d2dfbc44deaf47e59cabc0c14c.fp.measure.office.com
 f21e9565eb554e568fad95131d5c749c-77ee068b6863.cdn.forter.com
 f22064d06ee5c26c52ce0a4fe0ce7a07.safeframe.googlesyndication.com
 f220dc056af37dedbd631e9d4183a647.safeframe.googlesyndication.com
+f220e81bc1.02a30fd4b8.com
 f220ed8abb9f44ff9fc0410bbef4c974.fp.measure.office.com
 f2228957d3238132.com
 f223c2a7671caefdbe3736c3a65eaaa2.safeframe.googlesyndication.com
@@ -225785,7 +225777,6 @@ f72b4dca17a742d5bb7d7478a9130c9b.fp.measure.office.com
 f72b817c58eb48ee0bfec9b5cf80afb8.safeframe.googlesyndication.com
 f72b846f9c3c2dc747a538e76a7a4aa2.safeframe.googlesyndication.com
 f72bf1e8b709b13c.com
-f72c70be39.c91a5db997.com
 f72e5d0c1f534adfa251b9c89fa53a61.fp.measure.office.com
 f72e657749967f5e78618bb4fcb8e333.safeframe.googlesyndication.com
 f72e8e88b9a500410b353e371bb33f4f.safeframe.googlesyndication.com
@@ -238960,7 +238951,6 @@ fasmivakzm.com
 fasofvagjak.com
 faspc.hubhubhub.name
 faspoeije.life
-faspox.com
 fast-anime.ru
 fast-api.hisavana.com
 fast-counter.net
@@ -239348,7 +239338,6 @@ fb4e4f497c0590baf99cfe4dc90b3efc.safeframe.googlesyndication.com
 fb4e79fb5224b4f5bb88a834aee9abcd.safeframe.googlesyndication.com
 fb4fbc17c6f3fa202fa69571e5bc5e3c.safeframe.googlesyndication.com
 fb526cbf41924c74be46ca64487a3527.fp.measure.office.com
-fb53d9afaf.com
 fb53f98a1eb0d903c742b762565bdae1.safeframe.googlesyndication.com
 fb54cf60f0edca5c4afc8d4e8c2b45a2.safeframe.googlesyndication.com
 fb551a58-6af7-4348-a3d5-d3fa8defe08f.t.ssp.hinet.net
@@ -243960,6 +243949,7 @@ flowexi.com
 flowingco.top
 flowingdeficitjeanne.com
 flowinghypuralcincha.cfd
+flowldsd.online
 flowledger.in
 flowledger.online
 flowledger.tech
@@ -244410,7 +244400,6 @@ fnphy6.conversions.appsflyersdk.com
 fnphy6.launches.appsflyersdk.com
 fnrienddoc.com
 fnrw0o1isj4ig7idnxf16sk8d0o0v1782162505.uaid.nmrodam.com
-fnsfczcmghkyb.site
 fntvloqdmf.com
 fntwghrlskkz7th53zchnebrbu39s1779459334.nuid.nmrodam.com
 fntxtcd8mk4qqxd1a7yaluj6bz9vvghc.d.eu.sardine.ai
@@ -245445,7 +245434,6 @@ fqwm8ppl3ykixptyn1e8qhykiv1.cfd
 fqx5k99yqy6io6xfq65.cyou
 fqxkj.cn
 fqy8jp1r75mklvg8oln88u.cfd
-fqypnxsfbedtl.space
 fqzoje2wwwlahxbgjvtsro1g0h.vmn.net
 fr-ad-lgsmartad-com.aws-prd.net
 fr-celsiuscasino.fr
@@ -247412,7 +247400,6 @@ fyhjir.cdn-settings.appsflyersdk.com
 fyhjir.inapps.appsflyersdk.com
 fyhjir.launches.appsflyersdk.com
 fyhswz.com
-fyhwvfojswwzi.site
 fyhzrdxl885dfttt.com
 fyjjq1crkypjhklotvwive0i5kf4u1768082455.nuid.imrworldwide.com
 fyjqawlg.eug.stape.io
@@ -253170,7 +253157,6 @@ gmdgtnd2vq0crs15vbkiavrxb0wu91781858260.uaid.nmrodam.com
 gmdoy2.cdn-settings.appsflyersdk.com
 gmdoy2.launches.appsflyersdk.com
 gmegxgot1u5w72.cyou
-gmemkuflmihes.online
 gmendanln.com
 gmenqguhllxj.com
 gmetrics.getbeamer.com
@@ -260849,7 +260835,6 @@ hkeig.com
 hkexpress.data.adobedc.net
 hkexpress.demdex.net
 hkfv5vwj8mupvgj6v8jskr1rp49tz1779298814.uaid.nmrodam.com
-hkgvjwodselbk.site
 hkh9ljnct3dmducx0hh1ntgxbaqcz1781267405.nuid.imrworldwide.com
 hkhepvdhopxflu.com
 hkhorse.com
@@ -261300,7 +261285,6 @@ hohnsobered.cfd
 hohxhoennu.com
 hoi4pzbvjoejzvfnsztgfyh54c.conduit.com
 hoiamqpf.sac.stape.io
-hoichcxxdgkit.site
 hoidar.com
 hoidulich.com
 hoilop.com
@@ -263245,7 +263229,6 @@ hur05121kns.com
 hur05130kns.com
 huranope.com
 hurarwjrirti.com
-huraxbaw.in
 hurdisbirma.shop
 hurenvskuaichuanzhibo.com.cn
 hurfrumpertomin.qpon
@@ -263371,7 +263354,6 @@ hvcs3fzejl45ah07tvuu4v1gwnicz1782343845.uaid.nmrodam.com
 hven6x97232kuir9zyqb1ie7qnx431769582980.uaid.vtwenty.com
 hvepshmpoxauufv.com
 hvet0t33ci0fxozauivhyp4jcacwk1779337224.nuid.nmrodam.com
-hvevwsqsvpoml.website
 hvfmnayvafg.com
 hvgbk5wb8dqihmlfuvgkbniggwoek1765287690.nuid.imrworldwide.com
 hvgcfx1.com
@@ -295112,7 +295094,6 @@ ipify4.pling.com
 ipify6.pling.com
 ipinfodb.com
 ipinyou.com.cn
-ipirusuipxda.com
 ipl.containers.piwik.pro
 iplayad.com
 iplist.cc
@@ -296453,6 +296434,7 @@ iwbjgl-launches.appsflyersdk.com
 iwcelp4ci38h5zf9b2e5v1uzs1odk1770373409.uaid.vtwenty.com
 iwcnmto.top
 iwcrabmanwoibe.cfd
+iwe.ktvgv.com
 iwe4fvm0my6nwswof9qpg2fqnxzla1778267946.uaid.nmrodam.com
 iwebland.com
 iwebtrack.com
@@ -296722,7 +296704,6 @@ izszyw.conversions.appsflyersdk.com
 izszyw.inapps.appsflyersdk.com
 izszyw.launches.appsflyersdk.com
 izt0nwjtxycqgncaoxbdgzn6ludl41772780748.nuid.imrworldwide.com
-izubaoknanmwa.online
 izuchai.dance
 izuksitalteert.com
 izustansiw.com
@@ -300162,7 +300143,6 @@ js9smn0yvh1s.s4.adsco.re
 jsa-accessdevelopment.domdog.io
 jsa-iyzico.domdog.io
 jsa-khls.domdog.io
-jsagyefkkfaea.site
 jsasshz8ixavtx21eohkjwiynm7k11782030583.nuid.imrworldwide.com
 jsb15wc5yw5ixgb1uft60j5qsyxdx1772117472.uaid.nmrodam.com
 jsbbppwfiydtrgbfewn7qskzfs9p11777131066.nuid.imrworldwide.com
@@ -300722,7 +300702,6 @@ jvvtom-cdn-settings.appsflyersdk.com
 jvwwikmr.com
 jvydt9.inapps.appsflyersdk.com
 jvydt9.launches.appsflyersdk.com
-jvzogvirjbaly.site
 jvzoo.com
 jvzxpow3rgaa8rarlgfpowuqk6po31781015266.nuid.imrworldwide.com
 jw-gate.hl.cn
@@ -300910,7 +300889,6 @@ jyhm52tzyycdeliigimj6nt6mbjq91781016258.nuid.nmrodam.com
 jyiikm.xyz
 jyjfycnpodkjp.com
 jyjhuuze7rlhnrhsnb8pqqrdadsyc1779825969.nuid.nmrodam.com
-jyjiflntdujev.site
 jyjzc.com
 jyk.jp
 jykvxx6g9u9iiut74mr.cfd
@@ -305937,7 +305915,6 @@ ktv5uq-attr.appsflyersdk.com
 ktv5uq-cdn-settings.appsflyersdk.com
 ktv5uq-conversions.appsflyersdk.com
 ktv5uq-launches.appsflyersdk.com
-ktvgv.com
 ktvxrofysn6xw0goqvglrjwge9fvc1763382906.nuid.imrworldwide.com
 ktw6hrybjc.kameleoon.io
 ktxmkraw.eu.stape.io
@@ -327415,7 +327392,6 @@ mpay69.biz
 mpbrz.com
 mpc.mxptint.net
 mpc.mybluehost.me
-mpcduaxujgpkxt.com
 mpcfg.fancydsp.com
 mpcodev.000webhostapp.com
 mpctech.com
@@ -328294,7 +328270,6 @@ mumcorridorlikeable.com
 mumgidesaccvere.xyz
 mumglobal.com
 mummickficary.top
-mummifycyclops.cfd
 mummifypaps.shop
 mumn19ow7zxd1goj2cgvnsvndao421782353769.uaid.nmrodam.com
 mumpercodo.com
@@ -331033,7 +331008,6 @@ nc7ff3087.app-ads-txt.com
 nc93vu01q7o2an5xm6hzzfdymg5u51781798080.uaid.nmrodam.com
 ncaa.com.102.122.2o7.net
 ncagulpz4l3vgcex564wuafq96dsj1782116507.uaid.nmrodam.com
-ncajeyujvbhza.site
 ncalfi-inapps.appsflyersdk.com
 ncaqqlck.com
 ncases.com
@@ -333237,7 +333211,6 @@ nk.tingo.fun
 nk.vowelywisely.com
 nk.wishself.com
 nk2pqadgx5ak7935x94x9xe5l21xr1762458808.uaid.vtwenty.com
-nkagopzlfdvne.online
 nkavabaw.com
 nkbq3mv2gyof3d8fbfjb5woflwtl91775823244.nuid.nmrodam.com
 nkcuzdjyozxdb.space
@@ -335627,7 +335600,6 @@ nxc9z3prp6mlzkw1t89ffbz5vwas81775219601.uaid.vtwenty.com
 nxcpf959pt7jhmalyi8wdxpim97wg1777999976.uaid.nmrodam.com
 nxdzawmcbp.com
 nxempgkoujrwypeh6adshjhascgsm1770875308.nuid.imrworldwide.com
-nxethnjxkujoa.site
 nxg8fk5m7jjpbs4bq8gf5ww08h9ym1768835155.uaid.nmrodam.com
 nxgal8sbbe9smpcpb.ay.delivery
 nxihv8z3phmq.l4.adsco.re
@@ -357303,7 +357275,6 @@ polydistrib.com
 polyfill-js.cn
 polyglify.com
 polyglotcoding.com
-polygonautism.cfd
 polymarket-fr.fr
 polymnymoriscocrible.qpon
 polypsburrer.cyou
@@ -358092,7 +358063,6 @@ ppnlnpildcole.online
 ppogame.com
 pponixtkecj.com
 pponline.com.cn
-ppovbdxry.com
 ppoy72z6opjnrfuhp8vj3khazaj9t1781876699.nuid.imrworldwide.com
 ppp.mybluehost.me
 ppp7ycgopnrihgrwaq4kgyguahjom1765565244.nuid.nmrodam.com
@@ -358116,6 +358086,7 @@ ppsxy.com
 pptiyuonline.com.cn
 pptraggetykella.cfd
 ppu.adasgsts.cc
+ppu.adasgxsp.cc
 ppu.asgadmp.cc
 ppu.asgadsts.cc
 ppulsek.click
@@ -359031,6 +359002,7 @@ prketoolpl.shop
 prkpshpr.site
 prkxqttohkjc.com
 prl.adasgsts.cc
+prl.adasgxsp.cc
 prl.asgadmp.cc
 prl.asgadsts.cc
 prlds.appia.com
@@ -371497,7 +371469,6 @@ rbrxg.com
 rbs.data.adobedc.net
 rbs.demdex.net
 rbsemp.cdn-settings.appsflyersdk.com
-rbsiwzkxqrfkw.site
 rbssales.com
 rbsvipqdefqyq.net
 rbt-partner-web.interakt.ru
@@ -376097,7 +376068,6 @@ rqb3xk2926wu6zw1yhrw2t3496nlg1778612729.uaid.vtwenty.com
 rqbgmjs42dsmc2ipljun8ftqgedx31777655674.darnuid.imrworldwide.com
 rqbnxzlgh0.tt.omtrdc.net
 rqckqdwpg5yl9xygdooxlwz53oplb1771596854.nuid.imrworldwide.com
-rqcmxjpdvzmoi.space
 rqd.qq.com
 rqd.uu.qq.com
 rqdlegiz0u.data.adobedc.net
@@ -376810,6 +376780,7 @@ rtb2-apac.afkwa.com
 rtb2-apac.xaprio.net
 rtb2-eu.afkwa.com
 rtb2-eu.convergeselect.net
+rtb2-useast.adpix.online
 rtb2-useast.afkwa.com
 rtb2-useast.assemblyexchange.com
 rtb2-useast.e-volution.ai
@@ -381156,6 +381127,7 @@ sdasteam.com
 sdata.avid.com
 sdata.connection.com
 sdata.kbeautystore.com
+sdausa.online
 sdbjy3.cdn-settings.appsflyersdk.com
 sdbnsucvd.com
 sdbvnokuntf.com
@@ -395047,7 +395019,6 @@ ssdsp.smt.docomo.ne.jp
 sse.games.playhop.com
 sse.workers.ourdream.ai
 sse.xtreemhost.com
-sseffllpcrwm.com
 sseuxtxhitpa.com
 ssevt.com
 ssfuqxdnhqi.xyz
@@ -396686,6 +396657,7 @@ static-resource.org
 static-resources.workers.dev
 static-rise.enhance.co.jp
 static-rtb.vespymedia.com
+static-rtb2.adpix.online
 static-rtb2.afkwa.com
 static-rtb2.assemblyexchange.com
 static-rtb2.convergeselect.net
@@ -401028,7 +401000,6 @@ sxp.huyamba.mobi
 sxpebe1lu9ib5o4q2y4su5asl8sqkazj.d.sardine.ai
 sxpfwd.audio-ads.io
 sxrevproxy.atl.publicus.com
-sxsgyawsmtbxxt.com
 sxstage.atl.publicus.com
 sxtez.com
 sxtkfamhqnp.com
@@ -403064,7 +403035,6 @@ tangozebra.com
 tangram-config.gdt.qq.com
 tangram.e.qq.com
 tangsweb.o-f.com
-tanguintempeh.shop
 tangycover.com
 tangyoubeibanjuesaiguoyuduizhenqueding.com.cn
 tangyuan-ai.cn
@@ -405075,7 +405045,6 @@ tfactktcddyarbhuc.ay.delivery
 tfaln.com
 tfazuhaxfxre.com
 tfb1j1afd0xrtmpxh4lyqbxjklx7b1772798771.uaid.vtwenty.com
-tfbgabfweyewb.site
 tfbihserstsonfv.com
 tfbngkhtr0z02c6mqu7gr1kmc0kmp1763718229.uaid.nmrodam.com
 tfbwfe0oray6yf5kx5zsptz0qqtw01776923362.nuid.imrworldwide.com
@@ -409521,23 +409490,18 @@ tpytt.com
 tpzksfbketvhuaiy3vhwcfvvnm7fw1781966431.nuid.nmrodam.com
 tpzuipdpg.com
 tq-eu.bluodpa-a.online
-tq-eu.cnsiap.online
 tq-eu.grantdk-1.online
 tq-eu.ldnpointer.online
 tq-eu.optargone-3.online
-tq-eu.sdausa.online
 tq-eu.starvalue-3.online
 tq.bluodpa-a.online
-tq.cnsiap.online
 tq.flowldsb.online
-tq.flowldsd.online
 tq.gentlywarrant.com
 tq.grantdk-1.online
 tq.ldnpointer.online
 tq.mandscarus.cfd
 tq.mashmenjump.qpon
 tq.optargone-3.online
-tq.sdausa.online
 tq.similordemand.com
 tq.starvalue-4.online
 tq3miorqxif6g78k5y313iqn0ovr41782237605.uaid.nmrodam.com
@@ -414717,7 +414681,6 @@ udsfehqf.atw.hu
 udsrpbegrpdjz.online
 udu2euwdfecw7xg13mlq1fnpv8wve1780947360.nuid.nmrodam.com
 udue-wending.com.cn
-udurcyzcjpotp.site
 udv8nfkq9k709fabzycaqgj3s88lg1773745906.uaid.vtwenty.com
 udvccbiuqcel.com
 udvdrikm.eun.stape.io
@@ -419009,7 +418972,6 @@ uswest-beacon.deepintent.com
 uswest-ipv6-beacon.deepintent.com
 uswestgcp.bfmio.com
 uswtritons.shop
-uswvvrisswcbd.site
 uswzr1.cdn-settings.appsflyersdk.com
 uswzr1.inapps.appsflyersdk.com
 uswzr1.launches.appsflyersdk.com
@@ -422547,7 +422509,6 @@ vgc1ehlxpuurdscnqnz4740t2m8hz1782132960.nuid.nmrodam.com
 vgdfkh.cdn-settings.appsflyersdk.com
 vgflwz29.alphonso.tv
 vgfutxwgq.com
-vggfftcbic.com
 vggrejpnvlfpx.com
 vghd.com
 vgixy3ejidfa.l4.adsco.re
@@ -431309,7 +431270,6 @@ weplay-tur.eu-central-1.log.aliyuncs.com
 weplay-va.us-east-1.log.aliyuncs.com
 weplay-vnm.ap-southeast-1.log.aliyuncs.com
 weps.org
-weqcofjqupexq.online
 wer.schwarzwaelder-bote.de
 werastinus.com
 werbeflut.net
@@ -432781,7 +432741,6 @@ wjst7t-cdn-settings.appsflyersdk.com
 wjtc4l.cdn-settings.appsflyersdk.com
 wjtc4l.gcdsdk.appsflyersdk.com
 wjtc4l.launches.appsflyersdk.com
-wjtplohagbwor.online
 wjvgsj.shop
 wjvhbfbl83v4t1.cfd
 wjvnzv6fgenrsjfrdmocbo0v2ta7a1779998204.darnuid.imrworldwide.com
@@ -570357,10 +570316,8 @@ xml-eu-v4.boffoadsfeeds.com
 xml-eu-v4.clickmi.net
 xml-eu-v4.clixvista.com
 xml-eu-v4.clkfst.com
-xml-eu-v4.cnsiap.online
 xml-eu-v4.ctrtraffic.com
 xml-eu-v4.ezmob.com
-xml-eu-v4.flowldsd.online
 xml-eu-v4.fmlabsonline.com
 xml-eu-v4.goclickz.net
 xml-eu-v4.grantdk-1.online
@@ -570377,7 +570334,6 @@ xml-eu-v4.qualiclicks.com
 xml-eu-v4.relevanceads.com
 xml-eu-v4.rocoads.com
 xml-eu-v4.saroadexchange.com
-xml-eu-v4.sdausa.online
 xml-eu-v4.srvqck17.com
 xml-eu-v4.srvqck19.com
 xml-eu-v4.srvqck27.com
@@ -570404,7 +570360,6 @@ xml-eu.adxfactory.com
 xml-eu.boffoadsfeeds.com
 xml-eu.clickmi.net
 xml-eu.clkfst.com
-xml-eu.cnsiap.online
 xml-eu.ezmob.com
 xml-eu.h12ads.net
 xml-eu.hueadsxml.com
@@ -570417,7 +570372,6 @@ xml-eu.pushub.net
 xml-eu.qualiclicks.com
 xml-eu.rtbfactory.com
 xml-eu.saturndynamic.pt
-xml-eu.sdausa.online
 xml-eu.servsserverz.com
 xml-eu.srvqck19.com
 xml-eu.srvqck27.com
@@ -570453,12 +570407,10 @@ xml-v4.clixcrafts.com
 xml-v4.clixforads.com
 xml-v4.clixvista.com
 xml-v4.clkfst.com
-xml-v4.cnsiap.online
 xml-v4.ctrtraffic.com
 xml-v4.exdirectopl.com
 xml-v4.eximdigital.com
 xml-v4.ezmob.com
-xml-v4.flowldsd.online
 xml-v4.flurryad.com
 xml-v4.fmlabsonline.com
 xml-v4.giantpanda.media
@@ -570482,7 +570434,6 @@ xml-v4.rocoads.com
 xml-v4.rtxfeed.com
 xml-v4.safesearchguard.com
 xml-v4.saroadexchange.com
-xml-v4.sdausa.online
 xml-v4.srvqck1.com
 xml-v4.srvqck17.com
 xml-v4.srvqck18.com
@@ -570534,7 +570485,6 @@ xml.clickmi.net
 xml.clixcrafts.com
 xml.clixvista.com
 xml.clixwells.com
-xml.cnsiap.online
 xml.ctrtraffic.com
 xml.exdirectopl.com
 xml.exdiroplect.com
@@ -570543,7 +570493,6 @@ xml.expplatdirect.com
 xml.finevisit.com
 xml.flairadscpc.com
 xml.flowldsb.online
-xml.flowldsd.online
 xml.flurryad.com
 xml.fmlabsonline.com
 xml.fstsrv9.com
@@ -570589,7 +570538,6 @@ xml.rtbfactory.com
 xml.rtxfeed.com
 xml.safesearchguard.com
 xml.saroadexchange.com
-xml.sdausa.online
 xml.sedodna.com
 xml.servsserverz.com
 xml.srvqck.com
@@ -574743,7 +574691,6 @@ youzonggw.com
 youzovxa.apc.stape.io
 yovadkhspaa2qmyjihl1p5ahjzoas1760644360.nuid.nmrodam.com
 yovck9n6tt7jb8tn3pt35te6.cfd
-yovedmwkxiufj.space
 yoviyl.cdn-settings.appsflyersdk.com
 yoviyl.launches.appsflyersdk.com
 yowltrycloud.com
@@ -578065,7 +578012,6 @@ zjwxoxhby68mnlxfgolfpudi28sxj1779205434.nuid.nmrodam.com
 zjyl90ijlffuonk3younkcgpmmrnw1764564081.uaid.vtwenty.com
 zjyxx1905.com
 zjzh2019.com
-zjzpezeicfnbn.site
 zjzth.com
 zjzxg.com
 zk.chivwtusseh.com
