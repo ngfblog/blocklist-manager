@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-07-30 17:01 UTC
+# Generated: 2026-07-31 06:41 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 465744 domains
+# Total entries: 465766 domains
 #
 0--0.info
 0--4.com
@@ -26129,6 +26129,7 @@
 19b0bdf2da58d7f3cb69d86dfef4d44a.safeframe.googlesyndication.com
 19b1a0dd58494037f851eb9a240d99a0.safeframe.googlesyndication.com
 19b339e348d28cccbe67488af6b6dda5.safeframe.googlesyndication.com
+19b48064cd.com
 19b72f0b97aadffceb3bfd8b1567e429.safeframe.googlesyndication.com
 19b80dd0e5fcdc3287b82ebde6ce6da8.safeframe.googlesyndication.com
 19bae7e0b4150a96e6b7d5f47624e927.safeframe.googlesyndication.com
@@ -29440,6 +29441,7 @@
 21669e8ae980aae882551828e98c7997.safeframe.googlesyndication.com
 2166b96fcacf2e2cfa29917552c1d915.safeframe.googlesyndication.com
 21674d544931321cabc77c64d2eaf9fe.safeframe.googlesyndication.com
+21675c32f8.com
 2167c5e6ebe300c5c3e0f3666deadfd4.safeframe.googlesyndication.com
 2168h9evhhub9yzr29zwc02pkojw71782713483.uaid.nmrodam.com
 2169.cc
@@ -33417,6 +33419,7 @@
 2e8a8abe48eceaac7e10cd82a285a0a7.safeframe.googlesyndication.com
 2e8b7c443d48f629f2e9dda9d031123814edef5778f4c2002cbc5e2acd18fb2.us-east-1.prod.service.minerva.devices.a2z.com
 2e8c01b0f08a00c26f55b085ce18ed62.safeframe.googlesyndication.com
+2e903a817d.com
 2e919903074111dfebcbe77a420b8374.safeframe.googlesyndication.com
 2e9252eb2b9df135e1956f055569d44f.safeframe.googlesyndication.com
 2e93ad1fcb7d92c5c25fa981567f5d91.safeframe.googlesyndication.com
@@ -43713,6 +43716,7 @@
 49831c100aa1da03c2a25c22c8facbf0.redinuid.imrworldwide.com
 4983200.notify6.com
 4983282.notify6.com
+4984435e26.com
 49855e10634b229596296ef94f57813f.safeframe.googlesyndication.com
 49858a7892368c1f45f1c7b93cdb695a.safeframe.googlesyndication.com
 4985b00bd0.066b7e895c.com
@@ -50490,6 +50494,7 @@
 5d57a861c09dbfd7f2c32f050cd0568e.safeframe.googlesyndication.com
 5d5bdf43129ea73126d495de0307ec61.safeframe.googlesyndication.com
 5d5d50397a44c0c0d9e4bc788d04a4ec.safeframe.googlesyndication.com
+5d5dae2524.com
 5d5e0ea8b7.com
 5d5f21da10996dd80bee4b6ae62a8f49.safeframe.googlesyndication.com
 5d60be951bc042fa5cc0fbb5c1264a23.safeframe.googlesyndication.com
@@ -52287,6 +52292,7 @@
 614314448764e03f4190896166c84dc9.safeframe.googlesyndication.com
 6143865.fls.doubleclick.net
 6143919.fls.doubleclick.net
+6143e5d2b7.com
 61442f804791c691f7ccac63ca694a61.safeframe.googlesyndication.com
 614447ba3e1d157dada12bcebf766e4d.safeframe.googlesyndication.com
 61476700920e24ea0f2cd33d2e5f80a5.safeframe.googlesyndication.com
@@ -58061,6 +58067,7 @@
 7247925.collect.igodigital.com
 7247bca08878341efc677b0ef28782a6.safeframe.googlesyndication.com
 72493c6ec70c5254811a3a5fa4afd215.safeframe.googlesyndication.com
+724969cf37.com
 724a76c099629bae1066bd24b33e2b22.safeframe.googlesyndication.com
 724aa371fec1665453ccea1371b4a775.safeframe.googlesyndication.com
 724adec7b2fad005b3ad16dd3f393cff.safeframe.googlesyndication.com
@@ -73230,6 +73237,7 @@
 9dc5e08e1d56149cb9dde97b8b2e87db.safeframe.googlesyndication.com
 9dc7976ad88b782e5e3bd0260581a836.safeframe.googlesyndication.com
 9dc9f89a-d3cb-489c-914c-1868aa0a0583.distil.ninja
+9dca841dfa.com
 9dcae0f138.com
 9dcbcfc0ffaf467a745d585e68cca3d3.safeframe.googlesyndication.com
 9dcc32936ac509b9f0f90c789780cb1f.safeframe.googlesyndication.com
@@ -73479,6 +73487,7 @@
 9e9a99288da5d3645a2dcf390660d93524839e16.com
 9e9a99p.9e9a99288da5d3645a2dcf390660d93524839e16.com
 9e9c3bcb61a4820d741e4aeb797b495f.safeframe.googlesyndication.com
+9e9cb445eb.com
 9e9f381117963d03f060916dba151842.safeframe.googlesyndication.com
 9e9fc7d59e91d9a4d8f4561a504bcd52.safeframe.googlesyndication.com
 9e9soula8o.kameleoon.eu
@@ -98939,6 +98948,7 @@ analytics.searchspring.net
 analytics.secure-bits.org
 analytics.secuso.org
 analytics.seekheart.de
+analytics.seekxr.com
 analytics.seemann.io
 analytics.seerow.ch
 analytics.seg.ritual.com
@@ -113557,6 +113567,7 @@ berunews.com
 beryour.com
 bes.mobfox.com
 bes3x4npj142n4ucjxklnvq3rki1b1782672585.uaid.nmrodam.com
+besandileer.com
 besandileom.com
 besaucekuchean.cyou
 besaviking.com
@@ -132559,6 +132570,7 @@ cmcglp.cdn-settings.appsflyersdk.com
 cmcglp.inapps.appsflyersdk.com
 cmcglp.launches.appsflyersdk.com
 cmchbhopal.com
+cmcxmh.com
 cmdbpmtvhoax694wpwyachayoxcvv1772276156.nuid.nmrodam.com
 cmdhnz7be2jveqlfsbr5tgewffgcg1779388143.nuid.nmrodam.com
 cmdignquoauchkijgu4ewsgrabody1783528099.nuid.nmrodam.com
@@ -144460,6 +144472,7 @@ datactively.com
 datadisco.umbel.com
 datado.me
 datadog-forwarder.chime.com
+datadog-log.clovergames.io
 datadoghq-browser-agent.com
 datadome.maisonsdumonde.com
 datadrivenpromotion.com
@@ -150714,6 +150727,7 @@ dossier.chartboost.com
 dossiers-revocations.com
 dostavka.ru
 dosterrium.com
+dostunkyan.com
 dostupevent.ru
 dosug.cz
 dosugcz.net
@@ -166303,6 +166317,7 @@ f51bc91abab5c2379629164bd8b489d27cdfdc69.ipv6.cws.conviva.com
 f51c013e95b65d91bcbb04fb67dce33a.safeframe.googlesyndication.com
 f51c970dcf287d80e2965cc60f2ec108.safeframe.googlesyndication.com
 f51e9ba2233573c1cabc6d266c10fd81.safeframe.googlesyndication.com
+f51f0dff5c.com
 f51fe3a6a52849d1d25eaef07d24dc16.safeframe.googlesyndication.com
 f51ff9e99c8b8f84855da3032640cb8d.safeframe.googlesyndication.com
 f520335861.ad.moe.video
@@ -182582,6 +182597,7 @@ grouchyreward.pro
 grouchystructure.pro
 grouchytest.pro
 groukeshousa.com
+groulrob.com
 groumpepsouckoo.net
 groundcontrol.rendering.sharethrough.com
 grounded-history.com
@@ -199374,7 +199390,6 @@ jetstream.advertising.a2z.com
 jetswap.com
 jett-jamison.com
 jette-handel.de
-jettertoupeed.com
 jetxuluk.com
 jetztde.numpet.com
 jetztgewinner.de
@@ -252124,6 +252139,7 @@ peninsulaknot.com
 peninsularesentmentcarla.com
 penisincrease.net
 penixmed.com
+penknife87.com
 penknifelousyvampire.com
 penknifesneakplaying.com
 penlitecarotte.cyou
@@ -260948,6 +260964,7 @@ pwrtds.com
 pws5rw.cdn-settings.appsflyersdk.com
 pws5rw.conversions.appsflyersdk.com
 pwsnx2i5p9dlcdptujk1jp7v4k9au1779909735.uaid.nmrodam.com
+pwsviu.com
 pwtjkm0prbgvvg1pwaf2lkyopiswk1782039479.nuid.nmrodam.com
 pwucezxlchxijvjkcnp4bukshzsqn1784798169.nuid.nmrodam.com
 pwutqvqnim.com
@@ -268097,6 +268114,7 @@ rastleelastin.shop
 rastrillo.de
 rastuxor.at
 rasulio.com
+rat.einfachlebenforum.com
 ratafiatoea.com
 ratansi.net
 ratataur.com
@@ -290224,6 +290242,7 @@ sou-gou.com.cn
 soudansslushedocypete.cfd
 soughstreek.com
 soughtnicefoe.com
+sougoapha.com
 sougou-browser.com.cn
 sougou-browsre-qq.hl.cn
 sougou-browsre.hl.cn
@@ -297998,6 +298017,7 @@ swift-review.com
 swift-ua.store
 swift-vacation.pro
 swift-weird.com
+swift.jos.ht
 swiftcode.work
 swifterapps.000webhostapp.com
 swiftforgavetwice.com
@@ -319252,6 +319272,7 @@ viableconferfitting.com
 viablehornsborn.com
 viacasino-fr.fr
 viachimechoor.com
+viaclefachan.com
 viads.com
 viads.net
 viaexploudtor.com
@@ -321175,6 +321196,7 @@ vonsjl.conversions.appsflyersdk.com
 voob.ru
 voodoo.com
 voogradaloa.com
+voohostokipy.com
 vooibu.com
 vookiz.com
 vooment.com
