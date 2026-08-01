@@ -46,7 +46,7 @@ IP_SOURCES = [
 
 # External DNSBL sources to compare against
 DNSBL_SOURCES = [
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/pro.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists-legacy/main/hosts/pro.txt",
 ]
 
 MY_LISTS_FILE = "my_lists.json"
