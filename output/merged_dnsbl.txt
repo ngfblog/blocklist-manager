@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-08-01 06:06 UTC
+# Generated: 2026-08-01 07:07 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 457541 domains
+# Total entries: 457502 domains
 #
 0--0.info
 0--4.com
@@ -8446,7 +8446,6 @@
 10f1e91c4077cd713120ff89a8cd53e8.safeframe.googlesyndication.com
 10f2b630131ec548f4fe918d200dd37e.safeframe.googlesyndication.com
 10f42fd386d23c091d824b04cc254260.safeframe.googlesyndication.com
-10f506eaa3.19b7f4f4d8.com
 10f53afe9d971af1e78f881ac9c52380.safeframe.googlesyndication.com
 10f69a111e02f1cc28b15274e5b5a80d.safeframe.googlesyndication.com
 10f7d92bdbb214e81ef096aff25dc816.safeframe.googlesyndication.com
@@ -26323,6 +26322,7 @@
 19b339e348d28cccbe67488af6b6dda5.safeframe.googlesyndication.com
 19b48064cd.com
 19b72f0b97aadffceb3bfd8b1567e429.safeframe.googlesyndication.com
+19b7f4f4d8.com
 19b80dd0e5fcdc3287b82ebde6ce6da8.safeframe.googlesyndication.com
 19bae7e0b4150a96e6b7d5f47624e927.safeframe.googlesyndication.com
 19bb102dd15b58fd3c419e870bd41cc6.safeframe.googlesyndication.com
@@ -43058,7 +43058,6 @@
 468729f062192a8e09a8a69c87d6e7d9.safeframe.googlesyndication.com
 468874448668dde182c64e89cc3c8811.safeframe.googlesyndication.com
 468a48c3f62b977c01fdfe5a4b3a61e0.safeframe.googlesyndication.com
-468a72fe3d.5534a1fe5d.com
 468f6ea18c3bdd0af0a4444e178de0c1b3a4c1ba05c73d5da58aa6300df9ed4.us-east-1.prod.service.minerva.devices.a2z.com
 468willits.com
 4692bc5c-24b5-465d-a64c-1f70a9a19733.distil.ninja
@@ -48419,6 +48418,7 @@
 55325e875983467021beedc1de2af73f.safeframe.googlesyndication.com
 5532dbd85acd318ed0692d9204cfb0a2.safeframe.googlesyndication.com
 553344d4e6f6296c4d873524b3003503.safeframe.googlesyndication.com
+5534a1fe5d.com
 5535014.notify6.com
 5535aibo.com
 55369e775d4162acafc116fd288199dd.safeframe.googlesyndication.com
@@ -87549,7 +87549,6 @@ adorableattention.com
 adorablecase.pro
 adorablekind.pro
 adorablenet.com
-adorablepromotion.com
 adorch.makemytrip.com
 adoredcount.com
 adoredsignificance.pro
@@ -89261,7 +89260,6 @@ ads02.webfrontier.it
 ads03.vxmaxpro.online
 ads04.vxmaxpro.online
 ads05.vxmaxpro.online
-ads1-adqva.com
 ads1.adplsr.com
 ads1.akkuna.com
 ads1.atpclick.com
@@ -104368,7 +104366,6 @@ asgpkt.cdn-settings.appsflyersdk.com
 asgpkt.conversions.appsflyersdk.com
 ash-aliyun-applog-transmission.us-east-1.log.aliyuncs.com
 ashamed-area.com
-ashamed-temperature.com
 ashamedbirchpoorly.com
 ashamedevidence.com
 ashasvsucoce.com
@@ -106271,15 +106268,6 @@ auxiliaryracingcosy.com
 auxml.com
 auxmoney-partnerprogramm.de
 auxuedmz6y2yycszfe2tzernmpvci1777916353.uaid.nmrodam.com
-auy07170km.com
-auy07180km.com
-auy07181km.com
-auy07190km.com
-auy07200km.com
-auy07201km.com
-auy07210km.com
-auy07211km.com
-auy07240km.com
 auynumt.com
 auz.mybluehost.me
 auzanllmbg.data.adobedc.net
@@ -106646,7 +106634,6 @@ awfulanxiety.pro
 awfulcatchypolitician.com
 awfullyheady.com
 awfullyninghakeem.qpon
-awfyuqoidy.com
 awgadtra.com
 awgakfdh.in
 awgutqp.cc
@@ -114404,7 +114391,6 @@ betify-casino-poker-fr.fr
 betify-casino-poker-france.fr
 betify-casino-sport-france.fr
 betify-casinos.fr
-betimbur.com
 betiseburnut.com
 betisleaves.cfd
 betkanyon100.com
@@ -115330,7 +115316,6 @@ bfslanguages.com
 bfsyuwyl.com
 bftb.org
 bftepkjtxeulc.com
-bfthrelgad.com
 bftinter-relay.iocnt.net
 bfuqui.cdn-settings.appsflyersdk.com
 bfuqui.conversions.appsflyersdk.com
@@ -135677,7 +135662,6 @@ concrete-occasion.com
 concrete-shirt.pro
 concrete.gumgum.com
 concreteexecutionavid.com
-concretemovie.com
 concretepouringbiz.sitey.me
 concretepouringblog.sitey.me
 concretewalkwaybiz.sitey.me
@@ -148960,7 +148944,6 @@ dircont3.com
 dirctychop.com
 direcaoconcursos.idevaffiliate.com
 direct-download.gleeze.com
-direct-push.com
 direct-support.comscore.com
 direct.4armn.com
 direct.ad-core-lb-v3.lf.bytelb.net
@@ -149518,7 +149501,6 @@ djqdrb.cdn-settings.appsflyersdk.com
 djqdrb.conversions.appsflyersdk.com
 djrawry.000webhostapp.com
 djrzq5vdqfserob5a9d90qt45k0y41783886226.nuid.nmrodam.com
-djs.baomihua.com
 djsalcbhew47.lol
 djshawnmichaels.com
 djsitscti.com
@@ -151307,7 +151289,6 @@ dreary-day.pro
 dreary-extent.com
 dreary-group.pro
 dreary-hunt.com
-dreary-version.pro
 drearysmell.pro
 drechselbanke.com
 drechselmaschinenrabatt.com
@@ -157476,7 +157457,6 @@ ed21940ca3a10208ed42bf29f0208f06.safeframe.googlesyndication.com
 ed22acf948c6739f872664f5a6ce7a09.safeframe.googlesyndication.com
 ed2343124bbf1aa643580d48e87de46a.safeframe.googlesyndication.com
 ed24114bf0349f9958cfacb7b501efb2.safeframe.googlesyndication.com
-ed24cb4bc7.com
 ed26049641fe1b657f973bf838bdd848.safeframe.googlesyndication.com
 ed27bcc35352594d1306b0c1a7f995ac.safeframe.googlesyndication.com
 ed2813518b85c1bc0eeadb8220179074.safeframe.googlesyndication.com
@@ -162544,7 +162524,6 @@ eua.stape.io
 eua.stape.net
 eua.trailerplus.nl
 euads-o.api.leiniao.com
-euamonudes.com
 euapp-prod.eu-central-1.log.aliyuncs.com
 eub.stape.net
 eub1.3gmimo.com
@@ -164388,7 +164367,6 @@ eyeshadowrot.com
 eyesnamda.cfd
 eyethalics.com
 eyewearandframes.com
-eyewondermedia.com
 eyezcure.com
 eyfgl1qywq3acgibslnr0wfozhnc71781846809.nuid.nmrodam.com
 eyfoopve3l1431570ffi6env9lsak1778714949.uaid.nmrodam.com
@@ -168127,7 +168105,6 @@ fantasia-menard.com
 fantasiavashi.com
 fantasies-girls.com
 fantastic-drawing.com
-fantastic-read.com
 fantastic-salamander-c721cb.netlify.app
 fantasticfishapp.com
 fantastindents.com
@@ -173525,7 +173502,6 @@ fortumo.ee
 fortunacasino.fr
 fortunamor.com
 fortunate-pattern.com
-fortunate-responsibility.com
 fortunatecy.com
 fortunatehippies.com
 fortunatelyhandcuff.com
@@ -185677,7 +185653,6 @@ healththrivewith.com
 healthtrader.com
 healthtreatmentblog.my-free.website
 healthvilla12.educatorpages.com
-healthvot.com
 healthworldwidesupplier.com
 healthy-craft.com
 healthyair.educatorpages.com
@@ -186727,7 +186702,6 @@ hgzpj7.cdn-settings.appsflyersdk.com
 hh.analytics.echo-factory.com
 hh.biggingshampoo.com
 hh.hajilijvicus.com
-hh.jiankang.com
 hh.koloaller.com
 hh.posoleexempli.cyou
 hh.wyveplanked.com
@@ -191969,7 +191943,6 @@ ieg89ocs16i09wt0uz91jgqcv1s4x1782975198.uaid.nmrodam.com
 iehubtnzp.com
 iehxlt.cdn-settings.appsflyersdk.com
 iehxlt.launches.appsflyersdk.com
-ieiczidqyv.com
 iejc9a1udh8zm7xbhp3ellptyjb1g1784091962.uaid.nmrodam.com
 ielaf.shop
 ielectronicfirmly.com
@@ -196584,7 +196557,6 @@ itrolexshop.com
 itrucehunting.com
 itrustcapitaalloginn.webflow.io
 itrxx.com
-its-that-easy.com
 its.cpx.to
 its.fusrv.com
 its.tbpot.com
@@ -209648,6 +209620,7 @@ live-draw-hk-tercepat.xyz
 live-drink.com
 live-en-desktop.hashnode.dev
 live-eu-am.primis.tech
+live-eu.healthvot.com
 live-eu.onlidex.com
 live-eu.pushub.net
 live-eu.sportsvot.com
@@ -209677,6 +209650,7 @@ live.cxo.name
 live.demand.supply
 live.eks.hotjar.com
 live.gaf-identity-provider.meltwater.io
+live.healthvot.com
 live.imimobile.com
 live.matomo.bsb.321.works
 live.matomo.hoyer-xpp.de
@@ -224845,7 +224819,6 @@ moderynly.com
 modeschulte.de
 modesoft.me
 modesoft.org
-modest-significance.com
 modest-visual.pro
 modestearthquakefund.com
 modestessayevenmilwek.shop
@@ -225498,7 +225471,6 @@ mortgage-relief.com
 morticeque.cfd
 mortified-scale.com
 mortifiedassociation.pro
-mortifiedpace.com
 mortifyinquired.com
 mortimernegation.com
 mortonlogymethyls.qpon
@@ -230606,7 +230578,6 @@ nifrhw6mehrujqqdzbqkos3hbh7ve1785134048.nuid.nmrodam.com
 nifrn-edu-br.my-free.website
 nifstq-cdn-settings.appsflyersdk.com
 nifstq-launches.appsflyersdk.com
-nifty-feature.com
 nifty-handle.com
 nifty-line.pro
 nifty-tracking-eastus-ext.eastus.cloudapp.azure.com
@@ -247308,7 +247279,6 @@ outrotomr.com
 outrunfan.byethost5.com
 outrunmost.com
 outseeltor.com
-outseylor.com
 outshine.me
 outshowhyalinecondemn.cfd
 outsideglitter.com
@@ -248744,7 +248714,6 @@ paintnet.it
 paintpear.com
 pair-pair.com
 pair-seat.net
-pairchat.click
 pairife.jp
 pairing0-0.net
 pairingmailmail.com
@@ -255889,7 +255858,6 @@ ppl.mybluehost.me
 ppmcdv.com
 ppmf9bd1ocdqaueyzfhorelw590rg1775837039.darnuid.imrworldwide.com
 ppmvmjzz5jnfs12h80rdm7ksepy6u1783490280.uaid.nmrodam.com
-ppmxp.com
 ppnurvj60iarxwobrcwrfclfli8ms1785002524.nuid.nmrodam.com
 ppogame.com
 pponixtkecj.com
@@ -260353,7 +260321,6 @@ qh7hxw.conversions.appsflyersdk.com
 qh7hxw.launches.appsflyersdk.com
 qh888b3.ukit.me
 qh88gg.educatorpages.com
-qhaazaduez.com
 qhaciv57.alphonso.tv
 qhaelqata.com
 qhangrotl.com
@@ -265958,7 +265925,6 @@ raquest.tax
 raquetsportsasia.com
 raramjqumo.com
 rare-control.com
-rare-remote.com
 rare404.com
 rarebasketballjerseys.com
 rarefather.pro
@@ -282702,7 +282668,6 @@ shenhl.top
 shenho.000webhostapp.com
 shenn.xyz
 shenshiads.com
-shenxianmaomao.com
 sheogueramate.qpon
 sheoguetom.com
 sheotpon.com
@@ -286345,7 +286310,6 @@ snapmint-delta-posthog.ap-south-1.aws.opsverse.cloud
 snappro.fr
 snappy-resort.com
 snappycar.pro
-snappypractice.com
 snappyreport.com
 snapsgate.com
 snapshot-concrete.events
@@ -291426,7 +291390,6 @@ static.fstsrv9.com
 static.fwfallowads.com
 static.g.iqiyi.com
 static.gacraft.jp
-static.gaomaer.cn
 static.gayporn.com
 static.getback.ch
 static.getbutton.io
@@ -297459,7 +297422,6 @@ takeda.demdex.net
 takedmca.com
 takedmorsegcd.qpon
 takejourney.com
-takelnk.com
 takeyadeutschland.de
 taki-taki.de
 taki-taki.info
@@ -322086,7 +322048,6 @@ wg7vitbt1urmf126uqyaml3gj3js61784351965.uaid.nmrodam.com
 wg87vip.bet
 wgbtsixsjhkyln.com
 wgc35joqmy3drkjtzfqem5qsmrfo51783092094.darnuid.imrworldwide.com
-wgceetonr.com
 wgcusbjrga.com
 wgd.wgplayer.com
 wgdyl5za7lq1y9mko2gf5l35jrhi01777825848.uaid.nmrodam.com
