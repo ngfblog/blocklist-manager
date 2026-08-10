@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-09T23:30:00.078704+00:00",
+  "generated": "2026-08-10T05:49:58.158189+00:00",
   "source": "pfSense config.xml",
   "ip_lists": [
     "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/cn/ipv4-aggregated.txt",
@@ -13,15 +13,15 @@
     "https://raw.githubusercontent.com/ngfblog/blocklist-manager/main/output/merged_ip.txt"
   ],
   "dnsbl_lists": [
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists-legacy/main/domains/doh.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/doh.txt",
     "https://small.oisd.nl",
     "https://openphish.com/feed.txt",
     "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts",
     "https://urlhaus.abuse.ch/downloads/hostfile/",
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists-legacy/main/hosts/native.winoffice.txt",
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists-legacy/main/hosts/native.samsung.txt",
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists-legacy/main/hosts/native.tiktok.txt",
-    "https://raw.githubusercontent.com/hagezi/dns-blocklists-legacy/main/hosts/native.xiaomi.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.winoffice.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.samsung.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.tiktok.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/hosts/native.xiaomi.txt",
     "https://raw.githubusercontent.com/ngfblog/blocklist-manager/main/output/merged_dnsbl.txt"
   ]
 }
