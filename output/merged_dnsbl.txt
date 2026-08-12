@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-08-12 05:11 UTC
+# Generated: 2026-08-12 16:19 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 469942 domains
+# Total entries: 469941 domains
 #
 0--0.info
 0--4.com
@@ -259623,7 +259623,6 @@ povodok-shop.ru
 povqmoulxknny.space
 povr.nl
 powa-ingest-prod-us-east-1.video-player.arcpublishing.com
-powderencouraged.com
 powderxpirit.at
 powegonsku.com
 power-bet.fr
