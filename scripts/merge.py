@@ -30,9 +30,9 @@ FALLBACKS = {
         "https://small.oisd.nl",
         "https://raw.githubusercontent.com/sjhgvr/oisd/main/domainswild2_small.txt",
     ],
-    "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/hosts/pro.txt": [
-        "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/hosts/pro.txt",
-        "https://gitlab.com/hagezi/mirror/-/raw/main/dns-blocklists/adblock/pro.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt": [
+        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt",
+        "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/pro-onlydomains.txt",
     ],
 }
 
@@ -50,7 +50,7 @@ IP_SOURCES = [
 
 # External DNSBL sources to compare against
 DNSBL_SOURCES = [
-    "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/hosts/pro.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt",
 ]
 
 MY_LISTS_FILE = "my_lists.json"
