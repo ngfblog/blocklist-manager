@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-08-19 15:52 UTC
+# Generated: 2026-08-20 03:58 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 152717 domains
+# Total entries: 152709 domains
 #
 0--0.info
 0--4.com
@@ -4721,6 +4721,7 @@
 336cbcp.336cbcb522848ebdaf473c97b842c846340900eb.com
 336dh.com
 337x.to
+338023da13.39d929a029.com
 3387b76be8.com
 3389.top
 338cd13932d8974a8f643248141faa509bb71e56216d7e9287478485.com
@@ -16493,7 +16494,6 @@ analytics-api.belenka.es
 analytics-api.belenka.eu
 analytics-api.belenka.pl
 analytics-api.benandfrank.com
-analytics-api.byub.org
 analytics-api.cloudinary.com
 analytics-api.comiccrusher.com
 analytics-api.commandcentral.com
@@ -17656,7 +17656,6 @@ analytics.byondesign.com
 analytics.bytechtree.com
 analytics.bytecraft.fi
 analytics.bytesbourbonbbq.com
-analytics.byub.org
 analytics.byupw.org
 analytics.cab.de
 analytics.cabralportoimoveis.com.br
@@ -21462,7 +21461,6 @@ analytics.takeyourbackpack.com
 analytics.takomogolf.com
 analytics.talbots.com
 analytics.talentbrew.io
-analytics.talentegy.com
 analytics.tallink.com
 analytics.tamariapp.com
 analytics.tango.me
@@ -50757,7 +50755,6 @@ eq.opus.pro
 eqatp.com
 eqbvnrotlkmmce.com
 eqbyc.com
-eqffjcyatdmxr.space
 eqgcudymex.com
 eqghuu.com
 eqgsmrhk.com
@@ -85576,7 +85573,6 @@ medisora.click
 meditatem.com
 meditationhelpers.com
 meditationmary.com
-medium-while.com
 mediumdirt.com
 mediumhand.com
 mediummiddle.pro
@@ -87674,7 +87670,6 @@ mhpa.net
 mhprh.orientwatchusa.com
 mhrauto-industrie.com
 mhukzoikt.com
-mhyjkehtotssq.space
 mhyxciahfas.com
 mi-analytics.marketindex.com.au
 mi-natoa.org
@@ -94438,7 +94433,6 @@ obyory.com
 obyty.pl
 obzvimvuzkic.com
 obzwhoxazc.com
-obzxiqas.in
 oc-ox.com
 oc.caulisefford.com
 oc.waggersapostle.com
@@ -120808,7 +120802,6 @@ sitstandwalk.com
 sitti.co.id
 sittiad.com
 sittingpets.com
-situremelt.com
 situsdepe4d.site
 situsdepe4d.space
 situshokix618jp.live
@@ -144307,7 +144300,6 @@ wailakiforcet.cfd
 wailciry9911.icu
 wailsmasonic.com
 wainfulagnate.com
-wainfuljain.com
 waioidmwg.com
 waipu-ad.tv
 wairong.com
