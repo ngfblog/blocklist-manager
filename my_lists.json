@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-30T23:30:00.194244+00:00",
+  "generated": "2026-08-31T23:30:00.118231+00:00",
   "source": "pfSense config.xml",
   "ip_lists": [
     "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/cn/ipv4-aggregated.txt",
@@ -10,7 +10,8 @@
     "https://www.spamhaus.org/drop/drop.txt",
     "https://rules.emergingthreats.net/fwrules/emerging-Block-IPs.txt",
     "https://lists.blocklist.de/lists/all.txt",
-    "https://raw.githubusercontent.com/ngfblog/blocklist-manager/main/output/merged_ip.txt"
+    "https://raw.githubusercontent.com/ngfblog/blocklist-manager/main/output/merged_ip.txt",
+    "https://feodotracker.abuse.ch/downloads/ipblocklist.txt"
   ],
   "dnsbl_lists": [
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-onlydomains.txt",
@@ -22,6 +23,7 @@
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.samsung-onlydomains.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.tiktok-onlydomains.txt",
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.xiaomi-onlydomains.txt",
-    "https://raw.githubusercontent.com/ngfblog/blocklist-manager/main/output/merged_dnsbl.txt"
+    "https://raw.githubusercontent.com/ngfblog/blocklist-manager/main/output/merged_dnsbl.txt",
+    "https://threatfox.abuse.ch/downloads/hostfile/"
   ]
 }
