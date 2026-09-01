@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-01 18:05 UTC
+# Generated: 2026-09-01 22:49 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 150236 domains
+# Total entries: 150238 domains
 #
 0--4.com
 0--d.com
@@ -105932,6 +105932,7 @@ redhotter.com
 redhottrades.com
 rediads.com
 rediparceiros.lat
+redir.lowtid.xyz
 redir.sunnyshore.xyz
 redirect-ads.com
 redirect-escort.club
@@ -138082,6 +138083,7 @@ use-trk.bluevoox.com
 use-trk2.bluevoox.com
 use.hosting.de
 useads.com
+usearchamor.com
 useassay.com
 useast.quantumdex.io
 usebebrasil.com
