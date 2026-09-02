@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-02 12:58 UTC
+# Generated: 2026-09-02 18:02 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 150254 domains
+# Total entries: 150255 domains
 #
 0--4.com
 0--d.com
@@ -104156,6 +104156,7 @@ qnywphp.forum
 qnywsrc.buzz
 qo.flinchoilcups.com
 qoapxwtgedswt.com
+qobuz.surveysparrow.com
 qocoll.com
 qoiitjhdi.com
 qoijertneio.com
