@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-02 18:02 UTC
+# Generated: 2026-09-02 22:47 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 150255 domains
+# Total entries: 150256 domains
 #
 0--4.com
 0--d.com
@@ -73300,6 +73300,7 @@ lahitapiola.sc.omtrdc.net
 lahitapiola.tt.omtrdc.net
 lahom.teamwarrior.com
 lahrarbfemav.com
+laichegloavy.com
 laichook.net
 laikaush.com
 laikouthiphu.com
