@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-06T23:30:00.070828+00:00",
+  "generated": "2026-09-07T23:30:00.069249+00:00",
   "source": "pfSense config.xml",
   "ip_lists": [
     "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/cn/ipv4-aggregated.txt",
