@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-07 14:30 UTC
+# Generated: 2026-09-07 23:01 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 128383 domains
+# Total entries: 128385 domains
 #
 0--4.com
 0--d.com
@@ -37951,6 +37951,7 @@ dfi09250kq.com
 dfi8.xyz
 dficgbecdhchcicdhaca.world
 dfinery.ai
+dfipol.com
 dfirst1.com
 dfjd.xyz
 dfkd.xyz
@@ -58844,6 +58845,7 @@ kerry.com.data.adobedc.net
 kersten-maschinenvertriebs-gmbh.de
 kervqb.startlovedating.com
 kerwwg.loveeconnect.com
+kespoy.com
 kesug.com
 ket.ru
 ketchupacute.com
