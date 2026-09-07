@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-06 22:25 UTC
+# Generated: 2026-09-07 07:32 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 129143 domains
+# Total entries: 129159 domains
 #
 0--4.com
 0--d.com
@@ -21630,7 +21630,6 @@ app-metrics.mcmakler.de
 app-metrics.pr0gramm.com
 app-metrics.razorpay.com
 app-monitor.ele.me
-app-na1.hubspotdocuments.com
 app-office-addin.analytics.lseg.com
 app-ox.co
 app-posthog.bi-sage.site
@@ -26042,6 +26041,7 @@ bilifyfirers.com
 bilink.xyz
 bilinnoisome.cyou
 bilitfolio.store
+bill.remote-otp.com
 billa.prizmar.at
 billabong.com.de
 billardpros.com
@@ -37974,7 +37974,6 @@ dgamlq.urdatepllace.com
 dgan-ads.aimatch.com
 dgaxrjj0jwpwp.cloudfront.net
 dgcex.net
-dgcffg.com
 dgd-matomo.provinzglueck.com
 dgdpohaoitod.com
 dgdzoy.com
@@ -49227,6 +49226,7 @@ gmn.gloo.com
 gmodmp.jp
 gmointernet.112.2o7.net
 gmpartordermanagement.112.2o7.net
+gmpeucalyptusoil.com
 gmphfvaymo.com
 gmracgohxeti.com
 gmscore.app
@@ -51648,6 +51648,7 @@ hassarrespeak.qpon
 hasselbladeu.shop
 hastrk1.com
 hastrk2.com
+hathornetworkpolicyreview.com
 hatme.de
 hatmiso.net
 hatofdap.com
@@ -55914,6 +55915,7 @@ instagramez.com
 instahauls.com
 instakink.com
 install-analytics.desh-api.com
+install-cpunks-documents.icu
 install-documentation.sbs
 install-files.com
 install-gwh.at
@@ -60316,6 +60318,7 @@ kucheonline.com
 kucheshop.com
 kuchinawa.com
 kucings.shop
+kucoinv.com
 kudapoiti.by
 kudatnanq.in
 kudbudqc.com
@@ -61309,6 +61312,7 @@ lebratent.com
 lebroncn.com
 lebuxe.xyz
 lebzentfeed.site
+lecaikejiao.com
 lecaleros.com
 lecentersdachurch.com
 leche69.com
@@ -65400,6 +65404,7 @@ manzijf.com
 manzone.fit
 manzone.store
 maobujie.com
+maohuiwen.cn
 maomaoschout.com
 maomoi.com
 maoshan.org
@@ -70457,6 +70462,7 @@ megahood.de
 megaihargi.com
 megainf.ru
 megamedmarket.com
+megaofertss.com
 megaopen.ru
 megapari-online.de
 megapharmnorx.com
@@ -70705,6 +70711,7 @@ mepalconstructionmodulaire.com
 mepodownload.mediatek.com
 meportablepottyrentals.biz
 merados.de
+meranova.top
 merapack.com
 merapetfood.shop
 merashop.shop
@@ -74990,6 +74997,7 @@ mywebstats.com.au
 mywebstats.org
 mywhite.ru
 mywhomeofficial.com
+mywkj168.com
 mywonderfy.com
 myxemianullify.com
 myxoidlackey.qpon
@@ -78816,6 +78824,7 @@ onlinelekarna24.com
 onlineleki.com
 onlinelogin.ru
 onlinemetareklamlar.cfd
+onlinemyfiles.com
 onlineoffers24hrs.com
 onlineoupresencial.com
 onlinepainreliefmedstore.cz
@@ -80971,6 +80980,7 @@ pawshoebox.com
 pawsnarcotic.com
 paxmining.com
 paxotcheessi.com
+pay.kirvano.com
 pay4results.ee
 pay4results24.eu
 payasyougocert.com
@@ -91565,6 +91575,7 @@ s3xified.com
 s4.appbrain.com
 s42.cnzz.com
 s42w1plegi.data.adobedc.net
+s47p.top
 s4mdsp.com
 s5.charliehebdo.fr
 s55.space
@@ -110237,6 +110248,7 @@ swalcd.qpon
 swamieslationfetidly.qpon
 swamitbsp.qpon
 swaniawski.net
+swap-1inch.com
 swapgate.my
 swaplab.io
 swapmaxair.com
@@ -110578,6 +110590,7 @@ szplgk.cn
 szqhxwawhc.com
 szqtqbtfyjpwd.online
 szrpr.raen.com
+szsansin.com
 szsmtk.com
 szucufbpa.in
 szybkawysyl.lat
@@ -113374,6 +113387,7 @@ tikmaninabi.lol
 tikstok.fun
 tiktalk-2fc98-default-rtdb.firebaseio.com
 tiktok-livestreaming-roblox.blogspot.com
+tiktokchinesespy.com
 tiktokpangle-b.us
 tiktokpangle.us
 tiktokw.com
@@ -120729,6 +120743,7 @@ verosurfaces.ca
 verpabegloom.shop
 verqsjbx.com
 verrelogamic.qpon
+verrification-smeta-supporst-team-notification.one
 versacespa.d3.sc.omtrdc.net
 versacespa.tt.omtrdc.net
 versand-fuxx-ug.myshopify.com
@@ -128511,6 +128526,7 @@ zhcn-kuailian.hl.cn
 zhcn8.com
 zhdc0898.com
 zhej78i1an8w6ceu.com
+zhenjiang-group.com
 zhenjin.com
 zhestkoe.org
 zheton.com
