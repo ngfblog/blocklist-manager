@@ -56,6 +56,7 @@ DNSBL_SOURCES = [
 MY_LISTS_FILE = "my_lists.json"
 OUTPUT_IP     = "output/merged_ip.txt"
 OUTPUT_DNS    = "output/merged_dnsbl.txt"
+CACHE_FILE    = "cache/ip_source_cache.json"
 
 
 def download(url, label):
@@ -154,12 +155,26 @@ def main():
     # Download external IP sources and find gaps
     print("\n[4] Finding IP gaps...")
     gap_nets = set()
+    source_cache = {}
     for url in IP_SOURCES:
         text = download(url, url.split("/")[-1])
         source_nets = parse_ips(text)
+        # Cache the exact snapshot we just downloaded so compare.py can reuse
+        # it instead of re-downloading — the upstream lists (especially
+        # firehol_level2) update near-continuously, so a second independent
+        # download minutes later would drift and never settle at 0 gaps.
+        source_cache[url] = sorted(str(n) for n in source_nets)
         new_nets = [n for n in source_nets if not nets_overlap(n, my_ip_nets) and not is_bogon(n)]
         gap_nets.update(new_nets)
         print(f"     {url.split('/')[-1]}: {len(source_nets)} total, {len(new_nets)} new networks")
+
+    os.makedirs("cache", exist_ok=True)
+    with open(CACHE_FILE, "w") as f:
+        json.dump({
+            "generated": datetime.now(timezone.utc).isoformat(),
+            "sources": source_cache
+        }, f)
+    print(f"  Cached {len(source_cache)} source snapshots → {CACHE_FILE}")
 
     gap_nets_collapsed = sorted(
         ipaddress.collapse_addresses(n for n in gap_nets if n.version == 4),
