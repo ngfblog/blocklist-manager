@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-08 01:38 UTC
+# Generated: 2026-09-08 07:26 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 128385 domains
+# Total entries: 128380 domains
 #
 0--4.com
 0--d.com
@@ -4828,7 +4828,6 @@
 4felts.com
 4flight.com
 4freecle.com
-4fyxc9o3.xyz
 4g2avikmda.data.adobedc.net
 4gency.com
 4hu.org
@@ -4900,7 +4899,6 @@
 4thdmovie.com
 4thepeopleontheboat.com
 4tpsolutions.com
-4tztxlmp.xyz
 4u.game
 4u.pl
 4u2.de
@@ -5031,7 +5029,6 @@
 54bn.com
 54eh.com
 54fcf8392666.top
-54hgg3ra.xyz
 54kefu.net
 54m0v.922000.com
 54yio5j1vx89zilm.cfd
@@ -23315,7 +23312,6 @@ autoleasespro.com
 autoled.tech
 autoline-top.com
 autolinie.de
-automagazin.rs
 automarketing-khdn.vinaphone.vn
 automatacompare.com
 automate.linksynergy.com
@@ -24256,7 +24252,6 @@ bankwest.sc.omtrdc.net
 bankxp.com
 banmax.com
 bannedpoachy.cfd
-bannedretro.com
 banner-ad-nex.com
 banner-online.nl
 banner.abbyy.com
@@ -28747,7 +28742,6 @@ c9dy.com
 ca-ad-lgsmartad-com.aws-prd.net
 ca-agentur.de
 ca-conv.jp
-ca-secupassinfo.com
 ca-umami-prod.lemonglacier-6a5930b7.uksouth.azurecontainerapps.io
 ca.102.122.2o7.net
 ca.clcknads.pro
@@ -31703,7 +31697,6 @@ club.lc
 clubcollector.com
 clubdating3344.com
 clubeboss.de
-clubrunning.es
 clucxwfjllgqo.com
 cluejack.com
 clueless-vegetable.pro
@@ -34882,6 +34875,7 @@ cryptofarmer.com
 cryptofast.net
 cryptofundfx.com
 cryptomcw.com
+cryptominded.com
 cryptomoney888.com
 cryptomyoa.com
 cryptonight.net
@@ -35146,7 +35140,6 @@ cupsoamsephuk.net
 curablity.com
 curacaoonlinecasino.de
 curacoapips.com
-curaenatura.com
 curatnestful.com
 curberstownletwur.qpon
 curefip.com
@@ -35730,6 +35723,7 @@ d3.com.cn
 d30a2o6zg7ra9b.cloudfront.net
 d30gt5larl1k8h.cloudfront.net
 d30s0lx1onfwyh.cloudfront.net
+d30sec8k5ond2x.cloudfront.net
 d3125zvx5yi5sj.cloudfront.net
 d317dmr0whummx.cloudfront.net
 d31nb97nd8ha11.cloudfront.net
@@ -35897,7 +35891,6 @@ dabdriedpointer.com
 dabiaozhi.com
 daboisdechauff.com
 dac-dws-matomo.mehrkanal.com
-dac8flattax.com
 daccp.cn
 dacdn.visualwebsiteoptimizer.com
 dacedsfa.cn
@@ -38900,6 +38893,7 @@ doctruyencotich.vn
 documentarp.com
 documentsite.net
 docusfilesdownloadhelper.info
+dodajogloszenia.pl
 dodge-forum.eu
 dodgyvertical.com
 dodoclk.com
@@ -39077,7 +39071,6 @@ dorabbb.top
 dorat.de
 dorcelcash.com
 dorealis.com
-dorianneartstore.com
 doriansaga.com
 dork.fail
 dormanshop.com
@@ -42410,7 +42403,6 @@ escalated.io
 escalatorclung.com
 escapeaccusation.com
 escatedint.work
-esce-secuane.com
 eschemialcove.org
 eschewsairflow.shop
 escinteractive.com
@@ -44365,7 +44357,6 @@ fdetolgput.com
 fdfgkgziquc.com
 fdfhddfss.top
 fdgkjqw.pages.dev
-fdhdocref.com
 fdhvczd.cn
 fdic.122.2o7.net
 fdk-matomo-wn6vwotucf.liara.run
@@ -56660,6 +56651,7 @@ ittoxicroakon.club
 ituaa.com
 ituseed.com
 itv-ia.aimatch.com
+itvopen.net
 itw.me
 itwasluke.com
 itxinrou.com
@@ -60158,7 +60150,6 @@ l16-prod-all-sentry-trickcal-sgp.bilibiligame.net
 l17-dev-all-sentry-ghost-sgp.bilibiligame.net
 l1native.com
 l1nq.com
-l2tc.com
 l2top.ru
 l3.evidon.com
 l4-logs-http-browser-pub-s0-e2bce5ba2ff871a5.elb.us-east-1.amazonaws.com
@@ -61278,7 +61269,6 @@ libgen.plus
 libgenesis.net
 liboguojiyule.tmdss.com
 libra-service.com
-library.se
 librato.com
 libreddit.domain.glass
 libreentry.ru
@@ -74002,6 +73992,7 @@ myfg.com
 myfidevs.io
 myfishsoup.com
 myfitnessdealz.de
+myflyertrains.net
 myfoolmoon.com
 myforwarded.com
 myfreecopyright.com
@@ -74169,7 +74160,6 @@ mysticdecorllc.com
 mysticechohaven.com
 mysticmodelsgrieced.cyou
 mystictempleincense.com
-mysubcription-neftlix.com
 mysumo.de
 mysweetlinks.com
 myswitchads.com
@@ -74793,6 +74783,7 @@ negligwormian.cyou
 negoceantsier.com
 negocio.site
 nehopalliance.org
+nehsbe.cn
 neib.cn
 neifstowce.qpon
 neighboring-protection.com
@@ -79715,6 +79706,7 @@ pageview-analytics-worker.support-67d.workers.dev
 pageview.activengage.com
 pageview.activengage.com.cdn.cloudflare.net
 pageview.click
+paginas.site
 paginasamarillas.tt.omtrdc.net
 pagingsanjaks.cfd
 pagnawhouk.net
@@ -80193,6 +80185,7 @@ pawsnarcotic.com
 paxmining.com
 paxotcheessi.com
 pay.kirvano.com
+pay.wiapy.com
 pay4results.ee
 pay4results24.eu
 payasyougocert.com
@@ -83577,7 +83570,6 @@ plus.bezvavlasy.cz
 plus.url.google.com
 plus10sm.ru
 plusatrends.com
-plusbhd.com
 pluschennici.com
 plusfind.info
 plushair.cz
@@ -86144,6 +86136,7 @@ q1qfc323.com
 q20jqurls0y7gk8.info
 q2fomkg8nzmqkh64b3x436gc.cfd
 q2shebwpnt.data.adobedc.net
+q3ei4f.rophim10.wiki
 q3t7wc.lat
 q4ee.top
 q552.iisalmensanomat.fi
@@ -86573,7 +86566,6 @@ qqsghecc.com
 qquhzi4f3.com
 qqwtwpdvhoq.com
 qr.drammerxylinid.com
-qr.fm
 qr.nikastic.com
 qr8888.com
 qrcodedynamic.com
@@ -98679,6 +98671,7 @@ shapfaogvhca.com
 shapingnewtomorrow.shop
 sharanilodge.com
 share-links.biz
+share.kz
 share.lc
 share.outgrow.biz
 share.polymail.io
@@ -118325,6 +118318,7 @@ urlqh.cn
 urlstats.com
 urlto.me
 urlumbrella.com
+urlvn.net
 urlyte.com
 urnawkwarddegrade.com
 urnbduat.com
@@ -122833,6 +122827,7 @@ wegmansfoods.data.adobedc.net
 wegmw6.top
 wegoeuro.com
 wegoflight.com
+wegoupupup.com
 wegovymexicopharmacy.com
 wegowan.com
 weheepellilevoodoos.cyou
