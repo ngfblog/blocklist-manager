@@ -34,6 +34,7 @@ COMPARE_SOURCES = {
 
 MY_LISTS_FILE = "my_lists.json"
 OUTPUT_FILE   = "output/recommendations.json"
+CACHE_FILE    = "cache/ip_source_cache.json"
 
 BOGON_RANGES = [
     ipaddress.ip_network("10.0.0.0/8"),
@@ -81,6 +82,31 @@ def nets_overlap(net, existing_nets):
     return False
 
 
+def load_cache():
+    if not os.path.exists(CACHE_FILE):
+        return {}
+    try:
+        with open(CACHE_FILE) as f:
+            return json.load(f).get("sources", {})
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def get_source_nets(url, label, cache):
+    # Reuse the exact snapshot merge.py downloaded moments ago in this same
+    # run, instead of downloading again — a second independent download
+    # drifts against fast-moving sources like firehol_level2 and never
+    # settles at 0 gaps. Only fall back to a live download if merge.py
+    # hasn't run yet or didn't cache this URL (e.g. run standalone).
+    cached = cache.get(url)
+    if cached is not None:
+        print(f"  Using cached snapshot: {label} ({len(cached)} entries)")
+        return {ipaddress.ip_network(n, strict=False) for n in cached}
+    print(f"  No cache for {label}, downloading fresh...")
+    text = download(url, label)
+    return parse_ips(text)
+
+
 def main():
     print("=== Blocklist Comparison ===")
     print(f"Time: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}")
@@ -115,13 +141,12 @@ def main():
     print(f"  Total my networks: {len(my_nets)}")
 
     print("\n[3] Comparing against external sources...")
+    cache = load_cache()
     recommendations = []
 
     for name, source in COMPARE_SOURCES.items():
         print(f"\n  Checking: {name}")
-        text = download(source["url"], name)
-
-        source_nets = parse_ips(text)
+        source_nets = get_source_nets(source["url"], name, cache)
         new_nets = [n for n in source_nets if not nets_overlap(n, my_nets) and not is_bogon(n)]
         coverage_pct = round((1 - len(new_nets) / max(len(source_nets), 1)) * 100, 1)
 
