@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-11 13:04 UTC
+# Generated: 2026-09-11 18:02 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 135914 domains
+# Total entries: 135907 domains
 #
 0--4.com
 0--d.com
@@ -5799,7 +5799,6 @@
 7ky.cc
 7lbd4.armandthiery.fr
 7lrz6ytv1u8hl7xbu27kg91yg1.cfd
-7lzwgj.donaukurier.de
 7makemoneyonline.com
 7mb.nl
 7moor.com
@@ -23276,7 +23275,6 @@ arumhelps.com
 arvanvads.ir
 arvato-entertainment.de
 arvulonikanz.com
-arvulonikanz.net
 arvulonikanz.org
 arwanagamingzpt.site
 arwhpetevielbj.com
@@ -23789,7 +23787,6 @@ atclauncheran.com
 atcnetworktower.com
 atconnect.npo.nl
 atdasjournal.com
-atddmn.com
 atdeerlinga.com
 atdmaincode.com
 atdriczfuli.com
@@ -49067,7 +49064,6 @@ fiusps.com
 fivalgsy.com
 five-media011.com
 five.vipshop.nl
-fivecdm.com
 fiveplusthree.com
 fivesixgroup.com
 fivewords.com
@@ -52380,7 +52376,6 @@ getaawp.com
 getaccess.w3spaces.com
 getadfinity.com
 getadmiral.com
-getads.ru
 getairabreeze.com
 getalliny.com
 getallmedia.com
@@ -67905,7 +67900,6 @@ log.byteoversea.com.edgekey.net
 log.byteoversea.com.ttdns2.com
 log.byteoversea.net
 log.c3o.org
-log.calomeal.com
 log.captioncall.com
 log.cau.ac.kr
 log.cc.netease.com
@@ -95712,7 +95706,6 @@ riderls32.life
 ridernoodleacerbity.com
 ridesprint.com
 ridevsgonn.store
-ridfvncgizfjlq.com
 ridge-cdn.lol
 ridge-cdn.xyz
 ridge-static.space
