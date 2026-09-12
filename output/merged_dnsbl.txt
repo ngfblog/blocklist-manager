@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-12 17:23 UTC
+# Generated: 2026-09-12 22:34 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 137515 domains
+# Total entries: 137537 domains
 #
 0--4.com
 0--d.com
@@ -6547,7 +6547,6 @@ a.stackscale.com
 a.stateless.me
 a.sysadmins.zone
 a.tangible.net.nz
-a.tapinfluence.com
 a.tellonym.me
 a.thesnowcentre.com
 a.tlineat.jp
@@ -12108,6 +12107,7 @@ adsrvx-track.com
 adssistem.com
 adssuper.com
 adstacks.in
+adstage.io
 adstargeting.com
 adstargets.com
 adstark.com
@@ -12315,6 +12315,7 @@ adv.messaggerosantantonio.it
 adv.misystem.com.ua
 adv.mpvc.it
 adv.naturalcosmetics-alba.com
+adv.nexthardware.com
 adv.office-partner.de
 adv.peasun.net
 adv.pilseta24.lv
@@ -12875,6 +12876,7 @@ affiliate.coral.co.uk
 affiliate.grin.co
 affiliate.konibet.com
 affiliate.tantanapp.com
+affiliate.treated.com
 affiliatecenter.jp
 affiliatecontrol-api-dev.com
 affiliatecontrol-api.com
@@ -24238,6 +24240,7 @@ audience.systems
 audienceamplify.com
 audienceexposure.com
 audienceg.com
+audienceinsights.com
 audienceiq.com
 audiencelab-sdk-backend-1051822917.eu-central-1.elb.amazonaws.com
 audiencelab.io
@@ -24701,6 +24704,7 @@ avnxt.site
 avo-pharmacy.com
 avo.app
 avocams.com
+avocet.io
 avocetriches.com
 avogex.com
 avoidedtreasr.com
@@ -27131,6 +27135,7 @@ besullyyampa.qpon
 besunwiseskinwise.com
 bet-links.com
 bet-online.pro
+bet.hkjc.com
 bet3000partners.com
 bet88vip.cyou
 beta-metrics.lecoq.io
@@ -34538,6 +34543,7 @@ coinstancy.com
 coinstong.com
 coinsup.com
 cointpietr.rest
+cointraffic.io
 coinvertise.com
 coinvoro.com
 coinwebmining.com
@@ -46716,7 +46722,6 @@ events.adjust.com
 events.airtel.tv
 events.analytics.dhbbtv.fi
 events.animecix.co
-events.apester.com
 events.api.eu.zetaglobal.net
 events.apizones.com
 events.artlist.io
@@ -51032,6 +51037,7 @@ freesia45.top
 freesiaaristas.cfd
 freesite.org
 freesitemapgenerator.com
+freeskreen.com
 freeslotreg.ru
 freesoftwarecreative.com
 freespee.com
@@ -60744,6 +60750,7 @@ incivicdojiggytousled.qpon
 inclick.sk
 includemodal.com
 incluster.com
+incognitosearches.com
 incomellit.rest
 incoming-telemetry.thunderbird.net
 incommholdings.sc.omtrdc.net
@@ -61415,6 +61422,7 @@ instiengage.com
 instilligydalarvate.cfd
 instilsemigree.qpon
 instinct365intelligent.com
+instinctiveads.com
 instirosene.autos
 institutem.com
 institution2.com
@@ -76420,6 +76428,7 @@ mediaplus.shop
 mediaportal.ru
 mediaprima-telemetry-events.switch.tv
 mediarepost.ru
+mediaserver.bwinpartypartners.it
 mediaservingcd.com
 mediasmart.io
 mediasquare.fr
@@ -77657,6 +77666,7 @@ metrics.golds-gym.de
 metrics.goldtime.ee
 metrics.golvshop.se
 metrics.gov.ciscospark.com
+metrics.govexec.com
 metrics.gq.com.au
 metrics.graefenhoftee.de
 metrics.gravado.de
@@ -79838,6 +79848,7 @@ moneralsramana.shop
 moneraltilting.com
 moneta.sc.omtrdc.net
 monetano.com
+monetate.net
 monetisetrk2.co.uk
 monetixads.com
 monetiza.co
@@ -88197,6 +88208,7 @@ perso.menara.ma
 persol.at
 person.clearbit.com
 persona3.tech
+personagraph.com
 personaisstore.com
 personal-bowl.pro
 personal-effort.com
@@ -92840,6 +92852,7 @@ promomasters.at
 promontory32.com
 promoprism.com
 promorin.com
+promos.bwin.it
 promos.inyourarea.co.uk
 promos.makemytrip.com
 promoshq.wildfireapp.com
@@ -98418,6 +98431,7 @@ rumstat-03.cdnvideo.ru
 rumt-us.com
 run-server-side-tagging-t3s332nvca-el.a.run.app
 run.hywei.com
+runads.com
 runaivete.com
 runbffvq.com
 runconverge.com
@@ -110105,6 +110119,7 @@ somni.vikingrivercruises.com
 somnisleepstore.com
 somnit.equinox.com
 somniture.scotiabank.com
+somniture.stuff.co.nz
 somoaudience.com
 somon.tj
 somosmovies.com
@@ -110755,6 +110770,7 @@ sorrowfultreadcountless.com
 sorrowfuluniversity.pro
 sorryfearknockout.com
 sortable-match.dotomi.com
+sortable.com
 sortallav.com
 sortedmates.com
 sorteslocatio.cyou
@@ -111042,6 +111058,7 @@ speedgamer.top
 speedhq.net
 speedkit.de
 speedmydata.com
+speedomizer.com
 speedos.co.at
 speedpeople.de
 speedpi12321.xyz
@@ -117446,6 +117463,7 @@ stussy-berlin.de
 stussyaustria.at
 stussyaustrias.com
 stussydeutschland.de
+stussyhoodienl.com
 stussystoresdeutschland.de
 stussywien.at
 stutterschuyt.com
@@ -121837,6 +121855,7 @@ tngcipctheu-ia.aimatch.com
 tngcipegeup-ia.aimatch.com
 tngciuniceu-ia.aimatch.com
 tnjvz.cn
+tnkexchange.com
 tnksrlatsbm.com
 tnlservicebd.com
 tnmmyafdfpymj.com
@@ -127360,6 +127379,7 @@ usermetrics.lidlplus.com
 usermgmt-api.optimizely.com
 userneeds.com
 userprofile.push.heytapmobi.com
+userreplay.com
 users.cuci.nl
 users.maxcluster.net
 users.videasy.to
@@ -132299,6 +132319,7 @@ wickedreports.com
 wickedsmartpodcast.com
 wickenachy.cyou
 wickyuprestudy.com
+widdit.com
 widdlearuspex.cfd
 wideangle.co
 wideeyed-stay.com
@@ -133332,6 +133353,7 @@ wslog.chinanetcenter.com
 wsmiccraev.shop
 wsnfvioo.com
 wso2telco.com
+wsod.com
 wsor.com
 wsotools.com
 wsowjvslwmvmnm.com
