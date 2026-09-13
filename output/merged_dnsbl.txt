@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-12 22:34 UTC
+# Generated: 2026-09-13 07:34 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 137537 domains
+# Total entries: 137543 domains
 #
 0--4.com
 0--d.com
@@ -82046,6 +82046,7 @@ neoviafinancial.tt.omtrdc.net
 nepalbahak.com
 nepheshhurroo.com
 nepitkabyle.top
+neple.pl
 nepmenatretic.qpon
 nepoamoo.com
 neponaroshku.ru
@@ -88942,6 +88943,7 @@ pinklion.io
 pinkotri.com
 pinkrespectablevocational.com
 pinksales-pools.pages.dev
+pinktoesandpowertools.com
 pinkuro.com
 pinkymanualssavorer.qpon
 pinnacle.doubleverify.com
@@ -91338,6 +91340,7 @@ po.funshion.com
 po.hanoembolum.com
 po2l.ru
 po2scans.com
+po8klasie.pl
 poachedroofman.shop
 poafoashou.com
 poalikebridle.shop
@@ -93053,6 +93056,7 @@ pry3.com
 prytheevalhall.cyou
 pryzmads.com
 przedmiotnr75142352.sbs
+przedszkole20.com.pl
 ps-ad-lgsmartad-com.aws-prd.net
 ps-eu.amazon-adsystem.com
 ps-fe.amazon-adsystem.com
@@ -129237,9 +129241,11 @@ videotronres.112.2o7.net
 videowalldirect.com
 videowood.tv
 vider-cda.online
+vider-pl.net
 vider-pl.pl
 vider.cc
 vider.fun
+vider.info.pl
 vider.online
 videttsqsmrnwo.com
 videxx.pro
