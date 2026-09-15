@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-15 18:17 UTC
+# Generated: 2026-09-15 23:06 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 139610 domains
+# Total entries: 139616 domains
 #
 0--4.com
 0--d.com
@@ -5382,6 +5382,7 @@
 597d2be657ca.mywire.org
 597d2be657ca.net
 597hx.com
+598186191.lat
 59831.lol
 599b5a99b77f7699.com
 59brl-com1.com
@@ -6172,6 +6173,7 @@
 853399.com
 8540eb51663cf71f.com
 854145.com
+8567345.lat
 856d79ad49.com
 857chwukib.data.adobedc.net
 858581.com
@@ -38683,6 +38685,7 @@ cybeleelude.com
 cyber-ad01.cc
 cyber-duck.co.com
 cyber-haus.de
+cyber-hub.pw
 cyber-ninja.jp
 cyber-traffic.net
 cyber20.com
@@ -40784,6 +40787,7 @@ deepseekapp.cc
 deepseekapp.com.cn
 deepseekcn.cyou
 deepseekem.com
+deepseekk.com.cn
 deepseekl.com.cn
 deepseekplus.cc
 deepseeksai.com
@@ -54405,6 +54409,7 @@ gizmbyhoddba.com
 giznpuol.com
 gizoakre.net
 gizpiwtamsi.com
+gj-oferta26532.sbs
 gj.chimneylurdane.com
 gj7.ru
 gjaudxmpdfthv.com
@@ -90359,6 +90364,7 @@ pishedputons.qpon
 pishingtetum.qpon
 pishoodoo.net
 pishrust.com
+piskaday.com
 pisksalvo.qpon
 piskylagan.qpon
 pismaprawne.com
