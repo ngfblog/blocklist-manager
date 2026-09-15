@@ -32,4 +32,10 @@ jobs:
           git config user.email "bot@blocklist-manager"
           git add output/
           git diff --cached --quiet || git commit -m "chore: update lists and recommendations $(date -u '+%Y-%m-%d %H:%M UTC')"
-          git push
+          # Retry push with rebase in case remote moved while this job was running
+          for i in 1 2 3; do
+            git push && break
+            echo "Push rejected, pulling and retrying ($i/3)..."
+            git pull --rebase origin main
+            sleep 5
+          done
