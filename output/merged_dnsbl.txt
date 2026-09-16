@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-16 13:41 UTC
+# Generated: 2026-09-16 18:27 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 140614 domains
+# Total entries: 140615 domains
 #
 0--4.com
 0--d.com
@@ -85452,6 +85452,7 @@ novafluxdump.top
 novak24.com
 novaleelds.com
 novalyx.de
+novambients.de
 novamenstruhilfe.de
 novamoda.de
 novamov.com
