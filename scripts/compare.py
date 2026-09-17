@@ -47,6 +47,9 @@ BOGON_RANGES = [
     ipaddress.ip_network("224.0.0.0/4"),         # multicast
     ipaddress.ip_network("240.0.0.0/4"),         # reserved / future use
     ipaddress.ip_network("255.255.255.255/32"),  # limited broadcast
+    ipaddress.ip_network("192.0.2.0/24"),        # TEST-NET-1 (RFC 5737 documentation)
+    ipaddress.ip_network("198.51.100.0/24"),     # TEST-NET-2 (RFC 5737 documentation)
+    ipaddress.ip_network("203.0.113.0/24"),      # TEST-NET-3 (RFC 5737 documentation)
 ]
 
 
