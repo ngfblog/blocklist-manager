@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-17 18:29 UTC
+# Generated: 2026-09-17 23:17 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 141314 domains
+# Total entries: 141313 domains
 #
 0--4.com
 0--d.com
@@ -128768,7 +128768,6 @@ uarleniz.com
 uartholdings.com
 uarxokmu.com
 uasehjnkan.com
-uasputnik.com
 uat-sync.inmobi.com
 uat.analytics.immoscoop.be
 uatu.newsquestdigital.co.uk
