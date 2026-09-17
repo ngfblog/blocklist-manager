@@ -15,13 +15,16 @@ HEADERS = {"User-Agent": "blocklist-manager/1.0 (https://github.com/ngfblog/bloc
 TIMEOUT = 30
 
 BOGON_RANGES = [
-    ipaddress.ip_network("10.0.0.0/8"),
-    ipaddress.ip_network("172.16.0.0/12"),
-    ipaddress.ip_network("192.168.0.0/16"),
-    ipaddress.ip_network("127.0.0.0/8"),
-    ipaddress.ip_network("169.254.0.0/16"),
-    ipaddress.ip_network("0.0.0.0/8"),
-    ipaddress.ip_network("100.64.0.0/10"),
+    ipaddress.ip_network("10.0.0.0/8"),          # RFC1918 private
+    ipaddress.ip_network("172.16.0.0/12"),       # RFC1918 private
+    ipaddress.ip_network("192.168.0.0/16"),      # RFC1918 private
+    ipaddress.ip_network("127.0.0.0/8"),         # loopback
+    ipaddress.ip_network("169.254.0.0/16"),      # link-local
+    ipaddress.ip_network("0.0.0.0/8"),           # "this network"
+    ipaddress.ip_network("100.64.0.0/10"),       # CGNAT
+    ipaddress.ip_network("224.0.0.0/4"),         # multicast
+    ipaddress.ip_network("240.0.0.0/4"),         # reserved / future use
+    ipaddress.ip_network("255.255.255.255/32"),  # limited broadcast
 ]
 
 # Fallback URLs: if the primary URL fails, try the alternatives in order
@@ -40,6 +43,7 @@ FALLBACKS = {
 def is_bogon(net):
     return any(net.overlaps(b) for b in BOGON_RANGES)
 
+
 # External IP sources to compare against
 IP_SOURCES = [
     "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level1.netset",
@@ -54,9 +58,9 @@ DNSBL_SOURCES = [
 ]
 
 MY_LISTS_FILE = "my_lists.json"
-OUTPUT_IP     = "output/merged_ip.txt"
-OUTPUT_DNS    = "output/merged_dnsbl.txt"
-CACHE_FILE    = "cache/ip_source_cache.json"
+OUTPUT_IP = "output/merged_ip.txt"
+OUTPUT_DNS = "output/merged_dnsbl.txt"
+CACHE_FILE = "cache/ip_source_cache.json"
 
 
 def download(url, label):
@@ -68,10 +72,10 @@ def download(url, label):
             r = requests.get(attempt_url, headers=HEADERS, timeout=TIMEOUT)
             r.raise_for_status()
             if attempt_url != urls[0]:
-                print(f"     (fallback used: {attempt_url})")
+                print(f"    (fallback used: {attempt_url})")
             return r.text
         except Exception as e:
-            print(f"     Warning: {attempt_url} failed ({e}), trying next...")
+            print(f"    Warning: {attempt_url} failed ({e}), trying next...")
             last_error = e
     raise RuntimeError(f"Failed to download {label}: {last_error}")
 
@@ -129,7 +133,7 @@ def main():
     with open(MY_LISTS_FILE) as f:
         my_lists = json.load(f)
 
-    my_ip_urls    = [u for u in my_lists.get("ip_lists", []) if "ipverse" not in u and "blocklist-manager" not in u]
+    my_ip_urls = [u for u in my_lists.get("ip_lists", []) if "ipverse" not in u and "blocklist-manager" not in u]
     my_dnsbl_urls = [u for u in my_lists.get("dnsbl_lists", []) if "blocklist-manager" not in u]
 
     # Download and parse my IP lists
@@ -139,7 +143,7 @@ def main():
         text = download(url, url.split("/")[-1])
         nets = parse_ips(text)
         my_ip_nets.update(nets)
-        print(f"     {url.split('/')[-1]}: {len(nets)} networks")
+        print(f"    {url.split('/')[-1]}: {len(nets)} networks")
     print(f"  Total my IP networks: {len(my_ip_nets)}")
 
     # Download and parse my DNSBL lists
@@ -149,7 +153,7 @@ def main():
         text = download(url, url.split("/")[-1])
         domains = parse_domains(text)
         my_domains.update(domains)
-        print(f"     {url.split('/')[-1]}: {len(domains)} domains")
+        print(f"    {url.split('/')[-1]}: {len(domains)} domains")
     print(f"  Total my domains: {len(my_domains)}")
 
     # Download external IP sources and find gaps
@@ -159,14 +163,16 @@ def main():
     for url in IP_SOURCES:
         text = download(url, url.split("/")[-1])
         source_nets = parse_ips(text)
+
         # Cache the exact snapshot we just downloaded so compare.py can reuse
         # it instead of re-downloading — the upstream lists (especially
         # firehol_level2) update near-continuously, so a second independent
         # download minutes later would drift and never settle at 0 gaps.
         source_cache[url] = sorted(str(n) for n in source_nets)
+
         new_nets = [n for n in source_nets if not nets_overlap(n, my_ip_nets) and not is_bogon(n)]
         gap_nets.update(new_nets)
-        print(f"     {url.split('/')[-1]}: {len(source_nets)} total, {len(new_nets)} new networks")
+        print(f"    {url.split('/')[-1]}: {len(source_nets)} total, {len(new_nets)} new networks")
 
     os.makedirs("cache", exist_ok=True)
     with open(CACHE_FILE, "w") as f:
@@ -199,7 +205,7 @@ def main():
         source_domains = parse_domains(text)
         new_domains = source_domains - my_domains
         gap_domains.update(new_domains)
-        print(f"     {url.split('/')[-1]}: {len(source_domains)} total, {len(new_domains)} new domains")
+        print(f"    {url.split('/')[-1]}: {len(source_domains)} total, {len(new_domains)} new domains")
 
     gap_domains_sorted = sorted(gap_domains)
     print(f"  Total DNSBL gaps: {len(gap_domains_sorted)} domains")
@@ -214,8 +220,8 @@ def main():
             f.write(domain + "\n")
 
     print(f"\n=== Done ===")
-    print(f"  IP gaps:    {len(gap_nets_collapsed):,} networks → {OUTPUT_IP}")
-    print(f"  DNSBL gaps: {len(gap_domains_sorted):,} domains  → {OUTPUT_DNS}")
+    print(f"  IP gaps: {len(gap_nets_collapsed):,} networks → {OUTPUT_IP}")
+    print(f"  DNSBL gaps: {len(gap_domains_sorted):,} domains → {OUTPUT_DNS}")
 
 
 if __name__ == "__main__":
