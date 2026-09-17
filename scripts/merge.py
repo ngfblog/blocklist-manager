@@ -178,9 +178,16 @@ def main():
     with open(CACHE_FILE, "w") as f:
         json.dump({
             "generated": datetime.now(timezone.utc).isoformat(),
-            "sources": source_cache
+            "sources": source_cache,
+            # Cache the base ("my") IP list snapshot too — not just the
+            # compare-sources. Spamhaus/Emerging Threats/etc. churn
+            # constantly, so if compare.py re-downloads these independently
+            # a few minutes later, IPs that were "covered" here can appear
+            # "uncovered" there purely from base-list drift, not from any
+            # real gap. Sharing this exact snapshot removes that drift.
+            "my_ip_nets": sorted(str(n) for n in my_ip_nets)
         }, f)
-    print(f"  Cached {len(source_cache)} source snapshots → {CACHE_FILE}")
+    print(f"  Cached {len(source_cache)} source snapshots + base list → {CACHE_FILE}")
 
     gap_nets_collapsed = sorted(
         ipaddress.collapse_addresses(n for n in gap_nets if n.version == 4),
