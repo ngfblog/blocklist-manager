@@ -1,5 +1,5 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-17 13:25 UTC
+# Generated: 2026-09-17 18:29 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
 # Total entries: 141314 domains
@@ -58221,6 +58221,7 @@ hase.in
 hasebaty.com
 hasegawamodel.com
 hashcat.app
+hashedsolver.icu
 hashersargus.shop
 hashing.com
 hashisa.com
@@ -67857,7 +67858,6 @@ krxwwojyad.com
 kryptod.com
 kryptofx.com
 kryptographen.de
-kryptonclient.vip
 kryptoneo.com
 kryptoswap.my
 ks-baumarkt.com
