@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-18 13:02 UTC
+# Generated: 2026-09-18 18:04 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 142504 domains
+# Total entries: 142502 domains
 #
 0--4.com
 0--d.com
@@ -65370,7 +65370,6 @@ jnoznr.dateewithus.com
 jnpmfdgxlsafbsd.com
 jnqv.top
 jnrtavp2x66u.com
-jnt.bild.de
 jnvbrctrxjuvy.com
 jnwpzq.com
 jnwucna.top
@@ -74116,7 +74115,6 @@ massdna.com
 massen.shop
 massets.appsflyer.com
 massgravel.com
-massgravel.net
 massimo-dutti.at
 massive-deals.com
 massive-ease.pro
