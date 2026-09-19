@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-19 12:56 UTC
+# Generated: 2026-09-19 17:40 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 142807 domains
+# Total entries: 142808 domains
 #
 0--4.com
 0--d.com
@@ -3120,7 +3120,6 @@
 14y.net
 14zipai.xyz
 15-minute-appointment.com
-150.co.il
 1500m2.com
 1500perimeterparkway.com
 1500perimeterparkway.net
@@ -25810,6 +25809,7 @@ azullinhasaereas.tt.omtrdc.net
 azurapoolcare.com
 azure-docu-analytics.azurewebsites.net
 azureanungrasppluvial.cyou
+azuredcalcar.com
 azuremodule.com
 azureus.es
 azuztqqoqbi.com
@@ -53303,6 +53303,7 @@ furphyrisotto.cyou
 furredunedged.com
 furrowywiriest.cyou
 furrying.com
+furudloof.com
 furvt.finishline.com
 furykms.com
 fuse-ad.com
