@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-21 15:23 UTC
+# Generated: 2026-09-21 23:25 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 140646 domains
+# Total entries: 140640 domains
 #
 0--4.com
 0--d.com
@@ -7613,7 +7613,6 @@ a392dd20b73bb6c9.com
 a3ab17f8dfee5319.com
 a3cloud.net
 a3h.de
-a3kvau184uea.com
 a3n.de
 a401751626.cdn.optimizely.com
 a41765.actonsoftware.com
@@ -18910,7 +18909,6 @@ analytics.lawin60.net
 analytics.lawin60plus.net
 analytics.lawin60pro.net
 analytics.lawin60ultra.net
-analytics.laxamentum.tech
 analytics.lbry.com
 analytics.lbsd.at
 analytics.lc-ds.de
@@ -83274,7 +83272,6 @@ n.clips4sale.com
 n.gp
 n.hyperinzerce.cz
 n.kettenbach-immobilien.de
-n.nstbrowser.io
 n.rosehosting.com
 n.serialeonline.pl
 n122ypfxtrhre27.cfd
@@ -87085,6 +87082,7 @@ onex-corporation.com
 onex-trade.com
 onezapp.com
 onfallshitty.com
+onfiltre.com.tr
 onfinery.com
 onfirstshow.site
 ongaurd.com
@@ -90668,7 +90666,6 @@ pibgornunknots.shop
 pibikakrg.com
 pibok.de
 pibubi.com
-pica-ad-api.diwodiwo.xyz
 picanalysis.vivo.com.cn
 picardcoreshuspil.cyou
 picardroanoke.cyou
@@ -99634,7 +99631,6 @@ rlets.com
 rlftd.staples.com
 rljjt.cn
 rlmkr6fpngw6kjz.cfd
-rlog.baifentan.com
 rlog.video.qq.com
 rlog4.vizio.com
 rloteria.com
@@ -128051,7 +128047,6 @@ u.guannin.com
 u.hit.gemius.pl
 u.kimai.org
 u.l.qq.com
-u.omgjav.com
 u.peterthaleikis.com
 u1n7qcy9tnkfc54jbww7.cfd
 u1sdata.webullfintech.com
@@ -140603,7 +140598,6 @@ zyuo6teb8r9k4be69f8v.cfd
 zyvbvqvjjkjkb.top
 zyvbvqvwqomow.top
 zyxwvutsrqponmlkjihgfedcbazyxwvutsrqponmlkjihgfedcbazyxwvutsrqp.de
-zyy25t69u.com
 zyynxbfkwms.com
 zyyvyfkeydwgv.online
 zyzlpt.com
