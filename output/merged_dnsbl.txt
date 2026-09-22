@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-21 23:25 UTC
+# Generated: 2026-09-22 07:54 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 140640 domains
+# Total entries: 140641 domains
 #
 0--4.com
 0--d.com
@@ -40895,6 +40895,7 @@ deautorabatt.com
 debagkedarnectary.cfd
 debasketball.com
 debateshindiganymore.com
+debbiecarter.com
 debbiesmurexacknew.cfd
 debbiestabenowforsenate.org
 debbihwarren.com
@@ -113521,6 +113522,7 @@ spanner44.com
 spanpromo-link.com
 spanulepongee.com
 spar-allianz.de
+spar-dienst.de
 spar-markt.de
 sparbusinessservices.sc.omtrdc.net
 sparbusinessservices.tt.omtrdc.net
@@ -121959,7 +121961,6 @@ talasderat.store
 talaya.de
 talbots.com.ssl.sc.omtrdc.net
 talbotsinc.tt.omtrdc.net
-talcoseliukiu.com
 talenorvixa.com
 talent-levia.com
 talent.sharethis.com
