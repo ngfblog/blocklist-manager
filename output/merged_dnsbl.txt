@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-23 18:55 UTC
+# Generated: 2026-09-23 23:19 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 137736 domains
+# Total entries: 137732 domains
 #
 0--4.com
 0--d.com
@@ -1443,6 +1443,7 @@
 0fbee846c6.com
 0fc444b9be1e3632.com
 0ff34e8ab8.com
+0following.com
 0forum.biz
 0fs.me
 0fucks.xyz
@@ -9701,6 +9702,7 @@ adds.weatherology.com
 addthiscdn.com
 addthisedge.com
 addugispir.rest
+addurltogoogle.com
 addweb.ru
 addwish.com
 addy.expressen.se
@@ -20815,7 +20817,6 @@ analytics.sport.es
 analytics.sport24-shop.com
 analytics.sport24.dk
 analytics.sportcorico.com
-analytics.sportigio.com
 analytics.sportisimo.bg
 analytics.sportisimo.com
 analytics.sportisimo.cz
@@ -26779,7 +26780,6 @@ beacons3.gvt2.com.zetakai.kozow.com
 beaconstreetservices.com
 bead-ad.com
 beakertroll.com
-beam.telegram.hr
 beambead.com
 beambroth.com
 beamednation.com
@@ -31276,7 +31276,6 @@ camp-api.naver.com.nheos.com
 campabedel.cyou
 campaign-sentry.hepsiburada.com
 campaign-telemetry.phreesia.net
-campaign.telegram.hr
 campaign.thehindubusinessline.com
 campaigncog.com
 campaignified.xyz
@@ -43445,7 +43444,6 @@ dutyfreeoutlet.com
 dutypayslips.com
 dutytill.com
 dutztechh.shop
-duvkog4eyegl0.cloudfront.net
 duvnihavrob.in
 duwaylconcept.com
 duxingangtiaoban.com
@@ -99003,7 +99001,6 @@ scamwebsite.com
 scan-recouvrement.com
 scan.page
 scan6show.com
-scanbot.me
 scanbuymart.com
 scandicas.com
 scandichotelsab.data.adobedc.net
@@ -122905,7 +122902,6 @@ tracker.snowsphere.net
 tracker.softgarden.de
 tracker.stileo.it
 tracker.switch.ch
-tracker.telegram.hr
 tracker.tnt.studio
 tracker.tradedoubler.com
 tracker.tsell.cc
