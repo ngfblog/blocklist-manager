@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-23 23:19 UTC
+# Generated: 2026-09-24 07:54 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 137732 domains
+# Total entries: 137731 domains
 #
 0--4.com
 0--d.com
@@ -65108,7 +65108,6 @@ korean1fa.xyz
 koreatownlanews.com
 korep4fxb6.data.adobedc.net
 korespodent.net
-korexnode.xyz
 korff-agrarbau.de
 korfo.org
 korfys.shop
