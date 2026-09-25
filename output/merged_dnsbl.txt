@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-24 18:55 UTC
+# Generated: 2026-09-24 23:44 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 138410 domains
+# Total entries: 138408 domains
 #
 0--4.com
 0--d.com
@@ -16821,7 +16821,6 @@ analytics.clear-guide.org
 analytics.clearcutdigital.com
 analytics.cleura.com
 analytics.cleverside.com
-analytics.click-or-die.ru
 analytics.click2apply.net
 analytics.click4survey.com
 analytics.clickdimensions.com
@@ -63728,7 +63727,7 @@ justdieselcars.co.uk
 justearn.it
 justgoodsalt.com
 justhelping.com
-justice.hls.lol
+justice.maybeoneday.ch
 justicensw.tt.omtrdc.net
 justinedmund.com
 justinepulvino.qpon
@@ -78265,7 +78264,6 @@ metrics.teamviewer.com
 metrics.technodom.kz
 metrics.teemill.com
 metrics.teksavvy.com
-metrics.temptcdn.com
 metrics.tempur.com
 metrics.tenpin.co.uk
 metrics.teqblaze.com
