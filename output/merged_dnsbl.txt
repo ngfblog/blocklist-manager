@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-26 13:06 UTC
+# Generated: 2026-09-26 22:47 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 140522 domains
+# Total entries: 140507 domains
 #
 0--4.com
 0--d.com
@@ -24195,7 +24195,6 @@ art-portrait.de
 art.rollinart.at
 artamuspaterae.cfd
 artboxagency.org
-artcat.net
 artcrochetshop.com
 artefact.is
 artefuncional.com
@@ -26235,7 +26234,6 @@ bakuronel.com
 balaamstoppleimams.cyou
 balady-metrics.urbi.ae
 balajiparking.com
-balamutka.link
 balance-leben.at
 balancecentrum.eu
 balancedecke.de
@@ -35103,7 +35101,6 @@ coast-telemetry.trainsimworld.net
 coastalbloom.xyz
 coastalcabinet.sbs
 coastalscontractors.com
-coastaltltlela.com
 coastalwinter.com
 coasthubba.cfd
 coat0tire.com
@@ -39901,7 +39898,6 @@ data-track-global.yingxiong.com
 data-track.yingxiong.com
 data-tracker-43ai52v45a-ew.a.run.app
 data-vocabulary.org
-data-www-weaver.wanted.co.kr
 data.07eins.com
 data.102.122.2o7.net
 data.123drogisterij.nl
@@ -42316,7 +42312,6 @@ discodude.com
 disconnectedsoftballcolonel.com
 discoradioitalia01.wt-eu02.net
 discord.ru
-discordrewards.com
 discospizza.com
 discotutel.store
 discount-audio-equipment.com
@@ -46451,7 +46446,6 @@ epoxyworkshop.de
 epp.bih.net.ba
 eppdoocnrivaa.website
 eppescanning.com
-eppost-gon.us.cc
 eprdl.online
 eprice.it.102.122.2o7.net
 epromarket.com
@@ -50496,6 +50490,7 @@ fitbook.de.ssl.sc.omtrdc.net
 fitcenterz.com
 fitflopromania.com
 fitforpurposetreatment.org
+fitfur.qpon
 fitgirl-repack.com.in
 fitgirl-repacks.org
 fitgirl-repacks.pk
@@ -53633,7 +53628,6 @@ gentlemanmagazin.de
 gentlemanmode.de
 gentlemfr.com
 gentletreefield.com
-gentlledreams.com
 gentor.de
 genuine-machine.com
 genuinepartscompany.tt.omtrdc.net
@@ -62490,7 +62484,6 @@ interpellet.at
 interpersonalskillse.info
 interpolls.com
 interpretanaemia.com
-interpromosi.store
 interrenog.store
 interrogationpreparedgenerous.com
 intersberr.store
@@ -66272,7 +66265,6 @@ kleurrijkedame.com
 kleversholz.com
 kley-kanzlei.com
 klick4u.de
-klicklotse.click
 klickly.com
 klickpiloten.de
 klicksternchen.click
@@ -66631,7 +66623,6 @@ kostenlose-counter.com
 kostuemfest.com
 kostumparty.com
 kosv.net
-kotaccfuel.com
 kotadp.com
 kotakmahindrabank.sc.omtrdc.net
 kotakmahindrabank.tt.omtrdc.net
@@ -67069,7 +67060,6 @@ kurushiunai.jp
 kurvea.com
 kurvukbkiqc.in
 kurwa-bober.ninja
-kurznova.click
 kurzschliessen.de
 kurzurlaub-deal.de
 kurzycz.care
@@ -68941,13 +68931,11 @@ links.lc
 links2revenue.com
 linksalpha.com
 linkscout.com
-linkseil.click
 linkslot.ru
 linksmallbusinesschallenge.xyz
 linksnavi.com
 linksta.cc
 linkstorm.net
-linksturm.click
 linktraff.ru
 linkunder.ru
 linkurlove.com
@@ -77589,6 +77577,7 @@ mecash.ru
 mechabiptouth.com
 mechanicalpartsde.com
 mechanicse.com
+mechanische-werkstaette.de
 mechat.info
 mechirearlish.cfd
 mechtildfiebig.de
@@ -82630,7 +82619,6 @@ mykitworkshops.de
 mykl-law.net
 mylead-tracking.tracknow.info
 myleadcorner.com
-mylewisph.com
 mylifeisboringandiwannadoasidequestbutidontknowwhattodo.com
 mylikes.com
 mylinkinb.io
@@ -92623,7 +92611,6 @@ play-analytics.com
 play-egypt-go.com
 play-fivezerosix-online.com
 play-garant.com
-play-roblox.com
 play-services-telemetry.googleapis.com
 play.underdogfantasy.com
 playable-stats.mindworks-creative.com
@@ -124211,7 +124198,6 @@ tokbit.site
 tokd-whatsapp.hl.cn
 token-invest.com
 tokendomain.xyz
-tokenim-hk-cdn.sbs
 tokenisation.cn
 tokesdupe.com
 toki-no-irodori.com
@@ -127161,6 +127147,7 @@ turkescortbayan.com
 turkeynewstoday.com
 turkeyrank.com
 turkeyweaver.com
+turking.site
 turkish.lc
 turkishsilverwholesale.com
 turkleak.info
@@ -139406,7 +139393,6 @@ zavirand.com
 zavoretern.store
 zavovpargct.com
 zavv4532.xyz
-zaxacy.com
 zaxade.com
 zaxakerom.com
 zaxdfibadv.in
@@ -139630,7 +139616,6 @@ zeniocloud.com
 zenithcampus.com
 zeniya.pro
 zenla.de
-zenlatrix83.pro
 zeno-paris.shop
 zenoclimat.de
 zenova-shop.de
