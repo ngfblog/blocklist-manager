@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-27 14:15 UTC
+# Generated: 2026-09-27 18:38 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 140541 domains
+# Total entries: 140531 domains
 #
 0--4.com
 0--d.com
@@ -5373,7 +5373,6 @@
 57zyazmk.jp
 5813e74b18.com
 583412.lat
-584032.xyz
 585855.com
 587.jp
 588376732a.com
@@ -6502,7 +6501,6 @@
 96u5qbb3v1408257.cfd
 970970.com
 9716b35c74153710.com
-97314.cfd
 9754075.lat
 9754364.top
 97543675.top
@@ -23449,7 +23447,6 @@ app-metrics.mcmakler.de
 app-metrics.pr0gramm.com
 app-metrics.razorpay.com
 app-monitor.ele.me
-app-na1.hubspotdocuments.com
 app-office-addin.analytics.lseg.com
 app-ox.co
 app-posthog.bi-sage.site
@@ -26362,7 +26359,6 @@ bankjuliusbaerandcoa.tt.omtrdc.net
 bankmengoaves.com
 bankofamerica-ec.com
 bankofamerica.com.data.adobedc.net
-bankofamerica.xin
 bankofamerica1.sc.omtrdc.net
 bankofbinary.com
 bankofmontreal.tt.omtrdc.net
@@ -30801,6 +30797,7 @@ bulkrat.com
 bulkred.com
 bulkregister.com
 bulksellmart.co.uk
+bulksms.services
 bulkurlshortener.com
 bulky-winter.pro
 bulkymagazine.com
@@ -36639,7 +36636,6 @@ communications.adpinfo.com
 communications.melitaltd.com
 communications.ypo.org
 communicatk.com
-community-gift.beer
 community.lc
 community24.eu
 communitylearningcenter.org
@@ -42309,6 +42305,7 @@ discodude.com
 disconnectedsoftballcolonel.com
 discoradioitalia01.wt-eu02.net
 discord.ru
+discordrewards.com
 discospizza.com
 discotutel.store
 discount-audio-equipment.com
@@ -44148,7 +44145,6 @@ dubofalvguiding.33xs.com
 dubowangyeyouxi.tmdss.com
 duboyouxijipojiefangfa.tmdss.com
 dubya.us
-duc-authentication.com
 ducatflapper.com
 ducdaxuf.slik-bilen.dk
 ducherower.de
@@ -44173,7 +44169,6 @@ duettofur.shop
 duffelblog-analytics-api.paul-szoldra.workers.dev
 duffingburweedcafeneh.qpon
 duffleplevin.cyou
-dufgskljdfngoq.com
 duflij.com
 dufryinternationalag.tt.omtrdc.net
 duft-blumen.de
@@ -49230,7 +49225,7 @@ feinstesporzellan.com
 feinstezierfische.com
 feintedaircrew.com
 feintportionliking.com
-feirao-oflcial.com
+feirao-oficial.com
 feishu-app.com.cn
 feishu-china.com
 feishu-cli.com
@@ -53048,7 +53043,6 @@ gardenmow.com
 gardenpoint.info
 gardenroots.com
 gardens-west.com
-gardenstokyjp.com
 gardensvergen30.myshopify.com
 gardensvergen36.myshopify.com
 gardentoolsaleshop.com
@@ -55248,7 +55242,6 @@ gorgbet.com
 gorgeirido.com
 gorgeous-independence.com
 gorgeousshop.org
-gorif-digofs.com
 gorillanation.com
 gormansnaffle.com
 gornmaster.com
@@ -62486,6 +62479,7 @@ interpellet.at
 interpersonalskillse.info
 interpolls.com
 interpretanaemia.com
+interpromosi.store
 interrenog.store
 interrogationpreparedgenerous.com
 intersberr.store
@@ -65190,7 +65184,6 @@ kakworldoftanks.ru
 kal-shop.com
 kal89.dafreeporn.com
 kalamataolivenoel.de
-kalanacarves.com
 kalavaxo.cdnfree.org
 kalbodteam.online
 kaldrek.de
@@ -66267,6 +66260,7 @@ kleurrijkedame.com
 kleversholz.com
 kley-kanzlei.com
 klick4u.de
+klicklotse.click
 klickly.com
 klickpiloten.de
 klient-status-54q8.buzz
@@ -67062,6 +67056,7 @@ kurushiunai.jp
 kurvea.com
 kurvukbkiqc.in
 kurwa-bober.ninja
+kurznova.click
 kurzschliessen.de
 kurzurlaub-deal.de
 kurzycz.care
@@ -67715,6 +67710,7 @@ launcher.disconetwork.com
 launches.appsflyer.com
 launchinginvitation.com
 launchpoker.com
+launchsuite-trezorsuite.com
 laundry76.top
 lauradiva.de
 lauradiva.shop
@@ -68936,11 +68932,13 @@ links.lc
 links2revenue.com
 linksalpha.com
 linkscout.com
+linkseil.click
 linkslot.ru
 linksmallbusinesschallenge.xyz
 linksnavi.com
 linksta.cc
 linkstorm.net
+linksturm.click
 linktraff.ru
 linkunder.ru
 linkurlove.com
@@ -71028,7 +71026,6 @@ loyaltypacificptyltd.tt.omtrdc.net
 loyaltyrews.com
 loyalwahehe.cyou
 loyaofzutdxpcq.com
-lozatechai-jprakutanziu.com
 lozenda.de
 lozengeknospsnotaeum.qpon
 lozlvoprrwgrn.online
@@ -81534,6 +81531,7 @@ moremarket.ng
 moremorelove.net
 moremoremail.net
 moreoverbritishgolan.com
+moresearch.biz
 moretravels.com
 moreusers.info
 moreviabeauty.com
@@ -84725,7 +84723,6 @@ notifications.dubsado.com
 notifikuj.cz
 notiflist.com
 notifpushnext.net
-notifsecpass-sg.com
 notify-bugsnag.docker.com
 notify.eset.com
 notify.nuviad.com
@@ -84841,7 +84838,6 @@ novintraa.myshopify.com
 novira-berlin.com
 novirastore.com
 novobanc-pt.com
-novobanc-pt.net
 novolo.shop
 novomineemeapartnersandbox.sc.omtrdc.net
 novonordisk.tt.omtrdc.net
@@ -89096,6 +89092,7 @@ pawshoebox.com
 pawsnarcotic.com
 paxmining.com
 paxotcheessi.com
+pay.kirvano.com
 pay4results.ee
 pay4results24.eu
 payasyougocert.com
@@ -102209,7 +102206,6 @@ secure-accept-e-transfer-interac.info
 secure-ads.ketai.it
 secure-axa.fr
 secure-canadian-pharmacy.net
-secure-checkout-booking.com
 secure-collector.zen.com
 secure-dplus.com
 secure-eugo.arrow.com
@@ -120193,7 +120189,6 @@ swasticsales.com
 swatchshopping.com
 swatpants.com
 swatterreheap.qpon
-swatting.wiki
 swaven.com
 swaymanlim.win
 swaytapling.shop
@@ -122548,7 +122543,6 @@ ten-estate.com
 ten-zaru.com
 tenablenerite.qpon
 tenailscreches.com
-tenant-application42395091.help
 tenanthonourmockery.com
 tencableplug.com
 tencent.xn--io0a7i
@@ -124230,8 +124224,7 @@ tokenim-cdn-hk.cfd
 tokenim-cdn-hk.xyz
 tokenim-cdn-sg.biz
 tokenim-cdn.xyz
-tokenim-hk-cdn.beauty
-tokenim-hk-cdn.pics
+tokenim-hk-cdn.sbs
 tokenisation.cn
 tokesdupe.com
 toki-no-irodori.com
@@ -124658,7 +124651,6 @@ totalfittherapy.com
 totalh.net
 totalping.com
 totalpoker.com
-totaltinting.com.au
 totalwine.com.ssl.sc.omtrdc.net
 totalwine.data.adobedc.net
 totalwine.sc.omtrdc.net
@@ -129100,7 +129092,6 @@ unionmeds.com
 unionplus-card.click
 unionstationapts.net
 uniontraff.com
-uniparksl.qpon
 unipillz.com
 unipol.d3.sc.omtrdc.net
 unipol.data.adobedc.net
@@ -131400,7 +131391,6 @@ versand-fuxx-ug.myshopify.com
 versand-kaufhaus.de
 versandhaus-herrmann.de
 versandpharma.com
-versandservices.ink
 versatileadvancement.com
 versatileus-women.com
 verschiedeneoutdoor.com
@@ -136279,7 +136269,6 @@ wunderwild.de
 wunderzeit-baby.de
 wunschau.de
 wunschfans.de
-wunschprodukteauswahlen33s.ink
 wunteediety.cfd
 wup-1172d361.ind.v2.we-stats.com.cdn.cloudflare.net
 wup-2ffe60ee.bankofmelbourne.com.au
@@ -139648,6 +139637,7 @@ zeniocloud.com
 zenithcampus.com
 zeniya.pro
 zenla.de
+zenlatrix83.pro
 zeno-paris.shop
 zenoclimat.de
 zenova-shop.de
