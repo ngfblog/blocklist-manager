@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-28T00:03:54.347335+00:00",
+  "generated": "2026-09-28T09:27:22.267218+00:00",
   "my_networks_count": 57763,
   "recommendations": [
     {
@@ -27,7 +27,7 @@
       "description": "Blocklist.de \u2013 IPs that attacked SSH, FTP, web servers in last 48h",
       "url": "https://lists.blocklist.de/lists/all.txt",
       "type": "ip",
-      "total_networks": 30076,
+      "total_networks": 30001,
       "new_networks": 3,
       "your_coverage_pct": 100.0,
       "worth_adding": false
