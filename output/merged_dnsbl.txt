@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-09-27 18:38 UTC
+# Generated: 2026-09-27 23:31 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 140531 domains
+# Total entries: 140529 domains
 #
 0--4.com
 0--d.com
@@ -30386,7 +30386,6 @@ broworker15s.com
 broworker4s.com
 broworker8s.com
 broworker9s.com
-browpotware.com
 browsee.io
 browseer-sogou.com.cn
 browsekeeper.com
@@ -84460,7 +84459,6 @@ noctiviostore.com
 nocturnalaverage.com
 nocturnalprofessor.com
 nod1.lirema.se
-nodals.io
 noddlesmuvule.qpon
 noddus.com
 node.azur-online.de
