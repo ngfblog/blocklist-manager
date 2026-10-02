@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-02 19:19 UTC
+# Generated: 2026-10-02 23:44 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 138440 domains
+# Total entries: 138446 domains
 #
 0--4.com
 0--d.com
@@ -3775,7 +3775,6 @@
 2026cname.com
 2026cnamenew2.com
 2026cnamens19.com
-2026reducaotaxas.sbs
 2027casino.com
 2027poker.com
 2027solareclipseegypt.com
@@ -9268,11 +9267,13 @@ adat.baon.hu
 adat.beol.hu
 adat.bihon.ro
 adat.boon.hu
+adat.borsonline.hu
 adat.delmagyar.hu
 adat.feol.hu
 adat.haon.hu
 adat.heol.hu
 adat.kemma.hu
+adat.koponyeg.hu
 adat.retroradio.hu
 adat.sonline.hu
 adat.szoljon.hu
@@ -29332,6 +29333,7 @@ brandt-belle.de
 brandup-grade.de
 brandvoom.com
 brandyheathenfashioned.com
+branetempresarial.digital
 brangista.122.2o7.net
 branlesero.com
 bransoncapital.cfd
@@ -33585,6 +33587,7 @@ cleeknhanfurzy.cyou
 cleen.ru
 cleftvagueflatten.com
 clemencyexceptionpolar.com
+clemensantikvariat.dk
 clenchinfer.com
 clentrk.com
 cleoberlin.de
@@ -34560,6 +34563,7 @@ colinextend.com
 colinprobe.com
 colintwentiethcheapen.com
 coliponych.store
+colissimo-outremer.com
 colivulgare.cfd
 collarity.com
 collarsflanged.top
@@ -45121,7 +45125,6 @@ emporiojane.co.za
 emporium-digital.com
 empowerlocal.co
 empresa-bia.help
-empressinterba.site
 emptionunpray.com
 emptyreplacement.com
 empusacooner.com
@@ -46019,6 +46022,7 @@ espace-secufr.com
 espace97280.com
 espacedblc.com
 espaceverts.com
+espacio-de-renovacion.com
 espanodeal.lat
 espanrimis.store
 espares01.wt-eu02.net
@@ -49890,6 +49894,7 @@ flower-byte.com
 floweraup.com
 flowercomedy.com
 flowerdicks.com
+flowerlofirla.com
 flowermodas.com
 flowersprost.cyou
 flowery-economy.com
@@ -70065,7 +70070,6 @@ luxeparfum.co.uk
 luxeron.de
 luxetalks.com
 luxevibehub.com
-luxfab.luxe
 luxfi.de
 luxfp.space
 luxhause.de
@@ -70821,6 +70825,7 @@ manatee.io
 manbestdate.net
 manbycus.com
 mancareand.com
+mancrewinit.sbs
 mandanelutes.cfd
 mandarinorientalmgt.tt.omtrdc.net
 mandartoilerummies.cyou
@@ -79944,6 +79949,7 @@ mon16-normal-us-ttp.capcutapi.us.edgesuite.net
 mon3-misc-lf.fqnovel.com
 mon3-misc.fqnovel.com
 monacandoormat.qpon
+monacces-securise.com
 monaccessoirebeaute.com
 monaclient.com
 monarchads.com
@@ -82180,6 +82186,7 @@ netdreamersad.durasite.net
 netelektro.com
 netembed.xyz
 netempresabia.help
+netempresasatualizar.com
 neteor.com
 neterbarit.com
 netextra.hu
@@ -82365,7 +82372,6 @@ newfulfilment.com
 newgen-track.de
 newgocontainers.com
 newgoodfoodmarket.com
-newgovtjobs.in.net
 newheartoftexas.org
 newhoney.jp
 newinmountain.com
@@ -84306,6 +84312,7 @@ odqtugonnwi.in
 ods-telemetry-server.dev.oa.yo-digital.com
 odtrtadl.com
 odtvcokzaof.com
+oduaody.com
 oduwow.com
 odyjsxwapjvac.online
 odylicplodge.qpon
@@ -108322,6 +108329,7 @@ sinmo.chasecenter.com
 sinogamepeck.com
 sinonneurism.com
 sinonpheno.store
+sinopeeditions.com
 sintoconve.store
 sinu24.de
 sinuatemedia.com
@@ -118284,6 +118292,7 @@ supply.bi.serviceplan.com
 supplyaquatics.com
 support-128448844521.us-south1.run.app
 support-beacon.userlocal.jp
+support-encontrar2yx.us
 support-google.hl.cn
 support-json.imoim.net
 support-metrics.confluent.io
@@ -123002,6 +123011,7 @@ tounnecessary.com
 toup.net
 toupinonpr.store
 tour375.com
+touralmarocco.it
 tourism.visitorlando.com
 tourismnerds.org
 tourismnz.sc.omtrdc.net
@@ -128067,7 +128077,6 @@ usermgmt-api.optimizely.com
 userneeds.com
 userprofile.push.heytapmobi.com
 userreplay.com
-users-boardds.com
 users.cuci.nl
 users.maxcluster.net
 users.videasy.to
@@ -132588,7 +132597,6 @@ webttracking.de
 webtuna.com
 webturn.ru
 webufexwg.com
-webulebs.com
 webunder.ru
 weburlopener.com
 webuzz.me
@@ -134243,7 +134251,6 @@ wstd.io
 wstxeaiowouqn.site
 wsu.sc.omtrdc.net
 wsvbcwilhukkkn.com
-wswhats.cyou
 wsxcdeqaz.com
 wt-google.com.cn
 wt-loadtesting.inflectionapp.net
@@ -135300,7 +135307,6 @@ xfd35.xyz
 xffdhyplpiqxd.website
 xfgctg.com
 xfghbdfghfdgh.pages.dev
-xfhfstore.com
 xficidaqdoxv.com
 xfidfuxidr.in
 xfinity.com.ssl.sc.omtrdc.net
