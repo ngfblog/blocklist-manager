@@ -1,13 +1,13 @@
 {
-  "generated": "2026-10-03T08:09:25.708442+00:00",
-  "my_networks_count": 44466,
+  "generated": "2026-10-03T13:23:16.485055+00:00",
+  "my_networks_count": 37645,
   "recommendations": [
     {
       "name": "firehol_level1",
       "description": "FireHOL Level 1 \u2013 top consensus blocklist aggregating 10+ trusted sources",
       "url": "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level1.netset",
       "type": "ip",
-      "total_networks": 4650,
+      "total_networks": 4645,
       "new_networks": 0,
       "your_coverage_pct": 100.0,
       "worth_adding": false
@@ -17,7 +17,7 @@
       "description": "FireHOL Level 2 \u2013 broader coverage, more aggressive blocking",
       "url": "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level2.netset",
       "type": "ip",
-      "total_networks": 14352,
+      "total_networks": 5270,
       "new_networks": 0,
       "your_coverage_pct": 100.0,
       "worth_adding": false
