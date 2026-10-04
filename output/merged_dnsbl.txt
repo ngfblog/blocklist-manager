@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-04 18:12 UTC
+# Generated: 2026-10-04 22:56 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 112675 domains
+# Total entries: 112660 domains
 #
 0--4.com
 0--d.com
@@ -5741,6 +5741,7 @@ a-counters.com
 a-elita.in.ua
 a-google.hl.cn
 a-i-ad.com
+a-linkedlin.com
 a-loch.de
 a-markt.de
 a-p-c-t.fr
@@ -11922,6 +11923,7 @@ amazon-shopaa.shop
 amazon-tam-match.dotomi.com
 amazonboxus.com
 amazonco.uk
+amazoncomp.az
 amazoncustomerservice.d2.sc.omtrdc.net
 amazonfulfillmentservices.sc.omtrdc.net
 amazongamestudios.d2.sc.omtrdc.net
@@ -16257,7 +16259,6 @@ app-metrics.mcmakler.de
 app-metrics.pr0gramm.com
 app-metrics.razorpay.com
 app-monitor.ele.me
-app-na1.hubspotdocuments.com
 app-ox.co
 app-posthog.bi-sage.site
 app-rush.com
@@ -22159,7 +22160,6 @@ btled.com
 btmarketing.it
 btmessage.com
 btncdn.com
-btnseqv.info
 btpnav.com
 btrank.top
 btrbdf.com
@@ -22613,7 +22613,6 @@ bwquktubbb.com
 bwredir.com
 bwreq22gl721ocbxnmi8rqg2468binmn.cfd
 bws-beratung.com
-bws.airwallex.com
 bwsrsjxrm.com
 bwtsrv.com
 bwvhtadad.com
@@ -25492,6 +25491,7 @@ cloud-cdn.ru
 cloud-exploration.com
 cloud-ingenuity.com
 cloud-iq.com
+cloud-ld-soporte.com
 cloud-log.yy.com
 cloud-ops-hub.com
 cloud-pages.svc-nue.pushwoosh.com
@@ -32786,7 +32786,6 @@ dpns-notifications.com
 dpost-gefolgtpaket.de
 dpost-versendung.de
 dpp750yjcl65g.cloudfront.net
-dppesulohfqre.cloudfront.net
 dppzmgxpxwnnk.space
 dpsecuredinvestments.com
 dptai.com
@@ -34131,7 +34130,6 @@ ebannertraffic.com
 ebanq2025.site
 ebase01.wt-eu02.net
 ebashop.store
-ebay5678.vip
 ebayclassifiedsgroup.com
 ebayobjects.com.au
 ebayrtm.com
@@ -34972,7 +34970,6 @@ elsevier.com.ssl.d1.sc.omtrdc.net
 elsevierlimited.tt.omtrdc.net
 elsewhere.info
 elsopia.com
-elsweb.app
 elternundkinderfreude.de
 eltex.co.jp
 eltin.com
@@ -40966,6 +40963,7 @@ gardenmow.com
 gardenpoint.info
 gardenroots.com
 gardens-west.com
+gardenstokyjp.com
 gardensvergen30.myshopify.com
 gardensvergen36.myshopify.com
 gardentoolsaleshop.com
@@ -44075,7 +44073,6 @@ guangzhuiyuan.com
 guanjiabo.net
 guanoo.net
 guanyipack.com
-guanyuezhihu-jp.com
 guaolassikyshachly.qpon
 guaraburevererkonkani.cyou
 guarantee-cdn.com
@@ -44726,6 +44723,7 @@ haohuisheng555.cn
 haokoubei.top
 haolo.de
 haomursim.com
+haoniuzibe-jp.com
 haoqiebike.de
 haose003.com
 haovx.com
@@ -47860,7 +47858,6 @@ ideenfruehling.org
 ident-acces-ppl.com
 ident-finanzonline.at
 identicalpeach.com
-identifcation.com
 identificationcardinalsteeple.com
 identifierincludehungry.com
 identifiersonerous.com
@@ -48513,7 +48510,6 @@ imrworldwide.com
 imshivoglite.qpon
 imtmp.net
 imtnormqdocinb.com
-imtoken.xin
 imtolenplex.com
 imtrace.org
 imtrend.at
@@ -51337,6 +51333,7 @@ jumbo.zomato.com
 jumbopassenger.pro
 jumenttallithborders.cyou
 jumentundrew.cyou
+jumiandan.com
 jump-hi-quality77.com
 jumpedearhole.qpon
 jumpedformer.com
@@ -54263,6 +54260,7 @@ leaperarage.qpon
 leaperskcmalist.qpon
 leapmobs.com
 leaptillumination.com
+learcorp.biz
 learn-started.kb.help
 learn.atdaslelabor.com
 learn.kompressify.com
@@ -54872,7 +54870,6 @@ lifespeaker.ru
 lifestyle-brands-us.com
 lifestyle-leder.de
 lifestylebicycle.com
-lifestylechangelife.com
 lifestyleconceiveeasel.com
 lifestylejournal.com
 lifetds.com
@@ -55683,7 +55680,6 @@ locatedchatprofane.com
 locatepartzeal.com
 locatesprolin.cfd
 locatezealous.com
-location-gpsmx-satelite.help
 location-services-measurements.s3-external-1.amazonaws.com
 location-v6.tiktokv.us.edgesuite.net
 location.dynabic.com
@@ -57244,7 +57240,6 @@ lux-ad.com
 lux-clubx.za.com
 lux-the-destiny.com
 luxads.net
-luxazure.luxe
 luxbetaffiliates.com.au
 luxeberlin.de
 luxeblissliving.com
@@ -63686,7 +63681,6 @@ mtm.sms-ol.com
 mtmkfjbitxzlhijfcenx.top
 mtmprd.tso-aws.com
 mtmsw.qdqmedia.com
-mtoken-cdn-sg-im.lol
 mtp.murrelektronik.com
 mtqhfcinxiiof.website
 mtquality.com
@@ -69508,6 +69502,7 @@ pakehajerid.cfd
 paket-de.com
 paket-dhl-de.com
 paket-sendungsverfolgung.com
+paket-zustelldiensta.ink
 paketzustellung.eu
 paketzustellung.mov
 pakke.click
@@ -69915,6 +69910,7 @@ pawsdefenseneigh.com
 pawshoebox.com
 pawsnarcotic.com
 paxmining.com
+pay.kirvano.com
 pay.wiapy.com
 pay4results.ee
 pay4results24.eu
@@ -69946,7 +69942,6 @@ payoffsmolefait.qpon
 payout-chatgpt.com
 payoutsolanum.shop
 paypal-ads.com
-paypal-transactions.sbs
 paypalcz.cz
 paypayinsurance.cn
 payperpost.com
@@ -73929,6 +73924,7 @@ promisecresyls.qpon
 promised.cc
 promit.ru
 promo-reklama.ru
+promo-sbb.com
 promo.lab-alimentation-nouvelle-aquitaine.fr
 promo4partners.com
 promociones.betsala.com
@@ -75003,7 +74999,6 @@ qeigr.luluandgeorgia.com
 qekbmjwjrbomr.top
 qekbmjyvbbawb.top
 qelvayklqqzro.top
-qendravik.cfd
 qenova.com
 qerestooker.com
 qerkbeaarqkmw.top
@@ -75959,7 +75954,6 @@ rakishinvoice.cyou
 rakistylets.com
 rakoff.ru
 raksha-bandhanm4.blogspot.com
-rakunten-shop.com
 rakutenadvertising.com
 rakutenadvertising.io
 rakxjt4c.ru
@@ -76196,6 +76190,7 @@ razwans.com
 razys.de
 razysshop.com
 rb-express.com
+rb-rot.xyz
 rb-str.ru
 rb.infox.sg
 rb.loftmentiple.com
@@ -76675,6 +76670,7 @@ redsquare.rambler.ru
 redstarchain.com
 redstarpoker.com
 redsurf.ru
+redsys-transactions.sbs
 redt.salamander.de
 redtamatofeed.com
 redtrack.godlike.host
@@ -86465,7 +86461,6 @@ silliesairparkfolia.cyou
 sillones.org
 silly-primary.com
 sillysink.com
-silmevorn.cfd
 silnymuz.com
 silux.shop
 silvaemegmho.shop
@@ -88418,7 +88413,6 @@ sophisticated-check.com
 sophisticatedversion.com
 sophus3.com
 sopiteakania.cfd
-soporte-app-gps.us
 soppdobuy.com
 sopranishamim.com
 soptimize.southwest.com
@@ -94736,6 +94730,7 @@ strakeolluck.shop
 stramfree.top
 strands.com
 strange-depth.pro
+stranoparts.com
 strapi.clickjogos.com.br
 strapology.co
 strashnokrivo.org
@@ -98929,19 +98924,14 @@ toitransit.com
 tojo-heizoel.de
 tokbit.site
 tokd-whatsapp.hl.cn
-tokeim-cdn.lol
 tokelaunavet.cyou
-token-cdn-acd.lol
 token-cdn-adn.click
-token-cdn-adn.xyz
-token-cdn-sg-im-ace.lol
-token-cdn-xgu.xyz
 token-ihk-cdn.cfd
 token-ihk-cdn.click
 token-ihk-cdn.cyou
 token-invest.com
 tokendomain.xyz
-tokenim-cdn-vip.lol
+tokenim-cdn-sg-k.lol
 tokenisation.cn
 tokesdupe.com
 toki-no-irodori.com
@@ -98957,7 +98947,6 @@ tokujiro.base.shop
 tokujirou.stores.jp
 tokumeichat135.net
 tokumeichatmail.net
-tokysevrtp-pe.top
 tolasdauk.cfd
 tolastoddlerauriga.qpon
 toleratepointless.com
@@ -104221,7 +104210,6 @@ vak8slb.adsafeprotected.com
 vakrin.com
 valaires.com
 valanio.com
-valburtonphot-jp.com
 valcreditance.com
 valeko.de
 valentinalondon.com
@@ -105856,7 +105844,6 @@ vongaiptim.net
 vongomedia.ru
 vonngallery.com
 vonnye.com
-vonovia-immobilien-house.com
 voob.ru
 voodoo.com
 voogradaloa.com
@@ -106814,7 +106801,6 @@ weakcompromise.com
 wealay.com
 wealma.com
 wealthicatorplattform.de
-wealthscapeinvestor.com
 wealthyblackgirls.com
 weaningrouellethirl.cfd
 weaponarratel.cfd
@@ -108698,7 +108684,6 @@ wpnjs.com
 wpnsrv.com
 wpnull.org
 wpokr.store
-wpotop.cyou
 wppluginspro.com
 wpps-office.hl.cn
 wprediscache.com
