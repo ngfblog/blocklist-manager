@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-04T08:08:48.460397+00:00",
-  "my_networks_count": 36883,
+  "generated": "2026-10-04T14:03:22.797861+00:00",
+  "my_networks_count": 38144,
   "recommendations": [
     {
       "name": "firehol_level1",
@@ -17,7 +17,7 @@
       "description": "FireHOL Level 2 \u2013 broader coverage, more aggressive blocking",
       "url": "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level2.netset",
       "type": "ip",
-      "total_networks": 5126,
+      "total_networks": 5084,
       "new_networks": 0,
       "your_coverage_pct": 100.0,
       "worth_adding": false
