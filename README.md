@@ -58,12 +58,15 @@ Edit the script and drop in your GitHub token:
 nano /root/Scripts/pfblockerng_sync.py
 ```
 
-Replace `YOUR_GITHUB_TOKEN_HERE` with a classic Personal Access Token (scope: `repo`).
+Replace `YOUR_GITHUB_TOKEN_HERE` with a fine-grained Personal Access Token limited to this one repository (permission: Contents → Read and write).
 
 **Creating a token:**
-1. https://github.com/settings/tokens → Generate new token (classic)
-2. Name it `blocklist-manager`, no expiration, scope: `repo`
-3. Copy it immediately — it won't show again
+1. https://github.com/settings/personal-access-tokens/new → Generate new token (fine-grained)
+2. Name it `blocklist-manager`, set an expiration, Repository access → *Only select repositories* → this repo
+3. Permissions → Repository permissions → Contents: *Read and write*
+4. Copy it immediately — it won't show again
+
+Keep the script private: `chmod 600 /root/Scripts/pfblockerng_sync.py`. Put the token expiry date in your calendar — if the token expires, the sync stops and the workflow fails after 72 hours with a clear message.
 
 Test it manually first:
 ```bash
@@ -90,7 +93,7 @@ Then add to cron (pfSense GUI → Services → Cron → Add):
 
 Actions → Update Blocklists → Run workflow
 
-First run takes around 20 minutes. After that it runs automatically at 03:00 UTC daily.
+First run takes around 20 minutes. After that it runs automatically every 6 hours (02:00, 08:00, 14:00, 20:00 UTC).
 
 ---
 
@@ -98,7 +101,7 @@ First run takes around 20 minutes. After that it runs automatically at 03:00 UTC
 
 ```
 02:30 local   pfSense cron runs pfblockerng_sync.py → pushes my_lists.json to GitHub
-03:00 UTC     GitHub Actions runs → builds output files + recommendations.json
+every 6 hours GitHub Actions runs → builds output files + recommendations.json
               index.html reads both and renders live data
 ```
 
@@ -117,7 +120,8 @@ blocklist-manager/
 │   └── update.yml
 ├── scripts/
 │   ├── merge.py               # builds merged_ip.txt and merged_dnsbl.txt
-│   └── compare.py             # builds recommendations.json
+│   ├── compare.py             # builds recommendations.json
+│   └── netutil.py             # shared parsers, bogon list and fast overlap check
 └── output/
     ├── merged_ip.txt
     ├── merged_dnsbl.txt
@@ -152,3 +156,15 @@ blocklist-manager/
 
 Personal homelab project. If it saved you some time, a small donation is appreciated.  
 👉 https://paypal.me/ShopNGF
+
+---
+
+## Safety checks
+
+The workflow refuses to publish when something looks wrong, so a broken download can never reach your firewall:
+
+- a source returns fewer entries than expected (empty or truncated file), or most of its lines can't be parsed
+- `my_lists.json` is older than 72 hours (pfSense sync stopped)
+- every `git push` attempt is rejected
+
+On any of these the run fails, the previous `output/` files stay untouched, and GitHub emails you about the failed run. Entries shorter than `/8` are dropped automatically.
