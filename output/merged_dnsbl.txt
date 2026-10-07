@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-06 19:38 UTC
+# Generated: 2026-10-06 23:54 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 115675 domains
+# Total entries: 115676 domains
 #
 0--4.com
 0--d.com
@@ -55853,6 +55853,7 @@ littleaha.com
 littlebyte.net
 littlecdn.com
 littledreamersshop.com
+littlejungle.pl
 littlesink.com
 littletikesdiscounts.com
 littlinpickage.com
