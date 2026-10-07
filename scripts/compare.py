@@ -5,11 +5,15 @@ Compares firehol sources against your active pfBlockerNG lists
 and produces recommendations.json
 """
 
-import requests
-import ipaddress
 import json
 import os
 from datetime import datetime, timezone
+
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+from netutil import CoverageIndex, is_excluded, is_geoip_url, is_self_url, parse_ips
 
 HEADERS = {"User-Agent": "blocklist-manager/1.0"}
 TIMEOUT = 30
@@ -36,56 +40,31 @@ MY_LISTS_FILE = "my_lists.json"
 OUTPUT_FILE   = "output/recommendations.json"
 CACHE_FILE    = "cache/ip_source_cache.json"
 
-BOGON_RANGES = [
-    ipaddress.ip_network("10.0.0.0/8"),          # RFC1918 private
-    ipaddress.ip_network("172.16.0.0/12"),       # RFC1918 private
-    ipaddress.ip_network("192.168.0.0/16"),      # RFC1918 private
-    ipaddress.ip_network("127.0.0.0/8"),         # loopback
-    ipaddress.ip_network("169.254.0.0/16"),      # link-local
-    ipaddress.ip_network("0.0.0.0/8"),           # "this network"
-    ipaddress.ip_network("100.64.0.0/10"),       # CGNAT
-    ipaddress.ip_network("224.0.0.0/4"),         # multicast
-    ipaddress.ip_network("240.0.0.0/4"),         # reserved / future use
-    ipaddress.ip_network("255.255.255.255/32"),  # limited broadcast
-    ipaddress.ip_network("192.0.2.0/24"),        # TEST-NET-1 (RFC 5737 documentation)
-    ipaddress.ip_network("198.51.100.0/24"),     # TEST-NET-2 (RFC 5737 documentation)
-    ipaddress.ip_network("203.0.113.0/24"),      # TEST-NET-3 (RFC 5737 documentation)
-]
+
+def make_session():
+    retry = Retry(
+        total=3,
+        backoff_factor=2,
+        status_forcelist=(429, 500, 502, 503, 504),
+        allowed_methods=("GET",),
+    )
+    session = requests.Session()
+    session.mount("https://", HTTPAdapter(max_retries=retry))
+    session.mount("http://", HTTPAdapter(max_retries=retry))
+    return session
 
 
-def is_bogon(net):
-    return any(net.overlaps(b) for b in BOGON_RANGES)
-
-
-def parse_ips(text):
-    nets = set()
-    for line in text.splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or line.startswith(";"):
-            continue
-        entry = line.split()[0]
-        try:
-            nets.add(ipaddress.ip_network(entry, strict=False))
-        except ValueError:
-            pass
-    return nets
+SESSION = make_session()
 
 
 def download(url, label):
     print(f"  Downloading: {label}")
     try:
-        r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+        r = SESSION.get(url, headers=HEADERS, timeout=TIMEOUT)
         r.raise_for_status()
         return r.text
     except Exception as e:
         raise RuntimeError(f"Failed to download {label}: {e}")
-
-
-def nets_overlap(net, existing_nets):
-    for existing in existing_nets:
-        if net.overlaps(existing):
-            return True
-    return False
 
 
 def load_cache():
@@ -100,35 +79,34 @@ def load_cache():
 
 def get_source_nets(url, label, cache_sources):
     # Reuse the exact snapshot merge.py downloaded moments ago in this same
-    # run, instead of downloading again — a second independent download
+    # run, instead of downloading again - a second independent download
     # drifts against fast-moving sources like firehol_level2 and never
     # settles at 0 gaps. Only fall back to a live download if merge.py
     # hasn't run yet or didn't cache this URL (e.g. run standalone).
     cached = cache_sources.get(url)
     if cached is not None:
         print(f"  Using cached snapshot: {label} ({len(cached)} entries)")
-        return {ipaddress.ip_network(n, strict=False) for n in cached}
+        nets, _ = parse_ips("\n".join(cached))
+        return nets
     print(f"  No cache for {label}, downloading fresh...")
-    text = download(url, label)
-    return parse_ips(text)
+    nets, _ = parse_ips(download(url, label))
+    return nets
 
 
 def get_my_ip_nets(my_ip_urls, cache):
     # Same reasoning as get_source_nets: reuse merge.py's exact base-list
     # snapshot instead of re-downloading. Spamhaus/Emerging Threats/etc.
-    # churn constantly (IPs added and removed), so an independent
-    # re-download minutes later drifts from what merge.py actually used to
-    # compute merged_ip.txt — making IPs merge.py correctly excluded as
-    # "already covered" look "newly uncovered" here, for no real reason.
+    # churn constantly, so an independent re-download minutes later drifts
+    # from what merge.py actually used to compute merged_ip.txt.
     cached = cache.get("my_ip_nets")
     if cached is not None:
         print(f"  Using cached base-list snapshot ({len(cached)} networks)")
-        return {ipaddress.ip_network(n, strict=False) for n in cached}
+        nets, _ = parse_ips("\n".join(cached))
+        return nets
     print("  No cached base-list snapshot, downloading fresh...")
     nets = set()
     for url in my_ip_urls:
-        text = download(url, url.split("/")[-1])
-        parsed = parse_ips(text)
+        parsed, _ = parse_ips(download(url, url.split("/")[-1]))
         nets.update(parsed)
         print(f"     {url.split('/')[-1]}: {len(parsed)} networks")
     return nets
@@ -142,26 +120,27 @@ def main():
     with open(MY_LISTS_FILE) as f:
         my_lists = json.load(f)
 
-    # Exclude ipverse (GeoIP) and blocklist-manager URLs from download
-    # GeoIP is irrelevant for coverage; merged_ip.txt will be added from local disk below
-    my_ip_urls = [u for u in my_lists.get("ip_lists", []) if "ipverse" not in u and "blocklist-manager" not in u]
+    # Exclude GeoIP and blocklist-manager URLs from download.
+    # GeoIP is irrelevant for coverage; merged_ip.txt is added from local disk below.
+    my_ip_urls = [u for u in my_lists.get("ip_lists", []) if not is_geoip_url(u) and not is_self_url(u)]
     print(f"  My IP sources: {len(my_ip_urls)}")
 
     print("\n[2] Loading my IP lists...")
     cache = load_cache()
     my_nets = get_my_ip_nets(my_ip_urls, cache)
 
-    # Add merged_ip.txt from local disk (already generated by merge.py in this same run)
-    # This ensures coverage calculation includes gaps already filled — without downloading
-    # a stale version from GitHub
+    # Add merged_ip.txt from local disk (already generated by merge.py in this same run).
+    # This ensures coverage calculation includes gaps already filled, without
+    # downloading a stale version from GitHub.
     merged_ip_path = "output/merged_ip.txt"
     if os.path.exists(merged_ip_path):
         with open(merged_ip_path) as f:
-            merged_nets = parse_ips(f.read())
+            merged_nets, _ = parse_ips(f.read())
         my_nets.update(merged_nets)
         print(f"     merged_ip.txt (local): {len(merged_nets)} networks")
 
     print(f"  Total my networks: {len(my_nets)}")
+    my_index = CoverageIndex(my_nets)
 
     print("\n[3] Comparing against external sources...")
     cache_sources = cache.get("sources", {})
@@ -170,7 +149,9 @@ def main():
     for name, source in COMPARE_SOURCES.items():
         print(f"\n  Checking: {name}")
         source_nets = get_source_nets(source["url"], name, cache_sources)
-        new_nets = [n for n in source_nets if not nets_overlap(n, my_nets) and not is_bogon(n)]
+        if not source_nets:
+            raise RuntimeError(f"{name}: no networks found - refusing to publish empty comparison")
+        new_nets = [n for n in source_nets if not my_index.overlaps(n) and not is_excluded(n)]
         coverage_pct = round((1 - len(new_nets) / max(len(source_nets), 1)) * 100, 1)
 
         print(f"    Total networks in source: {len(source_nets)}")
@@ -198,10 +179,12 @@ def main():
     }
 
     os.makedirs("output", exist_ok=True)
-    with open(OUTPUT_FILE, "w") as f:
+    tmp = OUTPUT_FILE + ".tmp"
+    with open(tmp, "w") as f:
         json.dump(output, f, indent=2)
+    os.replace(tmp, OUTPUT_FILE)
 
-    print(f"\n=== Done ===")
+    print("\n=== Done ===")
     for r in recommendations:
         status = "Worth adding" if r["worth_adding"] else "Already covered"
         print(f"  {r['name']}: {r['new_networks']:,} new networks – {status}")
