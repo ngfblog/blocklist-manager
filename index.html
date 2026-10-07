@@ -178,7 +178,7 @@ code{color:#79c0ff;font-family:monospace}
   </div>
 
   <div id="recs" class="panel">
-    <div class="banner"><i class="ti ti-info-circle"></i><span>GitHub Actions compares your active lists against external sources daily. Recommendations show what's missing from your coverage.</span></div>
+    <div class="banner"><i class="ti ti-info-circle"></i><span>GitHub Actions compares your active lists against external sources every 6 hours. Recommendations show what's missing from your coverage.</span></div>
     <div id="list-recs"><div class="loading">Loading recommendations...</div></div>
   </div>
 
@@ -186,8 +186,8 @@ code{color:#79c0ff;font-family:monospace}
     <div class="banner green"><i class="ti ti-check"></i><span>Live pfBlockerNG configuration, synced daily by a script running on pfSense.</span></div>
     <div class="sync-info">
       <div class="sync-title"><i class="ti ti-refresh" style="color:var(--green)"></i> How the sync works</div>
-      <div class="code-box">02:30  pfSense cron → pfblockerng_sync.py → my_lists.json → GitHub
-03:00  GitHub Actions → compare.py → recommendations.json → GitHub
+      <div class="code-box">02:30 local  pfSense cron → pfblockerng_sync.py → my_lists.json → GitHub
+Every 6 hours (02, 08, 14, 20 UTC)  GitHub Actions → merge.py + compare.py → output files → GitHub
        index.html reads both files and displays live data</div>
     </div>
     <div class="sync-info">
