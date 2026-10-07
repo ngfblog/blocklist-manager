@@ -6,22 +6,24 @@ on:
 concurrency:
   group: update-blocklists
   cancel-in-progress: false
-permissions:
-  contents: write
+permissions: {}
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: '3.11'
       - name: Install dependencies
-        run: pip install requests pyyaml
+        run: pip install -r requirements.txt
       - name: Run merge script
         run: python scripts/merge.py
       - name: Run comparison script
@@ -32,10 +34,19 @@ jobs:
           git config user.email "bot@blocklist-manager"
           git add output/
           git diff --cached --quiet || git commit -m "chore: update lists and recommendations $(date -u '+%Y-%m-%d %H:%M UTC')"
-          # Retry push with rebase in case remote moved while this job was running
+          # Retry push with rebase in case remote moved while this job was running.
+          # The step fails if every attempt is rejected, so a stale result is never reported as success.
+          pushed=0
           for i in 1 2 3; do
-            git push && break
+            if git push; then
+              pushed=1
+              break
+            fi
             echo "Push rejected, pulling and retrying ($i/3)..."
             git pull --rebase origin main
             sleep 5
           done
+          if [ "$pushed" -ne 1 ]; then
+            echo "::error::git push failed after 3 attempts"
+            exit 1
+          fi
