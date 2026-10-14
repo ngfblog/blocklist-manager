@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-13 20:06 UTC
+# Generated: 2026-10-14 07:12 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 113412 domains
+# Total entries: 113421 domains
 #
 0--4.com
 0--d.com
@@ -7023,6 +7023,7 @@ a8517651080.cdn.optimizely.com
 a8787468851.cdn.optimizely.com
 a8787894373.cdn.optimizely.com
 a883950043.com
+a8ae79b04a.0175a3229c.com
 a8clk.xserver.ne.jp
 a8cv.tokyo-dive.com
 a8sryxnzyc.data.adobedc.net
@@ -16851,7 +16852,6 @@ anntaylor.com.ssl.sc.omtrdc.net
 anntaylorinc.tt.omtrdc.net
 annuaire-autosurf.com
 annual-gamers-choice.com
-annualunion.com
 annuitiessold.com
 annulargulleys.com
 annulation-souscription-prime.com
@@ -20767,6 +20767,7 @@ bebogakharaoutride.qpon
 bebravecarbenestownet.qpon
 bebravedodos.cyou
 bebxbr.imirki27.com
+bechatotan.com
 bechic.club
 beckenfit.net
 becker-boutique.com
@@ -34875,7 +34876,6 @@ drammtestone.cfd
 drankticket.com
 drapart.org
 dratetillage.com
-dratexalt.com
 dratio.com
 drationecla.com
 draughtsolarycibory.cfd
@@ -35360,6 +35360,7 @@ dubofalvguiding.33xs.com
 dubowangyeyouxi.tmdss.com
 duboyouxijipojiefangfa.tmdss.com
 dubya.us
+dubzenom.com
 ducdameoxalato.com
 ducherower.de
 ducheryhoopoos.cyou
@@ -38306,7 +38307,6 @@ every-enjoy.com
 every-salmon.com
 every-shopping.pro
 every.com
-everybodycollecteagle.com
 everybodysophomore.com
 everyconclusion.pro
 everyday-outdoor.de
@@ -38908,6 +38908,7 @@ facebook-project-seven.vercel.app
 facebook-replica.vercel.app
 facebook-report.vercel.app
 facebook-roomvvip17.vercel.app
+facebook-sage-tau.vercel.app
 facebook-seven-alpha.vercel.app
 facebook-sigma-ruby.vercel.app
 facebook-signup-page-1zav.vercel.app
@@ -44148,6 +44149,7 @@ glossy-vacation.pro
 glossyburn.pro
 glostsganders.com
 glotgrx.com
+gloubauzaifoupe.net
 gloucmilsignid.net
 gloucoulroobuw.net
 glougloowhoumt.net
@@ -49333,6 +49335,7 @@ ichkaufegrundstuecke.de
 ichnaea-web.netflix.com
 ichnaea.dradis.netflix.com
 ichnaea.netflix.com
+ichofacouwhasa.net
 ichothaiwou.net
 icicisecurities.tt.omtrdc.net
 icicisecuritiesltd.data.adobedc.net
@@ -59490,6 +59493,7 @@ marketdeathly.com
 marketer.lv
 marketfy.de
 marketgiants.com
+marketgid.ru
 marketing-assets.vedantu.com
 marketing-guerilla.de
 marketing-info.wildberries.ru
@@ -75600,7 +75604,6 @@ psouthiboordaub.net
 psozoult.net
 psscdn.com
 pssthumidity.com
-psststernly.com
 psstyakuponfast.com
 pstat.flynet.de
 pstats.com
@@ -76661,6 +76664,7 @@ qrrrqx.cfd
 qrsu.io
 qrtrdpegrswsw.com
 qrumphathu.com
+qrvaygwbxg.net
 qrwoayzjybqwv.top
 qrwyvg.com
 qry.kr
@@ -76964,6 +76968,7 @@ qwifkyzupaj.com
 qwimdxczr.com
 qwinout.com
 qwitzovcu.in
+qwoeuhoeav.com
 qwov.qerkbejkbqwwo.top
 qwpg.com
 qwsoh.com
@@ -79679,6 +79684,7 @@ rtbix.com
 rtbix.xyz
 rtblab.net
 rtbpop.com
+rtbpopd.com
 rtbreachads.com
 rtbsape.com
 rtbuzz.net
@@ -87057,6 +87063,7 @@ shareease.link
 shareman.xyz
 sharemedia.rs
 sharemefiles.ru
+sharemyhtml.com
 sharenice.org
 shareno1wish.net
 sharescript.org
@@ -87106,6 +87113,7 @@ shebarindict.com
 sheckoaxausty.com
 shedaustoufitch.net
 sheebuckoa.net
+sheeckooshu.net
 sheegiwo.com
 sheegnaul.com
 sheekroakse.com
@@ -99499,6 +99507,7 @@ thonchoosy.qpon
 thoocheegee.xyz
 thoodreeckon.net
 thoodsadoats.net
+thoojoneersooy.net
 thoomtoa.com
 thor-media.ru
 thor-t.com
@@ -100069,7 +100078,6 @@ tnwbrazil.com.br
 tnwgxkhedrrjmp.com
 tnwotuqey.com
 tnwqjltyw.com
-to.lk
 toalor.com
 toapodazoay.com
 toashugruvy.net
@@ -100255,6 +100263,7 @@ toniesspielzeug.com
 toniesverkauf-de.com
 toningsystem.com
 tonmann.net
+tonpulse.com
 tonsados.makeup
 tonsuremammies.qpon
 tonsurerykingperkin.cyou
@@ -110001,7 +110010,7 @@ www.padelmafia.co.za
 www.prr.fdn.sbgwdn.idy360.com
 www.pwstats.leonardoweb.eu
 www.quantum.groupe.com
-www.roblox.com.bn
+www.roblox.com.gr
 www.s400708029.siteweb-initial.fr
 www.s401288291.siteweb-initial.fr
 www.shubhin.co.in
