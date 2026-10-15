@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-14T23:00:50.295852+00:00",
-  "my_networks_count": 54623,
+  "generated": "2026-10-15T07:04:26.630820+00:00",
+  "my_networks_count": 55410,
   "recommendations": [
     {
       "name": "firehol_level1",
@@ -27,7 +27,7 @@
       "description": "Blocklist.de \u2013 IPs that attacked SSH, FTP, web servers in last 48h",
       "url": "https://lists.blocklist.de/lists/all.txt",
       "type": "ip",
-      "total_networks": 24324,
+      "total_networks": 24325,
       "new_networks": 0,
       "your_coverage_pct": 100.0,
       "worth_adding": false
