@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-15 18:03 UTC
+# Generated: 2026-10-15 22:55 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 117857 domains
+# Total entries: 117859 domains
 #
 0--4.com
 0--d.com
@@ -9198,7 +9198,6 @@ ads-prod-narrowcasting.s3.us-west-2.amazonaws.com
 ads-production-public.s3.amazonaws.com
 ads-production-public.s3.us-east-1.amazonaws.com
 ads-provider.com
-ads-proxy-aka.prod.bo.canal.canalplustech.pro
 ads-pubsfusion.com
 ads-router.truecaller.com
 ads-rules-noneu.truecaller.com
@@ -11570,7 +11569,6 @@ ahqbumkf.in
 ahqognnmymar.com
 ahqoscozv.com
 ahqzmehput.com
-ahsniper.org
 ahsrraafzpu.com
 ahssite.xyz
 ahswohrhvxkyz.website
@@ -23979,6 +23977,7 @@ boorantech.com
 booshoatoocotez.net
 boostad.net
 boostappi.com
+boostaubeehy.net
 boostcdn.net
 boostedbuys.com
 booster-lastminute.com
@@ -24399,7 +24398,6 @@ brednonic.qpon
 bredyshopper.de
 breedanimals.com
 breezebiddingvarying.com
-breezeclient.com
 breezekiss.shop
 breezycupons.com
 bregato.com
@@ -27559,7 +27557,6 @@ cheeseoverlordsaline.com
 cheestalto.net
 cheetahhowevertowardsfrom.com
 cheetintake.cfd
-cheetoclient.com
 chefbulk.com
 chefclearance.com
 chefhaus.de
@@ -71943,6 +71940,7 @@ oferta413.sbs
 oferta4362119.cfd
 oferta63728.lol
 oferta6483875.cfd
+oferta7712.sbs
 oferta9102366.icu
 oferta91820467.icu
 oferta9435022.sbs
@@ -72883,6 +72881,7 @@ oopt.fr
 oorha.blacks.co.uk
 oos4l.com
 oostairgaul.com
+oostautaiks.net
 oostussoulie.net
 ootheetsid.com
 oovaufty.com
@@ -76603,6 +76602,7 @@ pl-oferta04496205.icu
 pl-oferta04859305.cfd
 pl-oferta2341123.sbs
 pl-oferta28502934.cfd
+pl-oferta36125.sbs
 pl-oferta376291784.cfd
 pl-oferta4123781.sbs
 pl-oferta489032.cfd
@@ -77570,6 +77570,7 @@ podukty33929179.lol
 podukty8567125.lol
 podukty9264532.lol
 podukty93624129.lol
+podukty982301332.lol
 poecilecobles.com
 poethomeless.com
 poeticmetric.com
@@ -117722,6 +117723,7 @@ zupz.store
 zuqacgsabacj.in
 zuqiu-huya.hl.cn
 zuqwuvmpix.com
+zur.nomarax.com
 zuramo.de
 zurbrueggende.com
 zureonglobal.com
