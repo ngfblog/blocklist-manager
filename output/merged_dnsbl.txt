@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-16 17:49 UTC
+# Generated: 2026-10-16 22:37 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 119315 domains
+# Total entries: 119313 domains
 #
 0--4.com
 0--d.com
@@ -61450,7 +61450,6 @@ lorana.de
 lorcnsee.lol
 lordeeksogoatee.net
 lordfin.com
-lordhq.biz
 lordinstructionagrarian.com
 lordofads.com
 lordoftheentertainingostriches.com
@@ -92511,6 +92510,7 @@ sighthut.com
 sigillnigrous.com
 sigma-agentlog-a11xxna.proxima.nie.easebar.com
 sigma-agentlog-mumusdk.proxima.nie.netease.com
+sigmaclient.net
 sigmainvestglobal.com
 sigmaproi.com
 sigmura.com
@@ -92617,7 +92617,6 @@ simikj.com
 similarity98.com
 similarlyjustin.com
 similarlyperjury.com
-similaroof.com
 similesgleby.com
 simility.com
 simlingproudly.com
@@ -111669,7 +111668,6 @@ videostreaming.rs
 videotakerrenew.com
 videotapit.com
 videotrivia.com
-videovein.com
 videowalldirect.com
 videowood.tv
 vider-pl.pl
