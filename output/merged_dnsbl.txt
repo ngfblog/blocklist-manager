@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-17 16:52 UTC
+# Generated: 2026-10-17 21:59 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 120077 domains
+# Total entries: 120080 domains
 #
 0--4.com
 0--d.com
@@ -12350,6 +12350,7 @@ ali-web-player-tracker.biliapi.net
 ali2.a.yximgs.com
 alia-iso.com
 aliams.de
+alianca-rs.com.br
 aliands.com
 aliascagesboxer.com
 alibabatraffic.com
@@ -62917,6 +62918,7 @@ majorautoteile.com
 majoritye.com
 majorleaguebucks.com
 majormetalcsorp.com
+majuhome.com.my
 makanigermanyshop.shop
 make2022.com
 make6pain.com
@@ -85246,6 +85248,7 @@ rxappfree.com
 rxcash.biz
 rxdigitaldev.data.adobedc.net
 rxhotline.com
+rxkcapital.com
 rxlqmojtvvmmk.online
 rxmanreturn.com
 rxnuglcau.net
