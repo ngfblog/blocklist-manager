@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-18 12:28 UTC
+# Generated: 2026-10-18 17:06 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 119935 domains
+# Total entries: 119936 domains
 #
 0--4.com
 0--d.com
@@ -114258,6 +114258,7 @@ webcool69.com
 webcounter.be
 webcounter.co.za
 webcounter.ws
+webcstore.pw
 webdesignerhut.com
 webdiana.ru
 webdmonitor.io
