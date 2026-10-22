@@ -28,6 +28,17 @@ HEADERS = {"User-Agent": "blocklist-manager/1.0 (+https://github.com/" +
            os.environ.get("GITHUB_REPOSITORY", "ngfblog/blocklist-manager") + ")"}
 TIMEOUT = 30
 
+# abuse.ch feeds need a personal Auth-Key inside the URL. my_lists.json must
+# never contain the real key (the repo is public). The pfSense sync script
+# writes the placeholder instead, and the real key comes from the GitHub
+# secret ABUSECH_KEY at run time.
+ABUSECH_KEY = os.environ.get("ABUSECH_KEY", "").strip()
+KEY_PLACEHOLDER = "{ABUSECH_KEY}"
+
+# A failed download from these hosts is skipped with a warning instead of
+# failing the whole run (abuse.ch has retired several public feeds).
+OPTIONAL_HOSTS = ("abuse.ch",)
+
 # Fallback URLs: if the primary URL fails, try the alternatives in order
 FALLBACKS = {
     "https://small.oisd.nl": [
@@ -92,9 +103,33 @@ def make_session():
 SESSION = make_session()
 
 
+def redact(text):
+    """Hide the abuse.ch key in anything that gets printed."""
+    text = str(text)
+    if ABUSECH_KEY:
+        text = text.replace(ABUSECH_KEY, "***")
+    return text
+
+
+def is_optional(url):
+    return any(host in url for host in OPTIONAL_HOSTS)
+
+
+def resolve_url(url):
+    """Insert the real key into placeholder URLs. Returns None if the key is missing."""
+    if KEY_PLACEHOLDER not in url:
+        return url
+    if not ABUSECH_KEY:
+        return None
+    return url.replace(KEY_PLACEHOLDER, ABUSECH_KEY)
+
+
 def download(url, label):
-    print(f"  Downloading: {label}")
-    urls = FALLBACKS.get(url, [url])
+    print(f"  Downloading: {redact(label)}")
+    real_url = resolve_url(url)
+    if real_url is None:
+        raise RuntimeError(f"Failed to download {label}: ABUSECH_KEY secret is not set")
+    urls = FALLBACKS.get(url, [real_url])
     # Prefer HTTPS: if a list is configured with http://, try https:// first
     # and fall back to the original URL only if HTTPS is not available.
     expanded = []
@@ -108,14 +143,14 @@ def download(url, label):
             r = SESSION.get(attempt_url, headers=HEADERS, timeout=TIMEOUT)
             r.raise_for_status()
             if attempt_url != expanded[0]:
-                print(f"    (fallback used: {attempt_url})")
+                print(f"    (fallback used: {redact(attempt_url)})")
             if attempt_url.startswith("http://"):
                 print(f"    Warning: {label} was downloaded over plain HTTP")
             return r.text
         except Exception as e:
-            print(f"    Warning: {attempt_url} failed ({e}), trying next...")
+            print(f"    Warning: {redact(attempt_url)} failed ({redact(e)}), trying next...")
             last_error = e
-    raise RuntimeError(f"Failed to download {label}: {last_error}")
+    raise RuntimeError(f"Failed to download {redact(label)}: {redact(last_error)}")
 
 
 def check_source(label, count, skipped, minimum=1):
@@ -165,7 +200,14 @@ def main():
     # Load my current pfBlockerNG lists
     print("\n[1] Loading my pfBlockerNG lists...")
     with open(MY_LISTS_FILE) as f:
-        my_lists = json.load(f)
+        raw = f.read()
+    if ABUSECH_KEY and ABUSECH_KEY in raw:
+        raise RuntimeError(
+            "The abuse.ch key is stored in plain text in my_lists.json (public repo). "
+            "Fix the pfSense sync script to write the {ABUSECH_KEY} placeholder, "
+            "then rotate the key on abuse.ch."
+        )
+    my_lists = json.loads(raw)
     check_my_lists_age(my_lists)
 
     my_ip_urls = [u for u in my_lists.get("ip_lists", []) if not is_geoip_url(u) and not is_self_url(u)]
@@ -185,13 +227,23 @@ def main():
     # Download and parse my DNSBL lists
     print("\n[3] Downloading my DNSBL lists...")
     my_domains = set()
+    skipped_sources = []
     for url in my_dnsbl_urls:
-        label = url.split("/")[-1] or url
-        domains, skipped = parse_domains(download(url, label))
-        check_source(label, len(domains), skipped)
+        label = redact(url.split("/")[-1] or url)
+        try:
+            domains, skipped = parse_domains(download(url, label))
+            check_source(label, len(domains), skipped)
+        except RuntimeError as e:
+            if not is_optional(url):
+                raise
+            print(f"    Warning: skipping optional source {label}: {redact(e)}")
+            skipped_sources.append(label)
+            continue
         my_domains.update(domains)
         print(f"    {label}: {len(domains)} domains")
     print(f"  Total my domains: {len(my_domains)}")
+    if skipped_sources:
+        print(f"  Skipped optional sources: {', '.join(skipped_sources)}")
 
     # Download external IP sources and find gaps
     print("\n[4] Finding IP gaps...")
