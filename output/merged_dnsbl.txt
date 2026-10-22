@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-22 18:21 UTC
+# Generated: 2026-10-22 23:00 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 123083 domains
+# Total entries: 123084 domains
 #
 0--4.com
 0--d.com
@@ -61682,6 +61682,7 @@ live-tfs-omnilytics.azurewebsites.net
 live-tv.top
 live-video-log16-normal-no1a.tiktokv.eu
 live-video-log16-normal-useast2a.tiktokv.com
+live-website.com
 live-xbet.com
 live.alljobs.co.il
 live.cxo.name
