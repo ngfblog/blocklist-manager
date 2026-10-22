@@ -25,6 +25,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run merge script
+        env:
+          ABUSECH_KEY: ${{ secrets.ABUSECH_KEY }}
         run: python scripts/merge.py
       - name: Run comparison script
         run: python scripts/compare.py
