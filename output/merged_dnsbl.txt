@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-23 18:07 UTC
+# Generated: 2026-10-23 22:56 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 124005 domains
+# Total entries: 124006 domains
 #
 0--4.com
 0--d.com
@@ -62257,6 +62257,7 @@ listing.yahoo.co.jp
 listis.ru
 listofmonks.com
 litaigcjx.com
+litaudrootsa.net
 litaxrowjmaq.com
 lite.fit
 liteanalytics.com
