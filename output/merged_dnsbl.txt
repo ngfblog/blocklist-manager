@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-25 07:20 UTC
+# Generated: 2026-10-25 12:59 UTC
 # Sources: Hagezi Pro
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 124332 domains
+# Total entries: 124362 domains
 #
 0--4.com
 0--d.com
@@ -4613,6 +4613,7 @@
 4536e19398.com
 455t.com
 456345678.com
+456351.top
 45675.world
 4567hh.com
 4567qp.com
@@ -27834,7 +27835,6 @@ cariboop.com
 carierdese.com
 carinfos.net
 caringforcats.co
-caringmink.com
 caringreissuetrodden.com
 cariousphiale.com
 carisini.co
@@ -27876,6 +27876,7 @@ carpartlabflow.com
 carpdidactsautoput.qpon
 carpeaboutupborne.cfd
 carpoolgraff.cfd
+carprlce.ru
 carpseulaliarebush.qpon
 carpsmelly.com
 carqiwireless.com
@@ -28841,6 +28842,7 @@ ch-deepseek.com.cn
 ch-fontainebleau.fr
 ch-i4.com.cn
 ch-info-lgsmartad-com.aws-prd.net
+ch-qishui-music.com.cn
 ch-rdx2-lgtvsdp-com.aws-prd.net
 ch.gluconv.com
 ch.gp
@@ -29476,7 +29478,6 @@ churchkhela.site
 churchofjesuschrist.hb-api.omtrdc.net
 churneruncowl.cfd
 churralkines.shop
-churromisos.com
 chusapsoarduwa.net
 chutedbeento.cfd
 chwanakaro.com
@@ -29510,7 +29511,6 @@ ciboneysoiledclonk.cyou
 cicilookshop.com
 cicinia.de
 ciderrenouncespoken.com
-ciderscautery.com
 cido7xwp2.com
 ciedeudlg.xyz
 ciefzrxtdqxgf.site
@@ -30279,6 +30279,7 @@ cloudapi.stream
 cloudapotheke.com
 cloudasbook.com
 cloudauth-whatsapp.com
+cloudbet-fr.fr
 cloudcdn-whatsapp.com
 cloudconf-app-ae.heytapmobile.com
 cloudconf-app-af.heytapmobile.com
@@ -42887,7 +42888,6 @@ facebook-clone-mu-six.vercel.app
 facebook-clone-phi-six.vercel.app
 facebook-clone-psi-five.vercel.app
 facebook-clone-zeta.vercel.app
-facebook-clone1-ten.vercel.app
 facebook-dun-eight.vercel.app
 facebook-faq.se
 facebook-fields-validation-card-expand-logic.vercel.app
@@ -44264,6 +44264,7 @@ finanzonline-gvbmfgv.info
 finanzonline.bmf-gvat.com
 finanzplanungwittenberg.com
 finanzwelt.pro
+finapactglobal.net
 finarionaxi.fr
 finarixisx.de
 finarodelybud.top
@@ -47868,6 +47869,7 @@ getrunkhomuto.info
 getsale.io
 getsecurify.com
 getsfiler.ru
+getsharedstore.com
 getshop.tv
 getshopsdeal.com
 getsmallbannerads-6egeg2u34q-du.a.run.app
@@ -52843,6 +52845,7 @@ hongyun.life
 honk-projekt.de
 honkiesfecials.top
 honorable-bedroom.pro
+honorableleader.pro
 honorsearch-dra.hiboard.hihonorcloud.com
 honorsearch-drcn.hiboard.hihonorcloud.com
 honorsearch-dre.hiboard.hihonorcloud.com
@@ -58932,6 +58935,7 @@ kenaijabirucoyotes.qpon
 kenaiuncamp.cfd
 kenal-cn.com
 kenalevugura.com
+kenanyavuzetnografyamuzesi.com
 kendo-guide.com
 kengi.top
 kenguigesuffers.cfd
@@ -59836,6 +59840,7 @@ kouclo.com
 koucy.com
 kouhojejou.net
 koumischemizo.cyou
+koumispleonal.cyou
 koun-wa.com
 koun-yogen.com
 kounisty.net
@@ -60214,6 +60219,7 @@ kuponacdn.de
 kupwafqigd.com
 kuqsxxqeen.com
 kurdirsojougly.net
+kureno.sbs
 kurierdzienny.info
 kurlkyja.com
 kurniabikebatam.com
@@ -70773,6 +70779,7 @@ mjbkluvqxfple.space
 mjdr.shop
 mjeo.top
 mjg0310.com
+mjirwhvxi.com
 mjiudwajhkf.w8510.com
 mjkwbawxaflfl.com
 mjolnex-ltd.com
@@ -72666,6 +72673,7 @@ myloveaffaires.com
 mylovecosmetic.de
 mylovedates.com
 mylumenx.com
+mymaclogo.com
 mymatomo.weiden.de
 mymediaindex.com
 mymedicalshop365.top
@@ -75531,6 +75539,7 @@ ofendeutschland.com
 ofenrohr.eu
 ofenundholz.de
 oferta-09453856.cfd
+oferta-2415754.cfd
 oferta-283715.cfd
 oferta-2875419.cfd
 oferta-3245620.cfd
@@ -75544,9 +75553,15 @@ oferta-6621385.cfd
 oferta-7241851.cfd
 oferta-7418523.cfd
 oferta-7418674.cfd
+oferta-7485214.cfd
+oferta-7485971.cfd
 oferta-7496524.cfd
+oferta-7498325.cfd
+oferta-7542157.cfd
 oferta-7542761.cfd
+oferta-75928593943.cfd
 oferta-7845184.cfd
+oferta-79582411.cfd
 oferta-8294030.cfd
 oferta-8475411.cfd
 oferta-8527499.cfd
@@ -75814,6 +75829,7 @@ ohuda.com
 ohvbdellid.cfd
 ohvtrokyq.com
 ohw.tf
+ohwlcfivhlfc.com
 oi.glaikkupper.com
 oi.unbaledabuttal.com
 oiaekgmwb.com
@@ -76561,6 +76577,7 @@ ooo.amzqwkh09.idy360.com
 ooo.app
 ooormdxnuicwfi.com
 oopatet.com
+oophiwherou.net
 oopihxqn.com
 oops-clubsauna.com
 oopt.fr
@@ -78582,6 +78599,7 @@ pathsmtp.com
 pathwayslife.care
 patienceinfluxdemon.com
 patient15.top
+patientne.info
 patientsaustralia.com
 patinaesarcina.com
 pative.shop
@@ -80719,6 +80737,7 @@ pkvpoker.asia
 pkydtotuhcw.com
 pkyfusgah.com
 pkygraajhdap.com
+pl-019667826.icu
 pl-029607002.icu
 pl-05669206.icu
 pl-091986033.icu
@@ -80761,6 +80780,7 @@ pl-n6hm.sbs
 pl-ofert372973share.lol
 pl-oferta012403.sbs
 pl-oferta01906331.icu
+pl-oferta0196006.icu
 pl-oferta01967207.icu
 pl-oferta04496205.icu
 pl-oferta04859305.cfd
@@ -80793,9 +80813,11 @@ pl-oferta85937583.cfd
 pl-oferta876127.sbs
 pl-oferta876171.sbs
 pl-oferta90122065.cfd
+pl-oferta901986003.icu
 pl-oferta91230669.icu
 pl-oferta912366301.icu
 pl-oferta918330707.icu
+pl-oferta9186923.icu
 pl-oferta941060.sbs
 pl-offertshare30274722.top
 pl-ofn.sbs
@@ -80810,6 +80832,7 @@ pl-ogloszenie.sbs
 pl-ogloszenie423238421.shop
 pl-ogloszenie5678992364.shop
 pl-ogloszenie7326475176.shop
+pl-ogloszenie89023512089.shop
 pl-ogloszezenie1248918928.shop
 pl-ogloszezenie789253789.shop
 pl-oglozszenie1248912891.shop
@@ -81592,6 +81615,7 @@ plazapremiumloungemanagementli.data.adobedc.net
 plb.ctrlpnl.page
 plchldr.co
 pleasanthearthsale.com
+pleasanthistorian.com
 pleasantk.com
 please-zebra.com
 pleasedboss.pro
@@ -81834,6 +81858,7 @@ poddon-moskva.ru
 podergtaise.top
 podestajackmengeoidal.cyou
 podiumambition.com
+podleybowyers.cyou
 podnode-whatsapp.com
 podomax.de
 podpora-erekce24.cz
@@ -86902,6 +86927,7 @@ riaccnavig.store
 riadvqgypr.com
 riaggequal.store
 rialisicur.store
+rialsheldfiendly.qpon
 rian.ffern.co
 riaresubbo.store
 riarialuvluv2023.com
@@ -86950,6 +86976,7 @@ richpopup.com
 richrelevance.com
 richterorthopadie.com
 richtraffic.ru
+richtransportation.pro
 richttirrit.com
 richylam.org
 riciinven.store
@@ -87938,6 +87965,7 @@ rtjthgjnwetghf39.top
 rtjxt.com
 rtk.io
 rtk.toptoon.jp
+rtkfpbarlsef.com
 rtkrtb.com
 rtldisneyfernsehengm.tt.omtrdc.net
 rtlf.de
@@ -97089,6 +97117,7 @@ slootz.io
 slope1.com
 slot88.vip
 slothoki327jp.live
+slotlair-france.fr
 slotmafia-online.de
 slotmagie.de
 slotmagie.zendesk.com
@@ -106443,6 +106472,7 @@ swiftmotorsholt.com
 swiftroutxp.com
 swiftsdumkybleeze.cyou
 swifttoolhub.com
+swiggergunnelsmenial.cyou
 swim-in-place.com
 swimmingtoothbrushenable.com
 swimpapallyrifting.cfd
@@ -108942,6 +108972,7 @@ thehog.dook.workers.dev
 thehouseof.net
 thehughaven.com
 theicck.com
+theie7countdown.com
 theindependentnewstoday.com
 theinf.xyz
 theinnercirclechicago.info
@@ -114286,7 +114317,6 @@ upaktpkntpvhz.online
 upapi.net
 uparceuson.com
 upbayfusain.cfd
-upbeatspring.com
 upbidshamer.cfd
 upbifctjrpnxg.website
 upbindsswythe.com
@@ -114483,6 +114513,7 @@ urlhausa.com
 urllib3.com
 urlqh.cn
 urlstats.com
+urlto.me
 urlumbrella.com
 urlyte.com
 urnawkwarddegrade.com
@@ -121733,7 +121764,6 @@ xnvvt.batteryjunction.com
 xnzexu11w4opnp.cfd
 xo-trier.de
 xo.penitisturkle.shop
-xoanonpacking.com
 xobeautysupply.com
 xochuanime.site
 xodrev.real4love.com
