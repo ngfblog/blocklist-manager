@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-30 19:00 UTC
+# Generated: 2026-10-30 23:29 UTC
 # Sources: Hagezi Pro + Hagezi TIF Mini + hagezi_tif_medium
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 270480 domains
+# Total entries: 270474 domains
 #
 0--4.com
 0--d.com
@@ -29768,7 +29768,6 @@ analytics.sdwan.cisco.com
 analytics.se.com
 analytics.seandev.xyz
 analytics.searchhub.io
-analytics.searchspring.net
 analytics.secure-bits.org
 analytics.secursolutions.it
 analytics.secuso.org
@@ -32104,7 +32103,6 @@ api-41829387-44817741.google-cloud.services
 api-4know-em.hismarttv.com
 api-4know-eu.hismarttv.com
 api-abematv.bucketeer.jp
-api-abtest-cdn.learnings.ai
 api-access.pangolin-sdk-toutiao-b.com.bytedns1.com
 api-access.pangolin-sdk-toutiao-b.com.queniuyk.com
 api-access.pangolin-sdk-toutiao-b.com.w.cdngslb.com
@@ -67744,7 +67742,6 @@ clawaramina.cfd
 clawpromote.com
 clawsdealss.homes
 claxonstumble.cyou
-claydar.com
 clayhost.xyz
 claymaxglobalbank.world
 claypolewear.net
@@ -68505,7 +68502,6 @@ clothesmentornovifashion.shop
 clothing-s.com
 clothinggbuyqg.info
 clothingonsale-online.com
-clothingoutlets.top
 clothingpickleball.com
 clothingsoothetone.com
 clothingsphere.com
@@ -135652,7 +135648,6 @@ keen--shoes.com
 keen-fr.com
 keen-schuhe.com
 keen-swaptorelle.online
-keenalto.com
 keendeutschland.de
 keenelawoffice.info
 keenfrance.fr
@@ -173648,7 +173643,6 @@ oluwysn6oajtihy.icu
 olvdxl.com
 olx-19346391.club-5esport.com
 olx-9668752.club-5esport.com
-olx-przelew-id9290485739.eu.cc
 olx.058127.click
 olx.059321.sbs
 olx.0ferta08921.sbs
