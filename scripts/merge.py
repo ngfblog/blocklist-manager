@@ -63,6 +63,7 @@ FALLBACKS = {
 IP_SOURCES = [
     "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level1.netset",
     "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level2.netset",
+    "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level3.netset",
     "https://lists.blocklist.de/lists/all.txt",
     "https://raw.githubusercontent.com/stamparm/ipsum/master/levels/3.txt",
 ]
@@ -79,6 +80,7 @@ DNSBL_SOURCES = [
 MIN_ENTRIES = {
     "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level1.netset": 2000,
     "https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/firehol_level2.netset": 5000,
+    "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level3.netset": 4500,
     "https://lists.blocklist.de/lists/all.txt": 1000,
     "https://raw.githubusercontent.com/stamparm/ipsum/master/levels/3.txt": 5000,
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt": 100000,
@@ -378,7 +380,7 @@ def main():
     write_atomic(OUTPUT_IP, [
         "# Blocklist Manager – IP gaps",
         f"# Generated: {stamp}",
-        "# Sources: firehol_level1 + firehol_level2 + blocklist_de_all + ipsum_level3",
+        "# Sources: firehol_level1 + firehol_level2 + firehol_level3 + blocklist_de_all + ipsum_level3",
         "# Contains networks NOT covered by your pfBlockerNG lists",
         f"# Total entries: {len(gap_nets_collapsed)} networks",
         "#",

@@ -140,6 +140,7 @@ blocklist-manager/
 |------|--------|-------|
 | IP | firehol_level1 | Consensus list aggregating 10+ trusted feeds |
 | IP | firehol_level2 | Broader coverage, more aggressive |
+| IP | firehol_level3 | Attackers, malware and spyware seen in the last 30 days |
 | IP | blocklist.de | IPs that attacked SSH, FTP, and web servers in the last 48h |
 | IP | ipsum level 3+ | IPs appearing on 3 or more independent blacklists, updated daily |
 | DNSBL | Hagezi Pro | Large multi-source domain blocklist |
@@ -161,7 +162,7 @@ Low-risk DNSBL candidates can be added to `merged_dnsbl.txt` automatically. IP c
 
 The state lives in `output/auto_sources.json`, which only `discover.py` writes:
 
-- **2-run rule** — a DNSBL candidate with `risk: "low"` is enabled only after it was `worth_considering` in **2 discovery runs in a row** (`consecutive_ok`), and only while the `last_new` of all enabled sources together stays within `max_new_domains` (default 150,000). Otherwise it stays disabled and `reason` says why.
+- **2-run rule** — a DNSBL candidate with `risk: "low"` is enabled only after it was `worth_considering` in **2 discovery runs in a row** (`consecutive_ok`), and only while the `last_new` of all enabled sources together stays within `max_new_domains` (250,000, set by `MAX_NEW_DOMAINS` at the top of `scripts/discover.py` and copied into the file on every run). Otherwise it stays disabled and `reason` says why.
 - **Removal** — an enabled source is disabled again when it is `dead` or `stale` in 2 runs in a row, or not eligible in 4 runs in a row. Entries are never deleted, only switched off.
 - **Events** — every add and remove is logged in `events` (last 20 kept) and shown in the *Candidates* tab of the web UI.
 - `merge.py` loads every enabled source after Hagezi Pro and TIF Mini, with the same coverage filter. An auto source must return at least 50% of its `last_total`; if it fails, it is skipped with a warning and the run continues. Active auto sources are listed in the `# Sources:` header of `merged_dnsbl.txt`.

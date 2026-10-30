@@ -35,10 +35,13 @@ CANDIDATES = [
     {"name": "hagezi_hoster", "type": "dnsbl", "url": HAGEZI.format("hoster"), "category": "abused hosting", "risk": "low"},
     {"name": "hagezi_dyndns", "type": "dnsbl", "url": HAGEZI.format("dyndns"), "category": "dynamic DNS", "risk": "high"},
     {"name": "hagezi_doh_vpn_proxy_bypass", "type": "dnsbl", "url": HAGEZI.format("doh-vpn-proxy-bypass"), "category": "DoH / VPN / proxy bypass", "risk": "high"},
-    {"name": "firehol_level3", "type": "ip", "url": FIREHOL.format("firehol_level3"), "category": "attacks / malware", "risk": "low"},
     {"name": "firehol_level4", "type": "ip", "url": FIREHOL.format("firehol_level4"), "category": "attacks / malware (aggressive)", "risk": "high"},
     {"name": "firehol_abusers_30d", "type": "ip", "url": FIREHOL.format("firehol_abusers_30d"), "category": "abusers (30 days)", "risk": "low"},
 ]
+
+# Cap for automatic DNSBL sources: the last_new of all enabled sources together
+# must stay within this. Written to auto_sources.json on every run.
+MAX_NEW_DOMAINS = 250000
 
 STALE_DAYS = 45               # Last-Modified older than this -> "stale"
 
@@ -47,7 +50,6 @@ PROMOTE_AFTER = 2             # eligible runs in a row before a source is enable
 FAIL_LIMIT = 2                # dead/stale runs in a row before an enabled source is removed
 INELIGIBLE_LIMIT = 4          # ineligible runs in a row before an enabled source is removed
 MAX_EVENTS = 20
-DEFAULT_MAX_NEW_DOMAINS = 150000
 
 OUTPUT_FILE = "output/candidates.json"
 AUTO_FILE = merge.AUTO_SOURCES_FILE
@@ -153,7 +155,7 @@ def load_auto_state(path):
         return {
             "generated": None,
             "auto_enabled": True,
-            "max_new_domains": DEFAULT_MAX_NEW_DOMAINS,
+            "max_new_domains": MAX_NEW_DOMAINS,
             "sources": [],
             "events": [],
         }
@@ -164,7 +166,6 @@ def load_auto_state(path):
         raise RuntimeError(f"{path} is unreadable ({e}) - fix or delete it. Aborting.")
     if not isinstance(state, dict) or not isinstance(state.get("sources"), list):
         raise RuntimeError(f"{path} has an unexpected format - fix or delete it. Aborting.")
-    state.setdefault("max_new_domains", DEFAULT_MAX_NEW_DOMAINS)
     state.setdefault("events", [])
     for s in state["sources"]:
         if not isinstance(s, dict) or "name" not in s:
@@ -291,7 +292,8 @@ def update_auto_sources(state, results, now):
             s["reason"] = f"still enabled, not eligible {s['ineligible_count']}/{INELIGIBLE_LIMIT}: {s['reason']}"
 
     # Then add, while the total stays within max_new_domains
-    limit = state["max_new_domains"]
+    state["max_new_domains"] = MAX_NEW_DOMAINS
+    limit = MAX_NEW_DOMAINS
     used = sum(s["last_new"] for s in state["sources"] if s["enabled"])
     for s in state["sources"]:
         if s["enabled"] or s["reason"]:
