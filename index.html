@@ -383,21 +383,23 @@ function formatTs(iso) {
   return d + ' ' + t;
 }
 
-function renderCandidates(data) {
+function renderCandidates(data, active = new Set()) {
   const el = document.getElementById('list-cands');
   const cands = (data && data.candidates) || [];
   if (!cands.length) { el.innerHTML = '<div class="loading" style="color:var(--text3)">No candidates yet</div>'; return; }
-  document.getElementById('cand-badge').textContent = cands.filter(c => c.worth_considering).length;
+  // Candidates already enabled as auto sources are not highlighted or counted
+  const worth = c => c.worth_considering && !active.has(c.name);
+  document.getElementById('cand-badge').textContent = cands.filter(worth).length;
   if (data.generated) document.getElementById('cand-generated').textContent = 'Last run: ' + formatTs(data.generated);
   const statusCls = { ok: 'b-green', stale: 'b-amber', dead: 'b-red' };
   el.innerHTML = `<div class="cand-wrap"><table class="cand-table">
     <thead><tr><th>Name</th><th>Type</th><th class="num">Total</th><th class="num">New</th><th class="num">New %</th><th>Status</th><th>Risk</th></tr></thead>
     <tbody>${cands.map(c => `
-      <tr class="${c.worth_considering ? 'worth' : ''}" title="${esc(c.worth_considering ? 'Worth considering' : (c.error || c.category || ''))}">
-        <td class="name"><a href="${esc(c.url)}" target="_blank">${esc(c.name)}</a></td>
+      <tr class="${worth(c) ? 'worth' : ''}" title="${esc(active.has(c.name) ? 'Auto-added source (active)' : worth(c) ? 'Worth considering' : (c.error || c.category || ''))}">
+        <td class="name"><a href="${esc(c.url)}" target="_blank">${esc(c.name)}</a>${active.has(c.name) ? ' <span class="badge b-green">active</span>' : ''}</td>
         <td><span class="badge ${c.type === 'ip' ? 'b-blue' : 'b-purple'}">${c.type === 'ip' ? 'IP' : 'DNSBL'}</span></td>
         <td class="num">${formatNum(c.total || 0)}</td>
-        <td class="num" style="color:${c.worth_considering ? 'var(--amber)' : 'inherit'}">${formatNum(c.new || 0)}</td>
+        <td class="num" style="color:${worth(c) ? 'var(--amber)' : 'inherit'}">${formatNum(c.new || 0)}</td>
         <td class="num">${esc(c.new_pct)}%</td>
         <td><span class="badge ${statusCls[c.status] || 'b-blue'}">${esc(c.status)}</span></td>
         <td><span class="badge ${c.risk === 'low' ? 'b-green' : 'b-amber'}">${esc(c.risk)}</span></td>
@@ -439,9 +441,11 @@ async function loadCandidates() {
       fetch(`https://raw.githubusercontent.com/${REPO}/main/output/candidates.json?t=${Date.now()}`),
       fetch(`https://raw.githubusercontent.com/${REPO}/main/output/auto_sources.json?t=${Date.now()}`)
     ]);
-    if (candRes.ok) renderCandidates(await candRes.json());
+    const auto = autoRes.ok ? await autoRes.json() : null;
+    const active = new Set(auto && auto.auto_enabled === true ? (auto.sources || []).filter(s => s.enabled).map(s => s.name) : []);
+    if (candRes.ok) renderCandidates(await candRes.json(), active);
     else document.getElementById('list-cands').innerHTML = '<div class="loading" style="color:var(--text3)">Run the Discover Candidates workflow to generate candidates</div>';
-    renderAuto(autoRes.ok ? await autoRes.json() : null);
+    renderAuto(auto);
   } catch(e) {
     document.getElementById('list-cands').innerHTML = '<div class="loading" style="color:var(--text3)">Could not load candidates</div>';
   }
