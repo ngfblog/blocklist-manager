@@ -1,0 +1,60 @@
+{
+  "generated": "2026-10-30T05:37:46.707766+00:00",
+  "auto_enabled": true,
+  "max_new_domains": 150000,
+  "sources": [
+    {
+      "name": "hagezi_tif",
+      "type": "dnsbl",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif-onlydomains.txt",
+      "enabled": false,
+      "first_seen": "2026-10-30",
+      "consecutive_ok": 1,
+      "last_total": 2062783,
+      "last_new": 1838924,
+      "fail_count": 0,
+      "ineligible_count": 0,
+      "reason": "eligible 1/2 runs in a row"
+    },
+    {
+      "name": "hagezi_tif_medium",
+      "type": "dnsbl",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.medium-onlydomains.txt",
+      "enabled": false,
+      "first_seen": "2026-10-30",
+      "consecutive_ok": 1,
+      "last_total": 414867,
+      "last_new": 199206,
+      "fail_count": 0,
+      "ineligible_count": 0,
+      "reason": "eligible 1/2 runs in a row"
+    },
+    {
+      "name": "hagezi_hoster",
+      "type": "dnsbl",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/hoster-onlydomains.txt",
+      "enabled": false,
+      "first_seen": "2026-10-30",
+      "consecutive_ok": 0,
+      "last_total": 1082,
+      "last_new": 120,
+      "fail_count": 0,
+      "ineligible_count": 1,
+      "reason": "only 120 new domains (needs 1000)"
+    },
+    {
+      "name": "hagezi_fake",
+      "type": "dnsbl",
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/fake-onlydomains.txt",
+      "enabled": false,
+      "first_seen": "2026-10-30",
+      "consecutive_ok": 0,
+      "last_total": 17720,
+      "last_new": 1,
+      "fail_count": 0,
+      "ineligible_count": 1,
+      "reason": "only 1 new domains (needs 1000)"
+    }
+  ],
+  "events": []
+}
