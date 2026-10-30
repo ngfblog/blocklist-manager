@@ -29,6 +29,11 @@ COMPARE_SOURCES = {
         "description": "FireHOL Level 2 – broader coverage, more aggressive blocking",
         "type": "ip"
     },
+    "firehol_level3": {
+        "url": "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level3.netset",
+        "description": "FireHOL Level 3 – attackers, malware and spyware seen in the last 30 days",
+        "type": "ip"
+    },
     "blocklist_de_all": {
         "url": "https://lists.blocklist.de/lists/all.txt",
         "description": "Blocklist.de – IPs that attacked SSH, FTP, web servers in last 48h",
