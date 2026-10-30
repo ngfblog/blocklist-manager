@@ -91,6 +91,22 @@ code{color:#79c0ff;font-family:monospace}
 .toast{position:fixed;bottom:24px;right:24px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;padding:12px 18px;font-size:13px;z-index:999;display:none;align-items:center;gap:8px}
 .toast.show{display:flex}
 .toast.success{border-color:var(--green-border);color:var(--green)}
+.banner.amber{background:var(--amber-bg);border-color:var(--amber-border)}
+.banner.amber i{color:var(--amber)}
+.cand-wrap{overflow-x:auto;background:var(--bg2);border:1px solid var(--border);border-radius:10px}
+.cand-table{width:100%;border-collapse:collapse;font-size:12px}
+.cand-table th{text-align:left;font-size:10px;font-weight:600;color:var(--text3);letter-spacing:0.06em;text-transform:uppercase;padding:10px 12px;border-bottom:1px solid var(--border);white-space:nowrap}
+.cand-table td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--text2);white-space:nowrap}
+.cand-table tr:last-child td{border-bottom:none}
+.cand-table td.num{text-align:right;font-variant-numeric:tabular-nums}
+.cand-table th.num{text-align:right}
+.cand-table td.name{color:var(--text);font-family:monospace}
+.cand-table tr.worth td{background:var(--amber-bg)}
+.cand-table tr.worth td:first-child{box-shadow:inset 3px 0 0 var(--amber)}
+.auto-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px}
+.auto-event{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);padding:6px 0;border-top:1px solid var(--border)}
+.auto-event:first-child{border-top:none}
+.auto-time{color:var(--text3);font-family:monospace;font-size:11px;white-space:nowrap}
 </style>
 </head>
 <body>
@@ -145,6 +161,7 @@ code{color:#79c0ff;font-family:monospace}
     <button class="tab" onclick="sw('dnsbl',this)"><i class="ti ti-dns"></i> DNSBL Lists</button>
     <button class="tab" onclick="sw('recs',this)"><i class="ti ti-bell"></i> Recommendations <span class="badge-count" id="rec-badge">0</span></button>
     <button class="tab" onclick="sw('setup',this)"><i class="ti ti-settings"></i> pfSense Setup</button>
+    <button class="tab" onclick="sw('cands',this)"><i class="ti ti-search"></i> Candidates <span class="badge-count" id="cand-badge">0</span></button>
   </div>
 
   <div id="ip" class="panel active">
@@ -180,6 +197,30 @@ code{color:#79c0ff;font-family:monospace}
   <div id="recs" class="panel">
     <div class="banner"><i class="ti ti-info-circle"></i><span>GitHub Actions compares your active lists against external sources every 6 hours. Recommendations show what's missing from your coverage.</span></div>
     <div id="list-recs"><div class="loading">Loading recommendations...</div></div>
+  </div>
+
+  <div id="cands" class="panel">
+    <div class="banner"><i class="ti ti-info-circle"></i><span>Lists you are not using yet, measured weekly against everything you already block. Highlighted rows are low-risk lists worth considering. <span id="cand-generated"></span></span></div>
+    <div id="auto-off"></div>
+    <div class="sec">
+      <div class="sec-head">
+        <div class="sec-head-left">
+          <span class="sec-lbl">Auto-added sources</span>
+          <div class="help-wrap"><span class="help-btn">?</span>
+            <div class="tooltip"><strong>Auto-added DNSBL sources</strong>Low-risk DNSBL candidates that were worth considering in 2 weekly runs in a row are added to merged_dnsbl.txt automatically. IP candidates are never added automatically.</div>
+          </div>
+        </div>
+      </div>
+      <div class="auto-box" id="auto-box"><div class="loading">Loading auto sources...</div></div>
+    </div>
+    <div class="sec">
+      <div class="sec-head">
+        <div class="sec-head-left">
+          <span class="sec-lbl">Candidate lists</span>
+        </div>
+      </div>
+      <div id="list-cands"><div class="loading">Loading candidates...</div></div>
+    </div>
   </div>
 
   <div id="setup" class="panel">
@@ -330,12 +371,89 @@ async function loadData() {
   }
 }
 
+function esc(v) {
+  return String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function formatTs(iso) {
+  const ts = new Date(iso);
+  if (isNaN(ts)) return '—';
+  const d = ts.toLocaleDateString('en-GB', { day:'2-digit', month:'2-digit', year:'numeric' });
+  const t = ts.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' });
+  return d + ' ' + t;
+}
+
+function renderCandidates(data) {
+  const el = document.getElementById('list-cands');
+  const cands = (data && data.candidates) || [];
+  if (!cands.length) { el.innerHTML = '<div class="loading" style="color:var(--text3)">No candidates yet</div>'; return; }
+  document.getElementById('cand-badge').textContent = cands.filter(c => c.worth_considering).length;
+  if (data.generated) document.getElementById('cand-generated').textContent = 'Last run: ' + formatTs(data.generated);
+  const statusCls = { ok: 'b-green', stale: 'b-amber', dead: 'b-red' };
+  el.innerHTML = `<div class="cand-wrap"><table class="cand-table">
+    <thead><tr><th>Name</th><th>Type</th><th class="num">Total</th><th class="num">New</th><th class="num">New %</th><th>Status</th><th>Risk</th></tr></thead>
+    <tbody>${cands.map(c => `
+      <tr class="${c.worth_considering ? 'worth' : ''}" title="${esc(c.worth_considering ? 'Worth considering' : (c.error || c.category || ''))}">
+        <td class="name"><a href="${esc(c.url)}" target="_blank">${esc(c.name)}</a></td>
+        <td><span class="badge ${c.type === 'ip' ? 'b-blue' : 'b-purple'}">${c.type === 'ip' ? 'IP' : 'DNSBL'}</span></td>
+        <td class="num">${formatNum(c.total || 0)}</td>
+        <td class="num" style="color:${c.worth_considering ? 'var(--amber)' : 'inherit'}">${formatNum(c.new || 0)}</td>
+        <td class="num">${esc(c.new_pct)}%</td>
+        <td><span class="badge ${statusCls[c.status] || 'b-blue'}">${esc(c.status)}</span></td>
+        <td><span class="badge ${c.risk === 'low' ? 'b-green' : 'b-amber'}">${esc(c.risk)}</span></td>
+      </tr>`).join('')}</tbody></table></div>`;
+}
+
+function renderAuto(data) {
+  const box = document.getElementById('auto-box');
+  const off = document.getElementById('auto-off');
+  if (!data) { box.innerHTML = '<div class="loading" style="color:var(--text3)">No auto sources yet — the weekly discovery run creates them</div>'; return; }
+  off.innerHTML = data.auto_enabled === true ? '' :
+    '<div class="banner amber"><i class="ti ti-alert-triangle"></i><span><strong style="color:var(--amber)">Auto mode is OFF.</strong> auto_enabled is false in output/auto_sources.json — merge.py ignores all auto sources and discovery makes no changes.</span></div>';
+  const enabled = (data.sources || []).filter(s => s.enabled);
+  const events = (data.events || []).slice(-5).reverse();
+  const srcHtml = enabled.length ? enabled.map(s => `
+    <div class="row">
+      <i class="ti ti-shield-check" style="font-size:15px;color:${data.auto_enabled === true ? 'var(--green)' : 'var(--text3)'};flex-shrink:0"></i>
+      <span class="row-url">${esc(s.name)}</span>
+      <span class="badge b-purple">${formatNum(s.last_new || 0)} new</span>
+      <span class="badge ${data.auto_enabled === true ? 'b-green' : 'b-amber'}">${data.auto_enabled === true ? 'active' : 'paused'}</span>
+    </div>`).join('') : '<div class="sync-desc">No sources enabled yet.</div>';
+  const evHtml = events.length ? events.map(e => `
+    <div class="auto-event">
+      <span class="auto-time">${formatTs(e.time)}</span>
+      <span class="badge ${e.action === 'added' ? 'b-green' : 'b-red'}">${esc(e.action)}</span>
+      <span style="color:var(--text)">${esc(e.name)}</span>
+      <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(e.detail)}</span>
+    </div>`).join('') : '<div class="sync-desc">No events yet.</div>';
+  box.innerHTML = `
+    <div class="sync-desc">Enabled sources (limit ${formatNum(data.max_new_domains || 0)} new domains in total):</div>
+    ${srcHtml}
+    <div class="sync-desc" style="margin-top:14px">Last events:</div>
+    ${evHtml}`;
+}
+
+async function loadCandidates() {
+  try {
+    const [candRes, autoRes] = await Promise.all([
+      fetch(`https://raw.githubusercontent.com/${REPO}/main/output/candidates.json?t=${Date.now()}`),
+      fetch(`https://raw.githubusercontent.com/${REPO}/main/output/auto_sources.json?t=${Date.now()}`)
+    ]);
+    if (candRes.ok) renderCandidates(await candRes.json());
+    else document.getElementById('list-cands').innerHTML = '<div class="loading" style="color:var(--text3)">Run the Discover Candidates workflow to generate candidates</div>';
+    renderAuto(autoRes.ok ? await autoRes.json() : null);
+  } catch(e) {
+    document.getElementById('list-cands').innerHTML = '<div class="loading" style="color:var(--text3)">Could not load candidates</div>';
+  }
+}
+
 function copyText(id) {
   navigator.clipboard.writeText(document.getElementById(id).textContent.trim())
     .then(() => showToast('Copied to clipboard'));
 }
 
 loadData();
+loadCandidates();
 </script>
 </body>
 </html>

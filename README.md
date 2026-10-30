@@ -117,15 +117,18 @@ blocklist-manager/
 ├── pfblockerng_sync.py        # runs on pfSense
 ├── requirements.txt
 ├── .github/workflows/
-│   └── update.yml
+│   ├── update.yml
+│   └── discover.yml
 ├── scripts/
 │   ├── merge.py               # builds merged_ip.txt and merged_dnsbl.txt
 │   ├── compare.py             # builds recommendations.json
+│   ├── discover.py            # builds candidates.json (weekly)
 │   └── netutil.py             # shared parsers, bogon list and fast overlap check
 └── output/
     ├── merged_ip.txt
     ├── merged_dnsbl.txt
     ├── recommendations.json
+    ├── candidates.json
     └── last_run.json
 ```
 
@@ -141,6 +144,31 @@ blocklist-manager/
 | IP | ipsum level 3+ | IPs appearing on 3 or more independent blacklists, updated daily |
 | DNSBL | Hagezi Pro | Large multi-source domain blocklist |
 | DNSBL | Hagezi TIF Mini | Threat Intelligence Feeds (mini): malware, phishing, scam and C2 domains |
+
+---
+
+## Candidate discovery
+
+Once a week (Sunday 05:00 UTC, or manually via Actions → Discover Candidates) `scripts/discover.py` checks lists you are *not* using yet and measures how many new entries each one would add on top of what you already block (your pfBlockerNG lists plus `merged_*.txt`). It never touches the merged lists.
+
+Results go to `output/candidates.json`, sorted by new entries. Each candidate gets `total`, `new`, `new_pct`, `status` (`ok`, `dead` or `stale`) and `worth_considering` — true only for low-risk lists that are alive and add at least 1,000 domains (DNSBL) or more than 100 networks (IP).
+
+To add or remove a candidate, edit the `CANDIDATES` list at the top of `scripts/discover.py`: `name`, `type` (`dnsbl` or `ip`), `url`, `category` and `risk` (`low` for security lists, `high` for lists that may break sites).
+
+### Automatic DNSBL sources
+
+Low-risk DNSBL candidates can be added to `merged_dnsbl.txt` automatically. IP candidates are never added automatically — they stay suggestions.
+
+The state lives in `output/auto_sources.json`, which only `discover.py` writes:
+
+- **2-run rule** — a DNSBL candidate with `risk: "low"` is enabled only after it was `worth_considering` in **2 discovery runs in a row** (`consecutive_ok`), and only while the `last_new` of all enabled sources together stays within `max_new_domains` (default 150,000). Otherwise it stays disabled and `reason` says why.
+- **Removal** — an enabled source is disabled again when it is `dead` or `stale` in 2 runs in a row, or not eligible in 4 runs in a row. Entries are never deleted, only switched off.
+- **Events** — every add and remove is logged in `events` (last 20 kept) and shown in the *Candidates* tab of the web UI.
+- `merge.py` loads every enabled source after Hagezi Pro and TIF Mini, with the same coverage filter. An auto source must return at least 50% of its `last_total`; if it fails, it is skipped with a warning and the run continues. Active auto sources are listed in the `# Sources:` header of `merged_dnsbl.txt`.
+
+**Kill switch:** set `"auto_enabled": false` in `output/auto_sources.json` (edit it on GitHub). `merge.py` then ignores all auto sources from the next run on, and `discover.py` leaves the file unchanged. Set it back to `true` to resume.
+
+**Cap:** if `merged_dnsbl.txt` would contain more than 600,000 domains, `merge.py` aborts and the previous output stays in place.
 
 ---
 
