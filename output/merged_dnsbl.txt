@@ -1,5 +1,5 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-30 04:23 UTC
+# Generated: 2026-10-30 05:32 UTC
 # Sources: Hagezi Pro + Hagezi TIF Mini
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
 # Total entries: 149697 domains
