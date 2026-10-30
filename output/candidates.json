@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-30T05:37:46.707766+00:00",
+  "generated": "2026-10-30T05:56:52.357302+00:00",
   "candidates": [
     {
       "name": "hagezi_tif",
@@ -8,7 +8,7 @@
       "category": "threat intelligence",
       "risk": "low",
       "total": 2062783,
-      "new": 1838924,
+      "new": 1838927,
       "new_pct": 89.1,
       "last_modified_age_days": null,
       "status": "ok",
@@ -34,7 +34,7 @@
       "category": "abusers (30 days)",
       "risk": "low",
       "total": 176919,
-      "new": 173488,
+      "new": 173492,
       "new_pct": 98.1,
       "last_modified_age_days": null,
       "status": "ok",
@@ -47,8 +47,8 @@
       "category": "attacks / malware (aggressive)",
       "risk": "high",
       "total": 187077,
-      "new": 172363,
-      "new_pct": 92.1,
+      "new": 172403,
+      "new_pct": 92.2,
       "last_modified_age_days": null,
       "status": "ok",
       "worth_considering": false
@@ -91,19 +91,6 @@
       "last_modified_age_days": null,
       "status": "ok",
       "worth_considering": false
-    },
-    {
-      "name": "firehol_level3",
-      "type": "ip",
-      "url": "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level3.netset",
-      "category": "attacks / malware",
-      "risk": "low",
-      "total": 10888,
-      "new": 4800,
-      "new_pct": 44.1,
-      "last_modified_age_days": null,
-      "status": "ok",
-      "worth_considering": true
     },
     {
       "name": "hagezi_dyndns",
