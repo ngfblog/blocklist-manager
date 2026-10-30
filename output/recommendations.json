@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-30T05:32:25.417315+00:00",
-  "my_networks_count": 54431,
+  "generated": "2026-10-30T05:58:52.221408+00:00",
+  "my_networks_count": 59292,
   "recommendations": [
     {
       "name": "firehol_level1",
@@ -23,11 +23,21 @@
       "worth_adding": false
     },
     {
+      "name": "firehol_level3",
+      "description": "FireHOL Level 3 \u2013 attackers, malware and spyware seen in the last 30 days",
+      "url": "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/firehol_level3.netset",
+      "type": "ip",
+      "total_networks": 10888,
+      "new_networks": 0,
+      "your_coverage_pct": 100.0,
+      "worth_adding": false
+    },
+    {
       "name": "blocklist_de_all",
       "description": "Blocklist.de \u2013 IPs that attacked SSH, FTP, web servers in last 48h",
       "url": "https://lists.blocklist.de/lists/all.txt",
       "type": "ip",
-      "total_networks": 26428,
+      "total_networks": 26397,
       "new_networks": 0,
       "your_coverage_pct": 100.0,
       "worth_adding": false
