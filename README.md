@@ -140,6 +140,7 @@ blocklist-manager/
 | IP | blocklist.de | IPs that attacked SSH, FTP, and web servers in the last 48h |
 | IP | ipsum level 3+ | IPs appearing on 3 or more independent blacklists, updated daily |
 | DNSBL | Hagezi Pro | Large multi-source domain blocklist |
+| DNSBL | Hagezi TIF Mini | Threat Intelligence Feeds (mini): malware, phishing, scam and C2 domains |
 
 ---
 

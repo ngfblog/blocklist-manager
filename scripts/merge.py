@@ -53,6 +53,10 @@ FALLBACKS = {
         "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt",
         "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/pro-onlydomains.txt",
     ],
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.mini-onlydomains.txt": [
+        "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.mini-onlydomains.txt",
+        "https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.mini-onlydomains.txt",
+    ],
 }
 
 # External IP sources to compare against
@@ -66,6 +70,7 @@ IP_SOURCES = [
 # External DNSBL sources to compare against
 DNSBL_SOURCES = [
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt",
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.mini-onlydomains.txt",
 ]
 
 # Sanity limits. If a source returns fewer entries than this, the download is
@@ -77,6 +82,7 @@ MIN_ENTRIES = {
     "https://lists.blocklist.de/lists/all.txt": 1000,
     "https://raw.githubusercontent.com/stamparm/ipsum/master/levels/3.txt": 5000,
     "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/pro-onlydomains.txt": 100000,
+    "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.mini-onlydomains.txt": 100000,
 }
 MAX_SKIPPED_RATIO = 0.2          # fail if more than 20% of the lines are unparseable
 MAX_MY_LISTS_AGE_HOURS = 72      # fail if my_lists.json (synced from pfSense) is older
@@ -181,6 +187,16 @@ def check_my_lists_age(my_lists):
             f"my_lists.json is {hours:.0f} hours old. The pfSense sync has stopped "
             "(expired token or cron problem?). Check pfblockerng_sync.py on pfSense."
         )
+
+
+def is_domain_covered(domain, covered):
+    """
+    True if the domain or one of its parent domains is in covered.
+    pfBlockerNG has Wildcard Blocking (TLD) enabled, so blocking example.com
+    also blocks every subdomain such as ads.example.com.
+    """
+    labels = domain.split(".")
+    return any(".".join(labels[i:]) in covered for i in range(len(labels) - 1))
 
 
 def write_atomic(path, lines):
@@ -301,7 +317,7 @@ def main():
         label = url.split("/")[-1]
         source_domains, skipped = parse_domains(download(url, label))
         check_source(label, len(source_domains), skipped, MIN_ENTRIES.get(url, 1))
-        new_domains = source_domains - my_domains
+        new_domains = {d for d in source_domains if not is_domain_covered(d, my_domains)}
         gap_domains.update(new_domains)
         print(f"    {label}: {len(source_domains)} total, {len(new_domains)} new domains")
 
@@ -323,7 +339,7 @@ def main():
     write_atomic(OUTPUT_DNS, [
         "# Blocklist Manager – DNSBL gaps",
         f"# Generated: {stamp}",
-        "# Sources: Hagezi Pro",
+        "# Sources: Hagezi Pro + Hagezi TIF Mini",
         "# Contains domains NOT covered by your pfBlockerNG DNSBL lists",
         f"# Total entries: {len(gap_domains_sorted)} domains",
         "#",
