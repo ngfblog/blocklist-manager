@@ -87,6 +87,12 @@ MIN_ENTRIES = {
 MAX_SKIPPED_RATIO = 0.2          # fail if more than 20% of the lines are unparseable
 MAX_MY_LISTS_AGE_HOURS = 72      # fail if my_lists.json (synced from pfSense) is older
 
+# DNSBL sources promoted automatically by discover.py (see README).
+# A missing or unreadable file, or "auto_enabled": false, means no auto sources.
+AUTO_SOURCES_FILE = "output/auto_sources.json"
+AUTO_MIN_RATIO = 0.5             # an auto source must return at least 50% of its last size
+MAX_DNSBL_DOMAINS = 600000       # fail if merged_dnsbl.txt would grow beyond this
+
 MY_LISTS_FILE = "my_lists.json"
 OUTPUT_IP = "output/merged_ip.txt"
 OUTPUT_DNS = "output/merged_dnsbl.txt"
@@ -197,6 +203,26 @@ def is_domain_covered(domain, covered):
     """
     labels = domain.split(".")
     return any(".".join(labels[i:]) in covered for i in range(len(labels) - 1))
+
+
+def load_auto_sources():
+    """Enabled auto sources from discover.py. Never fails the run."""
+    if not os.path.exists(AUTO_SOURCES_FILE):
+        return []
+    try:
+        with open(AUTO_SOURCES_FILE) as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, OSError) as e:
+        print(f"  Warning: cannot read {AUTO_SOURCES_FILE} ({e}), ignoring auto sources")
+        return []
+    if not isinstance(data, dict) or data.get("auto_enabled") is not True:
+        print("  Auto sources are switched off (auto_enabled is not true)")
+        return []
+    return [
+        s for s in data.get("sources", [])
+        if isinstance(s, dict) and s.get("enabled") is True and s.get("type") == "dnsbl"
+        and str(s.get("url", "")).startswith("https://") and not is_self_url(s["url"])
+    ]
 
 
 def write_atomic(path, lines):
@@ -321,8 +347,30 @@ def main():
         gap_domains.update(new_domains)
         print(f"    {label}: {len(source_domains)} total, {len(new_domains)} new domains")
 
+    # Auto sources promoted by discover.py. A broken one is skipped, never fatal.
+    auto_names = []
+    for src in load_auto_sources():
+        label = str(src.get("name") or src["url"].split("/")[-1])
+        try:
+            minimum = max(1, int(int(src.get("last_total") or 0) * AUTO_MIN_RATIO))
+            source_domains, skipped = parse_domains(download(src["url"], label))
+            check_source(label, len(source_domains), skipped, minimum)
+        except (RuntimeError, ValueError, TypeError) as e:
+            print(f"    Warning: skipping auto source {label}: {redact(e)}")
+            continue
+        new_domains = {d for d in source_domains if not is_domain_covered(d, my_domains)}
+        gap_domains.update(new_domains)
+        auto_names.append(label)
+        print(f"    {label} (auto): {len(source_domains)} total, {len(new_domains)} new domains")
+
     gap_domains_sorted = sorted(gap_domains)
     print(f"  Total DNSBL gaps: {len(gap_domains_sorted)} domains")
+    if len(gap_domains_sorted) > MAX_DNSBL_DOMAINS:
+        raise RuntimeError(
+            f"merged_dnsbl.txt would have {len(gap_domains_sorted)} domains "
+            f"(limit {MAX_DNSBL_DOMAINS}) - aborting without publishing. "
+            "Disable an auto source or set auto_enabled to false in output/auto_sources.json."
+        )
 
     # Write both output files only now, after every download and check
     # succeeded, so a failure can never leave one file new and the other old.
@@ -339,7 +387,7 @@ def main():
     write_atomic(OUTPUT_DNS, [
         "# Blocklist Manager – DNSBL gaps",
         f"# Generated: {stamp}",
-        "# Sources: Hagezi Pro + Hagezi TIF Mini",
+        "# Sources: " + " + ".join(["Hagezi Pro", "Hagezi TIF Mini", *auto_names]),
         "# Contains domains NOT covered by your pfBlockerNG DNSBL lists",
         f"# Total entries: {len(gap_domains_sorted)} domains",
         "#",

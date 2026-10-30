@@ -1,0 +1,52 @@
+name: Discover Candidates
+on:
+  schedule:
+    - cron: '0 5 * * 0'
+  workflow_dispatch:
+concurrency:
+  group: update-blocklists
+  cancel-in-progress: false
+permissions: {}
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run discovery script
+        env:
+          ABUSECH_KEY: ${{ secrets.ABUSECH_KEY }}
+        run: python scripts/discover.py
+      - name: Commit and push candidates
+        run: |
+          git config user.name "blocklist-bot"
+          git config user.email "bot@blocklist-manager"
+          git add output/candidates.json output/auto_sources.json
+          git diff --cached --quiet || git commit -m "chore: update candidates and auto sources $(date -u '+%Y-%m-%d %H:%M UTC')"
+          # Retry push with rebase in case remote moved while this job was running.
+          # The step fails if every attempt is rejected, so a stale result is never reported as success.
+          pushed=0
+          for i in 1 2 3; do
+            if git push; then
+              pushed=1
+              break
+            fi
+            echo "Push rejected, pulling and retrying ($i/3)..."
+            git pull --rebase origin main
+            sleep 5
+          done
+          if [ "$pushed" -ne 1 ]; then
+            echo "::error::git push failed after 3 attempts"
+            exit 1
+          fi
