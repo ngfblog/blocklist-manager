@@ -160,8 +160,8 @@ code{color:#79c0ff;font-family:monospace}
     <button class="tab active" onclick="sw('ip',this)"><i class="ti ti-shield"></i> IP Lists</button>
     <button class="tab" onclick="sw('dnsbl',this)"><i class="ti ti-dns"></i> DNSBL Lists</button>
     <button class="tab" onclick="sw('recs',this)"><i class="ti ti-bell"></i> Recommendations <span class="badge-count" id="rec-badge">0</span></button>
-    <button class="tab" onclick="sw('setup',this)"><i class="ti ti-settings"></i> pfSense Setup</button>
     <button class="tab" onclick="sw('cands',this)"><i class="ti ti-search"></i> Candidates <span class="badge-count" id="cand-badge">0</span></button>
+    <button class="tab" onclick="sw('setup',this)"><i class="ti ti-settings"></i> pfSense Setup</button>
   </div>
 
   <div id="ip" class="panel active">
@@ -205,6 +205,14 @@ code{color:#79c0ff;font-family:monospace}
     <div class="sec">
       <div class="sec-head">
         <div class="sec-head-left">
+          <span class="sec-lbl">Candidate lists</span>
+        </div>
+      </div>
+      <div id="list-cands"><div class="loading">Loading candidates...</div></div>
+    </div>
+    <div class="sec">
+      <div class="sec-head">
+        <div class="sec-head-left">
           <span class="sec-lbl">Auto-added sources</span>
           <div class="help-wrap"><span class="help-btn">?</span>
             <div class="tooltip"><strong>Auto-added DNSBL sources</strong>Low-risk DNSBL candidates that were worth considering in 2 weekly runs in a row are added to merged_dnsbl.txt automatically. IP candidates are never added automatically.</div>
@@ -212,14 +220,6 @@ code{color:#79c0ff;font-family:monospace}
         </div>
       </div>
       <div class="auto-box" id="auto-box"><div class="loading">Loading auto sources...</div></div>
-    </div>
-    <div class="sec">
-      <div class="sec-head">
-        <div class="sec-head-left">
-          <span class="sec-lbl">Candidate lists</span>
-        </div>
-      </div>
-      <div id="list-cands"><div class="loading">Loading candidates...</div></div>
     </div>
   </div>
 
