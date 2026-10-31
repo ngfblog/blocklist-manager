@@ -1,136 +1,236 @@
 {
-  "generated": "2026-10-31T04:12:05.576109+00:00",
+  "generated": "2026-10-31T04:47:54.677586+00:00",
   "dns_ok": true,
+  "live_check": {
+    "dead-domains-linter": 8
+  },
+  "prune_plan": {
+    "ip": [
+      {
+        "step": 1,
+        "name": "block.txt",
+        "url": "https://isc.sans.edu/feeds/block.txt",
+        "unique": 0,
+        "total": 20
+      },
+      {
+        "step": 2,
+        "name": "drop.txt",
+        "url": "https://www.spamhaus.org/drop/drop.txt",
+        "unique": 0,
+        "total": 1756
+      }
+    ],
+    "dnsbl": []
+  },
   "lists": [
     {
       "url": "https://www.spamhaus.org/drop/drop.txt",
       "type": "ip",
+      "name": "drop.txt",
       "status": "ok",
       "total": 1756,
       "unique": 0,
       "unique_pct": 0.0,
       "live_pct": null,
-      "redundant": true
+      "redundant": true,
+      "prune_step": 2,
+      "safe_now": false,
+      "blocked_by": "block.txt",
+      "cover_ok": true,
+      "redundant_runs": 0
     },
     {
       "url": "https://rules.emergingthreats.net/fwrules/emerging-Block-IPs.txt",
       "type": "ip",
+      "name": "emerging-Block-IPs.txt",
       "status": "ok",
       "total": 1781,
       "unique": 6,
       "unique_pct": 0.3,
       "live_pct": null,
-      "redundant": true
+      "redundant": true,
+      "prune_step": null,
+      "safe_now": false,
+      "blocked_by": null,
+      "cover_ok": null,
+      "redundant_runs": 0
     },
     {
       "url": "https://lists.blocklist.de/lists/all.txt",
       "type": "ip",
+      "name": "all.txt",
       "status": "ok",
-      "total": 24899,
-      "unique": 23991,
-      "unique_pct": 96.4,
+      "total": 24830,
+      "unique": 23922,
+      "unique_pct": 96.3,
       "live_pct": null,
-      "redundant": false
+      "redundant": false,
+      "prune_step": null,
+      "safe_now": false,
+      "blocked_by": null,
+      "cover_ok": null,
+      "redundant_runs": 0
     },
     {
       "url": "http://cinsscore.com/list/ci-badguys.txt",
       "type": "ip",
+      "name": "ci-badguys.txt",
       "status": "ok",
       "total": 15000,
-      "unique": 11884,
+      "unique": 11887,
       "unique_pct": 79.2,
       "live_pct": null,
-      "redundant": false
+      "redundant": false,
+      "prune_step": null,
+      "safe_now": false,
+      "blocked_by": null,
+      "cover_ok": null,
+      "redundant_runs": 0
     },
     {
       "url": "https://isc.sans.edu/feeds/block.txt",
       "type": "ip",
+      "name": "block.txt",
       "status": "ok",
       "total": 20,
       "unique": 0,
       "unique_pct": 0.0,
       "live_pct": null,
-      "redundant": true
+      "redundant": true,
+      "prune_step": 1,
+      "safe_now": true,
+      "blocked_by": null,
+      "cover_ok": true,
+      "redundant_runs": 1
     },
     {
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-onlydomains.txt",
       "type": "dnsbl",
+      "name": "doh-onlydomains.txt",
       "status": "ok",
       "total": 3368,
       "unique": 3357,
       "unique_pct": 99.7,
-      "live_pct": 91.3,
-      "redundant": false
+      "live_pct": 99.0,
+      "redundant": false,
+      "prune_step": null,
+      "safe_now": false,
+      "blocked_by": null,
+      "cover_ok": null,
+      "redundant_runs": 0
     },
     {
       "url": "https://big.oisd.nl",
       "type": "dnsbl",
+      "name": "big.oisd.nl",
       "status": "ok",
       "total": 235094,
       "unique": 234462,
       "unique_pct": 99.7,
-      "live_pct": 88.3,
-      "redundant": false
+      "live_pct": 90.3,
+      "redundant": false,
+      "prune_step": null,
+      "safe_now": false,
+      "blocked_by": null,
+      "cover_ok": null,
+      "redundant_runs": 0
     },
     {
       "url": "https://openphish.com/feed.txt",
       "type": "dnsbl",
+      "name": "feed.txt",
       "status": "ok",
       "total": 280,
       "unique": 265,
       "unique_pct": 94.6,
-      "live_pct": 95.0,
-      "redundant": false
+      "live_pct": 99.6,
+      "redundant": false,
+      "prune_step": null,
+      "safe_now": false,
+      "blocked_by": null,
+      "cover_ok": null,
+      "redundant_runs": 0
     },
     {
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.winoffice-onlydomains.txt",
       "type": "dnsbl",
+      "name": "native.winoffice-onlydomains.txt",
       "status": "ok",
       "total": 383,
       "unique": 326,
       "unique_pct": 85.1,
-      "live_pct": 90.0,
-      "redundant": false
+      "live_pct": 100.0,
+      "redundant": false,
+      "prune_step": null,
+      "safe_now": false,
+      "blocked_by": null,
+      "cover_ok": null,
+      "redundant_runs": 0
     },
     {
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.samsung-onlydomains.txt",
       "type": "dnsbl",
+      "name": "native.samsung-onlydomains.txt",
       "status": "ok",
       "total": 201,
       "unique": 150,
       "unique_pct": 74.6,
-      "live_pct": 97.0,
-      "redundant": false
+      "live_pct": 99.5,
+      "redundant": false,
+      "prune_step": null,
+      "safe_now": false,
+      "blocked_by": null,
+      "cover_ok": null,
+      "redundant_runs": 0
     },
     {
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.tiktok-onlydomains.txt",
       "type": "dnsbl",
+      "name": "native.tiktok-onlydomains.txt",
       "status": "ok",
       "total": 550,
       "unique": 452,
       "unique_pct": 82.2,
       "live_pct": 100.0,
-      "redundant": false
+      "redundant": false,
+      "prune_step": null,
+      "safe_now": false,
+      "blocked_by": null,
+      "cover_ok": null,
+      "redundant_runs": 0
     },
     {
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.xiaomi-onlydomains.txt",
       "type": "dnsbl",
+      "name": "native.xiaomi-onlydomains.txt",
       "status": "ok",
       "total": 350,
       "unique": 263,
       "unique_pct": 75.1,
-      "live_pct": 90.3,
-      "redundant": false
+      "live_pct": 100.0,
+      "redundant": false,
+      "prune_step": null,
+      "safe_now": false,
+      "blocked_by": null,
+      "cover_ok": null,
+      "redundant_runs": 0
     },
     {
       "url": "https://threatfox-api.abuse.ch/v2/files/exports/{ABUSECH_KEY}/hostfile.txt",
       "type": "dnsbl",
+      "name": "hostfile.txt",
       "status": "ok",
-      "total": 32641,
-      "unique": 32398,
+      "total": 32637,
+      "unique": 32394,
       "unique_pct": 99.3,
-      "live_pct": 42.0,
-      "redundant": false
+      "live_pct": 58.3,
+      "redundant": false,
+      "prune_step": null,
+      "safe_now": false,
+      "blocked_by": null,
+      "cover_ok": null,
+      "redundant_runs": 0
     }
   ],
   "skipped": [

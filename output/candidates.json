@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-31T04:10:59.406984+00:00",
+  "generated": "2026-10-31T04:42:30.188634+00:00",
   "candidates": [
     {
       "name": "hagezi_tif",
@@ -10,10 +10,25 @@
       "total": 1852754,
       "new": 1527231,
       "new_pct": 82.4,
-      "live_pct": 91.3,
+      "live_pct": 93.0,
       "last_modified_age_days": null,
       "status": "ok",
       "worth_considering": true
+    },
+    {
+      "name": "jarelllama_scam_blocklist",
+      "type": "dnsbl",
+      "url": "https://raw.githubusercontent.com/jarelllama/Scam-Blocklist/main/lists/adblock/scams.txt",
+      "category": "Jarelllama's Scam Blocklist",
+      "risk": "high",
+      "discovered": true,
+      "total": 468729,
+      "new": 453190,
+      "new_pct": 96.7,
+      "live_pct": 40.3,
+      "last_modified_age_days": null,
+      "status": "ok",
+      "worth_considering": false
     },
     {
       "name": "firehol_abusers_30d",
@@ -22,7 +37,7 @@
       "category": "abusers (30 days)",
       "risk": "low",
       "total": 178065,
-      "new": 174575,
+      "new": 174574,
       "new_pct": 98.0,
       "live_pct": null,
       "last_modified_age_days": null,
@@ -36,7 +51,7 @@
       "category": "attacks / malware (aggressive)",
       "risk": "high",
       "total": 185767,
-      "new": 170802,
+      "new": 170810,
       "new_pct": 91.9,
       "live_pct": null,
       "last_modified_age_days": null,
@@ -52,8 +67,23 @@
       "total": 315740,
       "new": 121030,
       "new_pct": 38.3,
-      "live_pct": 85.7,
+      "live_pct": 92.0,
       "last_modified_age_days": null,
+      "status": "ok",
+      "worth_considering": true
+    },
+    {
+      "name": "phishing_army",
+      "type": "dnsbl",
+      "url": "https://phishing.army/download/phishing_army_blocklist_extended.txt",
+      "category": "Phishing Army",
+      "risk": "low",
+      "discovered": true,
+      "total": 152871,
+      "new": 56528,
+      "new_pct": 37.0,
+      "live_pct": 7.0,
+      "last_modified_age_days": 0.1,
       "status": "ok",
       "worth_considering": true
     },
@@ -66,7 +96,37 @@
       "total": 282349,
       "new": 40692,
       "new_pct": 14.4,
-      "live_pct": 93.7,
+      "live_pct": 98.3,
+      "last_modified_age_days": null,
+      "status": "ok",
+      "worth_considering": false
+    },
+    {
+      "name": "shadowwhisperer_malware_list",
+      "type": "dnsbl",
+      "url": "https://github.com/ShadowWhisperer/BlockLists/raw/master/Lists/Malware",
+      "category": "ShadowWhisperer's Malware list",
+      "risk": "low",
+      "discovered": true,
+      "total": 46713,
+      "new": 31947,
+      "new_pct": 68.4,
+      "live_pct": 33.7,
+      "last_modified_age_days": null,
+      "status": "ok",
+      "worth_considering": true
+    },
+    {
+      "name": "jarelllama_scam_blocklist_light_version",
+      "type": "dnsbl",
+      "url": "https://raw.githubusercontent.com/jarelllama/Scam-Blocklist/main/lists/wildcard_domains/scams_light.txt",
+      "category": "Jarelllama's Scam Blocklist LIGHT VERSION",
+      "risk": "high",
+      "discovered": true,
+      "total": 18254,
+      "new": 17271,
+      "new_pct": 94.6,
+      "live_pct": 44.7,
       "last_modified_age_days": null,
       "status": "ok",
       "worth_considering": false
@@ -80,7 +140,7 @@
       "total": 225653,
       "new": 13245,
       "new_pct": 5.9,
-      "live_pct": 91.7,
+      "live_pct": 97.7,
       "last_modified_age_days": null,
       "status": "ok",
       "worth_considering": false
@@ -94,7 +154,22 @@
       "total": 16386,
       "new": 13126,
       "new_pct": 80.1,
-      "live_pct": 87.3,
+      "live_pct": 95.0,
+      "last_modified_age_days": null,
+      "status": "ok",
+      "worth_considering": false
+    },
+    {
+      "name": "shadowwhisperer_scam_list",
+      "type": "dnsbl",
+      "url": "https://github.com/ShadowWhisperer/BlockLists/raw/master/Lists/Scam",
+      "category": "ShadowWhisperer's Scam list",
+      "risk": "high",
+      "discovered": true,
+      "total": 7451,
+      "new": 6399,
+      "new_pct": 85.9,
+      "live_pct": 79.7,
       "last_modified_age_days": null,
       "status": "ok",
       "worth_considering": false
@@ -108,7 +183,7 @@
       "total": 1536,
       "new": 1346,
       "new_pct": 87.6,
-      "live_pct": 88.0,
+      "live_pct": 97.0,
       "last_modified_age_days": null,
       "status": "ok",
       "worth_considering": false
@@ -140,6 +215,113 @@
       "last_modified_age_days": null,
       "status": "ok",
       "worth_considering": false
+    },
+    {
+      "name": "fabriziosalmi_hourly_updated_blocklist",
+      "type": "dnsbl",
+      "url": "https://github.com/fabriziosalmi/blacklists/releases/download/latest/blacklist.txt",
+      "category": "Fabriziosalmi's Hourly Updated Blocklist",
+      "risk": "high",
+      "discovered": true,
+      "total": 0,
+      "new": 0,
+      "new_pct": 0.0,
+      "live_pct": null,
+      "last_modified_age_days": null,
+      "status": "dead",
+      "error": "skipped: 105.9 MB is over the 40 MB limit",
+      "worth_considering": false
+    },
+    {
+      "name": "t145_black_mirror",
+      "type": "dnsbl",
+      "url": "https://github.com/T145/black-mirror/releases/download/latest/BLOCK_DOMAIN.txt",
+      "category": "T145's Black Mirror",
+      "risk": "high",
+      "discovered": true,
+      "total": 0,
+      "new": 0,
+      "new_pct": 0.0,
+      "live_pct": null,
+      "last_modified_age_days": null,
+      "status": "dead",
+      "error": "skipped: 163.7 MB is over the 40 MB limit",
+      "worth_considering": false
     }
-  ]
+  ],
+  "live_check": {
+    "dead-domains-linter": 9,
+    "dns-lookup": 2
+  },
+  "catalog": {
+    "url": "https://raw.githubusercontent.com/jarelllama/Blocklist-Checker/main/data/blocklists_to_compare.txt",
+    "status": "ok",
+    "added": [
+      "jarelllama_scam_blocklist",
+      "jarelllama_scam_blocklist_light_version",
+      "fabriziosalmi_hourly_updated_blocklist",
+      "t145_black_mirror",
+      "phishing_army",
+      "shadowwhisperer_scam_list",
+      "shadowwhisperer_malware_list"
+    ],
+    "skipped": [
+      {
+        "name": "Hagezi's TIF Full",
+        "reason": "already used or already a candidate"
+      },
+      {
+        "name": "Hagezi's TIF Medium",
+        "reason": "already used or already a candidate"
+      },
+      {
+        "name": "Hagezi's Multi ULTIMATE",
+        "reason": "ads list"
+      },
+      {
+        "name": "Hagezi's Multi PRO",
+        "reason": "ads list"
+      },
+      {
+        "name": "Hagezi's Multi PRO mini",
+        "reason": "ads list"
+      },
+      {
+        "name": "xRuffKez's 14 day NRD feed",
+        "reason": "NRD list"
+      },
+      {
+        "name": "xRuffKez's 14 day phishing NRD feed",
+        "reason": "NRD list"
+      },
+      {
+        "name": "Jarelllama's NSFW Blocklist",
+        "reason": "adult list"
+      },
+      {
+        "name": "oisd big",
+        "reason": "already used or already a candidate"
+      },
+      {
+        "name": "oisd nsfw",
+        "reason": "adult list"
+      },
+      {
+        "name": "AdGuard's DNS filter",
+        "reason": "ads list"
+      },
+      {
+        "name": "ShadowWhisperer's Ads list",
+        "reason": "ads list"
+      },
+      {
+        "name": "ShadowWhisperer's Tracking list",
+        "reason": "tracking list"
+      },
+      {
+        "name": "ShadowWhisperer's Adult list",
+        "reason": "adult list"
+      }
+    ]
+  }
 }
