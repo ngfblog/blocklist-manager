@@ -205,7 +205,7 @@ code{color:#79c0ff;font-family:monospace}
   </div>
 
   <div id="cands" class="panel">
-    <div class="banner"><i class="ti ti-info-circle"></i><span>Lists you are not using yet, measured weekly against everything you already block. Highlighted rows are low-risk lists worth considering. <span id="cand-generated"></span></span></div>
+    <div class="banner"><i class="ti ti-info-circle"></i><span>Lists you are not using yet, measured weekly against everything you already block. Highlighted rows are low-risk lists worth adding (for DNSBL lists: at least 50% live). <span id="cand-generated"></span></span></div>
     <div id="auto-off"></div>
     <div class="sec">
       <div class="sec-head">
@@ -440,20 +440,22 @@ function renderCandidates(data, active = new Set()) {
   const hiddenCount = all.filter(lowValue).length;
   document.getElementById('cand-hidden').textContent = !showAll && hiddenCount ? `(${hiddenCount} hidden)` : '';
   // Candidates already enabled as auto sources are not highlighted or counted
-  const worth = c => c.worth_considering && !active.has(c.name);
+  // Highlight by worth_adding (worth_considering + live gate); older files only have worth_considering
+  const worth = c => ('worth_adding' in c ? c.worth_adding : c.worth_considering) && !active.has(c.name);
   document.getElementById('cand-badge').textContent = all.filter(worth).length;
   if (!cands.length) { el.innerHTML = `<div class="loading" style="color:var(--text3)">${all.length ? 'All candidates are hidden by the filter — tick "show all"' : 'No candidates yet'}</div>`; return; }
   if (data.generated) document.getElementById('cand-generated').textContent = 'Last run: ' + formatTs(data.generated);
   const statusCls = { ok: 'b-green', stale: 'b-amber', dead: 'b-red' };
   el.innerHTML = `<div class="cand-wrap"><table class="cand-table">
-    <thead><tr><th>Name</th><th>Type</th><th class="num">Total</th><th class="num">New</th><th class="num">New %</th><th>Status</th><th>Risk</th></tr></thead>
+    <thead><tr><th>Name</th><th>Type</th><th class="num">Total</th><th class="num">New</th><th class="num">New %</th><th class="num">Live %</th><th>Status</th><th>Risk</th></tr></thead>
     <tbody>${cands.map(c => `
-      <tr class="${worth(c) ? 'worth' : ''}" title="${esc(active.has(c.name) ? 'Auto-added source (active)' : worth(c) ? 'Worth considering' : (c.error || c.category || ''))}">
+      <tr class="${worth(c) ? 'worth' : ''}" title="${esc(active.has(c.name) ? 'Auto-added source (active)' : worth(c) ? 'Worth adding' : c.worth_considering ? 'Worth considering, but under 50% live or live check missing' : (c.error || c.category || ''))}">
         <td class="name"><a href="${esc(c.url)}" target="_blank">${esc(c.name)}</a>${active.has(c.name) ? ' <span class="badge b-green">active</span>' : ''}</td>
         <td><span class="badge ${c.type === 'ip' ? 'b-blue' : 'b-purple'}">${c.type === 'ip' ? 'IP' : 'DNSBL'}</span></td>
         <td class="num">${formatNum(c.total || 0)}</td>
         <td class="num" style="color:${worth(c) ? 'var(--amber)' : 'inherit'}">${formatNum(c.new || 0)}</td>
         <td class="num">${esc(c.new_pct)}%</td>
+        <td class="num">${c.live_pct === null || c.live_pct === undefined ? '—' : esc(c.live_pct) + '%'}</td>
         <td><span class="badge ${statusCls[c.status] || 'b-blue'}">${esc(c.status)}</span></td>
         <td><span class="badge ${c.risk === 'low' ? 'b-green' : 'b-amber'}">${esc(c.risk)}</span></td>
       </tr>`).join('')}</tbody></table></div>`;
