@@ -1,0 +1,173 @@
+{
+  "generated": "2026-10-31T04:12:05.576109+00:00",
+  "dns_ok": true,
+  "lists": [
+    {
+      "url": "https://www.spamhaus.org/drop/drop.txt",
+      "type": "ip",
+      "status": "ok",
+      "total": 1756,
+      "unique": 0,
+      "unique_pct": 0.0,
+      "live_pct": null,
+      "redundant": true
+    },
+    {
+      "url": "https://rules.emergingthreats.net/fwrules/emerging-Block-IPs.txt",
+      "type": "ip",
+      "status": "ok",
+      "total": 1781,
+      "unique": 6,
+      "unique_pct": 0.3,
+      "live_pct": null,
+      "redundant": true
+    },
+    {
+      "url": "https://lists.blocklist.de/lists/all.txt",
+      "type": "ip",
+      "status": "ok",
+      "total": 24899,
+      "unique": 23991,
+      "unique_pct": 96.4,
+      "live_pct": null,
+      "redundant": false
+    },
+    {
+      "url": "http://cinsscore.com/list/ci-badguys.txt",
+      "type": "ip",
+      "status": "ok",
+      "total": 15000,
+      "unique": 11884,
+      "unique_pct": 79.2,
+      "live_pct": null,
+      "redundant": false
+    },
+    {
+      "url": "https://isc.sans.edu/feeds/block.txt",
+      "type": "ip",
+      "status": "ok",
+      "total": 20,
+      "unique": 0,
+      "unique_pct": 0.0,
+      "live_pct": null,
+      "redundant": true
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-onlydomains.txt",
+      "type": "dnsbl",
+      "status": "ok",
+      "total": 3368,
+      "unique": 3357,
+      "unique_pct": 99.7,
+      "live_pct": 91.3,
+      "redundant": false
+    },
+    {
+      "url": "https://big.oisd.nl",
+      "type": "dnsbl",
+      "status": "ok",
+      "total": 235094,
+      "unique": 234462,
+      "unique_pct": 99.7,
+      "live_pct": 88.3,
+      "redundant": false
+    },
+    {
+      "url": "https://openphish.com/feed.txt",
+      "type": "dnsbl",
+      "status": "ok",
+      "total": 280,
+      "unique": 265,
+      "unique_pct": 94.6,
+      "live_pct": 95.0,
+      "redundant": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.winoffice-onlydomains.txt",
+      "type": "dnsbl",
+      "status": "ok",
+      "total": 383,
+      "unique": 326,
+      "unique_pct": 85.1,
+      "live_pct": 90.0,
+      "redundant": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.samsung-onlydomains.txt",
+      "type": "dnsbl",
+      "status": "ok",
+      "total": 201,
+      "unique": 150,
+      "unique_pct": 74.6,
+      "live_pct": 97.0,
+      "redundant": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.tiktok-onlydomains.txt",
+      "type": "dnsbl",
+      "status": "ok",
+      "total": 550,
+      "unique": 452,
+      "unique_pct": 82.2,
+      "live_pct": 100.0,
+      "redundant": false
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/native.xiaomi-onlydomains.txt",
+      "type": "dnsbl",
+      "status": "ok",
+      "total": 350,
+      "unique": 263,
+      "unique_pct": 75.1,
+      "live_pct": 90.3,
+      "redundant": false
+    },
+    {
+      "url": "https://threatfox-api.abuse.ch/v2/files/exports/{ABUSECH_KEY}/hostfile.txt",
+      "type": "dnsbl",
+      "status": "ok",
+      "total": 32641,
+      "unique": 32398,
+      "unique_pct": 99.3,
+      "live_pct": 42.0,
+      "redundant": false
+    }
+  ],
+  "skipped": [
+    {
+      "url": "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/cn/ipv4-aggregated.txt",
+      "type": "ip",
+      "reason": "GeoIP list"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/in/ipv4-aggregated.txt",
+      "type": "ip",
+      "reason": "GeoIP list"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/ir/ipv4-aggregated.txt",
+      "type": "ip",
+      "reason": "GeoIP list"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/kp/ipv4-aggregated.txt",
+      "type": "ip",
+      "reason": "GeoIP list"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ipverse/rir-ip/master/country/ru/ipv4-aggregated.txt",
+      "type": "ip",
+      "reason": "GeoIP list"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ngfblog/blocklist-manager/main/output/merged_ip.txt",
+      "type": "ip",
+      "reason": "own output file"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/ngfblog/blocklist-manager/main/output/merged_dnsbl.txt",
+      "type": "dnsbl",
+      "reason": "own output file"
+    }
+  ]
+}

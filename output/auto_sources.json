@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-30T05:56:52.357302+00:00",
+  "generated": "2026-10-31T04:10:59.406984+00:00",
   "auto_enabled": true,
   "max_new_domains": 250000,
   "sources": [
@@ -9,12 +9,12 @@
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif-onlydomains.txt",
       "enabled": false,
       "first_seen": "2026-10-30",
-      "consecutive_ok": 2,
-      "last_total": 2062783,
-      "last_new": 1838927,
+      "consecutive_ok": 3,
+      "last_total": 1852754,
+      "last_new": 1527231,
       "fail_count": 0,
       "ineligible_count": 0,
-      "reason": "would exceed max_new_domains (0 in use + 1,838,927 new > 250,000)"
+      "reason": "would exceed max_new_domains (121,030 in use + 1,527,231 new > 250,000)"
     },
     {
       "name": "hagezi_tif_medium",
@@ -22,9 +22,9 @@
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.medium-onlydomains.txt",
       "enabled": true,
       "first_seen": "2026-10-30",
-      "consecutive_ok": 2,
-      "last_total": 414867,
-      "last_new": 199206,
+      "consecutive_ok": 3,
+      "last_total": 315740,
+      "last_new": 121030,
       "fail_count": 0,
       "ineligible_count": 0,
       "reason": ""
@@ -36,11 +36,11 @@
       "enabled": false,
       "first_seen": "2026-10-30",
       "consecutive_ok": 0,
-      "last_total": 1082,
-      "last_new": 120,
+      "last_total": 1074,
+      "last_new": 116,
       "fail_count": 0,
-      "ineligible_count": 2,
-      "reason": "only 120 new domains (needs 1000)"
+      "ineligible_count": 3,
+      "reason": "only 116 new domains (needs 1000)"
     },
     {
       "name": "hagezi_fake",
@@ -49,10 +49,10 @@
       "enabled": false,
       "first_seen": "2026-10-30",
       "consecutive_ok": 0,
-      "last_total": 17720,
+      "last_total": 17528,
       "last_new": 1,
       "fail_count": 0,
-      "ineligible_count": 2,
+      "ineligible_count": 3,
       "reason": "only 1 new domains (needs 1000)"
     }
   ],
