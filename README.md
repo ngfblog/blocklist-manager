@@ -159,7 +159,9 @@ Results go to `output/candidates.json`, sorted by new entries. Each candidate ge
 
 To add or remove a candidate, edit the `CANDIDATES` list at the top of `scripts/discover.py`: `name`, `type` (`dnsbl` or `ip`), `url`, `category` and `risk` (`low` for security lists, `high` for lists that may break sites).
 
-**Prefilter:** the *Candidates* tab hides rows with `new_pct` below 5% or fewer than 1,000 new entries; tick *show all* to see them. Active auto sources are always shown. DNSBL candidates that pass the prefilter also get `live_pct` — the share of up to 300 sampled *new* domains that still resolve in DNS. The prefilter and `live_pct` are for display only; they do not change `worth_considering` or the automatic rules below.
+**Catalog:** at the start of every run `discover.py` also reads the list catalog of [Blocklist-Checker](https://github.com/jarelllama/Blocklist-Checker) (`data/blocklists_to_compare.txt`, `name,url` per line). Every list you do not already use and that is not already in `CANDIDATES` is measured like a candidate, with `"discovered": true`. Adult, ads, tracking and NRD lists are skipped, at most 25 lists are added per run, and discovered lists larger than 40 MB are not downloaded (they show up as `dead` with the reason). Discovered lists are `risk: "high"` and therefore never auto-enabled — except *Phishing Army* and *ShadowWhisperer Malware*, which are `low` and follow the normal automatic rules. If the catalog cannot be downloaded, the run continues with `CANDIDATES` only. What was added or skipped is listed under `catalog` in `candidates.json`.
+
+**Prefilter:** the *Candidates* tab hides rows with `new_pct` below 5% or fewer than 1,000 new entries; tick *show all* to see them. Active auto sources are always shown. DNSBL candidates that pass the prefilter also get `live_pct` — the share of up to 300 sampled *new* domains that are still alive (see *Liveness* below). The prefilter and `live_pct` are for display only; they do not change `worth_considering` or the automatic rules below.
 
 ### Automatic DNSBL sources
 
@@ -184,10 +186,43 @@ The weekly *Discover Candidates* workflow also runs `scripts/analyze_existing.py
 
 - `total` — entries in the list
 - `unique` / `unique_pct` — entries that no *other* active list covers (DNSBL: parent domains count, because of wildcard blocking; IP: the same overlap check as `compare.py`)
-- `live_pct` (DNSBL only) — share of up to 300 sampled domains that still resolve in DNS (3 s timeout, same sample every run for an unchanged list). Left empty if DNS does not work on the runner at all.
-- `redundant` — `true` when a list has fewer than 100 unique entries **and** less than 5% unique
+- `live_pct` (DNSBL only) — share of up to 300 sampled domains that are still alive (see *Liveness* below)
+- `redundant` — `true` when a list has fewer than 100 unique entries **and** less than 5% unique (kept for compatibility; the prune plan below is what the web UI shows)
 
-The *IP Lists* and *DNSBL Lists* tabs show these numbers and a **maybe redundant** badge. Nothing is ever removed automatically — it is up to you whether to drop a list in pfBlockerNG. A list that fails to download is marked `dead`, and a failure of the whole analysis never fails the workflow.
+Nothing is ever removed automatically — it is up to you whether to drop a list in pfBlockerNG. A list that fails to download is marked `dead`, and a failure of the whole analysis never fails the workflow.
+
+### Prune plan
+
+Two lists that cover each other would both look redundant, but you can only remove one of them. So the analysis builds a **stepwise prune plan**, separately for IP and DNSBL lists (dead, GeoIP, ASN and this repo's own lists are left out):
+
+1. Count `unique` for every list.
+2. Prune candidates are lists with `unique` = 0 or `unique_pct` below 5%. Pick **one**: the lowest `unique`, ties broken by the smallest `total`.
+3. Simulate removing it, recount `unique` for the remaining lists, and repeat from step 2 until no candidate is left.
+
+The order is stored as `prune_plan` (`ip` and `dnsbl`, with the unique count at each step). Each list gets:
+
+- `prune_step` — 1, 2, … or `null` if it is not in the plan
+- `safe_now` — `true` only for step 1. Later steps are only valid **after** step 1 has been removed, so remove one list at a time and let the next run recompute the plan
+- `blocked_by` — for steps 2 and later, the name of the step 1 list
+- `redundant_runs` — in how many runs in a row this list was the step 1 list
+- `cover_ok` — `false` when some of the list's entries are covered only by other lists that are also in the plan
+
+The *IP Lists* and *DNSBL Lists* tabs show a green **prune step 1** badge for `safe_now`, and a grey **prune step N (after step 1)** badge for the later steps.
+
+### Liveness
+
+`live_pct` uses AdGuard's [Dead Domains Linter](https://github.com/AdguardTeam/DeadDomainsLinter), installed in the workflow with Node 20. The same deterministic sample of up to 300 domains is written to a file as `||domain^` rules, the linter checks it with `--export`, and `live_pct = 100 − dead / sampled × 100`. The linter treats a domain as dead when AdGuard DNS has not seen its registered domain in the last 24 hours and a DNS query confirms it, so the sampled domains are sent to AdGuard's public check service.
+
+If the linter is missing or fails — including failed lookups, which the linter only reports as warnings — the scripts fall back to their own DNS lookups (3 s timeout, 20 parallel). If that does not work either, `live_pct` stays empty: a failed check is never shown as 0%. `live_check` in the JSON files says which method was used.
+
+---
+
+## Third-party tools and data
+
+| Name | License | How it is used |
+|------|---------|----------------|
+| [AdGuard Dead Domains Linter](https://github.com/AdguardTeam/DeadDomainsLinter) (`@adguard/dead-domains-linter` 1.0.38) | MIT | Run as an external tool in the weekly workflow (`npm i -g`); not bundled or modified |
+| [Blocklist-Checker](https://github.com/jarelllama/Blocklist-Checker) list catalog (`data/blocklists_to_compare.txt`) | GPL-3.0 | Downloaded as data only (list names and URLs); no code is copied |
 
 ---
 

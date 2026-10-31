@@ -13,13 +13,23 @@ IP candidates are suggestions only.
 import argparse
 import json
 import os
+import re
 import sys
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 
 import merge
 from merge import check_source, download, is_domain_covered, redact
-from netutil import CoverageIndex, is_excluded, is_geoip_url, is_self_url, live_pct, parse_domains, parse_ips
+from netutil import (
+    LIVE_METHODS,
+    CoverageIndex,
+    is_excluded,
+    is_geoip_url,
+    is_self_url,
+    live_pct,
+    parse_domains,
+    parse_ips,
+)
 
 HAGEZI = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/{}-onlydomains.txt"
 FIREHOL = "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/{}.netset"
@@ -38,6 +48,22 @@ CANDIDATES = [
     {"name": "firehol_level4", "type": "ip", "url": FIREHOL.format("firehol_level4"), "category": "attacks / malware (aggressive)", "risk": "high"},
     {"name": "firehol_abusers_30d", "type": "ip", "url": FIREHOL.format("firehol_abusers_30d"), "category": "abusers (30 days)", "risk": "low"},
 ]
+
+# Candidate catalog: extra DNSBL lists from the Blocklist-Checker project (data
+# only, "name,url" per line). Lists you already have or that are already in
+# CANDIDATES are skipped, and so are adult, ads, tracking and NRD lists.
+# Discovered lists are "high" risk (never auto-enabled) unless listed in
+# CATALOG_LOW_RISK.
+CATALOG_URL = "https://raw.githubusercontent.com/jarelllama/Blocklist-Checker/main/data/blocklists_to_compare.txt"
+CATALOG_MAX = 25                       # discovered lists per run
+CATALOG_LOW_RISK = ("phishing army", "shadowwhisperer's malware")
+CATALOG_SKIP = {
+    "adult": r"\b(nsfw|adult|porn)\b",
+    "ads": r"\b(ads|multi|dns filter)\b",
+    "tracking": r"\b(tracking|trackers?)\b",
+    "NRD": r"\bnrd\b",
+}
+MAX_LIST_BYTES = 40 * 1024 * 1024      # discovered lists larger than this are not downloaded
 
 # Cap for automatic DNSBL sources: the last_new of all enabled sources together
 # must stay within this. Written to auto_sources.json on every run.
@@ -195,10 +221,91 @@ def last_modified_age_days(url):
         return None
 
 
+def url_key(url):
+    """
+    Comparable form of a list URL, so the same file is recognised behind
+    different hosts: GitHub raw / github.com/raw / jsDelivr URLs map to
+    owner/repo/path without the branch, *.oisd.nl lists to their host name.
+    """
+    u = re.sub(r"^[a-z]+://", "", url.strip().lower()).split("?")[0].split("#")[0].rstrip("/")
+    host, _, path = u.partition("/")
+    parts = path.split("/")
+    if host.endswith("oisd.nl"):
+        return host
+    if host == "cdn.jsdelivr.net" and parts[0] == "gh" and len(parts) > 3:
+        return "gh/" + "/".join([parts[1], parts[2].split("@")[0]] + parts[3:])
+    if host == "raw.githubusercontent.com" and len(parts) > 3:
+        rest = parts[5:] if parts[2:4] == ["refs", "heads"] else parts[3:]
+        return "gh/" + "/".join(parts[:2] + rest)
+    if host == "github.com" and len(parts) > 4 and parts[2] == "raw":
+        rest = parts[6:] if parts[3:5] == ["refs", "heads"] else parts[4:]
+        return "gh/" + "/".join(parts[:2] + rest)
+    return u
+
+
+def load_catalog(known_urls, known_names):
+    """
+    Candidates discovered in the catalog. Returns (candidates, info for
+    candidates.json). A failed download just returns no candidates.
+    """
+    info = {"url": CATALOG_URL, "status": "ok", "added": [], "skipped": []}
+    try:
+        text = download(CATALOG_URL, "blocklists_to_compare.txt")
+    except RuntimeError as e:
+        print(f"    Warning: catalog download failed ({redact(e)}) - using CANDIDATES only")
+        info.update(status="failed", error=redact(e))
+        return [], info
+    known = {url_key(u) for u in known_urls}
+    found = []
+    for line in text.splitlines():
+        if "," not in line or line.startswith("#"):
+            continue
+        title, url = (part.strip() for part in line.rsplit(",", 1))
+        if not url.lower().startswith(("https://", "http://")):
+            continue  # header line or junk
+        skip = next((cat for cat, pattern in CATALOG_SKIP.items() if re.search(pattern, title.lower())), None)
+        if skip:
+            info["skipped"].append({"name": title, "reason": f"{skip} list"})
+            continue
+        if url_key(url) in known:
+            info["skipped"].append({"name": title, "reason": "already used or already a candidate"})
+            continue
+        if len(found) >= CATALOG_MAX:
+            info["skipped"].append({"name": title, "reason": f"limit of {CATALOG_MAX} discovered lists per run"})
+            continue
+        name = re.sub(r"[^a-z0-9]+", "_", title.lower().replace("'s ", " ")).strip("_")
+        while name in known_names:
+            name += "_2"
+        known.add(url_key(url))
+        known_names.add(name)
+        risk = "low" if any(k in title.lower() for k in CATALOG_LOW_RISK) else "high"
+        found.append({"name": name, "type": "dnsbl", "url": url, "category": title,
+                      "risk": risk, "discovered": True})
+        info["added"].append(name)
+    print(f"    Catalog: {len(found)} new lists, {len(info['skipped'])} skipped")
+    return found, info
+
+
+def too_large(url):
+    """Size in MB if the server reports more than MAX_LIST_BYTES, else None."""
+    try:
+        r = merge.SESSION.head(url, headers=merge.HEADERS, timeout=merge.TIMEOUT, allow_redirects=True)
+        size = int(r.headers.get("Content-Length") or 0)
+    except Exception:
+        return None
+    return round(size / 1048576, 1) if size > MAX_LIST_BYTES else None
+
+
 def fetch(candidate):
     """Download and parse one candidate. Returns (entries, None) or (None, error)."""
     try:
+        if candidate.get("discovered"):
+            size = too_large(candidate["url"])
+            if size:
+                raise RuntimeError(f"skipped: {size} MB is over the {MAX_LIST_BYTES // 1048576} MB limit")
         text = download(candidate["url"], candidate["name"])
+        if candidate.get("discovered") and len(text) > MAX_LIST_BYTES:
+            raise RuntimeError(f"skipped: over the {MAX_LIST_BYTES // 1048576} MB limit")
         parse = parse_domains if candidate["type"] == "dnsbl" else parse_ips
         entries, skipped = parse(text)
         check_source(candidate["name"], len(entries), skipped)
@@ -350,6 +457,15 @@ def main():
 
     print("\n[1] Loading my pfBlockerNG lists...")
     my_lists = load_my_lists()
+    catalog = None
+    if has_dnsbl:
+        # Skip what is already a candidate or already blocked (pfBlockerNG lists and
+        # merge.py's fixed sources). Auto sources are not skipped: a discovered list
+        # that was auto-enabled must keep being measured to stay enabled.
+        known_urls = ([c["url"] for c in CANDIDATES] + merge.DNSBL_SOURCES + merge.IP_SOURCES
+                      + my_lists.get("dnsbl_lists", []) + my_lists.get("ip_lists", []))
+        discovered, catalog = load_catalog(known_urls, {c["name"] for c in CANDIDATES})
+        candidates += discovered
     # Read the auto state before writing anything, so a corrupt file aborts cleanly
     auto = load_auto_state(args.auto_file) if has_dnsbl else None
     auto_on = bool(auto and auto.get("auto_enabled") is True)
@@ -389,7 +505,10 @@ def main():
         results.append(measure(c, entries, error, covered, my_index))
     results.sort(key=lambda r: r["new"], reverse=True)
 
-    write_json(args.output, {"generated": now.isoformat(), "candidates": results})
+    output = {"generated": now.isoformat(), "candidates": results, "live_check": dict(LIVE_METHODS)}
+    if catalog:
+        output["catalog"] = catalog
+    write_json(args.output, output)
 
     if auto_on:
         print("\n[6] Updating auto sources...")
