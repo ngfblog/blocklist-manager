@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-10-31 18:16 UTC
+# Generated: 2026-10-31 23:08 UTC
 # Sources: Hagezi Pro + Hagezi TIF Mini + hagezi_tif_medium
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 278772 domains
+# Total entries: 278768 domains
 #
 0--4.com
 0--d.com
@@ -55250,6 +55250,7 @@ buxgifts.com
 buxinjiedian1.top
 buxinjiedian2.top
 buxinjiedian3.top
+buxnet.ir
 buxomerrentage.com
 buy-banner.com
 buy-cheap-online.info
@@ -97332,7 +97333,6 @@ events.limango.com
 events.madamemoneypenny.de
 events.mapbox.com
 events.mercadopago.com
-events.mics-notrack.com
 events.mobkoi.com
 events.muddyangelrun.com
 events.plausible.scandit.io
@@ -124064,7 +124064,6 @@ hlk3i.com
 hlks.net
 hll-whatsapp.com.cn
 hllndcasinos.top
-hllzhsqburw.com
 hlms.ecologie.gouv.fr
 hlnkamsta.net
 hlnktans.net
@@ -143157,7 +143156,6 @@ larkgloomily.com
 larkierpassu.com
 larkinairductservices.site
 larkishhaggy.com
-larklilac.com
 larnaxmudir.com
 laro.co
 laro06.xyz
@@ -147996,6 +147994,7 @@ lllvaw.succesfuiiucks.net
 llm-ing.com
 llm.casino
 llm2office.ru
+llmb.cn
 llmfree.app
 llmhub.com.br
 llmood.lv
@@ -183847,6 +183846,7 @@ paymhbe.vip
 paymhbv.vip
 paymitly.ai
 paymyexcess.com
+paymyroll.com
 payneconst.com
 payneplumbingservices.com
 paynest.top
@@ -198144,7 +198144,6 @@ quintessentialconsultingservices.com
 quintline.se
 quinyiesmack.com
 quinzehoddins.com
-quiouhxxk.com
 quiplease.com
 quiritetimotesargo.qpon
 quirk5.com
@@ -224395,7 +224394,6 @@ slimspots.com
 slimsyrups.ca
 slimvitaxdietgummies.officialdealsite.com
 slimyliquid.de
-sling-studio.shop
 slingo-casinouk.com
 slingpic.com
 slingshot.io
@@ -241322,7 +241320,6 @@ tablfree.com
 taboo-bet.org
 taboobet-deutschland.com
 taboobet-mx.com
-taboola-display.com
 taboola-ocm.com
 taboola.com
 taboorecords.com
@@ -266698,7 +266695,6 @@ werbetechnik-wermatswil.ch
 werdealz.com
 wereblog.com
 wereclever.com
-werefilledwit.org
 wereldparts.net
 wereldvandealswinz.space
 werentinjust.com
