@@ -65,6 +65,7 @@ code{color:#79c0ff;font-family:monospace}
 .b-purple{background:var(--purple-bg);color:var(--purple);border-color:var(--purple-border)}
 .b-amber{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-border)}
 .b-red{background:var(--red-bg);color:var(--red);border-color:var(--red-border)}
+.b-gray{background:var(--bg3);color:var(--text2);border-color:var(--border2)}
 .divider{height:1px;background:var(--border);margin:20px 0}
 .loading{color:var(--text3);font-size:13px;padding:20px 0;text-align:center}
 .sync-info{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:14px}
@@ -311,11 +312,22 @@ function renderList(elId, urls, analysis = null, showLive = false) {
     ${showLive ? '<span class="row-col" title="Share of up to 300 sampled domains that still resolve">Live %</span>' : ''}</div>`;
   el.innerHTML = head + urls.map(url => {
     const { label, cls } = getLabelFromURL(url);
-    const redundant = analysis && analysis[url] && analysis[url].redundant;
+    const a = analysis && analysis[url];
+    // Prune plan: only step 1 is safe now; later steps only after step 1 is removed
+    let prune = '';
+    if (a && a.prune_step) {
+      const note = a.cover_ok === false ? ' Some entries are covered only by lists that are also in the prune plan.' : '';
+      prune = a.safe_now
+        ? `<span class="badge b-green" title="${esc(`Safe to remove now: ${a.unique} unique entries (${a.unique_pct}%).` + (a.redundant_runs > 1 ? ` Step 1 in ${a.redundant_runs} runs in a row.` : '') + note)}">prune step 1</span>`
+        : `<span class="badge b-gray" title="${esc(`Only after ${a.blocked_by} (step 1) has been removed and the next run confirms it.` + note)}">prune step ${a.prune_step} (after step 1)</span>`;
+    } else if (a && a.redundant && !('prune_step' in a)) {
+      // Older existing_lists.json without a prune plan
+      prune = '<span class="badge b-amber" title="Fewer than 100 unique entries and under 5% unique">maybe redundant</span>';
+    }
     return `<div class="row">
       <i class="ti ti-shield-check" style="font-size:15px;color:var(--green);flex-shrink:0"></i>
       <span class="row-url">${url}</span>
-      ${redundant ? '<span class="badge b-amber" title="Fewer than 100 unique entries and under 5% unique">maybe redundant</span>' : ''}
+      ${prune}
       <span class="badge ${cls}">${label}</span>
       <span class="badge b-green">active</span>
       ${cols(url)}

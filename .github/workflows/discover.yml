@@ -24,6 +24,18 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: pip install -r requirements.txt
+      # Optional: AdGuard's Dead Domains Linter measures live_pct. If Node or the
+      # linter is missing, the scripts fall back to their own DNS lookups.
+      - name: Set up Node.js
+        continue-on-error: true
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '20'
+      - name: Install AdGuard Dead Domains Linter
+        continue-on-error: true
+        run: |
+          npm i -g @adguard/dead-domains-linter@1.0.38
+          dead-domains-linter --help
       - name: Run discovery script
         env:
           ABUSECH_KEY: ${{ secrets.ABUSECH_KEY }}

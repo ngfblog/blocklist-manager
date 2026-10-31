@@ -7,13 +7,17 @@ guarantees both scripts always use exactly the same rules.
 """
 
 import bisect
+import collections
 import functools
 import hashlib
 import ipaddress
 import os
 import random
 import re
+import shutil
 import socket
+import subprocess
+import tempfile
 import threading
 from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse
@@ -177,8 +181,12 @@ class CoverageIndex:
         return i >= 0 and self._ends[i] >= start
 
 
-# Liveness sampling: what share of a list's domains still resolve in DNS.
+# Liveness sampling: what share of a list's domains are still alive. Uses
+# AdGuard's Dead Domains Linter when it is installed (see discover.yml), and
+# falls back to plain DNS lookups when it is missing or fails.
 LIVE_SAMPLE_SIZE = 300
+LINTER = "dead-domains-linter"
+LINTER_TIMEOUT = 600      # seconds per list
 LIVE_TIMEOUT = 3          # seconds per lookup
 LIVE_THREADS = 20
 DNS_CONTROL_DOMAINS = ("example.com", "wikipedia.org", "cloudflare.com", "microsoft.com")
@@ -207,18 +215,75 @@ def dns_works():
     return sum(_resolves(d) for d in DNS_CONTROL_DOMAINS) >= 2
 
 
-def live_pct(domains, seed_key, sample_size=LIVE_SAMPLE_SIZE):
+# How the live_pct values of this run were measured, e.g. {"dead-domains-linter": 12}
+LIVE_METHODS = collections.Counter()
+_linter_failed = False
+
+
+def linter_available():
+    return not _linter_failed and shutil.which(LINTER) is not None
+
+
+def _linter_dead_count(sample):
     """
-    Percentage of up to sample_size domains that resolve. The sample is
-    deterministic per seed_key (e.g. the list URL). Returns None when there is
-    nothing to sample or DNS does not work at all, so a broken resolver never
-    makes every list look dead.
+    Number of dead domains in sample according to AdGuard's Dead Domains Linter,
+    or None if the linter is missing or fails. After one failure the linter is
+    not tried again in this run.
     """
-    if not domains or not dns_works():
+    global _linter_failed
+    if not linter_available():
         return None
+    with tempfile.TemporaryDirectory() as tmp:
+        # The linter only checks network rules, bare domain lines are ignored
+        with open(os.path.join(tmp, "sample.txt"), "w") as f:
+            f.write("".join(f"||{d}^\n" for d in sample))
+        try:
+            proc = subprocess.run(
+                [shutil.which(LINTER), "-i", "sample.txt", "--export", "dead.txt"],
+                cwd=tmp, stdin=subprocess.DEVNULL, capture_output=True, text=True, timeout=LINTER_TIMEOUT,
+            )
+            log = proc.stdout + proc.stderr
+            # A failed lookup is only a warning and the linter still exits 0,
+            # so an empty export would look like "nothing is dead". Check the log too.
+            failed = proc.returncode != 0 or "Failed to process" in log
+            export = os.path.join(tmp, "dead.txt")
+            if failed or not os.path.exists(export):
+                detail = next((l.strip() for l in log.splitlines() if "Failed" in l), f"exit code {proc.returncode}")
+                raise RuntimeError(detail[:200])
+            with open(export) as f:
+                dead = {line.strip().lower() for line in f if line.strip()}
+        except (OSError, subprocess.SubprocessError, RuntimeError) as e:
+            print(f"    Warning: {LINTER} failed ({e}) - using DNS lookups instead for the rest of this run")
+            _linter_failed = True
+            return None
+    return len(dead & set(sample))
+
+
+def _sample(domains, seed_key, sample_size):
+    """The same sample every run for an unchanged list (seeded per list)."""
     rng = random.Random(int(hashlib.sha256(seed_key.encode()).hexdigest()[:16], 16))
     pool = sorted(domains)
-    sample = rng.sample(pool, min(sample_size, len(pool)))
+    return rng.sample(pool, min(sample_size, len(pool)))
+
+
+def live_pct(domains, seed_key, sample_size=LIVE_SAMPLE_SIZE):
+    """
+    Percentage of up to sample_size domains that are alive. The sample is
+    deterministic per seed_key (e.g. the list URL). Measured with AdGuard's Dead
+    Domains Linter (live = 100 - dead/sampled*100), or with DNS lookups if the
+    linter is missing or fails. Returns None when nothing could be measured, so
+    a failed check is never shown as 0%.
+    """
+    if not domains:
+        return None
+    sample = _sample(domains, seed_key, sample_size)
+    dead = _linter_dead_count(sample)
+    if dead is not None:
+        LIVE_METHODS[LINTER] += 1
+        return round(100 - dead / len(sample) * 100, 1)
+    if not dns_works():
+        return None
     with ThreadPoolExecutor(LIVE_THREADS) as ex:
         alive = sum(ex.map(_resolves, sample))
+    LIVE_METHODS["dns-lookup"] += 1
     return round(alive / len(sample) * 100, 1)
