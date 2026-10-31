@@ -123,12 +123,15 @@ blocklist-manager/
 │   ├── merge.py               # builds merged_ip.txt and merged_dnsbl.txt
 │   ├── compare.py             # builds recommendations.json
 │   ├── discover.py            # builds candidates.json (weekly)
+│   ├── analyze_existing.py    # builds existing_lists.json (weekly)
 │   └── netutil.py             # shared parsers, bogon list and fast overlap check
 └── output/
     ├── merged_ip.txt
     ├── merged_dnsbl.txt
     ├── recommendations.json
     ├── candidates.json
+    ├── auto_sources.json
+    ├── existing_lists.json
     └── last_run.json
 ```
 
@@ -156,6 +159,8 @@ Results go to `output/candidates.json`, sorted by new entries. Each candidate ge
 
 To add or remove a candidate, edit the `CANDIDATES` list at the top of `scripts/discover.py`: `name`, `type` (`dnsbl` or `ip`), `url`, `category` and `risk` (`low` for security lists, `high` for lists that may break sites).
 
+**Prefilter:** the *Candidates* tab hides rows with `new_pct` below 5% or fewer than 1,000 new entries; tick *show all* to see them. Active auto sources are always shown. DNSBL candidates that pass the prefilter also get `live_pct` — the share of up to 300 sampled *new* domains that still resolve in DNS. The prefilter and `live_pct` are for display only; they do not change `worth_considering` or the automatic rules below.
+
 ### Automatic DNSBL sources
 
 Low-risk DNSBL candidates can be added to `merged_dnsbl.txt` automatically. IP candidates are never added automatically — they stay suggestions.
@@ -170,6 +175,19 @@ The state lives in `output/auto_sources.json`, which only `discover.py` writes:
 **Kill switch:** set `"auto_enabled": false` in `output/auto_sources.json` (edit it on GitHub). `merge.py` then ignores all auto sources from the next run on, and `discover.py` leaves the file unchanged. Set it back to `true` to resume.
 
 **Cap:** if `merged_dnsbl.txt` would contain more than 600,000 domains, `merge.py` aborts and the previous output stays in place.
+
+---
+
+## Analysis of your lists
+
+The weekly *Discover Candidates* workflow also runs `scripts/analyze_existing.py`. It looks at every list in `my_lists.json` (except this repo's own output files, GeoIP lists and ASN lists) and writes `output/existing_lists.json`:
+
+- `total` — entries in the list
+- `unique` / `unique_pct` — entries that no *other* active list covers (DNSBL: parent domains count, because of wildcard blocking; IP: the same overlap check as `compare.py`)
+- `live_pct` (DNSBL only) — share of up to 300 sampled domains that still resolve in DNS (3 s timeout, same sample every run for an unchanged list). Left empty if DNS does not work on the runner at all.
+- `redundant` — `true` when a list has fewer than 100 unique entries **and** less than 5% unique
+
+The *IP Lists* and *DNSBL Lists* tabs show these numbers and a **maybe redundant** badge. Nothing is ever removed automatically — it is up to you whether to drop a list in pfBlockerNG. A list that fails to download is marked `dead`, and a failure of the whole analysis never fails the workflow.
 
 ---
 

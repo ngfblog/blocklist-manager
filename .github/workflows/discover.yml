@@ -28,11 +28,19 @@ jobs:
         env:
           ABUSECH_KEY: ${{ secrets.ABUSECH_KEY }}
         run: python scripts/discover.py
+      - name: Analyze existing lists
+        # Report only: a failure here must never block the candidate update
+        continue-on-error: true
+        timeout-minutes: 30
+        env:
+          ABUSECH_KEY: ${{ secrets.ABUSECH_KEY }}
+        run: python scripts/analyze_existing.py
       - name: Commit and push candidates
         run: |
           git config user.name "blocklist-bot"
           git config user.email "bot@blocklist-manager"
           git add output/candidates.json output/auto_sources.json
+          if [ -f output/existing_lists.json ]; then git add output/existing_lists.json; fi
           git diff --cached --quiet || git commit -m "chore: update candidates and auto sources $(date -u '+%Y-%m-%d %H:%M UTC')"
           # Retry push with rebase in case remote moved while this job was running.
           # The step fails if every attempt is rejected, so a stale result is never reported as success.

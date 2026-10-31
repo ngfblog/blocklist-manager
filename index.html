@@ -106,6 +106,10 @@ code{color:#79c0ff;font-family:monospace}
 .auto-box{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px}
 .auto-event{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);padding:6px 0;border-top:1px solid var(--border)}
 .auto-event:first-child{border-top:none}
+.row-col{width:66px;flex-shrink:0;text-align:right;font-size:12px;color:var(--text2);font-variant-numeric:tabular-nums}
+.row-head{display:flex;align-items:center;gap:8px;padding:0 15px 6px;font-size:10px;font-weight:600;color:var(--text3);letter-spacing:0.06em;text-transform:uppercase}
+.row-head .row-col{font-size:10px;color:var(--text3)}
+.show-all{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text2);cursor:pointer}
 .auto-time{color:var(--text3);font-family:monospace;font-size:11px;white-space:nowrap}
 </style>
 </head>
@@ -207,6 +211,7 @@ code{color:#79c0ff;font-family:monospace}
         <div class="sec-head-left">
           <span class="sec-lbl">Candidate lists</span>
         </div>
+        <label class="show-all"><input type="checkbox" id="cand-show-all" onchange="renderCandidates(candState.data, candState.active)"> show all <span id="cand-hidden" style="color:var(--text3)"></span></label>
       </div>
       <div id="list-cands"><div class="loading">Loading candidates...</div></div>
     </div>
@@ -287,16 +292,33 @@ function getLabelFromURL(url) {
   return { label: 'Custom', cls: 'b-blue' };
 }
 
-function renderList(elId, urls) {
+function renderList(elId, urls, analysis = null, showLive = false) {
   const el = document.getElementById(elId);
   if (!urls || !urls.length) { el.innerHTML = '<div class="loading" style="color:var(--text3)">No lists found</div>'; return; }
-  el.innerHTML = urls.map(url => {
+  // Analysis columns from output/existing_lists.json, only when that file exists
+  const pct = v => v === null || v === undefined ? '—' : v + '%';
+  const cols = url => {
+    if (!analysis) return '';
+    const a = analysis[url];
+    const tip = !a ? 'Not analyzed (own output, GeoIP or ASN list)' : a.status === 'dead' ? 'Download failed: ' + (a.error || '') : '';
+    const ok = a && a.status === 'ok';
+    return `<span class="row-col" title="${esc(tip)}">${ok ? formatNum(a.unique) : '—'}</span>
+      <span class="row-col">${ok ? pct(a.unique_pct) : '—'}</span>
+      ${showLive ? `<span class="row-col">${ok ? pct(a.live_pct) : '—'}</span>` : ''}`;
+  };
+  const head = !analysis ? '' : `<div class="row-head"><span style="flex:1">List</span>
+    <span class="row-col" title="Entries no other active list covers">Unique</span><span class="row-col">Unique %</span>
+    ${showLive ? '<span class="row-col" title="Share of up to 300 sampled domains that still resolve">Live %</span>' : ''}</div>`;
+  el.innerHTML = head + urls.map(url => {
     const { label, cls } = getLabelFromURL(url);
+    const redundant = analysis && analysis[url] && analysis[url].redundant;
     return `<div class="row">
       <i class="ti ti-shield-check" style="font-size:15px;color:var(--green);flex-shrink:0"></i>
       <span class="row-url">${url}</span>
+      ${redundant ? '<span class="badge b-amber" title="Fewer than 100 unique entries and under 5% unique">maybe redundant</span>' : ''}
       <span class="badge ${cls}">${label}</span>
       <span class="badge b-green">active</span>
+      ${cols(url)}
     </div>`;
   }).join('');
 }
@@ -340,14 +362,23 @@ function renderRecs(recs) {
 
 async function loadData() {
   try {
-    const [listsRes, recsRes] = await Promise.all([
+    const [listsRes, recsRes, existRes] = await Promise.all([
       fetch(`https://raw.githubusercontent.com/${REPO}/main/my_lists.json?t=${Date.now()}`),
-      fetch(`https://raw.githubusercontent.com/${REPO}/main/output/recommendations.json?t=${Date.now()}`)
+      fetch(`https://raw.githubusercontent.com/${REPO}/main/output/recommendations.json?t=${Date.now()}`),
+      fetch(`https://raw.githubusercontent.com/${REPO}/main/output/existing_lists.json?t=${Date.now()}`).catch(() => null)
     ]);
+    let analysis = null;
+    if (existRes && existRes.ok) {
+      try {
+        const ex = await existRes.json();
+        analysis = {};
+        (ex.lists || []).forEach(l => { analysis[l.url] = l; });
+      } catch (e) { analysis = null; }
+    }
     if (listsRes.ok) {
       const data = await listsRes.json();
-      renderList('list-ip', data.ip_lists);
-      renderList('list-dns', data.dnsbl_lists);
+      renderList('list-ip', data.ip_lists, analysis, false);
+      renderList('list-dns', data.dnsbl_lists, analysis, true);
       document.getElementById('cnt-ip').textContent = data.ip_lists.length;
       document.getElementById('cnt-dns').textContent = data.dnsbl_lists.length;
       document.getElementById('status-pill').innerHTML = '<i class="ti ti-check" style="font-size:10px;vertical-align:-1px"></i> Live from pfSense';
@@ -383,13 +414,23 @@ function formatTs(iso) {
   return d + ' ' + t;
 }
 
+let candState = { data: null, active: new Set() };
+
 function renderCandidates(data, active = new Set()) {
+  candState = { data, active };
   const el = document.getElementById('list-cands');
-  const cands = (data && data.candidates) || [];
-  if (!cands.length) { el.innerHTML = '<div class="loading" style="color:var(--text3)">No candidates yet</div>'; return; }
+  const all = (data && data.candidates) || [];
+  // Prefilter: hide rows with new_pct < 5 or new < 1000 unless "show all" is ticked.
+  // Active auto sources are always shown.
+  const lowValue = c => !active.has(c.name) && ((c.new_pct || 0) < 5 || (c.new || 0) < 1000);
+  const showAll = document.getElementById('cand-show-all').checked;
+  const cands = showAll ? all : all.filter(c => !lowValue(c));
+  const hiddenCount = all.filter(lowValue).length;
+  document.getElementById('cand-hidden').textContent = !showAll && hiddenCount ? `(${hiddenCount} hidden)` : '';
   // Candidates already enabled as auto sources are not highlighted or counted
   const worth = c => c.worth_considering && !active.has(c.name);
-  document.getElementById('cand-badge').textContent = cands.filter(worth).length;
+  document.getElementById('cand-badge').textContent = all.filter(worth).length;
+  if (!cands.length) { el.innerHTML = `<div class="loading" style="color:var(--text3)">${all.length ? 'All candidates are hidden by the filter — tick "show all"' : 'No candidates yet'}</div>`; return; }
   if (data.generated) document.getElementById('cand-generated').textContent = 'Last run: ' + formatTs(data.generated);
   const statusCls = { ok: 'b-green', stale: 'b-amber', dead: 'b-red' };
   el.innerHTML = `<div class="cand-wrap"><table class="cand-table">
