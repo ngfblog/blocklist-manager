@@ -19,7 +19,7 @@ from email.utils import parsedate_to_datetime
 
 import merge
 from merge import check_source, download, is_domain_covered, redact
-from netutil import CoverageIndex, is_excluded, is_geoip_url, is_self_url, parse_domains, parse_ips
+from netutil import CoverageIndex, is_excluded, is_geoip_url, is_self_url, live_pct, parse_domains, parse_ips
 
 HAGEZI = "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/{}-onlydomains.txt"
 FIREHOL = "https://raw.githubusercontent.com/firehol/blocklist-ipsets/master/{}.netset"
@@ -44,6 +44,11 @@ CANDIDATES = [
 MAX_NEW_DOMAINS = 250000
 
 STALE_DAYS = 45               # Last-Modified older than this -> "stale"
+
+# Prefilter: candidates below either limit are hidden in the web UI by default
+# and get no liveness sampling. Display only - the promotion rules ignore it.
+PREFILTER_MIN_PCT = 5
+PREFILTER_MIN_NEW = 1000
 
 # Auto promotion rules (DNSBL only)
 PROMOTE_AFTER = 2             # eligible runs in a row before a source is enabled
@@ -204,14 +209,15 @@ def fetch(candidate):
 
 def measure(candidate, entries, error, covered_domains, my_index):
     result = dict(candidate)
-    result.update(total=0, new=0, new_pct=0.0, last_modified_age_days=None)
+    result.update(total=0, new=0, new_pct=0.0, live_pct=None, last_modified_age_days=None)
     if error is not None:
         print(f"    {candidate['name']}: DEAD ({error})")
         result.update(status="dead", error=error, worth_considering=False)
         return result
 
     if candidate["type"] == "dnsbl":
-        new = sum(1 for d in entries if not is_domain_covered(d, covered_domains))
+        new_domains = [d for d in entries if not is_domain_covered(d, covered_domains)]
+        new = len(new_domains)
     else:
         new = sum(1 for n in entries if not my_index.overlaps(n) and not is_excluded(n))
     age = last_modified_age_days(candidate["url"])
@@ -227,7 +233,12 @@ def measure(candidate, entries, error, covered_domains, my_index):
             and (new >= 1000 if candidate["type"] == "dnsbl" else new > 100)
         ),
     )
-    print(f"    {candidate['name']}: {len(entries)} total, {new} new ({result['new_pct']}%) - {status}")
+    # Liveness of the domains this list would add, only for rows that pass the prefilter
+    if (candidate["type"] == "dnsbl" and status == "ok"
+            and result["new_pct"] >= PREFILTER_MIN_PCT and new >= PREFILTER_MIN_NEW):
+        result["live_pct"] = live_pct(new_domains, candidate["url"])
+    live = f", live {result['live_pct']}%" if result["live_pct"] is not None else ""
+    print(f"    {candidate['name']}: {len(entries)} total, {new} new ({result['new_pct']}%{live}) - {status}")
     return result
 
 

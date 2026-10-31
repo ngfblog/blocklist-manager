@@ -7,9 +7,15 @@ guarantees both scripts always use exactly the same rules.
 """
 
 import bisect
+import functools
+import hashlib
 import ipaddress
 import os
+import random
 import re
+import socket
+import threading
+from concurrent.futures import ThreadPoolExecutor
 from urllib.parse import urlparse
 
 # Networks that must never end up in a block list (private, reserved, documentation)
@@ -169,3 +175,50 @@ class CoverageIndex:
         end = int(net.broadcast_address)
         i = bisect.bisect_right(self._starts, end) - 1
         return i >= 0 and self._ends[i] >= start
+
+
+# Liveness sampling: what share of a list's domains still resolve in DNS.
+LIVE_SAMPLE_SIZE = 300
+LIVE_TIMEOUT = 3          # seconds per lookup
+LIVE_THREADS = 20
+DNS_CONTROL_DOMAINS = ("example.com", "wikipedia.org", "cloudflare.com", "microsoft.com")
+
+
+def _resolves(domain, timeout=LIVE_TIMEOUT):
+    """True if the domain resolves within timeout seconds."""
+    result = []
+
+    def lookup():
+        try:
+            result.append(bool(socket.getaddrinfo(domain, None)))
+        except (OSError, UnicodeError):
+            result.append(False)
+
+    # getaddrinfo has no timeout of its own, so run it in a helper thread
+    t = threading.Thread(target=lookup, daemon=True)
+    t.start()
+    t.join(timeout)
+    return bool(result and result[0])
+
+
+@functools.lru_cache(maxsize=1)
+def dns_works():
+    """False unless at least 2 well-known domains resolve (a partly blocked resolver counts as broken)."""
+    return sum(_resolves(d) for d in DNS_CONTROL_DOMAINS) >= 2
+
+
+def live_pct(domains, seed_key, sample_size=LIVE_SAMPLE_SIZE):
+    """
+    Percentage of up to sample_size domains that resolve. The sample is
+    deterministic per seed_key (e.g. the list URL). Returns None when there is
+    nothing to sample or DNS does not work at all, so a broken resolver never
+    makes every list look dead.
+    """
+    if not domains or not dns_works():
+        return None
+    rng = random.Random(int(hashlib.sha256(seed_key.encode()).hexdigest()[:16], 16))
+    pool = sorted(domains)
+    sample = rng.sample(pool, min(sample_size, len(pool)))
+    with ThreadPoolExecutor(LIVE_THREADS) as ex:
+        alive = sum(ex.map(_resolves, sample))
+    return round(alive / len(sample) * 100, 1)
