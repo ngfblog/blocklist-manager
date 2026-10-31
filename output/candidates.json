@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-31T04:42:30.188634+00:00",
+  "generated": "2026-10-31T04:59:25.011322+00:00",
   "candidates": [
     {
       "name": "hagezi_tif",
@@ -13,7 +13,8 @@
       "live_pct": 93.0,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": true
+      "worth_considering": true,
+      "worth_adding": true
     },
     {
       "name": "jarelllama_scam_blocklist",
@@ -28,7 +29,8 @@
       "live_pct": 40.3,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": false
+      "worth_considering": false,
+      "worth_adding": false
     },
     {
       "name": "firehol_abusers_30d",
@@ -37,12 +39,13 @@
       "category": "abusers (30 days)",
       "risk": "low",
       "total": 178065,
-      "new": 174574,
+      "new": 174573,
       "new_pct": 98.0,
       "live_pct": null,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": true
+      "worth_considering": true,
+      "worth_adding": true
     },
     {
       "name": "firehol_level4",
@@ -51,12 +54,13 @@
       "category": "attacks / malware (aggressive)",
       "risk": "high",
       "total": 185767,
-      "new": 170810,
+      "new": 170809,
       "new_pct": 91.9,
       "live_pct": null,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": false
+      "worth_considering": false,
+      "worth_adding": false
     },
     {
       "name": "hagezi_tif_medium",
@@ -70,7 +74,8 @@
       "live_pct": 92.0,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": true
+      "worth_considering": true,
+      "worth_adding": true
     },
     {
       "name": "phishing_army",
@@ -83,9 +88,10 @@
       "new": 56528,
       "new_pct": 37.0,
       "live_pct": 7.0,
-      "last_modified_age_days": 0.1,
+      "last_modified_age_days": 0.0,
       "status": "ok",
-      "worth_considering": true
+      "worth_considering": true,
+      "worth_adding": false
     },
     {
       "name": "hagezi_ultimate",
@@ -99,7 +105,8 @@
       "live_pct": 98.3,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": false
+      "worth_considering": false,
+      "worth_adding": false
     },
     {
       "name": "shadowwhisperer_malware_list",
@@ -114,7 +121,8 @@
       "live_pct": 33.7,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": true
+      "worth_considering": true,
+      "worth_adding": false
     },
     {
       "name": "jarelllama_scam_blocklist_light_version",
@@ -129,7 +137,8 @@
       "live_pct": 44.7,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": false
+      "worth_considering": false,
+      "worth_adding": false
     },
     {
       "name": "hagezi_pro_plus",
@@ -143,7 +152,8 @@
       "live_pct": 97.7,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": false
+      "worth_considering": false,
+      "worth_adding": false
     },
     {
       "name": "hagezi_doh_vpn_proxy_bypass",
@@ -157,7 +167,8 @@
       "live_pct": 95.0,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": false
+      "worth_considering": false,
+      "worth_adding": false
     },
     {
       "name": "shadowwhisperer_scam_list",
@@ -169,10 +180,11 @@
       "total": 7451,
       "new": 6399,
       "new_pct": 85.9,
-      "live_pct": 79.7,
+      "live_pct": 80.0,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": false
+      "worth_considering": false,
+      "worth_adding": false
     },
     {
       "name": "hagezi_dyndns",
@@ -186,7 +198,8 @@
       "live_pct": 97.0,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": false
+      "worth_considering": false,
+      "worth_adding": false
     },
     {
       "name": "hagezi_hoster",
@@ -200,7 +213,8 @@
       "live_pct": null,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": false
+      "worth_considering": false,
+      "worth_adding": false
     },
     {
       "name": "hagezi_fake",
@@ -214,7 +228,8 @@
       "live_pct": null,
       "last_modified_age_days": null,
       "status": "ok",
-      "worth_considering": false
+      "worth_considering": false,
+      "worth_adding": false
     },
     {
       "name": "fabriziosalmi_hourly_updated_blocklist",
@@ -230,7 +245,8 @@
       "last_modified_age_days": null,
       "status": "dead",
       "error": "skipped: 105.9 MB is over the 40 MB limit",
-      "worth_considering": false
+      "worth_considering": false,
+      "worth_adding": false
     },
     {
       "name": "t145_black_mirror",
@@ -246,12 +262,13 @@
       "last_modified_age_days": null,
       "status": "dead",
       "error": "skipped: 163.7 MB is over the 40 MB limit",
-      "worth_considering": false
+      "worth_considering": false,
+      "worth_adding": false
     }
   ],
   "live_check": {
-    "dead-domains-linter": 9,
-    "dns-lookup": 2
+    "dead-domains-linter": 8,
+    "dns-lookup": 3
   },
   "catalog": {
     "url": "https://raw.githubusercontent.com/jarelllama/Blocklist-Checker/main/data/blocklists_to_compare.txt",

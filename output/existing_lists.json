@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-31T04:47:54.677586+00:00",
+  "generated": "2026-10-31T05:04:53.734836+00:00",
   "dns_ok": true,
   "live_check": {
     "dead-domains-linter": 8
@@ -61,8 +61,8 @@
       "type": "ip",
       "name": "all.txt",
       "status": "ok",
-      "total": 24830,
-      "unique": 23922,
+      "total": 24813,
+      "unique": 23899,
       "unique_pct": 96.3,
       "live_pct": null,
       "redundant": false,
@@ -78,8 +78,8 @@
       "name": "ci-badguys.txt",
       "status": "ok",
       "total": 15000,
-      "unique": 11887,
-      "unique_pct": 79.2,
+      "unique": 12079,
+      "unique_pct": 80.5,
       "live_pct": null,
       "redundant": false,
       "prune_step": null,
@@ -102,7 +102,7 @@
       "safe_now": true,
       "blocked_by": null,
       "cover_ok": true,
-      "redundant_runs": 1
+      "redundant_runs": 2
     },
     {
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-onlydomains.txt",
@@ -221,10 +221,10 @@
       "type": "dnsbl",
       "name": "hostfile.txt",
       "status": "ok",
-      "total": 32637,
-      "unique": 32394,
+      "total": 32636,
+      "unique": 32393,
       "unique_pct": 99.3,
-      "live_pct": 58.3,
+      "live_pct": 58.0,
       "redundant": false,
       "prune_step": null,
       "safe_now": false,
