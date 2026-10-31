@@ -81,6 +81,12 @@ PROMOTE_AFTER = 2             # eligible runs in a row before a source is enable
 FAIL_LIMIT = 2                # dead/stale runs in a row before an enabled source is removed
 INELIGIBLE_LIMIT = 4          # ineligible runs in a row before an enabled source is removed
 MAX_EVENTS = 20
+# Live gate (DNSBL only): a source is enabled only if live_pct >= LIVE_MIN_ADD,
+# and an enabled source is removed when live_pct < LIVE_MIN_KEEP in
+# LIVE_FAIL_LIMIT runs in a row. Runs without a live_pct are ignored for removal.
+LIVE_MIN_ADD = 50
+LIVE_MIN_KEEP = 30
+LIVE_FAIL_LIMIT = 2
 
 OUTPUT_FILE = "output/candidates.json"
 AUTO_FILE = merge.AUTO_SOURCES_FILE
@@ -203,7 +209,7 @@ def load_auto_state(path):
             raise RuntimeError(f"{path} has a source without a name - fix or delete it. Aborting.")
         for key, value in (("type", "dnsbl"), ("url", ""), ("enabled", False), ("first_seen", ""),
                            ("consecutive_ok", 0), ("last_total", 0), ("last_new", 0),
-                           ("fail_count", 0), ("ineligible_count", 0), ("reason", "")):
+                           ("fail_count", 0), ("ineligible_count", 0), ("live_fail_count", 0), ("reason", "")):
             s.setdefault(key, value)
     return state
 
@@ -319,7 +325,7 @@ def measure(candidate, entries, error, covered_domains, my_index):
     result.update(total=0, new=0, new_pct=0.0, live_pct=None, last_modified_age_days=None)
     if error is not None:
         print(f"    {candidate['name']}: DEAD ({error})")
-        result.update(status="dead", error=error, worth_considering=False)
+        result.update(status="dead", error=error, worth_considering=False, worth_adding=False)
         return result
 
     if candidate["type"] == "dnsbl":
@@ -344,6 +350,10 @@ def measure(candidate, entries, error, covered_domains, my_index):
     if (candidate["type"] == "dnsbl" and status == "ok"
             and result["new_pct"] >= PREFILTER_MIN_PCT and new >= PREFILTER_MIN_NEW):
         result["live_pct"] = live_pct(new_domains, candidate["url"])
+    # worth_adding = worth_considering plus, for DNSBL lists, the live gate
+    result["worth_adding"] = result["worth_considering"] and (
+        candidate["type"] != "dnsbl" or (result["live_pct"] is not None and result["live_pct"] >= LIVE_MIN_ADD)
+    )
     live = f", live {result['live_pct']}%" if result["live_pct"] is not None else ""
     print(f"    {candidate['name']}: {len(entries)} total, {new} new ({result['new_pct']}%{live}) - {status}")
     return result
@@ -356,7 +366,11 @@ def not_eligible_reason(result):
         return f"risk {result['risk']}"
     if result["status"] != "ok":
         return f"status {result['status']}"
-    return f"only {result['new']} new domains (needs 1000)"
+    if not result["worth_considering"]:
+        return f"only {result['new']} new domains (needs 1000)"
+    if result.get("live_pct") is None:
+        return "live check could not run this run"
+    return f"only {result['live_pct']}% live (needs {LIVE_MIN_ADD}%)"
 
 
 def update_auto_sources(state, results, now):
@@ -372,7 +386,7 @@ def update_auto_sources(state, results, now):
             state["sources"].append({
                 "name": r["name"], "type": "dnsbl", "url": r["url"], "enabled": False,
                 "first_seen": today, "consecutive_ok": 0, "last_total": 0, "last_new": 0,
-                "fail_count": 0, "ineligible_count": 0, "reason": "",
+                "fail_count": 0, "ineligible_count": 0, "live_fail_count": 0, "reason": "",
             })
 
     def event(action, name, detail):
@@ -382,7 +396,10 @@ def update_auto_sources(state, results, now):
     # Update counters
     for s in state["sources"]:
         r = by_name.get(s["name"])
-        eligible = bool(r and r["risk"] == "low" and r["worth_considering"])
+        eligible = bool(r and r["risk"] == "low" and r.get("worth_adding"))
+        # Only the live check could not run: not eligible, but this run does not
+        # count towards removing an enabled source either
+        live_unknown = bool(r and r["risk"] == "low" and r["worth_considering"] and r.get("live_pct") is None)
         if r:
             s["url"] = r["url"]
             if r["status"] != "dead":
@@ -391,7 +408,14 @@ def update_auto_sources(state, results, now):
         # fail_count = dead/stale runs in a row; ineligible_count = ineligible runs in a row
         s["consecutive_ok"] = s.get("consecutive_ok", 0) + 1 if eligible else 0
         s["fail_count"] = s.get("fail_count", 0) + 1 if r and r["status"] in ("dead", "stale") else 0
-        s["ineligible_count"] = 0 if eligible else s.get("ineligible_count", 0) + 1
+        if eligible:
+            s["ineligible_count"] = 0
+        elif not live_unknown:
+            s["ineligible_count"] = s.get("ineligible_count", 0) + 1
+        # live_fail_count = runs in a row with live_pct below LIVE_MIN_KEEP; runs without live_pct are ignored
+        live = r.get("live_pct") if r else None
+        if live is not None:
+            s["live_fail_count"] = s.get("live_fail_count", 0) + 1 if live < LIVE_MIN_KEEP else 0
         s["reason"] = "" if eligible else not_eligible_reason(r)
 
     # Remove first, so the freed budget can be used below
@@ -401,6 +425,10 @@ def update_auto_sources(state, results, now):
         if s["fail_count"] >= FAIL_LIMIT:
             s["enabled"] = False
             s["reason"] = f"dead/stale in {s['fail_count']} runs in a row ({s['reason']})"
+            event("removed", s["name"], s["reason"])
+        elif s["live_fail_count"] >= LIVE_FAIL_LIMIT:
+            s["enabled"] = False
+            s["reason"] = f"under {LIVE_MIN_KEEP}% live in {s['live_fail_count']} runs in a row ({s['reason']})"
             event("removed", s["name"], s["reason"])
         elif s["ineligible_count"] >= INELIGIBLE_LIMIT:
             s["enabled"] = False
@@ -517,7 +545,7 @@ def main():
 
     print("\n=== Done ===")
     for r in results:
-        flag = "worth considering" if r["worth_considering"] else ""
+        flag = "worth adding" if r["worth_adding"] else "worth considering (live gate not met)" if r["worth_considering"] else ""
         print(f"  {r['name']}: {r['new']:,} new – {r['status']} {flag}")
     print(f"  → {args.output}")
     if auto_on:

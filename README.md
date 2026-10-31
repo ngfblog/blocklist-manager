@@ -155,7 +155,7 @@ blocklist-manager/
 
 Once a week (Sunday 05:00 UTC, or manually via Actions → Discover Candidates) `scripts/discover.py` checks lists you are *not* using yet and measures how many new entries each one would add on top of what you already block (your pfBlockerNG lists plus `merged_*.txt`). It never touches the merged lists.
 
-Results go to `output/candidates.json`, sorted by new entries. Each candidate gets `total`, `new`, `new_pct`, `status` (`ok`, `dead` or `stale`) and `worth_considering` — true only for low-risk lists that are alive and add at least 1,000 domains (DNSBL) or more than 100 networks (IP).
+Results go to `output/candidates.json`, sorted by new entries. Each candidate gets `total`, `new`, `new_pct`, `status` (`ok`, `dead` or `stale`) and `worth_considering` — true only for low-risk lists that are alive and add at least 1,000 domains (DNSBL) or more than 100 networks (IP) — and `worth_adding`, which adds the live gate below for DNSBL lists (for IP lists it equals `worth_considering`). The *Candidates* tab highlights rows by `worth_adding` and shows a *Live %* column.
 
 To add or remove a candidate, edit the `CANDIDATES` list at the top of `scripts/discover.py`: `name`, `type` (`dnsbl` or `ip`), `url`, `category` and `risk` (`low` for security lists, `high` for lists that may break sites).
 
@@ -169,8 +169,9 @@ Low-risk DNSBL candidates can be added to `merged_dnsbl.txt` automatically. IP c
 
 The state lives in `output/auto_sources.json`, which only `discover.py` writes:
 
-- **2-run rule** — a DNSBL candidate with `risk: "low"` is enabled only after it was `worth_considering` in **2 discovery runs in a row** (`consecutive_ok`), and only while the `last_new` of all enabled sources together stays within `max_new_domains` (250,000, set by `MAX_NEW_DOMAINS` at the top of `scripts/discover.py` and copied into the file on every run). Otherwise it stays disabled and `reason` says why.
-- **Removal** — an enabled source is disabled again when it is `dead` or `stale` in 2 runs in a row, or not eligible in 4 runs in a row. Entries are never deleted, only switched off.
+- **2-run rule** — a DNSBL candidate with `risk: "low"` is enabled only after it was `worth_adding` in **2 discovery runs in a row** (`consecutive_ok`), and only while the `last_new` of all enabled sources together stays within `max_new_domains` (250,000, set by `MAX_NEW_DOMAINS` at the top of `scripts/discover.py` and copied into the file on every run). Otherwise it stays disabled and `reason` says why.
+- **Live gate** — `worth_adding` is `worth_considering` plus, for DNSBL lists, `live_pct` of at least 50%. If `live_pct` is empty (the check could not run), the candidate is not eligible in that run and `reason` says so.
+- **Removal** — an enabled source is disabled again when it is `dead` or `stale` in 2 runs in a row, under 30% live in 2 runs in a row (`live_fail_count`; runs without a `live_pct` are ignored and do not reset it), or not eligible in 4 runs in a row (runs where only the live check was missing do not count). Entries are never deleted, only switched off.
 - **Events** — every add and remove is logged in `events` (last 20 kept) and shown in the *Candidates* tab of the web UI.
 - `merge.py` loads every enabled source after Hagezi Pro and TIF Mini, with the same coverage filter. An auto source must return at least 50% of its `last_total`; if it fails, it is skipped with a warning and the run continues. Active auto sources are listed in the `# Sources:` header of `merged_dnsbl.txt`.
 
