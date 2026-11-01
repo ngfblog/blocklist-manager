@@ -1,5 +1,5 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-11-01 18:46 UTC
+# Generated: 2026-11-01 23:23 UTC
 # Sources: Hagezi Pro + Hagezi TIF Mini + hagezi_tif_medium
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
 # Total entries: 273058 domains
@@ -70077,7 +70077,6 @@ clearnview.com
 clearpathababilling.com
 clearpathdocumentservice.com
 clearpathtechnologyservices.com
-clearrobin.com
 clearrockdealpartners.com
 clearservices.net
 clearsharewardage.net
@@ -90874,6 +90873,7 @@ dvnofknrf.cn
 dvns1.analytics.solteq.solutions
 dvomnhxg.com
 dvonttkrelon.com
+dvpiogikqpyrj.net
 dvqcs4w0eo35b.cloudfront.net
 dvrexpert.st
 dvrip.6yd.ru
