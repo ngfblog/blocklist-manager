@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-01T11:37:04.902656+00:00",
+  "generated": "2026-11-08T11:38:13.315661+00:00",
   "auto_enabled": true,
   "max_new_domains": 250000,
   "sources": [
@@ -9,12 +9,12 @@
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif-onlydomains.txt",
       "enabled": false,
       "first_seen": "2026-10-30",
-      "consecutive_ok": 6,
-      "last_total": 1851038,
-      "last_new": 1515781,
+      "consecutive_ok": 7,
+      "last_total": 1441295,
+      "last_new": 1067094,
       "fail_count": 0,
       "ineligible_count": 0,
-      "reason": "would exceed max_new_domains (124,032 in use + 1,515,781 new > 250,000)",
+      "reason": "would exceed max_new_domains (172,872 in use + 1,067,094 new > 250,000)",
       "live_fail_count": 0
     },
     {
@@ -23,9 +23,9 @@
       "url": "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.medium-onlydomains.txt",
       "enabled": true,
       "first_seen": "2026-10-30",
-      "consecutive_ok": 6,
-      "last_total": 318186,
-      "last_new": 124032,
+      "consecutive_ok": 7,
+      "last_total": 363724,
+      "last_new": 172872,
       "fail_count": 0,
       "ineligible_count": 0,
       "reason": "",
@@ -38,11 +38,11 @@
       "enabled": false,
       "first_seen": "2026-10-30",
       "consecutive_ok": 0,
-      "last_total": 1074,
-      "last_new": 116,
+      "last_total": 1110,
+      "last_new": 133,
       "fail_count": 0,
-      "ineligible_count": 6,
-      "reason": "only 116 new domains (needs 1000)",
+      "ineligible_count": 7,
+      "reason": "only 133 new domains (needs 1000)",
       "live_fail_count": 0
     },
     {
@@ -52,11 +52,11 @@
       "enabled": false,
       "first_seen": "2026-10-30",
       "consecutive_ok": 0,
-      "last_total": 17553,
-      "last_new": 2,
+      "last_total": 18763,
+      "last_new": 3,
       "fail_count": 0,
-      "ineligible_count": 6,
-      "reason": "only 2 new domains (needs 1000)",
+      "ineligible_count": 7,
+      "reason": "only 3 new domains (needs 1000)",
       "live_fail_count": 0
     },
     {
@@ -66,12 +66,12 @@
       "enabled": false,
       "first_seen": "2026-10-31",
       "consecutive_ok": 0,
-      "last_total": 152156,
-      "last_new": 56352,
+      "last_total": 144961,
+      "last_new": 55901,
       "fail_count": 0,
-      "ineligible_count": 2,
-      "reason": "only 11.3% live (needs 50%)",
-      "live_fail_count": 2
+      "ineligible_count": 3,
+      "reason": "only 3.0% live (needs 50%)",
+      "live_fail_count": 3
     },
     {
       "name": "shadowwhisperer_malware_list",
@@ -80,11 +80,11 @@
       "enabled": false,
       "first_seen": "2026-10-31",
       "consecutive_ok": 0,
-      "last_total": 46712,
-      "last_new": 31928,
+      "last_total": 46756,
+      "last_new": 32469,
       "fail_count": 0,
-      "ineligible_count": 2,
-      "reason": "only 32.3% live (needs 50%)",
+      "ineligible_count": 3,
+      "reason": "only 38.0% live (needs 50%)",
       "live_fail_count": 0
     }
   ],
