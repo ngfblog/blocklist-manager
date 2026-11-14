@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-11-14 18:57 UTC
+# Generated: 2026-11-14 23:41 UTC
 # Sources: Hagezi Pro + Hagezi TIF Mini + hagezi_tif_medium
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 331569 domains
+# Total entries: 331571 domains
 #
 0--4.com
 0--d.com
@@ -69060,7 +69060,6 @@ bookieguestpre-chekpaga.com
 booking-accept-reservation.com
 booking-accept.com
 booking-airport.com
-booking-art.com
 booking-bodensee.de
 booking-boost.ru
 booking-confirmed.sbs
@@ -153316,6 +153315,7 @@ heminvestmentbanking.com
 hemlibra.com.data.adobedc.net
 hemlock-sauna.de
 hemmca-capital.com
+hemmentaksi.com
 hemoglli.com
 hemorrdroids.net
 hempborder.xyz
@@ -315020,6 +315020,7 @@ warthcoes.com
 wartomex-ai.com
 wartomexai.com
 warung168-cortez.xyz
+warungfadlan.store
 warunggolcobalogin.com
 warungjudi.com
 warungpoker.com
@@ -326617,6 +326618,7 @@ yghonola.com
 ygirls.com.ng
 ygmkcuj3v.com
 ygnooddg.shop
+ygrmedia.com
 ygrrvlvvgf.top
 ygtaxservices.com
 ygto.com
