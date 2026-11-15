@@ -1,8 +1,8 @@
 # Blocklist Manager – DNSBL gaps
-# Generated: 2026-11-15 19:36 UTC
+# Generated: 2026-11-15 23:48 UTC
 # Sources: Hagezi Pro + Hagezi TIF Mini + hagezi_tif_medium
 # Contains domains NOT covered by your pfBlockerNG DNSBL lists
-# Total entries: 336270 domains
+# Total entries: 336272 domains
 #
 0--4.com
 0--d.com
@@ -295063,6 +295063,7 @@ thinkwithnudge.app
 thinkwonders.shop
 thinnerlaet.qpon
 thinqrecommend.lgtvcommon.com
+thinspe.teachyourson.com
 thioningoth.com
 thirdavenuevillage.com
 thirdbiography.com
@@ -314403,6 +314404,7 @@ vinted-verify-request.click
 vinted.32356036.com
 vinted.chat
 vinted.explore-notificationpending.com
+vinted.info-fulfill.com
 vinted.nowe-04-11-op.eu.cc
 vinted.verifpage.com
 vintedfastverify.info
